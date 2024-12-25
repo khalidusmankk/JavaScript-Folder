@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS HTML DOM Navigation </title>
+
+</head>
+ <h1> DOM Navigation </h1>
+<p> With the HTML DOM, you can navigate the node tree using node relationships.</p>
+<p> Everything in an HTML document is a node</p>
+<pre>
+   The entire document is a document node
+   Every HTML element is an element node
+   The text inside HTML elements are text nodes
+   Every HTML attribute is an attribute node (deprecated)
+   All comments are comment nodes
+</pre>
+<p> With the HTML DOM, all nodes in the node tree can be accessed by JavaScript.
+   New nodes can be created, and all nodes can be modified or deleted.</p>
+
+   <p> The nodes in the node tree have a hierarchical (darjawar) relationship to each other.
+      The terms parent, child, and sibling are used to describe the relationships.</p>
+
+      <!-- <p>
+         <html> is the root node
+<html> has no parents
+<html> is the parent of <head> and <body>
+<head> is the first child of <html>
+<body> is the last child of <html>
+and:
+
+<head> has one child: <title>
+<title> has one child (a text node): "DOM Tutorial"
+<body> has two children: <h1> and <p>
+<h1> has one child: "DOM Lesson one"
+<p> has one child: "Hello world!"
+<h1> and <p> are siblings
+      </p> -->
+
+      <h2>Navigating Between Nodes </h2>
+      <p> You can use the following node properties to navigate between nodes with JavaScript </p>
+      <p>
+         parentNode
+         childNodes[nodenumber]
+         firstChild
+         lastChild
+         nextSibling
+         previousSibling
+      </p>
+
+
+      <p>
+         <!-- <title id="demo">DOM Tutorial</title> -->
+The element node <title> (in the example above) does not contain text.
+
+It contains a text node with the value "DOM Tutorial".
+
+The value of the text node can be accessed by the node's innerHTML property:
+      </p>
+
+
+<h1> DOM Document</h1>
+<p> HTML DOM methods are actions you can perform (on HTML Elements). </p>
+<p> HTML DOM properties are values (of HTML Elements) that you can set or change. </p>
+<p> <b> getElementById </b> is a method, while </b> innerHTML </b> is a property. </p>
+
+<h2> Finding HTML Elements </h2>
+<p> Method	                                   Description
+   document.getElementById(id)	         Find an element by element id
+   document.getElementsByTagName(name)	   Find elements by tag name
+   document.getElementsByClassName(name)	Find elements by class name </p>
+   Finding HTML elements by CSS selectors
+   Finding HTML elements by HTML object collections
+
+
+   <h2> Changing HTML Elements </h2>
+   <p> 
+                Property	                                       Description
+      element.innerHTML =  new html content            Change the inner HTML of an element
+      element.attribute = new value	                   Change the attribute value of an HTML element
+      element.style.property = new style	             Change the style of an HTML element
+                  Method	                                       Description
+      element.setAttribute(attribute, value)	          Change the attribute value of an HTML element</p>
+
+
+
+      <h2> Adding and Deleting Elements </h2>
+      <p> 
+               Method	                           Description
+         document.createElement(element)  	Create an HTML element
+         document.removeChild(element)    	Remove an HTML element
+         document.appendChild(element)    	Add an HTML element
+         document.replaceChild(new, old)  	Replace an HTML element
+         document.write(text)             	Write into the HTML output stream </p>
+
+
+
+       <h2> Adding Events Handlers </h2>
+       <p> 
+         Method	                                                      Description
+         document.getElementById(id).onclick = function(){code}	Adding event handler code to an onclick event</p>
+
+
+
+
+      <h1> HTML DOM Elements </h1>
+
+      <h2> Finding HTML Element by Id </h2>
+
+      <p id="introIdPara">Finding HTML Elements by Id</p>
+      <p>This example demonstrates the <b>getElementsById</b> method.</p>
+      <p id="demoId"></p>
+      <script>
+       const introId = document.getElementById ("introIdPara");
+
+       document.getElementById("demoId").innerHTML = "The text from the introIdPara paragraph is: " + introId.innerHTML;
+      </script>
+      <p> <b> Note that </b> If the element is found, the method will return the element as an object (in element).
+             If the element is not found, element will contain null.</p>
+
+
+
+
+             <h2> Finding HTML Elements by Tag Name </h2>
+             <div id="mainDiv">
+               <p> This is the first paragraph in the div. </p>
+               <p> This is the second paragraph in the main div.</p>
+             </div>
+             <p id="divParagraph"> </p>
+             <script>
+               const x = document.getElementById("mainDiv");
+              // const y = x.document.getElementsByTagName("p"); // The issue in your code is that you're trying to access x.document.getElementsByTagName("p"). The object x is a DOM element (mainDiv), and DOM elements do not have a document property. You should directly call getElementsByTagName on x, not x.document.
+               const y = x.getElementsByTagName("p");
+               document.getElementById("divParagraph").innerHTML = "The second paragraph in the mainDiv is : " + y[1].innerHTML;
+
+             </script>
+
+
+
+<h2> Finding HTML Elements by Class Name </h2>
+<p> If you want to find all HTML elements with the same class name, use getElementsByClassName(). </p>
+
+
+<p>Finding HTML Elements by Class Name.</p>
+<p class="classIntroPara">Hello World!</p>
+<p class="classIntroPara">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+ <p id="classIntroPara2"> </p>
+ 
+ <script>
+//document.getElementsByClassName("classIntroPara")[0].innerHTML = "Say Hello World";
+
+          // OR
+          const a = document.getElementsByClassName("classIntroPara");
+          document.getElementById("classIntroPara2").innerHTML = 
+          " Say " + a [0].innerHTML;
+ </script>
+ <p> getElementsByClassName returns a collection (even if there's only one match).
+    [0] is used to access the first item in that collection.</p>
+
+   
+
+
+
+
+    <h2> Finding HTML Elements by CSS Selectors </h2>
+    <p> If you want to find all HTML elements that match a specified CSS selector (id, class names, types, attributes, values of attributes, etc), use the querySelectorAll() method. </p>
+
+    <p> This example returns a list of all <p> elements with class="introSelect".</p>
+
+    <p> Paragraph without class </p>
+    <p class="introSelect">Ist Paragraph with class</p>
+    <p> Paragraph without class </p>
+    <p class="introSelect"> 2nd Paragraph with class</p>
+    <p> Paragraph without class </p>
+    <p class="introSelect"> 3rd Paragraph with class</p>
+
+    <p id="introSelectId"> </p>
+    
+    <script>
+      const xx = document.querySelectorAll("p.introSelect");
+      document.getElementById("introSelectId").innerHTML = " The Second Paragraph with calss is " + xx [1]. innerHTML;
+
+    </script>
+
+
+
+
+                
+
+   <h2> Finding HTML Elements by HTML Object Collections </h2>
+   <p> This example finds the form element with id="formOne", in the forms collection, and displays all element values: </p>
+
+<form id="formOne" action="/action_page.php">
+   First name: <input type="text" name="fname" value=" Khalid "><br>
+   Last name: <input type="text" name="lname" value=" Usman "><br><br>
+             <input type="submit" value=" Log In ">
+ </form> 
+
+ <p>These are the values of each element in the form:</p>
+
+ <p id="formm"></p>
+
+      <script>
+      const xForm = document.forms["formOne"];
+      let text = "";
+      for (let i = 0; i < xForm.length ;i++) {
+      text += xForm.elements[i].value + "<br>";
+      }
+      document.getElementById("formm").innerHTML = text;
+      </script>
+
+      <p> The following HTML objects (and object collections) are also accessible:
+
+         document.anchors <br>
+         document.body <br>
+         document.documentElement <br>
+         document.embeds <br>
+         document.forms <br>
+         document.head <br>
+         document.images <br>
+         document.links <br>
+         document.scripts <br>
+         document.title </p>
+
+
+
+
+
+
+
+
+
+         <h2> HTML DOM - Changing HTML </h2>
+         <p> The HTML DOM allows JavaScript to change the content of HTML elements. </p>
+         <p> The easiest way to modify the content of an HTML element is by using the innerHTML property.
+            To change the content of an HTML element, use this syntax: 
+            document.getElementById(id).innerHTML = new HTML </p>
+
+            <p id="changeContent"> Hello World </p>
+
+            <script>
+               document.getElementById("changeContent").innerHTML = " You will be changed ! "; //A JavaScript changes the content (innerHTML) of that element to "New text!"
+            </script>
+
+
+
+
+                
+
+  <h2> Changing the Value of an Attribute </h2>
+  <p> document.getElementById(id).attribute = new value
+      This example changes the value of the src attribute of an &lt; img &gt; element. </p>
+
+      <img id="image" src="logo.svg" width="160" height="120">
+
+      <img id="logoImage" src="logo.svg" width="120" height="120"> <!-- This image will be changed . -->
+
+<script>
+   document.getElementById("logoImage").src = "twitter.png";
+</script>
+<p> The HTML document above contains an &lt; img &gt; element with id="myImage" </p>
+<p> A JavaScript changes the <b> src </b> attribute of that element from "logo.svg" to "twitter.png"</p>
+
+ <h3> Attributes</h3>
+ <p> All HTML elements can have attributes <br>
+   The <b> href </b> attribute of &lt; a &gt;  specifies the URL of the page the link goes to <br>
+   The <b> src </b> attribute of &lt; img &gt; specifies the path to the image to be displayed <br>
+   The <b> width and height </b> attributes of &lt; img &gt; provide size information for images <br>
+   The <b> alt </b> attribute of &lt; img &gt; provides an alternate text for an image <br>
+   The <b> style </b> attribute is used to add styles to an element, such as color, font, size, and more <br>
+   The <b> lang </b> attribute of the &lt; html &gt; tag declares the language of the Web page <br>
+   The <b> title </b> attribute defines some extra information about an element </p>
+
+
+<!-- 
+   
+ 
+    <button onclick="changeColor()" style="background-image: conic-gradient(red, blue );  " > Change Color</button> 
+
+   </br>
+   <p>Finding HTML Elements by CSS Selector (Query Selector)</p>
+   <p class="intro">Hello World!.</p>
+   <p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
+
+
+   
+
+ 
+
+ let a = document.getElementsByTagName("p");
+ for(let paragraph = 6 ; paragraph < a.length; paragraph++){
+    a[paragraph].style.color= "red";
+ }
+
+
+    document.write("<p> I want to change the h3 color to green and  paragraphs(starts for 4, i.e, leave first 4) to red by using loop(for)</p>")
+
+    function changeColor(){
+ let x = document.getElementsByTagName("h3");
+ for ( let headd = 0; headd < x.length ; headd++){
+    x[headd].style.color= "yellow";
+    x[headd].style.backgroundColor= "blue";
+ }}
+
+ 
+ document.write("In the example above, getElementById is a method, while innerHTML is a property.","<br>")
+
+
+
+
+ document.write("Difference between <b> textContent & InnerText </b> " ,"<br>")
+ document.write("textcontent gives us complete text while innertext does not as the text in the span tags have been disappeared by css. as below" , "<br>")
+
+ 
+//  document.getElementsByTagName('h3').textContent
+//  document.getElementsByTagName('h3').innerText
+
+document.write("Note that the <b> innerHTML </b> gives us everything (text and attributes.)" ,"<br>")
+
+
+
+
+
+
+
+    
+</body>
+</html> 

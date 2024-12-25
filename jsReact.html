@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React's Page</title>
+  </head>
+
+  <style>
+    h2 {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      color: blue;
+    }
+  </style>
+  <body>
+    <h2>Destructuring</h2>
+    <p>
+      Sometimes We may have an array or object that we are working with, but we
+      only need some of the items contained in these , So we use Destructuring
+      for this.
+    </p>
+
+    <script>
+      document.write(
+        "sometime before the invention of destructuring ,wheh we had to assign the values of an to a variable, the process was very lengthy , as below ."
+      );
+      // let user = [ "Khlid" , 25 ]; // array
+      // let name = user[0]; // assigning the values of an array to variables
+      // let age = user[1]
+
+      document.write("<h4> Destructuring of an array </h4>");
+      document.write(
+        "To avoid the above lengthy code , ES6  has a new version of destructuring , as below .",
+        "<br>"
+      );
+
+      let user = ["Khlid", 25, "Rawalpindi"];
+      let [name, age, city] = user; // Assigned the above to a variable
+
+      document.write(name + "<br>");
+      document.write(age + "<br>");
+      document.write(city);
+
+      document.write("<h5> Nested array and its destructuring </h5>");
+
+      let numbers = [1, 2, 3, [" Male ", 2400]];
+      let [a, b, c, [gender, salary]] = numbers;
+      document.write(a + "<br>");
+      document.write(b + "<br>");
+      document.write(c + "<br>");
+      document.write(gender + "<br>");
+      document.write(salary + "<br>" + "<br>");
+
+      document.write(" Destructuring with rest operators " + "<br>");
+
+      let digit = [10, 20, 30, 40]; // rest operator turns the rest elements into an array.
+      let [w, , ...args] = digit;
+
+      document.write(...(args + "<br>"));
+
+      document.write("<h2> Destructuring an Object </h2>");
+
+      let user1 = {
+        name: "Khalid Usman",
+        Nationality: "Pakistani",
+        city: "Rawalpindi",
+      };
+      // let { name, age, city } = user1; // Error .. "Cannot redeclare block-scoped variables"  , So better to define the code again in function and then call a function.
+      // document.write(name + "<br>")
+      // document.write(age + "<br>")
+      // document.write(city + "<br>")
+      function myUser() {
+        let { name, Nationality, city } = user1;
+        document.write(name + "<br>");
+        document.write(Nationality + "<br>");
+        document.write(city + "<br>");
+      }
+      myUser();
+    </script>
+  </body>
+</html>

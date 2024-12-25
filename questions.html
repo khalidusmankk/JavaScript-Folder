@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Questions </title>
+</head>
+<body>
+    
+    <h3> Answer the following questions </h3>
+    <p> How JavaScript programs can be executed by the web browser in HTML ? </p>
+    <p> what is JPG, GIF & PNG images </p>
+    <p> To define a style for an element, Is mentioning the name of the element like ,div.className (div.cities) is necessary or .classname (.cities) is ok.</p>
+    <p> Answer: (.classname) This rule will apply to any element with the class cities, whether it's a div, p, span, etc.</p>
+    <p> (div.classname), This rule will apply only to div elements with the class cities.</p>
+
+
+
+
+    <p>  hr = (writ) =>   writ + " Hi "; // "Hi" is the value of writ and "Hello" is for hr.
+        document.write(hr("Hello"),"<br>"); </p>
+
+
+        <p> Do I need to use let before function or not ? </p>
+        <p>  welcome = ( name, age) => `Welcome Here! ${name} ${age}`;
+            document.write(welcome("Dear", 35));
+
+           let welcome = ( name, age) => `Welcome Here! ${name} ${age}`;
+            document.write(welcome("Dear", 35));</p>
+
+            <p> Below is an object , now if i write only this , i.e remove the detail after = , then it return the last property and value of an object, why ?. why not the first or second property of the object. (detail = `${x} :  ${principal[x]}) </p>
+            <p> let principal = { 
+                Name : "Rahman",
+                Age : 50,
+                Nationality : "Pakistani",
+                SchoolName : "New Iqra "
+              
+              }
+               let detail = "";
+               for (let x in principal){
+                 detail = detail + `${x} :  ${principal[x]} <br> `; 
+               }
+               document.write(detail , "<br>");</p>
+
+              
+</body>
+</html>

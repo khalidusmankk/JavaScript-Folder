@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Loops</title>
+  </head>
+
+  <body>
+    <div class="container-fluid mt-1">
+      <script>
+        document.write("<h3> Looping  and Iteration</h3>");
+        document.write(
+          " Looping is when we want to run through the same block of code a specific number of times, or repeatedly until a condition is met.We specify this condition within the loop.\
+            Iteration occurs when we want to execute code once for each item in a collection, usually elements in an array or properties of an object."
+        );
+        document.write("<h4> Loops in JavaScript</h4>");
+        document.write("  Loops are used in JavaScript to perform repeated tasks based on a condition ", "<br>");
+        document.write(" Conditions typically return true or false.", "<br>");
+        document.write(" A loop will continue running until the defined condition returns false.", "<br>");
+        document.write(
+          " Loops are handy, if you want to run the same code over and over again, each time with a different value, we use loops.",
+          "<br>"
+        );
+        document.write(" Loops can execute a block of code a number of times. ", "<br>");
+        document.write("Often this is the case when working with arrays:", "<br>");
+        document.write("<b> Scope of Loop</b>", "<br>");
+        document.write(
+          "In the first example, using var, the variable declared in the loop redeclares the variable outside the loop.\
+                In the second example, using let, the variable declared in the loop does not redeclare the variable outside the loop.\
+                When let is used to declare the i variable in a loop, the i variable will only be visible within the loop",
+          "<br>"
+        );
+        // var i = 5;
+        //  for (var i = 0; i < 10; i++) {
+        //    // some code
+        //  }
+        // // Here i is 10
+
+        // let i = 5;
+        // for (let i = 0; i < 10; i++) {
+        //   // some code
+        // }
+        // Here i is 5
+        document.write("<b> Use of ' for loop ' </b>", "<br>");
+        document.write(
+          "  for loop - loops through a block of code a number of times i.e, A 'For' loop is used to repeat a specific block of code a known number of times. For example, if we want to check the grade of every student in the class, we loop from 1 to that number.",
+          "<br>"
+        );
+        document.write("(initial expression, condition, increment/decrement)", "<br>");
+
+        document.write("<b> Simple 'for' loop </b>", "<br>");
+        const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audiis"];
+        let Room = "The cars are " + "<br>";
+        for (let i = 0; i < cars.length; i++) {
+          Room = Room + cars[i] + "<br>";
+        }
+        document.write(Room);
+
+        document.write("<br>");
+
+        for (let i = 10; i >= 1; i--) {
+          document.write(i, "<br>") + "<br>";
+        }
+
+        document.write("<br>");
+        document.write(
+          "In your loop, cars[i] refers to the current element in the cars array during each iteration of the loop.\
+            cars is an array that contains the elements: [BMW, Volvo, Saab, Ford, Fiat, Audiis].\i is the loop index, starting at 0 and incrementing by 1 on each iteration of the for loop.\
+            cars[i] accesses the element at the i-th index of the array.\
+            In the first iteration (i = 0), cars[i] is cars[0], which is BMW.\
+            In the second iteration (i = 1), cars[i] is cars[1], which is Volvo.\
+            And so on, until the last iteration where i = 5 and cars[i] is cars[5], which is Audiis.\
+            The Room variable collects the names of the cars, separated by line breaks (<br>), and will display.\
+            So, cars[i] dynamically accesses each element of the array based on the current value of i.",
+          "<br>"
+        );
+
+        let nums = [1, 2, 3, 4, 5];
+        let nums2 = " Numbers are " + "<br>";
+        for (let n = 0; n < nums.length; n++) {
+          nums2 += nums[n] + "<br>";
+        }
+        document.write(nums2 + "<br>");
+
+        document.write(" Below numbers are started from index one (1)" + "<br>");
+
+        for (let i = 1; i <= 10; i++) {
+          document.write(i, "<br>");
+        }
+
+        document.write(" Below numbers are started from index two (2)" + "<br>");
+
+        for (let k = 2; k <= 20; k++) {
+          document.write(k);
+        }
+
+        document.write("<br> ", "<br>");
+
+        document.write(" <b> Remove Negative NUmbers </b> from an array", "<br>");
+
+        const myNumbers = [4, 1, -20, -7, 5, 9, -6];
+
+        let removeNeg = []; // Create a new array to store positive numbers
+
+        // Loop through the array to check each number
+        for (let i = 0; i < myNumbers.length; i++) {
+          if (myNumbers[i] > 0) {
+            // If the number is positive
+            removeNeg.push(myNumbers[i]); // Add it to the removeNeg array
+          }
+        }
+
+        document.write(removeNeg); // Output the array with positive numbers
+
+        //         const myNumbers = [4, 1, -20, -7, 5, 9, -6];
+
+        // let negNumbers = []; // Create a new array to store negative numbers
+
+        // // Loop through the array to check each number
+        // for (let i = 0; i < myNumbers.length; i++) {
+        //   if (myNumbers[i] < 0) {
+        //     // If the number is negative
+        //     negNumbers.push(myNumbers[i]); // Add it to the negNumbers array
+        //   }
+        // }
+
+        // console.log(negNumbers); // Output: [-20, -7, -6]
+
+        document.write("<hr> ");
+
+        document.write("Use of <b> For/In Loop </b>.", "<br>");
+        document.write("The JavaScript for in statement loops through the properties of an Object:", "<br>");
+
+        let person = {
+          Name: "Rehan",
+          Father_Name: "Shaheen",
+          Age: 40,
+          Nationality: " Pakistani",
+        };
+
+        for (let x in person) {
+          document.write(x + " : " + person[x], "<br>");
+        }
+
+        //in the example above, the person object is not stored in x. Instead, during each iteration of the for...in loop, the variable x holds the name of a property (a key) from the person object, not the entire object itself.
+        //x is the property name or key of the person object in each iteration of the loop.
+        //person[x] accesses the value associated with that property name.
+        //In the first iteration, x will be "Name" and person[x] will be "Rehan" and so on
+        document.write("The <b> for in </b> loop iterates over a <b> person </b> object", "<br>");
+        document.write("Each iteration returns a <b> key </b> (x)", "<br>");
+        document.write("The key is used to access the <b> value </b> of the key", "<br>");
+        document.write("The value of the key is<b> person[x] </b>", "<br>");
+
+        const personFriend = { fname: "John", lname: "Doe", age: 25 };
+
+        let txt = "";
+        for (let x in personFriend) {
+          txt = txt + personFriend[x] + " ";
+        }
+        document.write(txt, "<br>");
+
+        let students = {
+          khalid: 89,
+          Usman: 84,
+          Inaya: 34,
+          Zahid: 84,
+        };
+
+        for (let a in students) {
+          document.write(" Marks of " + a + " are " + students[a], "<br>");
+        }
+
+        document.write("<br> ");
+
+        document.write(" <b> For In Over Arrays </b>", "<br>");
+        document.write("The JavaScript for in statement can also loop over the properties of an Array:", "<br>");
+        const numbers = [45, 4, 9, 16, 25];
+        let txtt = "";
+        for (let x in numbers) {
+          txtt += numbers[x] + "<br>";
+        }
+        document.write(txtt + "<br>");
+
+        // Array no 2
+        const schools = ["Iqra", "Alberuni", "Musa Nika"];
+        for (let x in schools) document.write(schools[x] + "<br>");
+
+        document.write("<b>Important Note </b>", "<br>");
+        document.write("Do not use <b> for in </b> over an Array if the index<b> order </b> is important.", "<br>");
+        document.write(
+          "The index order is implementation-dependent, and array values may not be accessed in the order you expect.",
+          "<br>"
+        );
+        document.write(
+          "It is better to use a <b> for </b> loop, a <b>for of  </b>loop, or <b> Array.forEach() </b> when the order is important.",
+          "<br>",
+          "<br>"
+        );
+
+        //          document.write("<hr>")
+
+        //  document.write("In while , variable must be decleared first." , "<br>")
+
+        //    let m = 1;
+        //     while(m<=10)
+        //    { document.write(m , "<br>"); m++};
+
+        //    document.write("<hr>")
+
+        document.write("<hr>");
+
+        document.write(" <b> For Of </b> Loop", "<br>");
+        document.write(
+          "The JavaScript <b> for of </b> statement loops through the values of an iterable object.",
+          "<br>"
+        );
+        document.write(
+          "It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:",
+          "<br>"
+        );
+        document.write("<b> Syntax </b>");
+        // for (variable of iterable) {
+        // code block to be executed
+        // }
+        document.write(
+          "<b> variable </b> - For every iteration the value of the next property is assigned to the variable. Variable can be declared with const, let, or var.",
+          "<br>"
+        );
+        document.write("<b> iterable </b> - An object that has iterable properties.", "<br>");
+        document.write("<b> Looping over an Array </b>", "<br>");
+
+        const caars = ["BMW", "Volvo", "Mini", "Mercedes"];
+        for (let x of caars) {
+          document.write(x, "<br>");
+        }
+
+        document.write("<b> Looping over a String </b>", "<br>");
+
+        let language = "JavaScript";
+
+        for (let x of language) {
+          document.write(x.toUpperCase(), "<br>");
+        }
+
+        document.write("<hr>");
+
+        document.write("<b> While & do/while </b> loop", "<br>");
+        document.write(
+          "The<b> while loop </b> loops through a block of code as long as a specified condition is true.",
+          "<br>"
+        );
+        document.write("<b> Syntax </b> ", "<br>");
+        //  while (condition) {
+        // code block to be executed
+        //  }
+
+        document.write(
+          "In the following example, the code in the loop will run, over and over again, as long as a variable (i) is less than 10:",
+          "<br>"
+        );
+
+        let i = 0;
+        while (i < 10) {
+          document.write(i + "<br>");
+          i++;
+        }
+
+        document.write("<hr>");
+
+        let count = 10;
+        while (count > 0) {
+          document.write(count + "<br>");
+          count--; // Decrement the count
+        }
+
+        document.write(
+          "<b> Note that </b> If you forget to increase the variable used in the condition, the loop will never end. This will crash your browser",
+          "<br>"
+        );
+
+        document.write("<b>  do/while </b> loop ", "<br>");
+        document.write(
+          "The do...while loop is similar to the while loop except that the condition check happens at the end of the loop. This means that the loop will always be executed at least once, even if the condition is false.",
+          "<br>"
+        );
+        document.write(" <b> Syntax </b> ", "<br>");
+        // do {
+        // code block to be executed
+        // }
+        // while (condition);
+        document.write(
+          "The example below uses a do while loop. The loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested:",
+          "<br>"
+        );
+
+        var doCount = 0;
+        do {
+          document.write("Current Count : " + doCount + "<br />");
+          doCount++;
+        } while (doCount < 5);
+
+        document.write("<br>");
+
+        document.write(
+          " <b> Do not forget </b> to increase the variable used in the condition, otherwise the loop will never end!",
+          "<br>",
+          "<br>"
+        );
+
+        document.write("<b>Array.forEach() </b> Method", "<br>");
+        document.write(
+          "The forEach() method calls a function (a callback function) once for each array element.",
+          "<br>"
+        );
+        document.write(" forEach Loop is used to print every elemet of array, (value, index, array)", "<br>");
+
+        const numberes = [45, 4, 9, 16, 25];
+        let text = "";
+        numberes.forEach(myFunction);
+        document.write(text);
+
+        function myFunction(value, index, array) {
+          text = text + array + "<br>";
+        }
+
+        let chicken = [" Grills ", " Motton ", " Fried ", " Tikka"];
+        chicken.forEach(function (chik) {
+          document.write(chik, "<br>");
+        });
+
+        document.write("<b> Comparing For and While </b>", "<br>");
+        document.write(
+          " A for loop is generally used when the number of iteration is fixed and known but we use the while loop whne the number of iterations is not known.",
+          "<br>"
+        );
+        document.write(
+          "If you have read the previous chapter, about the for loop, you will discover that a while loop is much the same as a for loop, with statement 1 and statement 3 omitted."
+        );
+        document.write(
+          "The loop in this example uses a <b> for </b> loop to collect the car names from the cars array:",
+          "<br>"
+        );
+
+        //  const cars = ["BMW", "Volvo", "Saab", "Ford"];
+        //  let i = 0;
+        //  let text = "";
+        //  for (;cars[i];) {
+        //    text += cars[i] + "<br>";
+        //    i++;
+        //  }
+
+        document.write("The loop in this example uses a while loop to collect the car names from the cars array:");
+
+        // const cars = ["BMW", "Volvo", "Saab", "Ford"];
+        // let i = 0;
+        // let text = "";
+        // while (cars[i]) {
+        //   text += cars[i];
+        //   i++;
+        // }
+      </script>
+    </div>
+  </body>
+</html>

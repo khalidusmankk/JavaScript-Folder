@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Dates</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container-fluid mt-1">
+      <script>
+        document.write(
+          "<h1 style='font-family: calibri ; color: blue; text-decoration: underline'> Dates in JavaScript</h1>"
+        );
+        document.write("<b> Creating Date Objects </b>", "<br>");
+        document.write(
+          "Date objects are created with the <b> new Date() </b> constructor.",
+          "<br>"
+        );
+        document.write(
+          "There are <b> 9 ways </b> to create a new date object: as below",
+          "<br>"
+        );
+
+        // new Date()
+        // new Date(date string)
+        // new Date(year,month)
+        // new Date(year,month,day)
+        // new Date(year,month,day,hours)
+        // new Date(year,month,day,hours,minutes)
+        // new Date(year,month,day,hours,minutes,seconds)
+        // new Date(year,month,day,hours,minutes,seconds,ms)
+        // new Date(milliseconds)
+
+        document.write("<b>JavaScript new Date() Constructor </b>", "<br>");
+        document.write(
+          "In JavaScript, date objects are created with <b> new Date() </b>.",
+          "<br>"
+        );
+        document.write(
+          "<b> new Date() </b> creates a date object with the <b> current date and time:</b>",
+          "<br>"
+        );
+
+        const d = new Date();
+        document.write(d, "<br>");
+
+        document.write(new Date(), "<br>"); //All the above and below formats are okay.
+
+        document.write(
+          "<b> Note that </b> 7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order):",
+          "<br>"
+        );
+        document.write(
+          "<b> Also Note that </b> JavaScript counts months from 0 to 11:",
+          "<br>"
+        );
+        document.write(
+          "<b> Remember that </b> Specifying a month higher than 11, will not result in an error but add the overflow to the next year: The below both dates are same",
+          "<br>"
+        );
+
+        //  const d = new Date(2018, 15, 24, 10, 33, 30);
+        //  const d = new Date(2019, 3, 24, 10, 33, 30);
+
+        document.write(
+          "<b> Remember that </b>Specifying a day higher than max, will not result in an error but add the overflow to the next month: ",
+          "<br>"
+        );
+        document.write(
+          "<b> Note that </b> You cannot omit month. If you supply only one parameter it will be treated as milliseconds.One parameter will be interpreted as new Date(milliseconds).",
+          "<br>"
+        );
+
+        const e = new Date(2018);
+        document.write(e, "<br>");
+
+        document.write("<b> Put date of your own choice </b>", "<br>");
+
+        const da = new Date("3-8-2022");
+        document.write(da, "<br>");
+
+        const dat = new Date(2023, 5, 23);
+        document.write(dat);
+
+        document.write(" <b>Displaying Dates </b>", "<br>");
+        document.write(
+          "JavaScript will (by default) output dates using the toString() method. When you display a date object in HTML, it is automatically converted to a string, with the toString() method.The toUTCString() method converts a date to a string using the UTC standard: The toDateString() method converts a date to a more readable format:",
+          "<br>"
+        );
+
+        document.write(dat.toDateString(), "<br>");
+
+        document.write(
+          "<b style = 'color : blue'>  Get Date , Methods </b>",
+          "<br>"
+        );
+
+        //  getFullYear()	       Get year as a four digit number (yyyy)
+        //  getMonth()  	       Get month as a number (0-11)
+        //  getDate()	           Get day as a number (1-31)
+        //  getDay()	           Get weekday as a number (0-6)
+        //  getHours()	         Get hour (0-23)
+        //  getMinutes()	       Get minute (0-59)
+        //  getSeconds()	       Get second (0-59)
+        //  getMilliseconds()	   Get millisecond (0-999)
+        //  getTime()	           Get time (milliseconds since January 1, 1970)
+
+        document.write(
+          "Few methods of 'Get' are explained below with examples",
+          "<br>"
+        );
+        document.write(dat.getFullYear(), "<br>");
+
+        document.write(dat.getDate(), "<br>");
+
+        document.write(dat.getDay(), "<br>");
+
+        document.write(
+          "<b> Note that </b> All the get methods above return Local time.",
+          "<br>"
+        );
+        document.write(
+          "The get methods return information from existing date objects.",
+          "<br>"
+        );
+        document.write(
+          'In a date object, the time is static. The "clock" is not "running".',
+          "<br>"
+        );
+        document.write(
+          "The time in a date object is NOT the same as current time.",
+          "<br>"
+        );
+        document.write(
+          "The getMilliseconds() method returns the milliseconds of a date as a number (0-999): as follows",
+          "<br>"
+        );
+
+        const dait = new Date("2023-03-25");
+        dait.getMilliseconds();
+        document.write(dait, "<br>");
+
+        document.write(
+          "<b> Note that </b> we can use an array of names, and <b> getDay() </b> to return weekday as a name: as follows",
+          "<br>"
+        );
+
+        const days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+
+        const dd = new Date("2021-03-25");
+        let day = days[dd.getDay()];
+        document.write(day, "<br>");
+
+        document.write("<b> The Date.now() Method </b>", "<br>");
+        document.write(
+          "<b> Date.now() </b> returns the number of milliseconds since January 1, 1970. Date.now() is a static method of the Date object. ",
+          "<br>"
+        );
+
+        document.write(
+          "<b style = 'color : blue '> Set Date , Methods </b>",
+          "<br>"
+        );
+        document.write(
+          "Set Date methods let you set date values (years, months, days, hours, minutes, seconds, milliseconds) for a Date Object.",
+          "<br>"
+        );
+        document.write(
+          "Set Date methods are used for setting a part of a date. Set Date Methods are below.",
+          "<br>"
+        );
+
+        //  setDate()	        Set the day as a number (1-31)
+        //  setFullYear()	    Set the year (optionally month and day)
+        //  setHours()	        Set the hour (0-23)
+        //  setMilliseconds()	Set the milliseconds (0-999)
+        //  setMinutes()	      Set the minutes (0-59)
+        //  setMonth()	        Set the month (0-11)
+        //  setSeconds()	      Set the seconds (0-59)
+        //  setTime()	        Set the time (milliseconds since January 1, 1970)
+
+        document.write("<b> Setting date </b> of your own with 'set' ", "<br>");
+        document.write(
+          "The <b> setFullYear() </b> method sets the year of a date object. In this example to 2020.The <b> setFullYear() </b> method can <b> optionally </b> set month and day."
+        );
+        let fullY = new Date();
+        fullY.setFullYear(2020);
+        document.write(fullY + "<br>");
+
+        let fullYe = new Date();
+        fullYe.setFullYear(2020, 11, 3);
+        document.write(fullYe);
+
+        document.write("<b> The setDate() Method </b>", "<br>");
+        document.write(
+          "The setDate() method sets the day of a date object (1-31):",
+          "<br>"
+        );
+
+        let setDat = new Date();
+        setDat.setDate(7);
+        document.write(setDat + "<br>");
+
+        document.write("<b> Compare Dates </b>", "<br>");
+        document.write(
+          "The following example compares today's date with January 14, 2100:",
+          "<br>"
+        );
+
+        let text = "";
+        const today = new Date();
+        const someday = new Date();
+        someday.setFullYear(2100, 0, 14);
+
+        if (someday > today) {
+          text = "Today is before January 14, 2100.";
+        } else {
+          text = "Today is after January 14, 2100.";
+        }
+        document.write(text, "<br>");
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript HTML</title>
+<style>
+  table {
+    width: 50%;
+  }
+  table, th, td {
+    text-align: left;
+    border-collapse: collapse;
+  }
+table {
+  border: 5px solid blue;
+}
+th, td {
+  border: 2px solid black;
+}
+
+
+
+table#t01 {
+  border: 5px solid rebeccapurple;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color: #941c1c;
+}
+table#t01 th {
+    color: white;
+    background-color: black;
+} 
+
+
+
+
+div.cities{
+  width: 200px;
+  height: 300px;
+  background-color: black;
+  color: whitesmoke;
+  text-align:left;
+  border: 2px solid red;
+}
+div.cities {
+  display: inline-block;
+  text-align: left;
+}
+div.cities h1 {
+  text-align: center;
+}
+
+
+.cityGallery {
+  background-color: black;
+  color: white;
+  width: 70%;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+nav {
+    line-height:30px;
+    background-color:#bab1b1;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;	      
+}
+.londonDesc{
+  width: 40%;
+  height: 280px;
+  margin-left: 50px;
+  float: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.footer {
+  width: 70%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  clear: both;
+  
+}
+
+
+.topHeading {
+  background-color: black;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  width: 430px;
+  
+}
+
+.sideHeading {
+  height: 310px;
+  background-color: rgb(55, 128, 63);
+  width: 120px;
+  float: left;
+  clear: right;
+  margin-top: -20px;
+  margin-left: 5px;
+ 
+  
+  
+}
+.sideHeading ul li{
+  padding-top: 20px;
+  list-style-type: none;
+  
+  
+}
+
+.mainHeading{
+  width: 300px;
+ float: left;
+ text-align: center;
+ background-color: aqua;
+ margin-top: -20px;
+ 
+}
+
+.mainHeading h4 {
+  text-align: left;
+  background-color: gray;
+  padding-left: 40px;
+  color: blue;
+}
+.footHeading {
+  clear: both;
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 430px ;
+
+}
+/* Calculor */
+.mainDiv {
+  width: 300px;
+  height: 400px;
+  background-color: black;
+  border: 2px solid darkgrey;
+  border-radius: 20px;
+}
+.childDiv {
+  width: 250px;
+  height: 60px;
+  background-color: rgb(153, 142, 142);
+  margin-left: 25px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.buttonDiv button {
+  width: 68px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 20px;
+ background-color:black;
+ border: 2px solid rgb(49, 42, 42);
+ color: whitesmoke;
+ 
+}
+/* #zeroButton {
+  margin-left: 103px;
+  
+} */
+#fouryButtons {
+  float: right;
+ 
+ 
+}
+
+</style>
+
+</head>
+
+
+<body>
+  
+  <h1> Tables in HTML </h1>
+  <table>
+    <tr>
+      <th> First Name</th>
+      <th> Last Name</th>
+      <th> ID</th>
+      <th  > Phone No</th>
+      
+    </tr>
+    <tr>
+      <td> Khalid</td>
+      <td> Usman</td>
+      <td> 11</td>
+      <td> 112233</td>
+    </tr>
+    <tr>
+      <td> Inayat</td>
+      <td> Khan</td>
+      <td> 22</td>
+      <td>2233</td>
+    </tr>
+    <tr>
+      <td> Ismaiel</td>
+      <td> Khan</td>
+      <td> 33</td>
+      <td>3344</td>
+    </tr>
+  </table>
+
+
+  <br> 
+
+
+  <table  id="t01" >
+    <tr>
+      <th> First Name</th>
+     <th> Last Name</th>
+      <th> ID</th>
+      <th  > Phone No</th>
+      
+    </tr>
+    <tr>
+      <td> Khalid</td>
+      <td> Usman</td>
+      <td> 11</td>
+      <td> 112233</td>
+    </tr>
+    <tr>
+      <td> Inayat</td>
+      <td> Khan</td>
+      <td> 22</td>
+      <td>2233</td>
+    </tr>
+    <tr>
+      <td> Ismaiel</td>
+      <td> Khan</td>
+      <td> 33</td>
+      <td>3344</td>
+    </tr>
+  </table>
+
+ <br><br><br>
+
+
+
+
+
+ <h2>A Description List</h2>
+
+  <dl style="list-style-type: circle;">
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dd>- Hot Coffee</dd>
+    <dd> - Capichinu</dd>
+    <dt>Milk</dt>
+    <dd>- Cold milk</dd>
+    <dd>- white cold drink</dd>
+    <dd>- Hot milk</dd>
+  </dl>
+  <br>
+<h3> Nested List </h3>
+
+ <ul>
+  <li> kk</li>
+  <li>kk</li>
+  <ul>
+    <li>ll</li>
+    <li>kk</li>
+    
+  </ul>
+  
+    <li>mm</li>
+    <li>mm</li>
+  
+ </ul>
+ <br><br><br>
+
+
+
+
+
+
+
+ <div class="cities">
+  <h1> Pakistan </h1>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum reiciendis aliquam, cupiditate soluta eius maxime neque error placeat aspernatur quis nobis, iste beatae veniam ipsa provident alias. Sequi, id! Illo?</p>
+ </div>
+    
+ <div class="cities">
+ <h1> India</h1>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum reiciendis aliquam, cupiditate soluta eius maxime neque error placeat aspernatur quis nobis, iste beatae veniam ipsa provident alias. Sequi, id! Illo?</p>
+ </div>
+
+ <div class="cities">
+ <h1> Afghanistan </h1>
+ <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum reiciendis aliquam, cupiditate soluta eius maxime neque error placeat aspernatur quis nobis, iste beatae veniam ipsa provident alias. Sequi, id! Illo?</p>
+</div>
+
+<br>
+
+ 
+<div class="cityGallery">
+  <h1> City Gallery</h1>
+   </div>
+
+   <nav>
+    London<br>
+    Paris<br>
+    Tokyo
+    </nav>
+ 
+   <div class="londonDesc">
+    <h2 > London </h2>
+    <p > London is the capital city of England.  It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.
+      Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+      
+   </div>
+    
+   <div class="footer"> Copyright &copy; W3Schools.com</div>
+   <br> <br>
+
+
+   <div class="topHeading"> 
+    <h2> City Center </h2>
+   </div>
+
+   <div class="sideHeading">
+    <ul>
+      <li> Lahore </li>
+      <li> Peshawar </li>
+      <li> Quetta </li>
+    </ul>
+   </div>
+
+   <div class="mainHeading">
+    <h4> Karachi </h4>
+   <p>  veritatis a corporis temporibus veniam iusto unde amet dicta modi, aperiam repudiandae quaerat hic. Aut, adipisci sunt consequatur nihil tempore fuga. Sequi aut architecto corporis ullam ea fugiat quasi earum, dolorum voluptatum qui quia est quis voluptas perspiciatis? Culpa, dolorem, quo incidunt delectus dolorum atque recusandae alias illum sunt vitae velit eveniet tempora consequatur ut cum! Quisquam nostrum veniam sapiente ullam sunt exercitationem recusandae quaerat, ducimus voluptatem enim dolore incidunt ut explicabo unde culpa.</p>
+   </div>
+
+   <div class="footHeading">
+    <p>  Copyright &copy; W3Schools.com </p>
+   </div>
+   <br> <br>
+
+
+
+
+
+
+   <h2> Using "Get" OR "Post" Methods In Forms</h2>
+   <h4> Get Method</h4>
+   <p> You can use GET (the default method): <br>
+    If the form submission is passive (like a search engine query), and without sensitive information.<br>
+    When you use GET, the form data will be visible in the page address: </p>
+
+   <form action="array.html" method="get" >
+    First name:<br>
+    <input type="text" name="firstname" value="Khalid">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname" value="Usman">
+    <br><br>
+    <input type="submit" value="Submit">
+  </form> 
+  
+  <p>If you click the "Submit" button, the form-data will be sent to a page called "array.html".</p>
+  
+  <h4> Post Method </h4>
+    <p> You should use POST:<br>
+      If the form is updating data, or includes sensitive information (password).<br>
+      POST offers better security because the submitted data is not visible in the page address.</p>
+      <form action="array.html" method="post" >
+        First name:<br>
+        <input type="text" name="firstname" value="Ismaiel">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" value="Khan">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+      <br> <br>
+
+
+
+      <h3> The Name Attribute </h3>
+      <p> A form to be submitted correctly, each input field in a form must have a <b> name attribute </b>.<br>
+        This example will only submit the <b> "Last name" input field </b>: </p>
+        <form action="http://www.w3schools.com/html/action_page.php">
+          First name:<br>
+          <input type="text" value="Mickey">
+          <br>
+          Last name:<br>
+          <input type="text" name="lastname" value="Mouse">
+          <br><br>
+          <input type="submit" value="Submit">
+        </form> 
+        <br> <br>
+
+
+
+
+        <h4> Grouping Form Data with &lt;fieldset&gt; &lt;/fieldset&gt;</h4>
+        <form action="action_page.php">
+          <fieldset>
+            <legend>Personal information:</legend>
+            First name:<br>
+            <input type="text" name="firstname" placeholder="Hajra" ><br>
+            Last name:<br>
+            <input type="text" name="lastname" value="Bibi"><br><br>
+            <input type="submit" value="Submit">
+          </fieldset>
+        </form>
+
+
+ <h2> HTML5 New 3 Form Elements </h2>
+ <ol>
+  <li> &lt; datalist &gt; </li>
+  <li> &lt; keygen &gt; </li>
+  <li> &lt; output &gt;</li>
+ </ol>
+
+ <h4> datalist </h4>
+ <p> The &lt; datalist &gt; element specifies a list of pre-defined options for an &lt; input &gt; element.
+  Users will see a drop-down list of pre-defined options as they input data.
+  The <b> list </b> attribute of the &lt; input &gt; element, must refer to the <b> id </b> attribute of the &lt; datalist &gt; element.</p>
+  <p> Below is an &lt; input &gt;  element with pre-defined values in a &lt; datalist &lt; : </p>
+
+  <form action="http://www.w3schools.com/html/action_page.php">
+    <input list="browsers" name="browser">
+    <datalist id="browsers">
+      <option value="Internet Explorer">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    </datalist>
+    <input type="submit">
+  </form>
+
+
+  <h4> HTML5 &lt; keygen &gt; Element </h4> <!-- Checking Later -->
+
+ <h4> HTML5 &lt; output &gt; Element </h4>
+ <p> The &lt; output &gt; element represents the result of a calculation (like one performed by a script). </p>
+
+ <form action="action_page.asp" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  <!-- <input type="range"  id="a" name="a" value="50">
+  100 + -->
+  <input type="number" id="a" name ="a" value="50">
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b" style="background-color: aqua;"> Result </output>
+  <br>
+  <input type="submit" >
+</form>
+
+<h1> HTML Input Types </h1>
+<p> If you omit the submit button's value attribute, the button will get a default text:(Submit Query) </p>
+<p> Radio buttons let a user select ONLY ONE of a limited number of choices: </p>
+<p> Checkboxes let a user select ZERO or MORE options of a limited number of choices. </p>
+<p></p>
+
+<h2> HTML5 New Input Types</h2>
+<ul> 
+  <li> color </li>
+  <li> date </li>
+  <li> datetime </li>
+  <li> datetime-local </li>
+  <li> email </li>
+  <li> month </li>
+  <li> number </li>
+  <li> range </li>
+  <li> search </li>
+  <li> tel </li>
+  <li> time </li>
+  <li> url </li>
+  <li> week </li>
+</ul>
+
+<h4> Input Number </h4>
+<p>
+  Depending on browser support:<br>
+  Numeric restrictions will apply in the input field.
+  </p>
+  
+  <form action="http://www.w3schools.com/html/action_page.php">
+    Quantity (between 1 and 5):
+    <input type="number" name="quantity" min="1" max="5">
+    <input type="submit">
+  </form>
+ 
+  <br>
+  <h4> Input Date </h4>
+ <p> We can add restrictions to the date input: </p>
+ <p> We can only add a date between 2000 and 2025 </p>
+  <input type="date" name="bday" id="bbday"  max="2025-12-31" min="2000-01-02">
+  
+  <h3> HTML5 Attributes </h3>
+  <p> HTML5 added the following attributes for &lt;input&gt;: </p>
+  <ul>
+    <li> autocomplete </li>
+    <li> autofocus </li>
+    <li> form </li>
+    <li> formaction </li>
+    <li> formenctype </li>
+    <li> formmethod </li>
+    <li> formnovalidate </li>
+    <li> formtarget </li>
+    <li> height and width </li>
+    <li> list </li>
+    <li> min and max </li>
+    <li>multiple </li>
+    <li> pattern (regexp)</li>
+    <li> placeholder </li>
+    <li> required </li>
+    <li> step </li>
+  </ul>
+  <p> and the following attributes for &lt; form &gt;</p>
+  <ul>
+    <li> autocomplete </li>
+    <li> novalidate </li>
+  </ul>
+ <p> <b> Note : </b> For further explanation of the input fields and Input Attributes, read javaformvalidation.html file</p>
+ 
+<br><br>
+
+
+
+
+<h1> Types of Images ( Image file format ) </h1>
+<ul>
+  <li> JPEG </li>
+  <li> GIF </li>
+  <li> PNG </li>
+</ul>
+<p> JPG stand for " Joint Photographic Expet Group "</p>
+<p> GIF stands for "Graphic Interchange Format " </p>
+<p> PNG stands for "Portable Network Graphic"</p>
+
+
+<h3> Note: Image Maps will be studied later </h3>
+<br><br>
+
+
+
+
+
+
+
+<div class="mainDiv">
+  <div class="childDiv"> </div>
+  <div class="buttonDiv">
+    <button style="background-color: gray; color: black;"> AC </button>
+    <button style="background-color: gray; color: black;"> */ </button>
+    <button style="background-color: gray; color: black;"> % </button>
+
+    <div id="fouryButtons" > 
+    <button style="background-color: yellow; color: black;"> / </button> <br>
+    <button style="background-color: yellow; color: black;"> * </button><br>
+    <button style="background-color: yellow; color: black;"> - </button><br>
+    <button style="background-color: yellow; color: black;"> + </button><br>
+   </div>
+
+    <div  id="mainButtons"> 
+    <button >1 </button>
+    <button> 2 </button>
+    <button> 3 </button>
+    <button> 4 </button>
+    <button> 5 </button>
+    <button> 6 </button>
+    <button> 7 </button>
+    <button> 8 </button>
+    <button> 9 </button>
+    <button style="width: 140px; "> 0 </button>
+    <button > . </button>
+    <button style="background-color: yellow; color: black;" > = </button>
+    </div>
+
+
+  </div>
+</div>
+
+<br><br>
+
+
+<script>
+
+</script>
+</body>
+</html>

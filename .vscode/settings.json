@@ -1,0 +1,8 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "html.format.indentHandlebars": false,
+  "html.format.contentUnformatted": "",
+  "html.format.wrapLineLength": 180
+}

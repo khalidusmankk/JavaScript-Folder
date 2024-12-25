@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Object</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid mx-3">
+      <script>
+        // The modulus operator (%) returns the division remainder.
+
+        //Example
+        let l = 5;
+        let y = 2;
+        let m = l % y;
+        document.write(m);
+
+        document.write("<h2> Math Objects in JavaScript</h2>");
+        document.write("The JavaScript Math object allows you to perform mathematical tasks on numbers.", "<br>");
+        document.write(
+          "<b> Note that </b> Unlike other objects, the Math object has no constructor. All methods and properties can be used without creating a Math object first.",
+          "<br>"
+        );
+        document.write(
+          "The Math() object is not in the list of <b> Built-in JavaScript Constructor. Math is a global object. The new keyword cannot be used on Math."
+        );
+
+        document.write("<b> Math Properties (Constants) </b>");
+        document.write(
+          "JavaScript provides 8 mathematical constants that can be accessed as Math properties, as follows",
+          "<br>"
+        );
+
+        // Math.E         returns Euler's number
+        // Math.PI        returns PI
+        // Math.SQRT2     returns the square root of 2
+        // Math.SQRT1_2   returns the square root of 1/2
+        // Math.LN2       returns the natural logarithm of 2
+        // Math.LN10      returns the natural logarithm of 10
+        // Math.LOG2E     returns base 2 logarithm of E
+        // Math.LOG10E    returns base 10 logarithm of E
+
+        document.write("<b> Math Methods </b>", "<br>");
+        document.write("The syntax for Math in any methods is : Math.method(number)", "<br>");
+
+        document.write("<b> Number to Integer </b>", "<br>");
+        document.write("There are 4 common methods to round a number to an integer , as below", "<br>");
+
+        document.write("Math.round(x)	Returns x rounded to its nearest integer", "<br>");
+        document.write(" Math.ceil(x) returns the value of x rounded up to its nearest integer:", "<br>");
+        document.write(" Math.floor(x) returns the value of x rounded down to its nearest integer:", "<br>");
+        document.write(" Math.trunc(x) returns the integer part of x:", "<br>", "<br>");
+
+        const x = Math.round(6.9);
+        document.write(x, "<br>");
+
+        const z = Math.round((6 + 5) / 2);
+        document.write(z, "<br>");
+
+        document.write(Math.round(8.8), "<br>");
+
+        document.write("<b> More Methods </b>", "<br>");
+
+        document.write("<b> Math.sign() </b> returns if x is negative , null or positive.", "<br>");
+        document.write(Math.sign(2), "<br>");
+
+        document.write("<b> Math.pow(x, y) </b>  returns the value of x to the power of y, as below", "<br>");
+
+        document.write(Math.pow(4, 3), "<br>");
+
+        document.write("<b> Math.sqrt(). </b> The square root of 64 is ", Math.sqrt(64), "<br>");
+
+        document.write(" <b> Math.abs(x) </b> returns the absolute (positive) value of x, as follows", "<br>");
+        document.write(Math.abs(-4.8), "<br>");
+
+        document.write(
+          "<b> Math.random() </b> returns a random number between 0 (inclusive), and 1 (exclusive).",
+          "<br>"
+        );
+        document.write(Math.random(), "<br>");
+
+        let maximum = (1, 3, 5, 10);
+        document.write(Math.max(maximum));
+      </script>
+    </div>
+  </body>
+</html>

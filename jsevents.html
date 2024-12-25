@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style></style>
+  </head>
+
+  <body>
+    <h2>Events in JavaScript</h2>
+    <p>
+      HTML events are "things" that happen to HTML elements. When JavaScript is used in HTML pages, JavaScript can
+      "react" on these events.
+    </p>
+
+    <p>
+      If I click the mouse, hover the mouse, press any keyboard key, load or resize the window etc, <br />
+      the event wil be called and the function will run.
+    </p>
+
+    <dl>
+      <dt>Click Events</dt>
+      <dd>Click (onclick)</dd>
+      <dd>Double Click (ondblclick)</dd>
+      <dd>Right Click (oncontextmenu)</dd>
+    </dl>
+
+    <dl>
+      <dt>Mouse Events</dt>
+      <dd>Mouse Hover (onmouseenter)</dd>
+      <dd>Mouse Out (onmouseout)</dd>
+      <dd>Mouse Down (onmousedown)</dd>
+      <dd>Mouse Up (onmouseup)</dd>
+    </dl>
+
+    <dl>
+      <dt>" Keyboard Events"</dt>
+      <dd>Key Press (onkeypress)</dd>
+      <dd>Key Up (onkeyup)</dd>
+    </dl>
+
+    <dl>
+      <dt>" Window Events"</dt>
+      <dd>Load (onload)</dd>
+      <dd>Unload (onunload)</dd>
+      <dd>Resize (onresize)</dd>
+      <dd>Scroll (onscroll)</dd>
+    </dl>
+    <h1>OR</h1>
+    <p>When an input field is changed</p>
+    <p>When an HTML form is submitted</p>
+
+    <p id="demoOne">Let's click the below button to change the content of this paragraph.</p>
+    <p>In the example below, the JavaScript code changes the content of the element (p) with id="demo".</p>
+    <button onclick="document.getElementById('demoOne').innerHTML = innerHTML + Date() ">The time is</button> <br />
+
+    <p>In the example below, the code changes the content of its own element (button) (using this.innerHTML):</p>
+    <button onclick="this.innerHTML = Date()">Today the date is?</button> <br />
+    <button onclick=" this.innerHTML = 'You clicked on the text' ">Click This Text</button> <br />
+
+    <button ondblclick="this.innerHTML ='It has been Clicked twice'">Double Click On This Button</button>
+
+    <p>
+      JavaScript code is often several lines long. It is more common to see event attributes calling functions, as
+      follows.
+    </p>
+
+    <p>We can also call a function from event handler for doing this as follow</p>
+    <button onclick="changeText(this)">Change this text!</button>
+    <!-- In the provided JavaScript code, a is a parameter of the function changeText. When you click the button, the function is called, and the button itself is passed as an argument to the function. -->
+    <!-- When the button is clicked, the onclick attribute calls the changeText function and passes the current button element (which is referenced by this) as an argument to the function. -->
+    <!-- The parameter a is just a placeholder name for the argument passed to the function. In this case, it represents the button element that was clicked. -->
+    <!-- we can say that a in this context refers to this. Here's how it works conceptually:
+
+    this: In JavaScript, this refers to the current object that the code is being executed on. When used in an event handler like onclick, this refers to the HTML element that triggered the event—in this case, the button.
+    
+    a: In your function changeText(a), the a parameter receives the value of this when the button is clicked. So, in essence, a is a variable that holds the reference to the button element (which is what this represents in this context). -->
+
+    <!-- Relationship between this and a: -->
+    <!-- This is used within the HTML element's event handler to refer to the element itself.
+a (the function parameter) receives the value of this, meaning a holds the reference to the button element. -->
+    <!-- So yes, you can think of a as referring to this within the context of that function call. The button that was clicked is passed as this to the function, and a is the parameter that captures it. -->
+    <script>
+      function changeText(a) {
+        a.innerHTML = "The text of this button will be changed";
+      }
+    </script>
+
+    <h3>HTML Event Attributes</h3>
+    <p>To assign events to HTML elements you can use event attributes.</p>
+    <p>Assign an onclick event to a button element, as below</p>
+
+    <button onclick=" displayDate()">The time is?</button>
+    <p id="showDate">The Date here in wana</p>
+
+    <script>
+      function displayDate() {
+        document.getElementById("showDate").innerHTML = Date();
+      }
+    </script>
+    <p>In the example above, a function named displayDate will be executed when the button is clicked.</p>
+
+    <h3>Assign <b> Events </b> Using the HTML DOM</h3>
+
+    <p>Assign an onclick event to a button element:</p>
+
+    <button id="myBtn">Click The Button</button>
+    <p id="btnFunction"></p>
+    <script>
+      document.getElementById("myBtn").onclick = showDate;
+
+      function showDate() {
+        document.getElementById("btnFunction").innerHTML = Date();
+      }
+    </script>
+    <p>
+      In the example above, a function named displayDate is assigned to an HTML element with the id="myBtn". The
+      function will be executed when the button is clicked.
+    </p>
+    <br />
+
+    <button id="myBtn2">Get Full Year</button>
+    <p id="btnFunction2"></p>
+
+    <script>
+      document.getElementById("myBtn2").onclick = showFullYear;
+
+      function showFullYear() {
+        const currentDate = new Date(); // Create a new Date object
+        const fullYear = currentDate.getFullYear(); // Get the full year from the Date object
+        document.getElementById("btnFunction2").innerHTML = fullYear; // Display the full year
+      }
+    </script>
+
+    <h3>The oninput Event</h3>
+    <p>The oninput event is often used for some actions while the user input data.</p>
+    <p>Below is an example of how to use the oninput to change the content of an input field.</p>
+    Enter Your Name Here : <input type="text" id="fnamee" oninput="upperCase()" />
+
+    <script>
+      function upperCase() {
+        const x = document.getElementById("fnamee");
+        x.value = x.value.toUpperCase();
+      }
+    </script>
+
+    <!-- Capitalize each word as below -->
+    <!-- <script>
+  function capitalizeWords() {
+    const x = document.getElementById('fnamee');
+    // Split the input into an array of words, capitalize each word, and join them back
+    x.value = x.value
+      .toLowerCase() // Convert the whole string to lowercase first
+      .split(' ') // Split by spaces to get individual words
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+      .join(' '); // Join the words back with spaces
+  }
+</script> -->
+
+    <!-- The onchange Event
+The onchange event is often used in combination with validation of input fields.
+
+Below is an example of how to use the onchange. The upperCase() function will be called when a user changes the content of an input field.
+
+Example
+<input type="text" id="fname" onchange="upperCase()"> -->
+
+    <h3>The onmouseover and onmouseout Events</h3>
+    <p>
+      The onmouseover and onmouseout events can be used to trigger a function when the user mouses over, or out of, an
+      HTML element:
+    </p>
+
+    <div
+      style="background-color: red; width: 120px; height: 20px; padding: 40px"
+      id="mOverr"
+      onmouseover="mOver(this)"
+      onmouseout="mOut(this)"
+    >
+      Mouse Over Me
+    </div>
+
+    <script>
+      function mOver(obj1) {
+        obj1.style.backgroundColor = "yellow";
+        obj1.innerHTML = " I am yellow now ";
+        obj1.style.border = "5px dotted red";
+      }
+
+      function mOut(obj) {
+        obj.style.backgroundColor = "pink";
+        obj.style.color = "yellow";
+        obj.innerHTML = "Mouse is Out now ";
+        obj.style.border = "5px solid blue";
+      }
+    </script>
+
+    <h3>The onmousedown, onmouseup and onclick Events</h3>
+    <p>
+      The onmousedown, onmouseup, and onclick events are all parts of a mouse-click. First when a mouse-button is
+      clicked, the onmousedown event is triggered, then, when the mouse-button is released, the onmouseup event is
+      triggered, finally, when the mouse-click is completed, the onclick event is triggered.
+    </p>
+
+    <div
+      style="background-color: pink; width: 90px; height: 20px; padding: 40px"
+      onmousedown="mDown(this)"
+      onmouseup="mUp(this)"
+      onmouseover="mOver2(this)"
+    >
+      Click Me
+    </div>
+    <!-- In an event, this refers to the element that received the event. -->
+    <script>
+      function mDown(obj) {
+        obj.style.backgroundColor = "red";
+        obj.style.color = "white";
+        obj.innerHTML = "Release Me";
+      }
+
+      function mUp(obj) {
+        obj.style.backgroundColor = "yellow";
+        obj.innerHTML = "Thank You";
+        obj.style.color = "red";
+      }
+      function mOver2(obj) {
+        obj.style.backgroundColor = "blue";
+        obj.style.color = "yellow";
+        obj.style.border = "5px solid green";
+      }
+    </script>
+
+    <p>If someone double click the button, the content of the p element with id(moreText) will be changed.</p>
+
+    <button ondblclick="informMe()">Double Click</button>
+
+    <p id="moreText">This text will be changed</p>
+
+    <script>
+      function informMe() {
+        document.getElementById("moreText").innerHTML = " This text is informative for everyone.";
+      }
+    </script>
+
+    <p>Let's add two numbers (5 & 5) by clicking a button.</p>
+    <p id="addNumbers">The result of this paragraph</p>
+    <button onclick="addBoth2()">Add Numbers</button>
+    <script>
+      function addBoth(a, b) {
+        document.getElementById("addNumbers").innerHTML = 5 + 5;
+      }
+    </script>
+    <!-- Also check the below function -->
+    <script>
+      function addBoth2() {
+        let resultHere = 5 + 5;
+        document.getElementById("addNumbers").innerHTML = "The result is " + resultHere;
+      }
+    </script>
+
+    <p>Let's find the square of 4</p>
+    <p id="squar"></p>
+    <button onclick="getSquare()">Get Square</button>
+    <script>
+      function getSquare() {
+        document.getElementById("squar").innerHTML = 4 * 4 * 4;
+      }
+    </script>
+
+    <h2>HTML DOM EventListener</h2>
+
+    <h4>The addEventListener() method</h4>
+    <p>
+      If I use different different events again and again on HTML tags in javaScript's file , I will have to open the
+      HTML file again and again, the code in HTML and javaScript will get longer and complicated
+    </p>
+    <p>To solve the above problem , we use addEventListener() method , as below</p>
+
+    <h3>Syntax is below</h3>
+    <!-- <p> element.addEventListener(event, function, useCapture); </p>  useCapture (optional): A boolean value: -->
+    <!-- document.getElementById('id').addEventListener("click", functionName) Basically it has three parameters -->
+    <p>
+      In parameters , write the name of event without 'on' and 'bracket' after it.The name of the event is written in
+      double quotes. Then write the name of the function, or make directly an anonymous function , as below.
+    </p>
+    <!-- document.getElementById('id').addEventListener("click", function(){ Statement here}) -->
+    <p>Let's make a dive and then use different events over it with the help of addEventListener</p>
+
+    <div id="divv" style="width: 400px; height: 100px; background: yellow">
+      <h3>This Div Is For addEventListener method</h3>
+    </div>
+
+    <script>
+      function divFunction() {
+        // I have made this function and then I will write the name of this function in the following addEventListener method. when I use click method , this function will be called as I have just written the name of this function in the following event.
+        document.getElementById("divv").style.backgroundColor = "green";
+      }
+
+      document.getElementById("divv").addEventListener("click", divFunction);
+
+      document.getElementById("divv").addEventListener("click", function () {
+        document.getElementById("divv").style.color = "yellow";
+      });
+      document.getElementById("divv").addEventListener("mouseenter", function () {
+        document.getElementById("divv").style.backgroundColor = "red";
+      }); // I can use multiple events. this time funtion is made here inside
+      document.getElementById("divv").addEventListener("click", function () {
+        document.getElementById("divv").style.border = "10px solid darkgray";
+      }); // we can use multiple events
+      document.getElementById("divv").addEventListener("mouseenter", function () {
+        this.style.border = "20px solid yellow";
+      }); //   We can also use 'this' here as used ....
+    </script>
+    <div id="multi" style="height: 100px; width: 100px; background-color: #d94a38">
+      Multiple Events are applied on this div.
+    </div>
+    <script>
+      // document.getElementById('multi').addEventListener("click" , function(){document.getElementById('multi').style.backgroundColor="yellow"})
+      document.getElementById("multi").addEventListener("click", function () {
+        document.getElementById("multi").style.backgroundColor = "yellow";
+      });
+      document.getElementById("multi").addEventListener("click", function () {
+        document.getElementById("multi").style.border = "5px solid red";
+      });
+      document.getElementById("multi").addEventListener("click", function () {
+        document.getElementById("multi").style.textDecoration = "underline";
+      });
+      document.getElementById("multi").addEventListener("click", function () {
+        document.getElementById("multi").style.height = "150px";
+        document.getElementById("multi").style.width = "400px";
+      });
+    </script>
+
+    <p>
+      <b> Note that </b> We can remove any addEventListener method by using another method called removeEventListener()
+      method.
+    </p>
+
+    <h3>Navigating Between Nodes</h3>
+    <ol>
+      <li>parentNode</li>
+      <li>firstChild</li>
+      <li>lastChild</li>
+      <li>childNodes[nodenumber]</li>
+      <li>nextSibling</li>
+      <li>previousSibling</li>
+    </ol>
+
+    <!-- <title id="demo">DOM Tutorial</title> -->
+    <p>
+      The element node <b> (in the example above) does not </b> contain text. It contains a <b> text node </b> with the
+      value "DOM Tutorial".
+    </p>
+    <!--  The value of the text node can be accessed by the node's innerHTML property:
+myTitle = document.getElementById("demo").innerHTML;
+Accessing the innerHTML property is the same as accessing the nodeValue of the first child:
+myTitle = document.getElementById("demo").firstChild.nodeValue;
+Accessing the first child can also be done like this:
+myTitle = document.getElementById("demo").childNodes[0].nodeValue; -->
+
+    <h3>The most important nodeType properties are:</h3>
+
+    <!-- Node	           Type   	Example
+ELEMENT_NODE	        1	       <h1 class="heading">W3Schools</h1>
+ATTRIBUTE_NODE	      2	       class = "heading" (deprecated)
+TEXT_NODE             3	       W3Schools
+COMMENT_NODE	        8	       <-- This is a comment -->
+    <!-- DOCUMENT_NODE	  9	       The HTML document itself (the parent of <html>)
+DOCUMENT_TYPE_NODE	 10   	   <!Doctype html> ---->
+
+    <p>
+      A markup language is a system for annotating a document in a way that is syntactically distinguishable from the
+      text. The annotations (or "markup") provide instructions to a system for formatting, structuring, or presenting
+      the text. A markup is the actual set of symbols or codes used to define or label the document structure and
+      elements.
+    </p>
+  </body>
+</html>
+
+<!-- 
+then where does "function example (e) {}" this e comes from
+
+ChatGPT said:
+
+The e in function example(e) is not a default parameter. It is typically a reference to the event object and is passed explicitly when a function is used as an event handler.
+
+The e (or often event) comes from the browser's event system when an event (e.g., click, keydown) triggers a callback function assigned to an event listener.
+
+Where does e come from?
+The browser automatically generates an event object when an event occurs.
+This object contains information about the event, such as:
+Event type (e.g., click, keydown)
+Target element
+Coordinates, key values, and more.
+The event object is passed automatically to the event handler function.
+Example of e in Action:
+1. Event Listener Example:
+javascript
+Copy code
+document.querySelector("button").addEventListener("click", function (e) {
+  console.log("Event Object:", e); // `e` is the event object
+  console.log("Event Type:", e.type); // Type of event: "click"
+  console.log("Target Element:", e.target); // The button element
+});
+When the button is clicked:
+The browser creates an event object.
+It passes the event object as an argument to the callback function (function (e)).
+Inside the function, e represents this event object. -->

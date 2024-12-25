@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Objects</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+    <style></style>
+  </head>
+
+  <body>
+    <div class="container-fluid mt-1">
+      <p id="result"></p>
+
+      <script>
+        // Non Primitive Data Type
+        // Primitive data types can store only a single value. To store multiple and complex values, non-primitive data types are used.
+        // Object and Array are Used to store collection of data.
+        // Example:
+        // // Collection of data in key-value pairs
+
+        // var obj1 = {
+        //    x:  43,
+        //    y:  "Hello world!",
+        //    z: function(){
+        //       return this.x;
+        //    }
+        // }
+
+        // // Collection of data as an ordered list
+
+        // var array1 = [5, "Hello", true, 4.1];
+        // Note- It is important to remember that any data type that is not a primitive data type, is of Object type in javascript.
+
+        document.write(
+          "<b style = 'color : blue ; font-family : calibri'> Real Life Objects, Properties, and Methods </b>",
+          "<br>"
+        );
+
+        document.write("In real life, a car is an <b> object </b>. ", "<br>");
+        document.write(
+          "A car has properties like name, model, weight and color, and methods like start ,drive ,brake and stop  : ",
+          "<br>"
+        );
+        document.write(
+          "In <kbd> car.name = corolla </kbd>, car name is a property and corolla is its value (property Value), or ( car.color = white, car.weight = 9000kg) ",
+          "<br>"
+        );
+        document.write(
+          "All cars have the same properties, but the property values differ from car to car.",
+          "<br>"
+        );
+        document.write(
+          "All cars have the same methods, but the methods are performed at different times.",
+          "<br>"
+        );
+        document.write(
+          " <mark> <b style = 'color : blue ; font-family : calibri'> JavaScript Objects </b>  </mark>",
+          "<br>"
+        );
+        document.write(
+          " Objects in JavaScript are written in curly braces {} .",
+          "<br>"
+        );
+
+        document.write(
+          "You have already learned that JavaScript variables are containers for data values. The following code assigns a simple value (Fiat) to a variable named car",
+          "<br>"
+        );
+        // var car = "Fiat"
+        document.write(
+          "Objects are variables too. But objects can contain many values.",
+          "<br>"
+        );
+
+        document.write(
+          "This code assigns many values (Fiat, 500, white) to a variable named car:",
+          "<br>"
+        );
+        // var car = {type:"Fiat", model:"500", color:"white"};
+        document.write(
+          "<b> Note that </b> JavaScript objects are containers for named values.",
+          "<br>"
+        );
+        document.write(
+          "We can define (create) an object in single line or it can span multiple lines , as below",
+          "<br>"
+        );
+        document.write(
+          "<b> Remember that </b> we can not print an object by writing an object's name directly in the document.write.",
+          "<br>"
+        );
+        document.write(
+          " We can print the object' properties one by one by accessing the object's properties in method, like ( teacher.lastName), etc",
+          "<br>"
+        );
+        document.write(" <h2> Creating a JavaScript Object </h2> ");
+        document.write(
+          "There are <b> 3 </b> different ways to create new objects:",
+          "<br>"
+        );
+        document.write(
+          "<ol> <li> Using an Object Literal </li> <li>Using the JavaScript Keyword new, </li> var person = new Object()  <li> Using an Object Constructor </li>  </ol> "
+        );
+
+        const teacher = {
+          firstName: "Khalid",
+          lastName: "Usman",
+          age: 50,
+          eyeColor: "blue",
+          belonging: "Wana",
+        };
+
+        document.write(teacher.lastName, "<br>");
+
+        document.write(
+          "But If we want to print the whole object in console.log , we can print this in console.log",
+          "<br>",
+          "<br>"
+        );
+        console.log(teacher);
+
+        document.write(
+          "Let's print an object in <b> for..in loop </b> ",
+          "<br>"
+        );
+
+        let principal = {
+          Name: "Rahman",
+          Age: 50,
+          Nationality: "Pakistani",
+          SchoolName: "New Iqra ",
+        };
+
+        for (let x in principal) {
+          document.write(x + ":" + principal[x], "<br>");
+        }
+
+        document.write(
+          "<b> Note that </b> Objects are mutable (means : taghaiorpazir): They are addressed by reference, not by value.If person is an object, the following statement will not create a copy of person:",
+          "<br>"
+        );
+        //   const person = {
+        //   firstName:"John",
+        //   lastName:"Doe",
+        //    age:50,
+        // eyeColor:"blue"
+        //   }
+
+        //   const x = person;
+        //   x.age = 10;      // Will change both x.age and person.age
+
+        //  const x = person;  // Will not create a copy of person.
+
+        document.write(
+          "The object x is not a copy of person. It is person. Both x and person are the same object. Any changes to x will also change person, because x and person are the same object.",
+          "<br>"
+        );
+        document.write(
+          "<b style = 'color : blue ; font-family : calibri'> JavaScript Primitives </b>",
+          "<br>"
+        );
+        document.write(
+          "A primitive value is a value that has no properties or methods. E.g. 3.14 is a primitive value.A primitive data type is data that has a primitive value. ",
+          "<br>"
+        );
+        document.write(
+          "JavaScript defines 7 types of primitive data types, as follows",
+          "<br>"
+        );
+
+        //  boolean
+        //  bigint
+        //  number
+        //  null
+        //  symbol
+        //  string
+        // undefined
+        document.write(
+          "Primitive values are <b> immutable </b> (they are hardcoded and cannot be changed). if x = 3.14, you can change the value of x, but you cannot change the value of 3.14.",
+          "<br>"
+        );
+
+        //  Value	        Type	                Comment
+        // "Hello"	      string	          "Hello" is always "Hello"
+        // 3.14	          number	           3.14 is always 3.14
+        // true	          boolean	           true is always true
+        // false	        boolean	           false is always false
+        // null      	    null (object)	     null is always null
+        // undefined	    undefined          undefined is always undefined
+
+        document.write(
+          "<b style = 'color : blue ; font-family : calibri'> Accessing Object Properties  </b>",
+          "<br>"
+        );
+        document.write(
+          "We can access object properties in three ways: ",
+          "<br>"
+        );
+        document.write(
+          "No 1 : objectName.propertyName (teacher.firstName) ",
+          "<br>"
+        );
+        document.write(
+          'No 2 : objectName["propertyName"] , i.e teache["lastName"]',
+          "<br>"
+        );
+        document.write(
+          'No 3 : objectName[expression] , e.g x = "age"  teacher[x]',
+          "<br>"
+        );
+        document.write(
+          " The expression must evaluate to a property name.",
+          "<br>"
+        );
+
+        document.write(
+          "<b> Do Not Declare Strings, Numbers, and Booleans as Objects, as follows. </b> Avoid String, Number, and Boolean objects.  They complicate your code and slow down execution speed.",
+          "<br>"
+        );
+        document.write(
+          "<b> Note that </b> The JavaScript for...in statement loops through the properties of an object, as described in the loop file.",
+          "<br>"
+        );
+        // var x = new String();        // Declares x as a String object
+        // var y = new Number();        // Declares y as a Number object
+        // var z = new Boolean();       // Declares z as a Boolean object
+        document.write(" <b> Use of an array inside an object .</b>", "<br>");
+        document.write(
+          "We can print an object using 'For/In loop .",
+          "<br>",
+          "<br>"
+        );
+        document.write(
+          "The JavaScript for...in statement loops through the properties of an object.",
+          "<br>"
+        );
+        document.write(
+          "The block of code inside of the for...in loop will be executed once for each property.",
+          "<br>"
+        );
+
+        //   for (variable in object) {
+        //     code to be executed
+        // }
+        let person = {
+          Name: "khalid",
+          Age: 40,
+          Nationality: "Pakistani",
+          color: "white",
+          favouriteCars: [" Lexus ", " Tiida ", " BMW"], //array here
+          Hobbies: ["Reading ", " Gardening "],
+        }; //array here
+
+        for (let x in person) {
+          document.write(x + " : " + person[x], "<br>");
+        }
+        document.write(person.Nationality.toUpperCase(), "<br>", "<br>"); // If I want to access the property one by one
+
+        document.write(
+          "If I want to print any single element of an array, i will give the index number in square brackets, as follows",
+          "<br>"
+        );
+        document.write(person.favouriteCars[2], "<br>", "<br>");
+
+        document.write(
+          "We can also put a function in the object, as follows ",
+          "<br>"
+        );
+        document.write(
+          "I will use () after the property name while printing it as it is a function.",
+          "<br>"
+        );
+
+        let myFriend = {
+          Name: "Ahmad",
+          Age: 30,
+          Nationality: "Afghan",
+          color: "white",
+          favouriteCars: [" Lexus ", " Tiida ", " BMW"], //array here
+          Hobbies: ["Reading ", " Gardening "], //array here
+          salaries: function (jan, feb) {
+            return jan + feb;
+          },
+        };
+        document.write(myFriend.salaries(400, 500), "<br>");
+        document.write(myFriend.favouriteCars[1], "<br>", "<br>", "<br>");
+
+        document.write(
+          "I will put another function, and this function will return the values of the given properties.",
+          "<br>"
+        );
+
+        secondFriend = {
+          Name: "Ahmad Yar",
+          Age: 30,
+          Nationality: "Afghan",
+          color: "white",
+          favouriteCars: [" Lexus ", " Tiida ", " BMW"], //array here
+          Hobbies: ["Reading ", " Gardening "], //array here
+          detail: function () {
+            return this.Name + " " + this.Nationality; //if i try to print this two properties without using 'this' keyword, it will return an error "Name is not defined", as Name is outside the scope of the function.
+          },
+        };
+        document.write(secondFriend.detail(), "<br>", "<br>");
+
+        document.write(
+          "The use of 'this' here means that this object is made inside this variable and the owner of this object is this variable. i.e,(secondFriend) Here 'this' is used for 'secondFriend'.",
+          "<br>"
+        );
+        document.write(
+          "I can also put another object inside the same object , as below",
+          "<br>"
+        );
+
+        thirdFriend = {
+          Name: "Zeshan",
+          Age: 20,
+          Nationality: "Pakistan",
+          color: "white",
+          favouriteCars: [" Lexus ", " Tiida ", " BMW"], //array here
+          Hobbies: ["Reading ", " Gardening "], //array here
+          Address: { country: "Pakistan", city: "Peshawar" },
+
+          detail: function () {
+            return this.Name + " " + this.Nationality; //if i try to print this two properties without using 'this' keyword, it will return an error "Name is not defined", as Name is outside the scope of the function.
+          },
+        };
+        document.write(thirdFriend.detail(), "<br>");
+        document.write(thirdFriend.Address.city, "<br>");
+
+        document.write("<b>Adding new property to an object </b>", "<br>");
+        document.write(
+          "You can add a new property to the object in JavaScript in the 2 ways , i.e using dot notation and using bracket notation",
+          "<br>"
+        );
+        thirdFriend.occupation = "teaching";
+        //teacher["occupation"] = "teaching"
+        document.write(thirdFriend.occupation, "<br>", "<br>");
+
+        document.write("<b> Deleting a property of an object </b>", "<br>");
+        document.write(
+          "The delete keyword does not delete inherited properties, but if you delete a prototype property, it will affect all objects inherited from the prototype.",
+          "<br>"
+        );
+        document.write(
+          "The delete operator is designed to be used on object properties. It has no effect on variables or functions.",
+          "<br>"
+        );
+
+        const driver = {
+          Name: "Ishtiaq",
+          Nationality: "Pakistani",
+          Age: 30,
+        };
+        delete driver.Age; //
+        document.write(driver.Name + " is " + driver.Age + " Year Old", "<br>");
+
+        document.write(
+          " <b style = 'color : blue ; font-family : calibri'> Objects are displayed by 4 methods. </b>",
+          "<br>"
+        );
+        document.write(
+          " By name, By Loop( for/In) , By Object.value, By JSON.string.",
+          "<br>"
+        );
+        document.write(
+          " Naming is used above i.e(object.propertyName) and  By Loop( for/In) is already used in the loops file.",
+          "<br>"
+        );
+        document.write(" <b> Using Object.value . </b>", "<br>");
+        document.write(
+          " Any JavaScript object can be converted to an array using Object.values() , as below",
+          "<br>",
+          "<br>"
+        );
+
+        document.write(Object.values(secondFriend), "<br>");
+
+        document.write(" <b> Using JSON ( JSON.stringfy) </b>", "<br>");
+        document.write(
+          "Any JavaScript object can be stringified (converted to a string) with the JavaScript function JSON.stringify():",
+          "<br>"
+        );
+        document.write(
+          "JSON.stringfy returns complete object (properties and its values), but it will not return the function.",
+          "<br>"
+        );
+
+        document.write(JSON.stringify(secondFriend), "<br>", "<br>");
+
+        document.write(
+          "<b style = 'color : blue ; font-family : calibri'> Accessing Object Methods  </b>",
+          "<br>"
+        );
+        document.write(
+          "We access an <b> object method </b> with the following syntax:",
+          "<br>"
+        );
+        document.write(
+          "objectName.methodName() , i.e. name = teacher.fullName()",
+          "<br>"
+        );
+        document.write(
+          "<b> Note that </b> If we access the fullName property, without (), it will return the function definition: ",
+          "<br>"
+        );
+        document.write(
+          "Object Methods are stored in properties as <b> function definitions </b> .",
+          "<br>",
+          "<br>",
+          "<br>"
+        );
+
+        document.write("<b> JavaScript Object General Methods </b>", "<br>");
+        document.write("<b> NO:1 :: The Object.entries() Method</b>", "<br>");
+        document.write(
+          "Object.entries() returns an array of the key/value pairs of an object.",
+          "<br>"
+        );
+
+        const doctorOne = {
+          firstName: "John",
+          lastName: "Hassan",
+          age: 40,
+          eyeColor: "black",
+        };
+
+        let textOne = Object.entries(doctorOne);
+        document.write(textOne);
+
+        document.write(
+          "Object.entries() makes it simple to use objects in loops:",
+          "<br>"
+        );
+        const fruits = {
+          Bananas: 300,
+          Oranges: 200,
+          Apples: 500,
+        };
+
+        for (let amount of Object.entries(fruits)) {
+          document.write(amount + "<br>");
+        }
+
+        document.write(
+          " <b> No:2 :: Object.assign(target, source) </b>",
+          "<br>"
+        );
+        document.write(
+          "The Object.assign() method copies properties from one or more source objects to a target object.",
+          "<br>"
+        );
+
+        // Create Target Object
+        const doctor = {
+          firstName: "Ismaiel",
+          lastName: "Khan",
+          age: 50,
+          eyeColor: "blue",
+        };
+
+        // Create Source Object
+        const patient = {
+          firstName: "Imran",
+          lastName: "Khalid",
+        };
+
+        // Assign Source to Target
+        Object.assign(doctor, patient);
+
+        // Display Target
+        let text = Object.entries(doctor);
+        document.write(text, "<br>");
+
+        document.write(
+          " <b> No:3 :: Object.create(object) </b> Creates an object from an existing object" +
+            "<br>"
+        );
+        // Create an Object:
+        const personFour = {
+          firstName: "John",
+          lastName: "Doe",
+          language: "ENG",
+        };
+
+        // Create new Object
+        const man = Object.create(personFour);
+        man.firstName = "Peter";
+
+        // Display Properties
+        document.write(man.language + " and " + man.firstName, "<br>");
+
+        document.write(
+          " <b> No:4 :: fromEntries() </b> method creates an object from a list of key/value pairs.",
+          "<br>"
+        );
+        const fruitsHere = [
+          ["apples", 300],
+          ["pears", 900],
+          ["bananas", 500],
+        ];
+
+        const myObj = Object.fromEntries(fruitsHere);
+        document.write(
+          ` I have ${myObj.pears} pears in the stock of fruits `,
+          "<br>"
+        );
+
+        document.write(
+          "<b> No:5 ::  Object.keys() </b> method returns an array with the keys of an object. n\
+                The Object.keys() method does not change the original object.",
+          "<br>"
+        );
+        // Create an Object
+        const personSix = {
+          firstName: "John",
+          lastName: "Doe",
+          age: 50,
+          eyeColor: "blue",
+        };
+
+        // Get the Keys
+        const keys = Object.keys(personSix);
+        document.write(keys, "<br>");
+
+        document.write(
+          "<b> No:6 ::  Object.values() </b> method returns an array of the property values of an object.n\
+             The Object.values() method does not change the original object.",
+          "<br>"
+        );
+        const personSeven = {
+          firstName: "Inayat",
+          lastName: "Doe",
+          age: 28,
+          eyeColor: "blue",
+        };
+
+        let text4 = Object.values(personSeven);
+        document.write(text4, "<br>");
+
+        document.write(
+          "<b> No:7 :: Object.groupBy() </b> method groups elements of an object according to string values returned from a callback function.It Groups object elements according to a function",
+          "<br>"
+        );
+        //Object.groupBy(object, callback)
+
+        // Create an Array
+        const fruitsEight = [
+          { name: "apples", quantity: 300 },
+          { name: "bananas", quantity: 500 },
+          { name: "oranges", quantity: 200 },
+          { name: "kiwi", quantity: 150 },
+        ];
+
+        // Callback function to select low volumes
+        function myCallback({ quantity }) {
+          return quantity > 200 ? "ok" : "low";
+        }
+
+        // Group by ok and low
+        const result = Object.groupBy(fruitsEight, myCallback);
+
+        // Display Results
+        let textEight = "These fruits are Ok: <br>";
+        for (let [x, y] of result.ok.entries()) {
+          textEight += y.name + " " + y.quantity + "<br>";
+        }
+
+        textEight += "<br>These fruits are low: <br>";
+        for (let [x, y] of result.low.entries()) {
+          textEight += y.name + " " + y.quantity + "<br>";
+        }
+
+        document.write(textEight);
+
+        document.write(
+          " <b> No:8 :: toString() </b> method is used internally by JavaScript when an object needs to be displayed as a text (like in HTML), or when an object needs to be used as a string."
+        );
+        const myTeacher = {
+          firstName: "Khalid",
+          lastName: "Usman",
+          age: 50,
+          toString: function () {
+            return `${this.firstName} ${this.lastName}, Age: ${this.age}`;
+          },
+        };
+
+        // Using toString() explicitly
+        document.write(myTeacher.toString(), "<br>"); // Output: Khalid Usman, Age: 50
+
+        // Using the object in a string context
+        document.write("Teacher details: " + myTeacher, "<br>"); // Output: Teacher details: Khalid Usman, Age: 50
+
+        document.write(
+          " <b> Explanation: </b> n\
+ <b> Explicit Call: </b> When you call teacher.toString(), the custom toString method is executed and returns a formatted string.n\
+ <b> Implicit Call: </b> When the object is used in a string context (e.g., concatenated with a string), JavaScript automatically calls the toString() method to convert the object into a string.",
+          "<br>"
+        );
+
+        document.write(
+          "<b> No:9 ::Object.isSealed() </b> returns true if an object is sealed.",
+          "<br>"
+        );
+        document.write(
+          "In JavaScript, an object is sealed when it meets the following conditions:n\
+                 No New Properties: You cannot add new properties to the object.n\
+                 No Deletion of Properties: Existing properties cannot be removed from the object.n\
+                 Property Configuration is Locked: The existing properties cannot be reconfigured (e.g., you can't change their descriptors such as configurable or writable flags).n\
+                 However, the values of writable properties can still be modified.",
+          "<br>"
+        );
+        const obj = {
+          name: "Alice",
+          age: 30,
+        };
+
+        // Seal the object
+        Object.seal(obj);
+
+        document.write(Object.isSealed(obj), "<br>"); // Output: true
+
+        // Trying to add a new property
+        obj.city = "New York";
+        document.write(obj.city, "<br>"); // Output: undefined (can't add new properties)
+
+        // Trying to delete a property
+        delete obj.age;
+        document.write(obj.age, "<br>"); // Output: 30 (can't delete existing properties)
+
+        // Modifying an existing property's value
+        obj.name = "Bob";
+        document.write(obj.name, "<br>"); // Output: Bob (value can still be modified)
+
+        document.write(
+          " <b> Note </b> : A sealed object prevents structural changes (adding or removing properties).n\
+                  Sealing does not make the object immutable; it only restricts its shape, not its content."
+        );
+
+        // Call , Apply & Bind
+        //  Methods like call(), apply(), and bind() can refer 'this' to any object.
+
+        document.write("<b> call() Method </b> ", "<br>");
+        document.write(
+          " In JavaScript all functions are object methods. With call(), an object can use a method belonging to <b> another object </b>.",
+          "<br>"
+        );
+        document.write(
+          "With the call() method, you can write a method that can be used on different objects. This method is also called a 'Method Reuse'.",
+          "<br>"
+        );
+        document.write(
+          "It can be used to invoke (call) a method with an owner object as an argument (parameter).",
+          "<br>"
+        );
+        document.write(
+          "This example calls the <b> fullName method </b> of <b> hisName </b>, using it on <b> principalOne </b>:",
+          "<br>"
+        );
+
+        const principalOne = {
+          fName: "Khalid",
+          lName: "Usman",
+        };
+
+        const principalTwo = {
+          fName: "Inayat",
+          lName: "Khan",
+        };
+
+        const principalThree = {
+          fullName: function () {
+            return this.fName + " " + this.lName;
+          },
+        };
+
+        let a = principalThree.fullName.call(principalOne);
+        document.write(a, "<br>");
+
+        document.write(" <b> Apply() Method </b>");
+        document.write(
+          "With the apply() method, you can write a method that can be used on different objects.The apply() method is similar to the call() method",
+          "<br>"
+        );
+
+        const personOne = {
+          fullName: function () {
+            return this.firstName + " " + this.lastName;
+          },
+        };
+        const personTwo = {
+          firstName: "Khalid",
+          lastName: "Doe",
+        };
+
+        document.write(personOne.fullName.apply(personTwo), "<br>");
+
+        document.write(
+          "<b> Difference Between call() and apply() </b>",
+          "<br>"
+        );
+        document.write(
+          "The call() method takes arguments separately.n\
+The apply() method takes arguments as an array.",
+          "<br>"
+        );
+        //person.fullName.apply(person1, ["Oslo", "Norway"]);
+        //person.fullName.call(person1, "Oslo", "Norway");
+
+        document.write("<b> Function Bind() </b>", "<br>");
+        document.write(
+          "The bind() method binds one function with another function, i.e, With the bind() method, an object can borrow a method from another object.",
+          "<br>"
+        );
+        document.write(
+          "The example below creates 2 objects (person and member).The member object borrows the fullname method from the person object:",
+          "<br>"
+        );
+
+        const personFive = {
+          firstName: "John",
+          lastName: "Doe",
+          fullName: function () {
+            return this.firstName + " " + this.lastName;
+          },
+        };
+        const member = {
+          firstName: "Khalid",
+          lastName: "Nilsen",
+        };
+
+        let fullName = personFive.fullName.bind(member); // If I use a call method here, I will not use braces below in document.write as call is a method
+
+        document.write(fullName() + "<br>"); // I will use braces here as bind method binds functions and fullName is called as a function.
+
+        document.write(
+          "<b style = 'color : blue ; font-family : calibri'> Object Accessors (Getters and Setters) </b>",
+          "<br>"
+        );
+        document.write(
+          "It gives simpler syntax.. It allows equal syntax for properties and methods..It is useful for doing things behind-the-scenes...Getters and setters allow you to define Object Accessors (Computed Properties)"
+        );
+        document.write(
+          "<b> JavaScript Getter (The get Keyword or function) </b>",
+          "<br>"
+        );
+        document.write(
+          "The example below uses a <b> lang </b> property to <b> get </b> the value of the <b> language </b> property.",
+          "<br>"
+        );
+        document.write(
+          "We can also use any method (like toUpperCase(), along with get accessor, or we can even use many methods together, as below)",
+          "<br>"
+        );
+        const persona = {
+          firstName: "John",
+          lastName: "Doe Nelson",
+          language: "English",
+          get lang() {
+            return this.language.toUpperCase();
+          },
+        };
+        document.write(persona.lang + "<br>");
+
+        document.write(
+          "With get , we can get the property value from one object into another object , as bellow " +
+            "<br>"
+        );
+
+        const personaaa2 = {
+          Name: "Usman",
+          age: 30,
+          get lastNn() {
+            return persona.lastName;
+          },
+        };
+        document.write(personaaa2.lastNn + "<br>", "<br>");
+
+        document.write("<b> JavaScript Setter (The set Keyword) </b>", "<br>");
+        document.write(
+          "This example uses a <b> lang </b> property to <b> set </b> the value of the <b> language </b> property.",
+          "<br>"
+        );
+
+        const personi = {
+          firstName: "John",
+          lastName: "Doe",
+          language: "",
+          set lang(lang) {
+            this.language = lang;
+          },
+        };
+        // Set an object property using a setter:
+        personi.lang = "Arabic";
+        // Display data from the object:
+        document.write(personi.language + "<br>");
+
+        computer = {
+          modal: 2005,
+          name: "HP",
+          color: "white",
+          get colr() {
+            return this.color.toUpperCase().charAt(0);
+          },
+        };
+        document.write(computer.colr, "<br>");
+
+        document.write(
+          "<b> Note that </b>JavaScript Function or Getter?",
+          "<br>"
+        );
+        // const person = {
+        //   firstName: "John",
+        //   lastName: "Doe",
+        //   fullName: function() {
+        //     return this.firstName + " " + this.lastName;
+        //   }
+        // };
+
+        // // Display data from the object using a method:
+        // document.getElementById("demo").innerHTML = person.fullName();
+
+        // const person = {
+        //   firstName: "John",
+        //   lastName: "Doe",
+        //   get fullName() {
+        //     return this.firstName + " " + this.lastName;
+        //   }
+        // };
+
+        // // Display data from the object using a getter:
+        // document.getElementById("demo").innerHTML = person.fullName;
+
+        document.write(
+          "In the above 2 examples, Example 1 access fullName as a function: person.fullName(). Example 2 access fullName as a property: person.fullName.The second example provides a simpler syntax.",
+          "<br>"
+        );
+        document.write("<br>", "<br>");
+
+        document.write(
+          " <b style = 'color : blue ; font-family : calibri'> Object Constructor  </b>",
+          "<br>"
+        );
+        document.write(
+          "In JavaScript, object constructors are used to create multiple objects of the same type. They provide a  template (Basic Blue Print) for creating objects with similar properties and methods."
+        );
+        document.write(
+          "If we want to show the results of more students \
+                  or print almost equal things together, we can use\
+                  'Object Constructor'",
+          "<br>"
+        );
+        document.write(
+          "The this keyword in an object constructor does not have a value. It is only a substitute for the new object.The value of this will become the new object when the constructor is used to create an object.",
+          "<br>"
+        );
+        document.write(
+          "There are 2 ways to create an object constructor",
+          "<br>"
+        );
+        document.write(
+          " No 1 is <b> Function Constructor </b> as follows",
+          "<br>"
+        );
+
+        function Students(a, b, c, d) {
+          this.Name = a;
+          this.Age = b;
+          this.ClassLevel = c;
+          this.Grade = d;
+        }
+        Students.prototype.Nationality = "Pakistani";
+
+        let student1 = new Students("khalid", 40, 12, "A");
+        let student2 = new Students("Ihsan", 20, 12, "A");
+        let student3 = new Students("Kamran", 30, 12, "A");
+        let student4 = new Students("Yaro", 50, 12, "A");
+
+        document.write(student1.Grade, " : ", student1.Nationality, "<br>");
+        document.write(student2.Grade, " : ", student2.Age, "<br>");
+        document.write(student3.Grade, "<br>");
+        document.write(student4.Grade, "<br>");
+
+        document.write(
+          " we can add later any other preoperty to the same object directly i.e 'this.nationality' or  by using ' prototype ' after the object as (Students.prototype.Nationality=\"Pakistani\") ",
+          "<br>"
+        );
+
+        document.write(" What is <b> This </b>", "<br>", "<br>", "<br>");
+        document.write(
+          "In JavaScript, the <b> this </b> keyword refers to an <b> object </b>.",
+          "<br>"
+        );
+        document.write(
+          "<b> Which </b> object depends on how <b> this </b> is being invoked (used or called).",
+          "<br>"
+        );
+        document.write(
+          "The <b> this </b> keyword refers to different objects depending on how it is used:",
+          "<br>"
+        );
+
+        //  In an object method, this refers to the object.
+        //  Alone, this refers to the global object.
+        //  In a function, this refers to the global object.
+        //  In a function, in strict mode, this is undefined.
+        //  In an event, this refers to the element that received the event.
+        //  Methods like call(), apply(), and bind() can refer this to any object.
+
+        document.write(
+          "<b> Note that </b> this is not a variable. It is a keyword. You cannot change the value of this.",
+          "<br>",
+          "<br>",
+          "<br>"
+        );
+
+        document.write(
+          "<b> Method 2 </b> of creating object constructor is to create it with a <b> class </b> as below.",
+          "<br>"
+        );
+
+        class Person {
+          constructor(a, b, c, d) {
+            this.Name = a;
+            this.Age = b;
+            this.LevelClass = c;
+            this.Grade = d;
+          }
+        }
+
+        const person1 = new Person("Khalid", 25, 12, "A");
+        const person2 = new Person("Usman", 25, 12, "A");
+        const person3 = new Person("Inayat", 25, 12, "A");
+        const person4 = new Person("Ismaiel", 25, 12, "A");
+
+        document.write(
+          ` The age of person2 is ${person2.Age} and the name of person3 is ${person3.Name}`,
+          "<br>"
+        );
+
+        document.write(
+          "<b style = 'color : white ; background-color : red' > Symbol </b>  ",
+          "<br>"
+        );
+        document.write(
+          "In JavaScript, the Symbol is a primitive data type introduced in ES6. It is created using the Symbol() function, which returns a unique symbol value each time it is called. Symbols are immutable and unique, making them useful for creating property keys that are guaranteed to be unique across different objects. They are often used to define non-enumerable object properties.",
+          "<br>"
+        );
+
+        let symb = Symbol("Hello World");
+        document.write(symb.description, "<br>");
+
+        document.write(
+          " <b style = 'color : blue ; font-family : calibri'> JavaScript Iterables ( qabil e taqrar ) </b>",
+          "<br>"
+        );
+        document.write(
+          "Technically, iterables must implement the ' Symbol.iterator ' method.",
+          "<br>"
+        );
+        document.write(
+          " Iterables are used to print any string , element , or value of an array anytime and anywhere.",
+          "<br>"
+        );
+        document.write(
+          "The Symbol.iterator is a function that returns a next() function.",
+          "<br>"
+        );
+        document.write(
+          "An iterable can be iterated over with the code: for (const x of iterable) { }",
+          "<br>"
+        );
+        document.write(
+          "The Symbol.iterator method is called automatically by for..of. and  we can also do it manually.",
+          "<br>"
+        );
+
+        let numbers = [200, 499, 588];
+
+        let iter = numbers[Symbol.iterator](); //The () is necessary because numbers[Symbol.iterator] gives you a function, and the () calls that function to get the actual iterator object. Without the (), you're just accessing the function itself but not using it.
+
+        document.write(numbers, "<br>");
+
+        document.write(iter.next().value, "<br>");
+        iter.next().value, "<br>"; // To omit the middle digit
+        document.write(iter.next().value, "<br>");
+
+        document.write("Below is it's other example. ", "<br>");
+
+        let mix = ["khalid", 50, "Ihsan", 40];
+        let iterabl = mix[Symbol.iterator]();
+        document.write(iterabl.next().value, "<br>");
+        iterabl.next().value;
+        document.write(iterabl.next().value, "<br>");
+
+        document.write("<br>", "<br>");
+
+        document.write(
+          " <b style = 'color : blue ; font-family : calibri'> Object Sets </b>",
+          "<br>"
+        );
+        document.write(
+          " A JavaScript Set is a collection of unique values.",
+          "<br>"
+        );
+        document.write(
+          " You can't put duplicate values in a ' set ' Each value can only occur once in a Set.",
+          "<br>"
+        );
+        document.write(
+          " A Set can hold any value of any data type. i.e ' Numbers, Strings, Boleans, arrays, objects etc' ",
+          "<br>"
+        );
+
+        const sett = new Set([
+          3,
+          4,
+          " Khalid ",
+          true,
+          (traini = { Name: "khan", nationl: "Pakistian" }),
+        ]);
+
+        let mmm = sett[Symbol.iterator]();
+        document.write(mmm.next().value + "<br>");
+        mmm.next().value;
+        mmm.next().value;
+        mmm.next().value;
+        document.write(mmm.next().value.Name + "<br>" + "<br>" + "<br>");
+
+        document.write(
+          "<b style = 'color : yellow; background-color: red'> Object Destructuring </b>" +
+            "<br>"
+        );
+        document.write(
+          "The technique to assign array values or object properties to the variables." +
+            "<br>"
+        );
+        document.write(
+          "It allows us to unpack the values from the arrays or objects and store them in individual variables." +
+            "<br>"
+        );
+
+        // Syntax
+        // const { prop1, popr2 } = obj;
+
+        const watch = {
+          brand: "Titan",
+          price: 6000,
+        };
+        const { brand, price } = watch;
+
+        document.write(
+          " The brand of the watch is " +
+            brand +
+            "The price of the watch is " +
+            price +
+            "<br>"
+        );
+
+        document.write(
+          "<b style = 'color : yellow; background-color: red'> Destructuring with less properties </b>" +
+            "<br>"
+        );
+        document.write(
+          "The code below demonstrates that you can unpack only required object properties and keep others as it is" +
+            "<br>"
+        );
+
+        const watchOne = {
+          brandOne: "Titan",
+          priceOne: 6000,
+          color: "Pink",
+          dial: "Round",
+        };
+        const { brandOne, priceOne } = watch;
+        document.write(
+          "The brand of the watch is " +
+            brand +
+            " and the price is " +
+            price +
+            "<br>"
+        );
+
+        document.write(
+          "<b style = 'color : yellow; background-color: red'> Object Destructuring and Rest Operator </b>" +
+            "<br>"
+        );
+        document.write(
+          "It allows you to collect the remaining object properties into a single variable in the object format." +
+            "<br>"
+        );
+
+        const nums = {
+          num1: 10,
+          num2: 20,
+          num3: 30,
+          num4: 40,
+        };
+        const { num1, ...numberNums } = nums;
+        document.write(num1 + "<br>");
+        document.write(numberNums + "<br>"); //numberNums uses the rest operator (...) to collect the remaining properties of nums (excluding num1) into a new object:
+        // When you use document.write(numberNums), it tries to display the numberNums object, but since objects are not inherently printable as plain text, it results in [object Object].
+
+        // Solution is that we know that for displaying any object we use JSON.stringify, Iterate Through the Object (using for..in loop) or Using Object.values()
+
+        document.write(JSON.stringify(numberNums) + "<br>");
+
+        for (let keys in numberNums) {
+          document.write(numberNums[keys] + "<br>");
+        }
+      </script>
+
+      <h2>How to use Property Attributes in Object ?</h2>
+    </div>
+  </body>
+</html>
+
+what is iterator pattern what is generator function what is yield function

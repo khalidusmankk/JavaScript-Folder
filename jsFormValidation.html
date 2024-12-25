@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Forms  Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <style>
+
+        fieldset {background-color:gray;}
+        input{ background:lightblue;}
+        legend{ background:red; 
+                margin-top:2px; 
+                font-size:20px;
+                float:left;}
+        .fieldset {display: inline-block;}
+        
+        
+        body {
+            margin-left: 20px;
+        }
+
+
+
+  ::selection {
+    background-color: yellow; 
+    color: black;
+  }
+         
+        </style>
+
+</head>
+
+
+
+<body>
+ 
+    <h1> HTML Forms </h1>
+    <p> An HTML form is used to collect user input. The user input is most often sent to a server for processing. </p>
+      <h3> The &lt; form &gt; Element </h3>
+      <p> The HTML &lt; form &gt; element is used to create an HTML form for user input</p>
+      <!-- <form>
+        ...
+        form elements
+        ...
+        </form> -->
+
+        <p> The &lt; form &gt; element is a container for different types of input elements, such as: text fields, checkboxes, radio buttons, submit buttons, etc.</p>
+
+        <h2> The &lt; input &gt; Element </h2>
+
+        <p> The HTML &lt;input&gt; element is the most used form element.
+            An &lt;input&gt; element can be displayed in many ways, depending on the <b> type </b>  attribute. </p>
+
+
+
+
+
+<!-- 
+    Type	                   Description
+<input type="text">	    Displays a single-line text input field
+<input type="radio">	Displays a radio button (for selecting one of many choices)
+<input type="checkbox">	Displays a checkbox (for selecting zero or more of many choices)
+<input type="submit">	Displays a submit button (for submitting the form)
+<input type="button">	Displays a clickable button -->
+
+
+
+
+    <h2 id="tips" > Link to FormControl file in react.JS </h2>
+    <P> The below form is linked to another file just for try </P>
+
+     <form action="/javaform2.html"> <!-- This data will be sent to javaform2 -->
+
+        <label for ="fname"> First Name : </label> <br>
+        <input type="text" id="fname" value="Khalid Usman" > <br>
+        <input type="submit" value="Submit">
+
+     </form><br>
+
+     <p> The <b> for </b> attribute of the &lt;label&gt; tag should be equal to the <b>id</b> attribute of the &lt;input&gt; element to bind them together.</p>
+
+
+
+     <h2> Radio Buttons </h2>
+     <p> Radio buttons let a user select ONE of a limited number of choices. </p>
+
+        <form>
+            <input type ="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">CSS</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">JavaScript</label>
+        </form> 
+
+
+            <h2> Checkboxes </h2>
+            <p> Checkboxes let a user select ZERO or MORE options of a limited number of choices. </p>
+
+            <form action="/javaform2.html">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <label for="vehicle1"> I have a bike</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                <label for="vehicle2"> I have a car</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> I have a boat</label><br><br>
+                <input type="submit" value="Submit">
+              </form> 
+
+
+ <h2>The Submit Button </h2>
+  <p>The &lt; input type="submit" &gt; defines a button for submitting the form data to a form-handler.
+    The form-handler is typically a file on the server with a script for processing input data.
+    The form-handler is specified in the form's <b> action </b> attribute. </p>
+
+
+
+
+
+    <h2> HTML Form Attributes </h2>
+
+    <h4> Action Attribute </h4>
+    <p> The action attribute defines the action to be performed when the form is submitted.
+        Usually, the form data is sent to a file on the server when the user clicks on the submit button. </p>
+        <p> <b> Tip: </b> If the action attribute is omitted, the action is set to the current page.</p>
+
+
+
+        <h4> Target Attribute </h4>
+        <p> The target attribute specifies where to display the response that is received after submitting the form.</p>
+
+        <p> Value	                 Description
+            _blank	    The response is displayed in a new window or tab
+            _self	    The response is displayed in the current window
+            _parent	    The response is displayed in the parent frame
+            _top	    The response is displayed in the full body of the window
+            framename	The response is displayed in a named iframe</p>
+
+            <p> The default value is <b> _self </b> which means that the response will open in the current window.</p>
+            <!-- <form action="/action_page.php" target="_blank"> -->
+
+
+
+                <h4> Method Attribute </h4>
+                <p> The method attribute specifies the HTTP method to be used when submitting the form data. </p>
+                <p> The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post"). </p>
+                <p> The default HTTP method when submitting form data is GET. </p>
+
+                <!-- <form action="/action_page.php" method="get"></form>
+
+                <form action="/action_page.php" method="post"></form> -->
+
+         <h2> Use of Get</h2>
+         <p>Appends the form data to the URL, in name/value pairs.
+            NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!).
+            The length of a URL is limited (2048 characters).
+            Useful for form submissions where a user wants to bookmark the result.
+            GET is good for non-secure data, like query strings in Google. </p>
+
+            <h2> Use of Post </h2>
+            <p> Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+                POST has no size limitations, and can be used to send large amounts of data.
+                Form submissions with POST cannot be bookmarked </p>
+
+                <p> <b> Tip: </b> Always use POST if the form data contains sensitive or personal information! </p>
+
+
+
+
+                <h4> Autocomplete Attribute </h4>
+                <p> The autocomplete attribute specifies whether a form should have autocomplete on or off. </p>
+
+                <!-- <form action="/action_page.php" autocomplete="on"></form> -->
+
+
+
+                <h4> Novalidate Attribute </h4>
+                <p> The novalidate attribute is a boolean attribute. </p>
+                <p> When present, it specifies that the form-data (input) should not be validated when submitted. </p>
+                <!-- <form action="/action_page.php" novalidate></form> -->
+
+
+    <h2> The Name Attribute for &lt;input&gt; </h2>
+    <p> Notice that each input field must have a <b> name </b> attribute to be submitted.
+        If the <b> name </b> attribute is omitted, the value of the input field will not be sent at all. </p>
+
+
+
+
+        <h2> HTML &lt; form &gt; Elements </h2>
+        <p> The HTML &lt; form &gt; element can contain one or more of the following form elements:</p>
+
+        <h2> Form Elements </h2>
+
+        <p> &lt; input &gt; <br>
+            &lt; label &gt; <br>
+            &lt; select &gt; <br>
+            &lt; textarea &gt; <br>
+            &lt; button &gt; <br>
+            &lt; fieldset &gt; <br>
+            &lt; legend &gt; <br>
+            &lt; datalist &gt; <br>
+            &lt; output &gt; <br>
+            &lt; option &gt; <br>
+            &lt; optgroup &gt;</p>
+
+
+
+
+
+            <h2> HTML Input Types </h2>
+            <p>
+                button <br>
+                checkbox <br>
+                Color <br>
+                date <br>
+                datetime-local <br> 
+                email <br>
+                file <br>
+                hidden <br>
+                image <br>   <!-- The input type="image" defines an image as a submit button.The path to the image is specified in the src attribute. -->
+                month <br>
+                number <br>
+                password <br>
+                radio <br>
+                range <br>
+                reset <br>
+                search <br>
+                submit <br>
+                tel <br>
+                text <br>
+                time <br>
+                url <br>
+                week
+
+            </p>
+            <p> <b> Tip: </b> The default value of the type attribute is "text". </p>
+
+            <div>
+                
+                <h2> Forms In HTML </h2>
+                <p> How To Set Form </p>
+                <!-- we can create a form by different ways using same techniques differently -->
+
+                <h2> The &lt; fieldset &gt; and &lt; legend &gt; Elements </h2>
+                <p> The fieldset element is used to group related data in a form.
+                    The legend element defines a caption for the fieldset element.</p>
+
+
+                <h4> Online Registration Form </h4>
+                <samp> <p> Fill the below form and submit </p> </samp>
+                 <br>
+                </div>
+
+                <form action ="/javaform2.html"> 
+                    
+                  <fieldset class="fieldset"> 
+
+                        <legend> Personal Information </legend> <br><br>
+                        
+                        <label for="fname">Name:</label> <br>
+                          <input type="text" id="fname" name="fname"  placeholder="khalid Usman"> <br> <!--autofocus -->
+                        <label for="lname">Father Name:</label> <br>
+                          <input type="text" id="lname" name="lname" title="Shah Mir Khan">  <br>
+                        <label for="email">Email:</label> <br>
+                          <input type="email" placeholder="example@gmali.com" id="email" name="email"> <br> 
+                        <label for="birthday">Birthday: </label> <br>
+                          <input type="date" id="birthday" name="birthday"><br>
+                        <label for="password"> Password: </label> <br>
+                          <input type="password" id="password" name="password" maxlength="15"> <br> <br> <!-- 15 means that we can't use more than 15 characters --> 
+                                   
+                </fieldset><br>
+                
+                
+                 <fieldset class="fieldset">
+                 <legend> Qualification </legend> <br>
+            <select name="down" id="highClasses">  <!-- The <select> element defines a drop-down list: -->
+                <option> SSC </option>
+                <option> F.SC </option>
+                <option> B.SC </option>
+                <option> M.SC </option>
+                <option> F.A </option>
+                <option> B.A </option>
+            </select> <br><br> 
+                
+                Upload Your Documents:<br> 
+                <input type="file"  id="files" name="file" multiple> <br><br> <!--  The multiple attribute specifies that the user is allowed to enter more than one value in an input field. -->
+
+                
+                Choose your favourite course:<br>
+                <input list ="course" name="course" placeholder=" Favourite Course "  >
+                <datalist  id="course">     <!-- The list attribute of the <input> element, must refer to the id attribute of the <datalist> element. -->
+                    <option> Web Designing </option>
+                    <option> Web Content Writer </option>
+                    <option> Computer Engineering </option>
+                    <option> Full HTML COURSE </option>
+                    <option> Full CSS COURSE</option>
+                    <option> Full JAVASCRIPT COURSE     </option>
+                </datalist> <br><br> 
+                
+                
+                 Choose Your Favourite Language<br>
+                 
+                         <input type="radio" id="html" name="fav_language" value="HTML">
+                         <label for="html">HTML</label><br>
+                         <input type="radio" id="css" name="fav_language" value="CSS">
+                         <label for="css">CSS</label><br>
+                         <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                         <label for="javascript">JavaScript</label> <br>
+                
+                
+                <input type="Button" value= "Edit Your Form"> <br>
+                <input type="reset" value= "Reset Your Form"><br>  <!-- <input type="reset"> defines a reset button that will reset all form values to their default values: -->
+                <input type="Submit" value="Submit"> <br><br>
+                <button type="button" onclick = "alert('You have applied')" > Click Here To Apply For Scholarship </button><br><br>
+
+               
+                    <textarea name = "message" rows="5" cols="30" placeholder=" Type Your Message Here" ></textarea>
+                    <br><br>
+                    <input type="submit">
+                  
+                </form> </fieldset> <br>
+                
+                <p>The "No files chosen" message you are seeing along with the "Select files" button comes from the behavior of the input type="file" element in HTML. Here's how it works: </p>
+                <p> <b> Default behavior </b> ,  This is the browser's built-in functionality for file input fields.</p>
+                <p> When you use input type="file", browsers typically display a button to browse for files and next to it, they show the message "No files chosen" by default. This message updates when a user selects a file. It will then display the name of the file(s) selected.</p>
+                
+               
+
+                <input type="image" src="logo.svg" alt="Submit" width="70" height="70"> <br>
+                
+                <input type="color" name="color"> <br>
+
+                <h2> HTML Input Attributes</h2>
+
+               <h4> No 1 : The value Attribute </h4>
+ <p>The input value attribute specifies an initial value for an input field.</p>
+                <h4> No 2 : readonly Attribute </h4>
+ <p>The input readonly attribute specifies that an input field is read-only. </p>
+                <h4> No 3 : disabled Attribute </h4>
+ <p>The input disabled attribute specifies that an input field should be disabled. </p>
+                <h4> No 4 : size Attribute</h4>
+ <p>The input size attribute specifies the visible width, in characters, of an input field. The default value for size is 20. </p>
+                <h4> No 5 : maxlength Attribute</h4>
+ <p>The input maxlength attribute specifies the maximum number of characters allowed in an input field. </p>
+                <h4> No 6 : min and max Attributes </h4>
+ <p>The input min and max attributes specify the minimum and maximum values for an input field. </p>
+                <h4> No 7 : multiple Attribute </h4>
+ <p>The input multiple attribute specifies that the user is allowed to enter more than one value in an input field. </p>
+                <h4> No 8 : pattern Attribute </h4>
+ <p>The input pattern attribute specifies a regular expression that the input field's value is checked against, when the form is submitted. </p>
+                <h4> NO 9 : placeholder Attribute </h4>
+ <p>The input placeholder attribute specifies a short hint that describes the expected value of an input field (a sample value or a short description of the expected format). </p>
+                <h4> No 10 : required Attribute </h4>
+ <p>The input required attribute specifies that an input field must be filled out before submitting the form. </p>
+                <h4> No 11 : step Attribute</h4>
+ <p>The input step attribute specifies the legal number intervals for an input field. Example: if step="3", legal numbers could be -3, 0, 3, 6, etc. </p>
+                <h4> No 12 : autofocus Attribute </h4>
+ <p>The input autofocus attribute specifies that an input field should automatically get focus when the page loads. </p>
+                <h4> No 13 : height and width Attributes </h4>
+ <p>The input height and width attributes specify the height and width of an input type="image" element. </p>
+                <h4> No 14 : list Attribute </h4>
+ <p>The input list attribute refers to a datalist element that contains pre-defined options for an input element. </p>
+                <h4> No 15 : autocomplete Attribute </h4>
+ <p>The input autocomplete attribute specifies whether a form or an input field should have autocomplete on or off. </p>
+
+
+
+                <h2> Input form attributes </h2>
+
+                <h4> form attribute </h4>
+                <p> E.g; An input field located outside of the HTML form (but still a part of the form):</p>
+                <p> The input form attribute specifies the form the input element belongs to.</p>
+                <p> The value of this attribute must be equal to the id attribute of the form element it belongs to.</p>
+
+                    <!-- 
+                    <form action="/action_page.php" id="form1">
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname"><br><br>
+                        <input type="submit" value="Submit">
+                      </form>
+                      
+                      <label for="lname">Last name:</label>
+                      <input type="text" id="lname" name="lname" form="form1">
+                       -->
+
+                       <p> <b> More attributes of the input form </b> are below <br>
+                        formaction <br>
+                        formenctype <br>
+                        formmethod <br>
+                        formtarget <br>
+                        formnovalidate <br>
+                        novalidate <br>
+
+                    </p>
+                    <p> <b> Question </b>: is novalidate and formnovalidate same </p>
+                    <p> <b> Answer </b>: No, novalidate and formnovalidate are not the same, but they serve related purposes in HTML forms. </p>
+
+                    <p> <b> 1.</b> novalidate Attribute (On form element):</p>
+                    <p> <b> Usage : </b> Applied to the form element. </p>
+                    <p> <b> Purpose : </b>  It disables all form validation for the entire form. </p>
+                    <p> <b> Effect : </b> When novalidate is used on a form, the browser will not automatically validate the form's input fields before submitting. This means it won't check for required fields, pattern matching, or any other validation constraints. </p>
+
+                    <p> <b> 2.</b> formnovalidate Attribute (On button or input type="submit"): </p>
+                    <p> <b> Usage : </b> Usage: Applied to individual submit buttons </p>
+                    <p> <b> Purpose : </b> It disables validation only for the specific button it is applied to when that button is used to submit the form. </p>
+                    <p> <b> Effect : </b>  When formnovalidate is used, the form will skip validation only when that specific button is clicked, but other submit buttons will still trigger validation. </p>
+
+
+
+    <div class="container mt-3 mx-2"> 
+  
+ 
+      <form onsubmit = "return anyName()"   action="javaform2.html"  autocomplete="off" >  <!-- When you write onsubmit="return anyName()", the return keyword ensures that the form submission depends on the outcome of the anyName() function. -->
+        
+          <label for="nam"> Name</label> <br>
+          <input class="w-25-col border border-2 border-success " type="text" id="nam" placeholder=" User name"><br/> 
+         
+         <label for="passwor"> Password</label> <br>
+         <input class="w-25-col border border-2 border-success " type="password" id="passwor" placeholder="Password"><br> <br> 
+
+          <input type="submit" value="Log In" >  
+      </form>  
+
+      <script>
+        function anyName(){
+         let a = document.getElementById("nam").value;
+         let b = document.getElementById("passwor").value;
+
+         if ( a == "" || b == "" ) {
+         alert ( "All fields must be filled")
+        return false ;} // If I don't use return keyword and i don't  turn it false ; this page will automatically be sent to another file/page after clicking ok the alert message.
+
+         else if ( b.length < 6 ) {
+         alert ( "The length is too short")
+         return false;}
+
+         else {
+            return true;
+         }
+         };
+      </script>
+
+     
+
+
+
+
+       <h3> Password Validation</h3>
+       <P>  Password and confirm password must match each other</P>
+    
+
+       <form onsubmit = "return anyName2()" action="javaform2.html" > 
+        
+            <label for="namee"> Name</label> <br>
+            <input  type="text" id="namee" placeholder=" User name"><br/> 
+
+            <label for="namee"> Email</label> <br>
+            <input  type="email" id="emaill" placeholder=" example@gmail.com"><br/> 
+        
+            <label for="passwordd"> Password</label> <br>
+            <input  type="password" id="passwordd" placeholder="Password"><br> 
+            
+            <label for="cnfpasswordd"> Confirm Password</label> <br>
+            <input type="password" id="cnfpasswordd" placeholder=" Confirm Password"  > <br>
+
+            <label for="contactt"> Contact </label> <br>
+            <input  type="number" id="contactt" placeholder=" Contact Numbers"><br/><br/>
+
+            <input type="submit" value="Submit Form" >  
+    </form>  
+
+    <script>
+        
+        var submittedEmails = [];
+
+function anyName2() {
+  let v = document.getElementById("namee").value;
+  let w = document.getElementById("emaill").value;
+  let x = document.getElementById("passwordd").value;
+  let y = document.getElementById("cnfpasswordd").value;
+  let z = document.getElementById("contactt").value;
+
+  // Check for empty fields
+  if (v == "" || w == "" || x == "" || y == "" || z == "") {
+    alert("All fields must be filled.");
+    return false;
+  }
+
+  // Check if passwords match
+  else if (x != y) {
+    alert("Passwords do not match.");
+    return false;
+  }
+
+  // Check for valid email format
+  else if (w.indexOf('@') <= 0 || (w.charAt(w.length - 4) != '.' && w.charAt(w.length - 3) != '.')) {
+    alert("Please put a valid email ID.");
+    return false;
+  }
+
+  // Check if email is already submitted
+  else if (submittedEmails.includes(w)) {
+    alert("This email ID has already been submitted.");
+    return false;
+  }
+
+  // Check if contact number is numeric
+  else if (isNaN(z)) {
+    alert("Please enter digits only for the contact number.");
+    return false;
+  }
+
+  // If all validations pass, add the email to the array and submit
+  else {
+    submittedEmails.push(w); // Add the email to the array
+    alert("Form submitted successfully!");
+    return true;
+  }
+}
+
+
+    </script>
+
+  <br> <br>  <br>
+       
+    <form name="myForm" action="/action_page.php" onsubmit = "return validateForm()" method="post">
+        Name: <input type="text" name="fname">
+              <input type="submit" value="Submit">
+      </form>
+
+      <script>
+                   function validateForm() {
+                    let x = document.forms["myForm"]["fname"].value;
+                    if (x == "") {
+                        alert("Name must be filled out");
+                        return false;
+                    }
+                    };
+
+
+                    document.write("<br>")
+document.write ("  document.forms[myForm][fname].value" , "<br>")
+document.write (" document.forms[myForm] is not a method, but rather a way to access a specific form in the HTML document. ", "<br>")
+document.write("<b> Explanation: </b> document.forms: This is a collection of all the forms in the document. Each form is accessible by its index number (e.g., document.forms[0]) or by its name or id attribute (e.g., document.forms[myForm] if the form's name or id is myForm).", "<br>")
+document.write ("[fname].value: Once you access the form, this part looks for an input element (like input, select, or textarea) inside the form with the name attribute of fname.", "<br>")
+document.write(".value retrieves the current value of that input field.", "<br>")
+document.write("Here, document.forms[myForm][fname].value accesses the value of the input field named fname inside the form myForm.", "<br>")
+
+      </script>
+    
+      <br> <br>  <br>
+
+
+      <h2> Automatic HTML Form Validation </h2>
+
+      <p> HTML form validation can be performed automatically by the browser:</p>
+      <p>If a form field (fname) is empty, the <b> required </b>  attribute prevents this form from being submitted:</p>
+
+      <form action="/action_page.php" method="post">
+        <input type="text" name="fname" required>
+        <input type="submit" value="Submit">
+      </form>
+       <p>If you click submit of the above form , without filling out the text field,
+        your browser will display an error message. </p>
+
+
+
+        <br> <br>  <br>
+
+        <h1> Data Validation </h1>
+        <p> Data validation is the process of ensuring that user input is clean, correct, and useful.</p>
+        <p> Validation can be defined by many different methods, and deployed in many different ways. </p>
+        <p> <b>Client side validation</b> is performed by a web browser, before input is sent to a web server.</p>
+        <p> <b>Server side validation</b> is performed by a web server, after input has been sent to the server.</p>
+
+
+
+        <h2> HTML Constraint (zabrdasti, pabandi) Validation </h2>
+        <p>HTML constraint validation is based on:</p>
+        <ul>
+            <li> Constraint validation <b> HTML Input Attributes </b></li>
+            <li> Constraint validation <b> CSS Pseudo Selectors</b></li>
+            <li> Constraint validation <b> DOM Properties and Methods</b></li>
+        </ul>
+
+        <h3> Constraint Validation HTML Input Attributes</h3>
+
+       <table class="table">
+        <thead>
+            <tr>
+                <th> Attribute </th>
+                <th> Description </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> disabled </td>
+                <td> Specifies that the input element should be disabled </td>
+            </tr>
+                
+                
+
+            </tr>
+            <td> max </td>
+                <td> Specifies the maximum value of an input element </td>
+            <tr>
+                 <tr>
+                    <td> min </td>
+                <td> Specifies the minimum value of an input element </td>
+
+                 </tr>
+           <tr>
+            <td> required </td>
+            <td> Specifies that the input field requires an element </td>
+           </tr>
+
+           <tr>
+            <td> type </td>
+            <td> Specifies the type of an input element </td>
+           </tr>
+        </tbody>
+
+    </table>
+
+   
+
+    <br> <br> 
+
+    <h3> Constraint Validation CSS Pseudo Selectors</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Selector </th>
+                <th> 	Description </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td> :disabled </td>
+                <td> Selects input elements with the "disabled" attribute specified </td>
+            </tr>
+
+            <tr>
+                <td> :invalid </td>
+                <td> Selects input elements with invalid values </td>
+            </tr>
+
+            <tr>
+                <td> :optional </td>
+                <td> Selects input elements with no "required" attribute specified </td>
+            </tr>
+
+            <tr>
+                <td> :required </td>
+                <td> Selects input elements with the "required" attribute specified </td>
+            </tr>
+
+            <tr>
+                <td> :valid </td>
+                <td> Selects input elements with valid values </td>
+            </tr>
+        </tbody>
+
+         </table>
+
+
+         <br> <br> 
+         <h1> Web Forms API </h1>
+         <h3> Constraint Validation DOM Methods </h3> 
+         <table class="table">
+         <thead>
+            <tr>
+                <th> Property </th>
+                <th> 	Description </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+                <td> checkValidity() </td>
+                <td> Returns true if an input element contains valid data. </td>
+            </tr>
+            <tr>
+                <td> setCustomValidity() </td>
+                <td> 	Sets the validationMessage property of an input element. </td>
+            </tr>
+         </tbody>
+        </table>
+
+
+
+        <p> If an input field contains invalid data, display a message: </p>
+        <input type="number" id="numberOne" min="100" max="300" required>
+<button onclick="myFunction()">OK</button>
+<h2 id="demo"> </h2>
+ <script>
+    function myFunction() {
+  const inpObj = document.getElementById("numberOne");
+  if (inpObj.checkValidity()!=true ) {
+    document.getElementById("demo").innerHTML = inpObj.validationMessage;
+  } else {
+    document.getElementById("demo").innerHTML = " Input field is filled! ";
+  } 
+};
+ </script>
+     
+ 
+
+   </div> <br> <br>
+
+   <h2 style="background-color: rgb(63, 132, 255);  text-align: center; font-family: serif; color: antiquewhite;background-image: url(twitter.png) ; margin: 12px; width: 500px; height: 400px;"> New Iqra Public High School </h2>
+ <!-- I can directly this styles here too as ... <h2 style="background-color: rgb(63, 132, 255); background-size: 300px 300px; background-repeat: no-repeat; background-position: center;  text-align: center; font-family: serif; color: antiquewhite;background-image: url(twitter.png) ; margin: 12px; width: 500px; height: 400px;"> New Iqra Public High School </h2> , but the below the most preferred method. -->
+ 
+  <script> 
+    let xy = document.getElementsByTagName("h2")[20];
+    xy.style.backgroundSize = "200px"; 
+    xy.style.backgroundPosition = "center";
+    xy.style.backgroundRepeat = "no-repeat"
+
+    document.getElementsByTagName("h2")[20].style.fontSize = "100px"
+  </script>
+</body>
+</html>

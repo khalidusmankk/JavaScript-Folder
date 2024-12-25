@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Java String</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container-fluid mt-1">
+      <h3>Strings and its use in JavaScript</h3>
+      <h5>Strings are for storing text</h5>
+      <p>Strings can be written both in single and double quotations;</p>
+
+      <br />
+      <h3>JavaScript String Methods</h3>
+
+      <script>
+        document.write("#1: Length of a string", "<br>");
+        document.write(
+          "The 'Length' property is used to find the length of a string. The index number start from zero.",
+          "<br>",
+          "<br>"
+        );
+        document.write("E.g", "<br>");
+
+        let person = " He is a gentle man ";
+        let explaination = person.length;
+        document.write(explaination, "<br>", "<br>");
+
+        document.write("<hr>");
+
+        document.write("#2:  To Upper Case & To Lower Case", "<br>");
+
+        let x = "he was not in the room";
+        let y = x.toUpperCase(); //toLowerCase and toUpperCase are methods i.e functions and we will use bracket after these 2.
+        document.write(y, "<br>", "<br>");
+
+        document.write("<hr>");
+
+        document.write("#3: Includes", "<br>");
+        document.write(
+          "It is used to search any word or character in a string.\
+       If it finds that word or character, it will returs true, if not, then it will return false.",
+          "<br>"
+        );
+
+        let woman = "They are talkative";
+        let define = woman.includes("talkative"); // Includes is a case sensetive
+        document.write(define, "<br>");
+
+        let define2 = woman.includes("Tive");
+        document.write(define2, "<br>");
+
+        let tryThis = "Khalid";
+        if (!tryThis) {
+          document.write(tryThis.includes());
+        } else {
+          document.write(tryThis);
+        }
+
+        document.write("<br>");
+        /*
+     let tryHe = "";
+     if (!tryHe) {       //Thsi will return false as tryHe is undefined.
+     alert (tryHe.includes())
+     }
+     else {
+      alert (tryHe);
+     }
+*/
+        document.write("<hr>");
+
+        document.write("#4: StartsWith & EndsWith", "<br>");
+
+        document.write(
+          "StartsWith returns 'true' if a string begins with a specified given value  and returns 'false' if the starts word or character does not match the search.",
+          "<br>"
+        );
+        document.write("E.g", "<br>");
+
+        let start = "It starts from here";
+        let startsWit = start.startsWith("It");
+        document.write(startsWit, "<br>");
+        let statWit = start.startsWith("it"); // It's a case sensetive
+        document.write(statWit, "<br>");
+
+        // let text = "Hello world, welcome to the universe.";
+        // text.startsWith("world", 6)       // returns true as the "world" starts after 6 characters.
+
+        document.write("Same is the procedure in the case of 'EndsWith' .");
+
+        document.write("<hr>");
+
+        document.write("#5: Search", "<br>");
+        document.write(
+          "It searhes a position of a word or character in a string. If it finds that word, it returns the index number of that word. It counts letters , not words.",
+          "<br>"
+        );
+
+        let searc = "I will search the words";
+        let wordss = searc.search("the");
+        document.write(wordss, "<br>");
+        document.write("Remember that if it doesn't find the exact match in a string, then it returns '-1'.", "<br>");
+        document.write("E.g", "<br>");
+        let minuss = searc.search("bad");
+        document.write(minuss);
+
+        //  /anything/g  it means that   Instead of stopping at the first match, it searches for all occurrences in the text.
+
+        document.write("<hr>");
+
+        document.write("#6: indexOf & lastIndexOf", "<br>");
+
+        document.write(
+          "indexOf returns the index number of the first found string  in a string.Both indexOf(), and lastIndexOf() return -1 if the text is not found.Both methods accept a second parameter as the starting position for the search.",
+          "<br>"
+        );
+        document.write("E.g", "<br>");
+        let inde = "There is his house is";
+        let house = inde.indexOf("is");
+        document.write(house, "<br>");
+        let house2 = inde.lastIndexOf("is");
+        document.write(house2);
+
+        document.write(" <h3> Did You Notice? </h3> ");
+        document.write("The two methods are NOT equal. These are the differences.", "<br>");
+        document.write("The search() method cannot take a second start position argument.", "<br>");
+        document.write("The indexOf() method cannot take powerful search values (regular expressions).", "<br>");
+        document.write("<hr>");
+
+        document.write("#7: Replace & replaceAll", "<br>");
+        document.write(
+          "It is used to replace a word with other word.It takes 2 parameters. The first replaces the other one.",
+          "<br>"
+        );
+        document.write("By default, the replace() method replaces only the first match.", "<br>");
+        document.write("To replace all matches, use a regular expression with a /g flag (global match).", "<br>");
+        // let text = "Please visit Microsoft and Microsoft!";
+        // let newText = text.replace(/Microsoft/g, "W3Schools");
+        document.write(
+          "By default, the replace() method is case sensitive. Writing KHALID (with upper-case) will not replace khalid (with lower-case)",
+          "<br>"
+        );
+        document.write(
+          "To replace case insensitive, use a regular expression with an /i flag (insensitive), i.e /KHALID/i "
+        );
+
+        let repl = "let's replace Khalid ";
+        let khali = repl.replace("Khalid", "Khalid Usman Khan");
+        document.write(khali, "<br>");
+
+        // text = text.replaceAll("Cats","Dogs");
+        // text = text.replaceAll("cats","dogs");
+        document.write(
+          " The replaceAll() method allows you to specify a regular expression instead of a string to be replaced.",
+          "<br>"
+        );
+        document.write(
+          "If the parameter is a regular expression, the global flag (g) must be set, otherwise a TypeError is thrown.",
+          "<br>"
+        );
+        // let text = "cats , dogs, cats, animals, cats";
+        // let text2 = text.replaceAll(/cats/g,"dogs"); replace all the cats with dogs
+
+        document.write("<hr>");
+
+        document.write("#8: Trim ,trimStart, trimEnd ", "<br>");
+        document.write("The trim() method removes whitespace from both sides of a string.", "<br>");
+        document.write(
+          "The trimStart() method works like trim(), but removes whitespace only from the start of a string.",
+          "<br>"
+        );
+        document.write(
+          "The trimEnd() method works like trim(), but removes whitespace only from the end of a string.",
+          "<br>"
+        );
+
+        let wor = "  Telecommunication  is   my field  ";
+        let wordd = wor.trim();
+        document.write(wordd);
+
+        document.write("<hr>");
+
+        document.write("#9: charAt", "<br>");
+        document.write("It returns the letter as per given index number", "<br>");
+        document.write("E.g", "<br>");
+
+        let char = "I am returning the word as per the given charAt number.";
+        let char1 = char.charAt(5);
+        document.write(char1);
+
+        document.write("<hr>");
+        document.write(" # 10 : at() ", "<br>");
+        document.write("The at() method returns the character at a specified index (position) in a string.", "<br>");
+        document.write("It allows the use of negative indexes while charAt() do not.", "<br>");
+
+        let myString = "It's my string ";
+        let myString2 = myString.at(-9);
+        document.write(myString2, "<br>");
+
+        document.write("Now you can use myString.at(-2) instead of charAt(myString.length-2).");
+        document.write("<hr>");
+
+        document.write("#11: Concat", "<br>");
+        document.write("concat is used to combine 2 or more than 2 strings.", "<br>");
+        document.write("E.g", "<br>");
+
+        let strng1 = "I will be concated with other";
+        let strng2 = " Let's concat the both strings";
+        let strngs = strng1.concat(strng2);
+        document.write(strngs, "<br>");
+
+        document.write("Let's concat 3 strings.", "<br>");
+
+        let strng3 = "Let's combine all strings together.";
+
+        let allstrngs = strng1.concat(strng2, strng3);
+        document.write(allstrngs, "<br>");
+
+        document.write("<hr>");
+
+        document.write("#12: Split", "<br>");
+        document.write(
+          "It splits the words of a string as per the given letter and returns the words seperated by a comma, same like an array.",
+          "<br>"
+        );
+        document.write("E.g", "<br>");
+
+        let splitt = "This string will be splitted";
+        let splitt2 = splitt.split("i");
+        document.write(splitt2);
+
+        document.write("<hr>");
+
+        document.write("#13: Repeat", "<br>");
+        document.write("It is used to repeat a string the many times you give in the brackets.", "<br>");
+        document.write("E.g", "<br>");
+
+        let repet = " It will be repeated ";
+        let repets = repet.repeat(3);
+        document.write(repets);
+
+        document.write("<hr>");
+
+        document.write("#14: Slice", "<br>");
+        document.write(
+          "slice() extracts a part of a string and returns the extracted part in a new string.If we pass single parameter, It will return the whole string after that letter. If we pass zero in the brackets, it will return the whole string.If a parameter is negative, the position is counted from the end of the string. The method basically takes 2 parameters: start position, and end position (end not included).",
+          "<br>"
+        );
+
+        let slic = "I want to print a letter";
+        let slies = slic.slice(7);
+        document.write(slies, "<br>");
+        let sli = slic.slice(5, 8);
+        document.write(sli, "<br>");
+        let slic2 = slic.slice(-7);
+        document.write(slic2); // the position is counted from the end of the string:
+        //This example slices out a portion of a string from position -12 to position -6:
+
+        document.write("<hr>");
+
+        document.write("#15: substr & substring", "<br>");
+        document.write(
+          "substr() is similar to slice().The difference is that the second parameter specifies the length of the extracted part."
+        );
+        document.write(
+          "It also works as a slice,but difference is that if we pass single parameter in this, it will return the whole string except these parameter. if I give 2 parameters, it will return the string counting form 0 again and including the letter on the first given number.",
+          "<br>"
+        );
+
+        let sub = "I want to print a letter in the substr of the string";
+        let subs = sub.substr(7);
+        document.write(subs, "<br>");
+        let subss = sub.substr(8, 18);
+        document.write(subss, "<br>");
+
+        document.write(
+          "Remeber that 'substring' returns the letters or character between (after the first parameter and before the last parameter. first and last parameters are not included.) the given parameters.",
+          "<br>"
+        );
+        document.write(
+          "The substring() method extracts characters, between two indices (positions), from a string, and returns the substring.n\
+             The substring() method extracts characters from start to end (exclusive).\
+            The substring() method does not change the original string.",
+          "<br>"
+        );
+        let textOne = "Script";
+        let substringText = textOne.substring(0, textOne.length - 3); //(method) String.substring(start: number, end?: number): string
+        document.write(substringText, "<br>");
+        document.write("The same substring is used in function file also for calculator", "<br>");
+
+        document.write(
+          "The difference is that start and end values less than 0 are treated as 0 in substring().",
+          "<br>"
+        );
+        // let sub = "I want to print a letter in the substr of the string";
+        let subbs = sub.substring(7, 18);
+        document.write(subbs);
+
+        document.write("<hr>");
+
+        document.write("#16: toString", "<br>");
+        document.write("It converts a string or numeric value to string.", "<br>");
+
+        let a = 40;
+        let b = 90;
+        let c = a.toString();
+        document.write(c + b);
+
+        document.write("<hr>");
+
+        document.write("#17: valueOf", "<br>");
+        document.write("It's a default function or method of javaScript to print a string as it is.", "<br>");
+
+        let valu = "Print the string as it is";
+        let val = valu.valueOf();
+        document.write(val);
+
+        document.write("<hr>");
+
+        document.write("#18: Match", "<br>");
+        document.write(
+          "match returns the array of the exact words (not the array of letters) if it matches. if it doesn't match, it returns nothing. if i want to search one word many times in a string, it will use regular expressions(word written inside a slashes //) is called regular expression. Remember that 'g' is used for global.",
+          "<br>"
+        );
+
+        let mat = "match returns the array of the words";
+        let matc = mat.match("the");
+        document.write(matc, "<br>");
+        let matcs = mat.match(/the/g);
+        document.write(matcs);
+
+        document.write("<hr>");
+
+        document.write("#19: charCodeAt & fromCharCode", "<br>");
+        document.write(
+          "it reutrns the skywords according to the given number. E.g, '65' is the skyword for capital A.",
+          "<br>"
+        );
+
+        let str = "javaScript is a great language";
+        let strcode = str.charCodeAt(97);
+        document.write(strcode, "<br>");
+        document.write(
+          "Remeber that it returned '97', bcz '97' is the skycode for small a. if we give any number exceeding the string ,like 300, it will return 'Nan'.",
+          "<br>"
+        );
+        document.write(
+          "fromCharCode have inbuild function of string.fromCharCode.it does not find anything in the given string, but it returned any sign or character as per the given numbers. it returns different characters as per the given instructions.E.g ",
+          "<br>"
+        );
+        let fromcharco = String.fromCharCode(5);
+        document.write(fromcharco, "<br>");
+        let strcodea = str.charCodeAt(5);
+        document.write(strcodea);
+
+        document.write("<hr>");
+
+        document.write(" <b> Template(Sancha) Literals(Lafzi, Harfi) </b>", "<br>");
+        document.write("It has many names like, String Templates ,  Template Strings , Template Literals", "<br>");
+        document.write(
+          "Template Literals use back-ticks (``) rather than the quotes  to define a string,: Template Literals are below.",
+          "<br>"
+        );
+        let templat = ` Hello Everyone `;
+
+        document.write("<b> Quotes Inside Strings </b>", "<br>", "<br>"); //template strings, offer several advantages over traditional string concatenation methods in JavaScript.
+        let name = `He is often called "Johnny"`;
+
+        document.write("<b> Multiline Strings </b>", "<br>", "<br>");
+        let text = `The quick
+                    brown fox
+                    jumps over
+                    the lazy dog`;
+
+        document.write(" <b>Template Literals For String Interpolation Or Concetenation </b>", "<br>"); // means in urdu melana ya elhaq krna
+        document.write(
+          "Template String provides an easy way to interpolate (izafa karna ya dalna ) variables and expressions into strings. The method is called string interpolation. It's Syntax is below.",
+          "<br>"
+        );
+        document.write("${...}", "<br>");
+
+        document.write("<b> Variable Substitutions </b>", "<br>");
+
+        document.write("Template Strings allow variables in strings:", "<br>");
+        let firstName = "Khalid";
+        let lastName = "Usman";
+        let fullName = `Welcome ${firstName}, ${lastName}!  `;
+        document.write(fullName + "<br>");
+
+        document.write(
+          "<b> Note that </b> Automatic replacing of variables with real values is called string interpolation.", // replaces the placeholders with the values
+          "<br>"
+        );
+
+        document.write(" <b> Expression Substitution </b>", "<br>");
+        document.write(" Template Strings allow expressions in strings: ", "<br>");
+        let price1 = 10;
+        let price2 = 25;
+        let total = ` The total prices are ${price1 + price2}`;
+        document.write(total + "<br>");
+        document.write(
+          "<b> Note that </b> Automatic replacing of expressions with real values is called string interpolation."
+        );
+
+        // let text= "He is a good boy and gentle man"
+        // document.write(text + "He can \"stay\" here for long time.", "<br>");
+
+        // document.write(text + " He may \'stay' with us");
+
+        document.write("<h2> HTML Templates OR </h2>");
+
+        let header = " Template Strings ";
+        let html = `<h2>${header}</h2>`;
+        document.write(html);
+
+        let tags = ["HTML", "CSS", "javascript", "ES6"];
+        for (let x of tags) {
+          document.write(`<li> ${x} </li>`);
+        }
+      </script>
+
+      <!-- length to uppercase&lowercase includes the startswith&endswith to search indexof for replace and trim , split , concat and repeat the charat 
+ the slice valueof tostring, substr match charcodeat -->
+    </div>
+  </body>
+</html>

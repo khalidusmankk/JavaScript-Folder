@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Nodes</title>
+  </head>
+
+  <body>
+    <h2>DOM Nodes</h2>
+    <h3>Creating new HTML elements (Nodes).</h3>
+    <p>Basically there are three methods in JS to creates anything.</p>
+    <ul>
+      <li>Create Element</li>
+      <li>Create TextNode</li>
+      <li>Create Comment</li>
+    </ul>
+    <p>
+      If I want to add any tag, add text or show comment in the page , I can use
+      the above methods.
+    </p>
+    <p>
+      To add a new element to the HTML DOM, you must create the element (element
+      node) first, and then append it to an existing element.
+    </p>
+    <p>I want to add new paragraph to the below paragraphs in the div.</p>
+    <p>
+      The problem here is that all the added elements are added at the end. Now
+      if I want to add a paragraph at any other place, <br />
+      I will use "insertBefore" method. I want to add a heading at the start of
+      that div.
+    </p>
+
+    <div id="div1">
+      <p>This is a paragraph.</p>
+      <p>This is also a paragraph.</p>
+    </div>
+
+    <script>
+      let a = document.createElement("h1");
+      console.log(a);
+
+      let b = document.createTextNode("It's a textnode in js.");
+      console.log(b);
+
+      let c = document.createComment("It's a comment.");
+      console.log(c);
+
+      const para = document.createElement("p");
+      const node = document.createTextNode("This is new paragraph.");
+      para.appendChild(node);
+      const element = document.getElementById("div1");
+      element.appendChild(para);
+
+      let x = document.createElement("h2");
+      let y = document.createTextNode("Inserting Before.");
+      x.appendChild(y);
+      let z = document.getElementById("div1");
+      z.appendChild(x);
+      z.insertBefore(x, z.childNodes[0]); //x in braces here means that  x.appendChild(y); to be inserted at number 0 .
+    </script>
+  </body>
+</html>

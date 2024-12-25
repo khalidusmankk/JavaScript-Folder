@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+
+  <body>
+    <h2>What is JSON?</h2>
+    <ul>
+      <li>JSON stands for JavaScript Object Notation</li>
+      <li>JSON is a lightweight data-interchange format</li>
+      <li>JSON is plain text written in JavaScript object notation</li>
+      <li>JSON is used to send data between computers</li>
+      <li>JSON is language independent *</li>
+      <li>
+        The JSON syntax is derived from JavaScript object notation, but the JSON
+        format is text only.
+      </li>
+      <li>
+        Code for reading and generating JSON exists in many programming
+        languages.
+      </li>
+    </ul>
+
+    <h3>JSON String</h3>
+    <h4>Converting JSON strings into JavaScript objects</h4>
+    <p>
+      JavaScript has a built in function for converting JSON strings into
+      JavaScript objects. JSON.parse()
+    </p>
+
+    <p>
+      JavaScript also has a built in function for converting an object into a
+      JSON string. JSON.stringify()
+    </p>
+
+    <h4>Storing Data</h4>
+    <p>
+      When storing data, the data has to be a certain format, and regardless of
+      where you choose to store it, text is always one of the legal formats.
+      JSON makes it possible to store <b> JavaScript objects </b> as text.
+    </p>
+
+    <script>
+      let jsonString =
+        '{"obj":{ "Name":"Khalid","Age":30, "Language": "JavaScript" }}';
+      let parsedString = JSON.parse(jsonString); // Converts JSON string into an object
+
+      document.write(
+        " If you parse the above JSON string with a JavaScript program, you can access the data as an object , as below .",
+        "<br>"
+      );
+
+      let objName = parsedString.obj.Name;
+      let objAge = parsedString.obj.Age;
+      let objLang = parsedString.obj.Language;
+      document.write(objName, "<br>");
+      document.write(objAge, "<br>");
+      document.write(objLang, "<br>");
+
+      document.write(
+        " The following JSON example  define an employees object, with an array of 3 employees. ",
+        "<br>"
+      );
+
+      let empArray = `{
+  "employees": [
+    { "firstName": "John", "lastName": "Doe" },
+    { "firstName": "Anna", "lastName": "Smith" },
+    { "firstName": "Peter", "lastName": "Jones" }
+  ]
+}`;
+
+      let parseArr = JSON.parse(empArray); // Parse the JSON string into an object
+
+      // Accessing the last name of the first employee (index 0)
+      let ab = parseArr.employees[0].firstName;
+      let bc = parseArr.employees[1].lastName;
+
+      document.write(ab);
+      document.write(bc);
+    </script>
+
+    <h3>MIME type for JSON text</h3>
+    <p>The MIME type for JSON text is "application/json"</p>
+    <p>
+      MIME (Multipurpose Internet Mail Extensions) is a standard used to specify
+      the type of content being transmitted on the internet. When it comes to
+      JSON (JavaScript Object Notation), the MIME type helps the server and
+      client understand that the data being sent is in JSON format.
+    </p>
+
+    <h3>JSON Data Types</h3>
+    <p>In JSON, values must be one of the following data types</p>
+    <ul>
+      <li>array</li>
+      <li>boolean</li>
+      <li>number</li>
+      <li>null</li>
+      <li>object (JSON object)</li>
+      <li>string</li>
+    </ul>
+
+    <h3>JSON Arrays</h3>
+    <p>Values in JSON can be arrays.</p>
+
+    { "employees" : [ " Khalid " , " Usman " , " Inayat "] }
+
+    <h3>JSON Booleans</h3>
+    <p>Values in JSON can be true/false.</p>
+
+    { " sale " : true }
+
+    <h3>JSON Numbers</h3>
+    <p>Numbers in JSON must be an integer or a floating point.</p>
+
+    { " Number " : 30 }
+
+    <h3>JSON null</h3>
+    <p>Values in JSON can be null.</p>
+
+    { "lastName" : null }
+
+    <h3>JSON Objects</h3>
+    <p>Values in JSON can be objects.</p>
+
+    { "Principal" : { "fName" : "Rahamt" , "lName" : "Jalil", "Age" : 30} }
+
+    <h3>JSON Strings</h3>
+    <p>Strings in JSON must be written in double quotes.</p>
+
+    { "Name" : "Khalid" }
+
+    <h2>JSON.parse()</h2>
+    <ul>
+      <li>A common use of JSON is to exchange data to/from a web server.</li>
+      <li>
+        When receiving data from a web server, the data is always a string.
+      </li>
+      <li>
+        Parse the data with JSON.parse(), and the data becomes a JavaScript
+        object.
+      </li>
+    </ul>
+
+    <h3>Example - Parsing JSON</h3>
+    <p>Imagine we received this text from a web server</p>
+    '{"name":"John", "age":30, "city":"New York"}'
+
+    <p>
+      Use the JavaScript function JSON.parse() to convert text into a JavaScript
+      object
+    </p>
+
+    <!-- <script>
+    const obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
+   </script> -->
+
+    <h2>Creating an Object from a JSON String</h2>
+
+    <p id="demo"></p>
+
+    <script>
+      const txt = '{"name":"John", "age":30, "city":"New York"}';
+      const obj = JSON.parse(txt);
+      document.getElementById("demo").innerHTML = obj.name + " , " + obj.age;
+    </script>
+
+    <p id="objName"></p>
+    <script>
+      let person = `{ "fName": "Khalid", "lName": "Usman" , "age":36 }`;
+      const obj2 = JSON.parse(person);
+      document.getElementById("objName").innerHTML =
+        obj2.lName + " , " + obj2.age;
+    </script>
+
+    <h2>Parsing a JSON Array.</h2>
+    <p>Data written as an JSON array will be parsed into a JavaScript array.</p>
+    <p id="jArray"></p>
+
+    <script>
+      const cars = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+      const parseCars = JSON.parse(cars);
+      document.getElementById("jArray").innerHTML = parseCars[0];
+    </script>
+
+    <h2>Exceptions</h2>
+
+    <h4>Parsing Dates</h4>
+    <ul>
+      <li>Date objects are not allowed in JSON.</li>
+      <li>If you need to include a date, write it as a string.</li>
+      <li>You can convert it back into a date object later</li>
+    </ul>
+
+    <h2>Convert a string into a date object.</h2>
+    <!-- <p id="demo"></p>
+
+<script>
+const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+const obj = JSON.parse(text);
+obj.birth = new Date(obj.birth);
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth; 
+</script> -->
+
+    <h2>Parsing Functions</h2>
+    <ul>
+      <li>Functions are not allowed in JSON.</li>
+      <li>If you need to include a function, write it as a string.</li>
+      <li>You can convert it back into a function later</li>
+    </ul>
+
+    <h2>Convert a string into a function.</h2>
+    <!-- <p id="demo"></p>
+
+<script>
+const text = '{"name":"John", "age":"function() {return 30;}", "city":"New York"}';
+const obj = JSON.parse(text);
+obj.age = eval("(" + obj.age + ")");
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age(); 
+</script> -->
+
+    <h1>Avoid Using Functions In JSON</h1>
+    <p
+      style="
+        background-color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      "
+    >
+      You should avoid using functions in JSON, the functions will lose their
+      scope, and you would have to use eval() to convert them back into
+      functions.
+    </p>
+
+    <h2>JSON.stringify()</h2>
+    <p>
+      A common use of JSON is to exchange data to/from a web server. When
+      sending data to a web server, the data has to be a string. Convert a
+      JavaScript object into a string with JSON.stringify().
+    </p>
+
+    <h3>Stringify a JavaScript Object</h3>
+    <p>Imagine we have this object in JavaScript:</p>
+
+    <script>
+      const personOne = { name: "John", age: 30, city: "New York" };
+
+      document.write(
+        "Use the JavaScript function JSON.stringify() to convert it into a string." +
+          "<br>"
+      );
+
+      const myJSON = JSON.stringify(personOne);
+      document.write(myJSON + "<br>");
+
+      document.write(
+        " It's result is a string following the JSON notation. " + "<br>"
+      );
+      document.write(
+        " myJSON is now a string, and ready to be sent to a server" + "<br>"
+      );
+    </script>
+
+    <h3>Stringify a JavaScript Array</h3>
+    <p>It is also possible to stringify JavaScript arrays</p>
+    <p>Imagine we have this array in JavaScript</p>
+
+    <script>
+      const arr = ["John", "Peter", "Sally", "Jane"];
+      const arrayJSON = JSON.stringify(arr);
+      document.write(arrayJSON + "<br>");
+      document.write(
+        "The result is a string following the JSON notation." + "<br>"
+      );
+    </script>
+
+    <h2>Exceptions</h2>
+    <h3>Stringify Dates</h3>
+    <p>
+      In JSON, date objects are not allowed. The JSON.stringify() function will
+      convert any dates into strings.
+    </p>
+
+    <h2>JSON.stringify() converts date objects into strings.</h2>
+
+    <script>
+      const dateObj = { name: "John", today: new Date(), city: "New York" };
+      const dateJSON = JSON.stringify(dateObj);
+      document.write(dateJSON + "<br>");
+      document.write(
+        " We can convert the string back into a date object at the receiver" +
+          "<br>"
+      );
+    </script>
+
+    <h3>Stringify Functions</h3>
+    <p>In JSON, functions are not allowed as object values.</p>
+    <p>
+      The JSON.stringify() function will remove any functions from a JavaScript
+      object, both the key and the value
+    </p>
+
+    <h2>JSON.stringify() will remove any functions from an object.</h2>
+
+    <script>
+      const objFun = {
+        name: "John",
+        age: function () {
+          return 30;
+        },
+        city: "New York",
+      };
+      const functionJSON = JSON.stringify(objFun);
+      document.write(functionJSON + "<br>");
+
+      document.write(
+        " This can be omitted if you convert your functions into strings before running the JSON.stringify() function. " +
+          "<br>"
+      );
+    </script>
+    <p
+      style="
+        background-color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      "
+    >
+      If you send functions using JSON, the functions will lose their scope, and
+      the receiver would have to use eval() to convert them back into functions.
+    </p>
+
+    <h1>JSON Object Literals</h1>
+    <p>this is a JSON string</p>
+
+    ` { "Name" : "Khalid", "age" : 40, "car" : null}`
+
+    <p>Inside the JSON string there is a JSON object literal</p>
+    { "Name" : "Khalid", "age" : 40, "car" : null}
+
+    <p>
+      It is a common mistake to call a JSON object literal "a JSON object". JSON
+      cannot be an object. JSON is a string format. The data is only JSON when
+      it is in a string format. When it is converted to a JavaScript variable,
+      it becomes a JavaScript object.
+    </p>
+
+    <p>
+      You can create a JavaScript object from a JSON object literal , as below
+    </p>
+
+    <script>
+      const javaObj = { name: "John", age: 30, car: null };
+
+      document.write(javaObj.age);
+    </script>
+
+    <h3>Accessing Object Values</h3>
+    <p>
+      You can access object values by using dot (.) notation , as above
+      <b> OR </b> by using bracket ([]) notation , as below
+    </p>
+    javaObj["name"]
+
+    <h2>Access a JavaScript Object</h2>
+    <p id="demoDem"></p>
+
+    <script>
+      const myJSONObj = '{"name":"John", "age":30, "car":null}';
+      const myObj2 = JSON.parse(myJSONObj);
+      document.getElementById("demoDem").innerHTML = myObj2["name"];
+    </script>
+    <!-- Normally, you create a JavaScript object by parsing a JSON string:
+
+Example
+myJSON = '{"name":"John", "age":30, "car":null}';
+myObj = JSON.parse(myJSON); -->
+
+    <h2>Looping an Object using For-in Loop</h2>
+    <p>You can loop through object properties with a for-in loop.</p>
+
+    <script>
+      const loopString = ` { "Name" : "Usman" , "age" : 35 , "City" : "wana"}`;
+      const myLoopString = JSON.parse(loopString);
+      let empty = "";
+
+      for (let element in myLoopString) {
+        empty += element + " , ";
+      }
+      document.write(empty);
+    </script>
+    <p>
+      In a for-in loop, use the bracket notation to access the property values
+      as, empty = empty + myLoopString [element];
+    </p>
+
+    <h2>JSON Array Literals</h2>
+    <p>This is a JSON string: '["Ford", "BMW", "Fiat"]'</p>
+
+    <p>
+      Inside the JSON string there is a JSON array literal: ["Ford", "BMW",
+      "Fiat"]
+    </p>
+
+    <p>Arrays in JSON are almost the same as arrays in JavaScript.</p>
+
+    <p>
+      You can create a JavaScript array from a literal: const myArray = ["Ford",
+      "BMW", "Fiat"];
+    </p>
+
+    <p>
+      You can create a JavaScript array by parsing a JSON string: myJSON =
+      '["Ford", "BMW", "Fiat"]'; myArray = JSON.parse(myJSON);
+    </p>
+
+    <h2>Accessing Array Values</h2>
+    <p>You access array values by index: myArray[0];</p>
+
+    <h3>Looping Through an Array</h3>
+    <p>You can access array values by using a <b> for in loop </b> .</p>
+  </body>
+</html>

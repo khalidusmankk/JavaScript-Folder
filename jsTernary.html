@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ternary Operator</title>
+  </head>
+  <body>
+    <script>
+      document.write("<b> Ternary Operator </b>", "<br>");
+      document.write("Normally we write a code as below", "<br>");
+
+      let number = 60;
+      let result;
+      if (number >= 40) {
+        result = "You are pass";
+      } else {
+        result = "You are fail";
+      }
+      document.write(result, "<br>");
+
+      document.write("Ternary Operator makes it simple and short", "<br>");
+      document.write("Ternary operator have 3 parts, as follows", "<br>");
+      document.write("<b> Syntax </b> = condition ? true : false", "<br>");
+
+      let score = 10;
+      let win;
+      win = score >= 20 ? "They won" : "We won";
+      document.write(win, "<br>");
+
+      document.write(" Normal nested conditions are below", "<br>");
+
+      let girls = 11;
+      let parents;
+      if (girls >= 20) {
+        parents = "They are enough";
+      } else if (girls > 10 && girls < 20) {
+        parents = "They are few";
+      } else {
+        ("we have no girl");
+      }
+      document.write(parents, "<br>");
+
+      document.write("Ternary operator also works in nested condition, as follows", "<br>");
+
+      let boys = 13;
+      let parnts;
+      parnts = boys <= 10 ? "They are few" : boys >= 11 && boys < 30 ? "They are enough" : "They are too much";
+      document.write(parnts, "<br>");
+    </script>
+  </body>
+</html>

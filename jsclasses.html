@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+  </head>
+
+  <body>
+    <script>
+      document.write(
+        " For example: If I receive any form for addmission or any air ticket, <br>\
+                  this empty form with basic data is called class, but when i fill this form and submit, <br>\
+                  this filled form now includes my informations and its now called an object. <br>\
+                  This form or ticket may be used by many people,but the template of the form or ticket is same for everyone.",
+        "<br>"
+      );
+      document.write(
+        " A JavaScript class is not an object. JavaScript Classes are <b> templates </b> for JavaScript Objects. ",
+        "<br>"
+      );
+      document.write(
+        " 2 students are applying and need 2 forms. <br>\
+                  We write <b> new </b> before every class name as everyone is new student or person.",
+        "<br>"
+      );
+
+      class AddmissionForm {
+        submit() {
+          document.write("form submitted ", "<br>");
+        }
+
+        cancel() {
+          document.write("form cancelled");
+        }
+      }
+
+      let khalid = new AddmissionForm();
+      let inayat = new AddmissionForm();
+
+      khalid.submit();
+      inayat.submit();
+      khalid.cancel();
+      document.write("<br>", "<br>");
+
+      document.write(
+        " Use of Constructor . <br>\
+                      If I forgot or I don't want to fill the form now , <br>\
+                      later i can edit or fill the form with the help of 'constructor'. <br>\
+                      If nothing is shown, the string in the constructor will must be shown.",
+        "<br>"
+      );
+
+      document.write(
+        " <b> Constructor Method </b>  is executed automatically when a new object is created<br>\
+                                   It is used to initialize object properties<br>\
+                                   If you do not define a constructor method, JavaScript will add an empty constructor method.",
+        "<br>"
+      );
+
+      class AddmissionForm2 {
+        constructor() {
+          document.write(" Fill in your form . ", "<br>");
+        }
+
+        submit() {
+          document.write(" Your form is submitted.", "<br>");
+        }
+
+        cancel() {
+          document.write(" Your form is cancelled.", "<br>");
+        }
+      }
+
+      let Kamran = new AddmissionForm2();
+      let Ihsan = new AddmissionForm2();
+
+      Kamran.submit();
+      Kamran.cancel();
+      Ihsan.cancel();
+
+      document.write("<br>", "<br>");
+      document.write(" <h2> Breakdown of the code </h2>");
+      document.write(
+        " constructor() is automatically executed whenever a new object is created using the class (with the new keyword). <br>\
+                        Since you create two objects (Kamran and Ihsan), the constructor is called twice, printing Fill in your form each time.",
+        "<br>"
+      );
+
+      document.write(" <h1> Solution : </h1> ");
+      document.write(
+        " Print it outside the constructor if it's supposed to be a general message and Ensure the constructor only contains logic specific to each instance, as below",
+        "<br>"
+      );
+
+      class AddmissionForm3 {
+        constructor() {}
+        submit() {
+          document.write(" Your form is submitted.", "<br>");
+        }
+
+        cancel() {
+          document.write(" Your form is cancelled.", "<br>");
+        }
+      }
+
+      document.write(" Fill in your form and wait for your turn. ", "<br>");
+
+      let KamranOne = new AddmissionForm3();
+      let IhsanOne = new AddmissionForm3();
+
+      KamranOne.submit();
+      KamranOne.cancel();
+      IhsanOne.cancel();
+
+      document.write("<br>", "<br>");
+
+      document.write(
+        "Another way of printing the message in the constructor method only one time is as follow ",
+        "<br>"
+      );
+
+      class AddmissionForm4 {
+        constructor(name) {
+          this.a = name; // Each form is associated with a person
+        }
+
+        accept() {
+          document.write(this.a + "'s form is accepted.", "<br>");
+        }
+
+        reject() {
+          document.write(this.a + "'s form is  rejected.", "<br>");
+        }
+      }
+
+      document.write(
+        "Fill in your form for the addmission in this college ",
+        "<br>"
+      ); // Printed only once
+
+      let jhon = new AddmissionForm4(" Jhon ");
+      let Doe = new AddmissionForm4(" Doe ");
+
+      jhon.accept();
+      Doe.reject();
+
+      document.write("<br>", "<br>");
+
+      document.write(" <b> Use of class 'Inheritance </b>.' ", "<br>");
+
+      document.write(
+        " To create a class inheritance, use the 'extends' keyword.<br>\
+                          A class created with a class inheritance inherits all the methods and properties from another class: i.e <br>\
+                          class monkey have all the properties of class animals and also have some additional properties.",
+        "<br>"
+      );
+
+      class Animal {
+        constructor(name, color) {
+          this.x = name; // Use `this` to refer to the instance properties
+          this.y = color;
+        }
+
+        // Define the methods inside the class
+        run() {
+          document.write(this.x + " is running. <br>"); // Use `this` to access the instance's properties
+        }
+
+        shout() {
+          document.write(this.x + " is playing with " + this.y + "." + "<br>");
+        }
+
+        drink() {
+          document.write(this.x + " is drinking water. <br>");
+        }
+      }
+
+      // Create an instance of the Animal class
+      const tiger = new Animal("Monkey", "Orange");
+
+      // Call the methods on the instance
+      tiger.run();
+      tiger.shout();
+      tiger.drink();
+
+      document.write("<hr>");
+
+      document.write("<h2> JavaScript Class Syntax </h2> ");
+      document.write(
+        " Use the keyword  'class'  to create a class. Then this keyword is followed by the name of the class. <br>\
+                                                        Always add a method named constructor():",
+        "<br>"
+      );
+
+      class Car {
+        constructor(a, b) {
+          this.name = a; // `this` refers to the specific instance being created , not yet created and i will create below.
+          this.year = b;
+        }
+      }
+
+      document.write(
+        "The example above creates a class named Car. The class has two initial properties: name and year.",
+        "<br>"
+      );
+      document.write(
+        "<b> Note that </b> In the context of the class Car and its constructor method, the keyword <b> this </b> refers to the instance of the class (also called an object) that is being created, not the class itself or the constructor method.",
+        "<br>"
+      );
+      document.write("<b> Explanation </b>");
+      document.write(
+        " <b> this </b> inside the constructor method is used to assign values to properties of the newly created instance of the Car class.",
+        "<br>"
+      );
+      document.write(
+        " Every time you create a new Car object using new Car(...), this will refer to that particular instance, allowing you to set or access the object's properties like name and year.",
+        "<br>"
+      );
+
+      document.write("<h2> Using a Class </h2>");
+      document.write(
+        "When you have a class, you can use the class to create objects:",
+        "<br>"
+      );
+
+      const myCar1 = new Car("Ford", 2014); // `this` refers to `myCar1` object
+      const myCar2 = new Car("Audi", 2019); // `this` refers to `myCar2` object here
+
+      document.write(myCar1.name + " , " + myCar2.name, "<br>");
+
+      document.write(" <b> Key points: </b> ");
+      document.write(
+        " <b> this inside the constructor refers to the individual object </b>  that is being created. ",
+        "<br>"
+      );
+      document.write(
+        " <b> It doesn't refer to the class or constructor method </b>, but the actual object that is instantiated (like myCar or anotherCar in the example). ",
+        "<br>"
+      );
+
+      document.write(
+        " The example above uses the <b> Car class </b> to create two <b> Car objects </b>.",
+        "<br>"
+      );
+      document.write(
+        " The constructor method is called automatically when a new object is created.",
+        "<br>"
+      );
+      document.write(
+        " The constructor method is used to initialize object properties ",
+        "<br>"
+      );
+
+      document.write(" <h2> Class Methods </h2>");
+      document.write(
+        " Class methods are created with the same syntax as object methods.",
+        "<br>"
+      );
+      document.write(" Use the keyword class to create a class. ", "<br>");
+      document.write(" Always add a constructor() method. ", "<br>");
+      document.write(" Then add any number of methods. ", "<br>");
+
+      // Syntax
+
+      // class ClassName {
+      //   constructor() { ... }
+      //   method_1() { ... }
+      //   method_2() { ... }
+      //   method_3() { ... }
+      // }
+
+      // Create a Class method named "age", that returns the Car age:
+
+      class Car2 {
+        constructor(name, year) {
+          this.name = name;
+          this.year = year;
+        }
+
+        age() {
+          const date = new Date(); // get current date
+          return date.getFullYear() - this.year; // subtract object's year from current year
+        }
+      }
+
+      let myCar = new Car2("Toyota", 2010);
+      document.write(myCar.name + " is " + myCar.age() + " years old ");
+
+      document.write(" <h2> JavaScript Class Inheritance </h2> ");
+      document.write(
+        "The concept of inheritance in JavaScript allows the child class to inherit the properties and methods of the parent class.",
+        "<br>"
+      );
+      document.write(
+        "To create a class inheritance, use the extends keyword. <br>\
+                                          A class created with a class inheritance inherits all the methods from another class: <br>\
+                              Example : Create a class named Model which will inherit the methods from the Car class: "
+      );
+
+      document.write(
+        " Use the 'extends' keyword to inherit all methods from another class",
+        "<br>"
+      );
+      document.write(
+        "Use the 'super method' to call the parent's constructor function.",
+        "<br>"
+      );
+
+      class Person {
+        constructor(a, b, c) {
+          this.name = a;
+          this.age = b;
+          this.gradeLevel = c;
+        }
+      }
+
+      class Student extends Person {
+        constructor(a, b, c, d) {
+          super(a, b, c); // Pass required arguments to the `Person` constructor
+          this.grade = d; // Initialize `grade` in the `Student` class
+        }
+
+        showMe() {
+          return "His name is " + this.name + ", His grade is " + this.grade;
+        }
+      }
+
+      // Create an instance of `Student`
+      const student = new Student("Khalid Usman", 18, "12th", "A");
+
+      // Use the `showMe` method
+      document.write(student.showMe(), "<br>");
+
+      class Car3 {
+        constructor(brand) {
+          this.carname = brand;
+        }
+
+        present() {
+          return "I have a " + this.carname;
+        }
+      }
+
+      class Model extends Car3 {
+        constructor(brand, mod) {
+          super(brand);
+          this.model = mod;
+        }
+        show() {
+          return this.present() + ", it is a " + this.model;
+        }
+      }
+
+      const myCars = new Model("Ford", "Mustang");
+
+      document.write(myCars.show(), "<br>", "<br>");
+
+      document.write(
+        " The super() method refers to the parent class. <br>\
+                            By calling the super() method in the constructor method, we call the 'parent's' constructor method and gets access to the parent's properties and methods. <br>\
+                            Inheritance is useful for code reusability: reuse properties and methods of an existing class 'when' you create a new class.",
+        "<br>"
+      );
+
+      document.write(
+        " Classes also allows you to use <b> getters and setters </b>. ",
+        "<br>"
+      );
+
+      document.write("<h3> Hoisting </h3>");
+      document.write(
+        "Unlike functions, and other JavaScript declarations, class declarations are not hoisted. <br>\
+                            That means that you must declare a class before you can use it:"
+      );
+
+      //Example
+      //You cannot use the class yet.
+      //myCar = new Car("Ford") will raise an error.
+
+      /* class Car {
+                              constructor(brand) {
+                                this.carname = brand;
+                              }
+                            } */
+
+      //Now you can use the class:
+      // const myCar = new Car("Ford")
+
+      document.write("<hr>");
+
+      document.write("<h3> JavaScript Static Methods </h3>");
+      document.write(
+        "<p> Static class methods are defined on the class itself. <br>\
+                                    You cannot call a static method on an object, only on an object class. </P> "
+      );
+
+      document.write("<h1>JavaScript Class Static Methods</h1>");
+      document.write(
+        "<p>A static method is created with the static keyword, and you can only call the method on the class itself.</p>"
+      );
+
+      class lastCar {
+        constructor(name) {
+          this.name = name;
+        }
+        static hello() {
+          return "Hello!!";
+        }
+      }
+
+      const myLastCar = new Car("Ford");
+
+      //You can call 'hello()' on the Car Class:
+      document.write(lastCar.hello());
+
+      // But NOT on  a Car Object:
+      // document.write ( myLastCar.hello() );
+      // this will raise an error.
+
+      document.write(
+        " <p> If you want to use the myCar object inside the static method, you can send it as a parameter: </P> "
+      );
+
+      class latestCar {
+        constructor(name) {
+          this.name = name;
+        }
+        static hello(x) {
+          return "Hello " + x.name;
+        }
+      }
+
+      const helloMyCar = new Car("Ford");
+      document.write(latestCar.hello(helloMyCar), "<br>");
+
+      document.write(
+        "<b style = 'color: blue ; background-color: red; font-size : 30px'> Object Oriented Programming (OOP) </b>",
+        "<br>"
+      );
+      document.write(
+        " JavaScript is an Object Oriented Programming (OOP) language. A programming language can be called object-oriented if it provides four(4) basic capabilities to developers.",
+        "<br>"
+      );
+      document.write(
+        "<ol> <li> Encapsulation </li>  <li> Abstraction </li>  <li> Inheritance </li>  <li> Polymorphism </li></ol>"
+      );
+      document.write(
+        " <b style = 'color: blue ; background-color : gray'> Encapsulation </b>",
+        "<br>"
+      );
+      document.write(
+        "The capability to store related information, whether data or methods, together in an object. Encapsulation in JavaScript is a way to keep the related properties and methods under a single namespace by bundling them.It can be a function, a class or an object. In JavaScript, the encapsulation can be implemented using closures, classes and getters and setters. ",
+        "<br>"
+      );
+      document.write(
+        "It is used to hide the data from the outside world and give access to required data only to improve the integrity and security of the data.",
+        "<br>"
+      );
+
+      class BankAccount {
+        constructor(accountHolder, accountNumber, initialBalance) {
+          this.accountHolder = accountHolder; // Data: Name
+          this.accountNumber = accountNumber; // Data: Account Number
+          this._balance = initialBalance; // Data: Account Balance (protected with '_')
+        }
+
+        // Method: Deposit Money
+        deposit(amount) {
+          if (amount > 0) {
+            this._balance = this._balance + amount; //The _balance property is prefixed with _, signaling that it is intended to be accessed only via the provided methods (a convention in JavaScript).
+            document.write(
+              `${amount} deposited. ${"<br>"} New balance is ${
+                this._balance
+              }${"<br>"}`
+            );
+          } else {
+            document.write("Deposit amount must be greater than zero.");
+          }
+        }
+
+        // Method: Withdraw Money
+        withdraw(amount) {
+          if (amount > 0 && amount <= this._balance) {
+            this._balance = this._balance - amount;
+            document.write(
+              `${amount} withdrawn.${"<br>"} Remaining balance is ${
+                this._balance
+              }${"<br>"}`
+            );
+          } else {
+            document.write("Insufficient balance or invalid amount.");
+          }
+        }
+
+        // Method: Get Account Balance
+        getBalance() {
+          return `The current balance is ${this._balance} ${"<br>"}`;
+        }
+      }
+
+      // Create an instance of BankAccount
+      const myAccount = new BankAccount("John Doe", "123456789", 1000);
+
+      // Use encapsulated methods to interact with the object
+      myAccount.deposit(500); // Output: 500 deposited. New balance is 1500
+      myAccount.withdraw(300); // Output: 300 withdrawn. Remaining balance is 1200
+      document.write(myAccount.getBalance(), "<br>", "<br>"); // Output: The current balance is 1200
+
+      // <!-- Real-World Comparison
+      // Think of a bank ATM:
+
+      // The screen and buttons are the methods that let you interact with the account (deposit, withdraw, check balance).
+      // The internal system (balance, account details) is hidden (protected) from you and can only be accessed through the provided interface (methods).
+      // This makes the system secure and ensures proper usage.
+      // Encapsulation in programming works in the same way: it provides a controlled way to interact with the data while protecting it from unauthorized access or unintended changes. -->
+
+      // One more example of encapsulation
+
+      class CarToyota {
+        #brand = "TATA"; // Private field .... To define the private class variables, you can write a variable name followed by the ‘#’ sign
+        #name = "Nexon"; // Private field
+        #milage = 16; // Private field
+
+        getMilage() {
+          return this.#milage; // Accessing private field
+        }
+        //The getMilage() method is defined to return the milage of the car, and the setMilage() method is used to set the milage of the method.
+        setMilage(milage) {
+          this.#milage = milage; // Modifying private field
+        }
+      }
+
+      let carobj = new CarToyota(); //We created the car class's object and used the method to access and modify the private fields. If you try to access the private field of the class, the code will throw an error.
+      document.write(
+        "Before  the car mileage was " + carobj.getMilage(),
+        "<br>"
+      );
+      carobj.setMilage(20);
+      document.write(
+        "After updating the car mileage is " + carobj.getMilage(),
+        "<br>"
+      );
+      // carobj.#milage);  will throw an error.
+
+      document.write(
+        " <b style = 'color: blue ; background-color : gray'> Inheritance </b>",
+        "<br>"
+      );
+      document.write(
+        "The concept of inheritance in JavaScript allows the child class to inherit the properties and methods of the parent class.",
+        "<br>"
+      );
+      document.write(
+        "To create a class inheritance, use the extends keyword. <br>\
+                    A class created with a class inheritance inherits all the methods from another class: <br>\
+        Example : Create a class named Model which will inherit the methods from the Car class: "
+      );
+      document.write(
+        " Use the 'extends' keyword to inherit all methods from another class",
+        "<br>"
+      );
+      document.write(
+        "Use the 'super method' to call the parent's constructor function.",
+        "<br>"
+      );
+
+      class PersonOne {
+        constructor(a, b, c) {
+          this.name = a;
+          this.age = b;
+          this.gradeLevel = c;
+        }
+      }
+
+      class StudentMe extends PersonOne {
+        constructor(a, b, c, d) {
+          super(a, b, c); // Pass required arguments to the `Person` constructor
+          this.grade = d; // Initialize `grade` in the `Student` class
+        }
+
+        showMe() {
+          return "His name is " + this.name + ", His grade is " + this.grade;
+        }
+      }
+
+      // Create an instance of `Student`
+      const studentMe = new Student("Khalid Usman", 18, "12th", "A");
+
+      // Use the `showMe` method
+      document.write(studentMe.showMe(), "<br>");
+
+      document.write(
+        " <b style = 'color: blue ; background-color : gray'> Abstraction </b>",
+        "<br>"
+      );
+      document.write(
+        " The abstraction concept allows us to hide the implementation details and expose only the essential features to the users.",
+        "<br>"
+      );
+
+      class ExchangeAccount {
+        // Private fields to hide internal details
+        #balance;
+
+        constructor(accountHolder, initialBalance) {
+          this.accountHolder = accountHolder;
+          this.#balance = initialBalance; // Private balance
+        }
+
+        // Public method to check balance
+        getBalance() {
+          return `The balance for ${this.accountHolder} is $ ${
+            this.#balance
+          } ${"<br>"}`;
+        }
+
+        // Public method to deposit money
+        deposit(amount) {
+          if (amount <= 0) {
+            return "Deposit amount must be greater than zero.";
+          }
+          this.#balance = this.#balance + amount;
+          return `Successfully deposited $ ${amount}.${"<br>"} ${this.getBalance()} ${"<br>"}`;
+        }
+
+        // Public method to withdraw money
+        withdraw(amount) {
+          if (amount > this.#balance) {
+            return `Insufficient funds. ${"<br>"}`;
+          }
+          this.#balance = this.#balance - amount;
+          return `Successfully withdrew $${amount}. ${this.getBalance()} ${"<br>"}`;
+        }
+      }
+
+      // Creating a bank account
+      const yourAccount = new ExchangeAccount(" Khalid Usman", 500);
+
+      document.write(yourAccount.getBalance()); // Public interface to view balance
+      document.write(yourAccount.deposit(200)); // Deposit money
+      document.write(yourAccount.withdraw(100)); // Withdraw money
+      document.write(yourAccount.withdraw(700)); // Attempt to withdraw more than balance
+
+      // Attempting to directly access private field (will throw an error)
+      // document.write(yourAccount.#balance); // Uncaught SyntaxError: Private field '#balance' must be declared in an enclosing class
+
+      document.write(
+        " <b style = 'color: blue ; background-color : gray'> Polymorphism </b>",
+        "<br>"
+      );
+      document.write(
+        "The polymorphism in JavaScript allows you to define multiple methods with the same name and different functionalities. Polymorphism is achieved by using method overloading and overriding.",
+        "<br>"
+      );
+      document.write(
+        "It means 'many forms'. It allows objects, functions, or methods to behave differently based on their context or the type of data they are working with.",
+        "<br>"
+      );
+
+      class Shape {
+        area(a, b) {
+          return "The area of each Geometry is different! <br>";
+        }
+      }
+
+      class Circle extends Shape {
+        area(r) {
+          // Overriding the method of the Shape class
+          return "The area of Circle is " + 3.14 * r * r + "<br>";
+        }
+      }
+
+      class Rectangle extends Shape {
+        area(l, b) {
+          // Overriding the method of the Shape class
+          return "The area of Rectangle is " + l * b + "<br>";
+        }
+      }
+
+      const circle = new Circle();
+      // Calling area() method of Circle class
+      document.write(circle.area(5));
+
+      const rectangle = new Rectangle();
+      // Calling area() method of Rectangle class
+      document.write(rectangle.area(5, 10));
+
+      // Another example of polymorphism
+
+      class AnimalOne {
+        sound() {
+          return "Some generic animal sound";
+        }
+      }
+
+      class Dog extends Animal {
+        sound() {
+          return "Bark!";
+        }
+      }
+
+      class Cat extends Animal {
+        sound() {
+          return "Meow!";
+        }
+      }
+
+      const animals = [new AnimalOne(), new Dog(), new Cat()];
+      animals.forEach((animal) => console.log(animal.sound()));
+      // Output:
+      // Some generic animal sound
+      // Bark!
+      // Meow!
+    </script>
+  </body>
+</html>

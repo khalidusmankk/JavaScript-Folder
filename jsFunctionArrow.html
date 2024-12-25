@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+  </head>
+
+  <body>
+    <h2>JavaScript Arrow Function</h2>
+    <p>Arrow functions allow us to write shorter function syntax:</p>
+
+    <h3>Function Before arrow</h3>
+
+    <script>
+      function myHello() {
+        // Some code here
+      }
+      //myHello()
+
+      // OR
+
+      var hell0 = function () {
+        return "Hello & Welcome!";
+      };
+      document.write(hell0(), "<br>", "<br>");
+
+      document.write("Function with arrow function.", "<br>");
+      // This way is called explicit return
+      let helloo = () => {
+        return "This is an Arrow Function";
+      };
+      document.write(helloo(), "<br>", "<br>", "<br>");
+
+      document.write(
+        "It gets shorter! If the function has only one statement, and the statement returns a value,<br>\
+         you can remove the 'brackets' and the 'return' keyword: ( Check in coding)",
+        "<br>",
+        "<br>"
+      );
+
+      // this way is called implicit return
+      const helo = () => " Brackets and return are removed";
+      document.write(helo(), "<br>", "<br>");
+      // Note that if we use {}, we will have to use return keyword too.
+
+      //const addTwo = (n1, n2)=> n1 + n2
+      // const addTwo = (n1, n2)=> (n1 + n2 ) // using () , this way is better
+
+      const addTwo = (n1, n2) => ({ userName: "Khalid" }); // I can't return an object directly in curly braces, i will have to use brackets around it.
+
+      document.write(" Arrow function with value ", "<br>");
+      //In an arrow function, if you use curly braces {}, you need to explicitly use the return keyword to return a value.
+      let hel = (val) => " Hello Habibi:" + val;
+      document.write(hel("Are You OK!"), "<br>");
+
+      let hr = (writ) => writ + " Hi "; // "Hi" is the value of hr and "Hello" is for writ. hr="Hi"; writ="hello"
+      document.write(hr("Hello"), "<br>"); // To value ('Hello')is passed as a parameter and to accept this value , i need a variable (writ) inside a function.
+
+      const welcome = (name, age) => `Welcome Here! ${name} ${age}`;
+      document.write(welcome("Dear", 35));
+
+      document.write("<br>");
+
+      document.write("The below function has a single parameter, and thus i don't even need braces", "<br>");
+
+      let welcome2 = (name) => `welcome single parameter ${name}`;
+      document.write(welcome2(" Name is Khalid Usman"));
+    </script>
+    <h2>When Not To Use Arrow Function</h2>
+    <p>Don't use arrow functions in the following 4 cases</p>
+    <ul>
+      <li>Object methods</li>
+      <li>Prototypes</li>
+      <li>Constructors</li>
+      <li>Event handlers</li>
+    </ul>
+  </body>
+</html>

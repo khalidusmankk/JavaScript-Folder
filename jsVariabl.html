@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+
+
+
+
+<body>
+    
+    <h2> JavaScript Variables </h2>
+    <p> JavaScript variables are containers for storing data values. </p>
+    <p> In this example below, x, y, and z, are variables:</p>
+
+    <p> var x = 5; <br>
+        var y = 6;<br>
+        var z = x + y;  </p>
+         
+   
+    <p>From the example above, you can expect:</p>
+      
+    <p>
+        x stores the value 5 <br>
+        y stores the value 6 <br>
+        z stores the value 11
+    </p>
+
+    <p> We can also use the names or any other thing for declaring varibles. </p>
+     <p> For example.</p>
+     <p>
+       let price1 = 100; <br>
+       let price2 = 200; <br>
+       let total = price1 + price2;
+
+       <h4>JavaScript Identifiers</h4>
+       <p> All JavaScript <strong> variables </strong> must be <strong> identified </strong> with <strong> unique names</strong>. </p>
+       <p> These unique names are called <strong> identifiers </strong>.</p>
+       <p>Identifiers can be short names (like x and y), or more descriptive names (age, sum, totalVolume). </p>
+       <p>Names can contain letters, digits, underscores, and dollar signs.<br>
+        Names must begin with a letter.<br>
+        Names can also begin with $ and _ .<br> <!-- (but we will not use it in this tutorial)-->
+        Names are case sensitive (y and Y are different variables) <br>
+        Reserved words (like JavaScript keywords) cannot be used as names</p>
+
+     </p>
+    
+   <h3> var, let, const</h3>
+
+    <script>
+
+
+        
+
+
+
+        document.write("<b> Scope </b>Scope is the set of variables you have access to.<b> OR </b>In JavaScript, scope is the set of variables, objects, and functions you have access to.In JavaScript, objects and functions are also variables. ", "<br>")
+
+        document.write(" <b> Global Scope </b>" , "<br>")
+        document.write("Variables declared outside of any function and blocks are global and are said to have global scope. This means that you can access them from any part of the current JavaScript program.", "<br>")
+
+        document.write("We declare variables by using these 3 words, var , let & const." , "<br>")
+
+        document.write("<b> Block Scope </b>" , "<br>")
+        document.write("If we do not want a variable declared inside a block {} , to be accessed outside of the block, we need to declare them using 'let' or 'const' keywords. ", "<br>")
+        document.write("Variable declared with the 'var' keyword inside the block{} are acccessible outside of the block too. So, be careful.", "<br>")
+        document.write("Do not use 'var' keyword inside a block. Always use 'let' & const instead.", "<br>")
+        document.write("<b> #1: var </b>" , "<br>");
+        document.write("<b> Scopr of var </b>" , "<br>");
+        document.write("<b> Scope </b> essentially means where these variables are available for use.", "<br>");
+        document.write("<b> var </b> declarations are globally or fuction/lacally scoped." , "<br>")
+        document.write("The scope is global when a var variable is declared outside a function. This means that any variable that is declared with 'var' outside a function block is available for use in the whole window.", "<br>")
+        document.write("'var' is function/locally scoped when it is declared within a function.This means that it is available and can be accessed only within that function. ", "<br>")
+        document.write("E.g" , "<br>")
+
+        var greeter = "Hey higgggg";
+
+         function student (){
+           var hello = "hello sir";
+
+             greeter = "Hey hilllllll";
+            document.write(hello , "<br>");
+            let toot = 8;
+            
+        }
+        var greeter = "Hey hillllllloooo";
+        
+
+
+        document.write("Here, <b> greeter </b> is globally scoped bcz it exists outside a function while <b> hello </b> is function/locally scoped as it is declared inside a function. So we cannot access the variable <b> hello </b> outside a function. So if we do this", "<br>")
+
+        document.write(greeter , "<br>");
+        student();
+      
+       // console.log(hello); // The error is that ,'hello' is not defined bcz hello is decalred inside a function.
+
+       //whole story of scope
+       var d = 95;
+       let declaredb = 10;
+       const decalredc = 15;
+            if (true){
+                var a = 5;
+                let b = 6;
+                const c = 7;
+                console.log(d);
+                console.log(declaredb);
+                console.log(decalredc);
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                 }
+                 console.log(a);
+                 console.log(b);
+                 console.log(c);
+                 console.log(d);
+                 console.log(declaredb);
+                console.log(decalredc);
+        
+
+        document.write(" <b> Automatically Global Variable </b>" , "<br>")
+        document.write("If you assign a value to a variable that has not been declared, it will automatically become a <b> GLOBAL</b> variable, as follows. ", "<br>")
+        // code here can use carName
+
+        //  function myFunction() {
+        //    carName = "Volvo";
+
+       // code here can use carName
+   // }
+
+       document.write("<b> Redeclaration & Updating </b>" , "<br>")
+       document.write("Variables declared with 'var' key word can be redeclared and updated (Reassigned)." , "<br>")
+       document.write("This means that we can do this within the same scope and will not get an error.", "<br>")
+       document.write("E.g", "<br>")
+
+       var greet = "Salam bhai";
+       var greet = "Hello Sir, Good Morning"; // Redeclared
+
+       document.write(greet, "<br>");
+
+       document.write("And we can also do this." , "<br>")
+
+       var greett = "Hi Sir";
+           greett = "Salam Bhai Jan";
+       document.write(greett , "<br>");
+
+
+    
+       
+       document.write("<b> Hoisting of var. </b>"  , "<br>")
+       document.write("Hoisting is a JavaScript mechanism where variables and function declaration are moved to the top of their scope   before code execution." , "<br>")
+       document.write("<b> OR </b> We can say that 'Hoisting is a JavaScript's default behaviour of moving declaration to the top of the current scope.i.e to the top of the function, if defined in a function and to the top of global context, if defined outside a function.", "<br>")
+       document.write("In JavaScript, a variable can be used before it has been declare.", "<br>")
+       document.write("var' declarations are hoisted with default value of undefined. var is hoisted and initialized to undefined immediately.")
+       var a = 40; 
+       document.write("var a = 40; is divided into 2 parts.", "<br>")
+       document.write("var a ; is variable declaration", "<br>")
+       document.write("a = 40; is variable initilization", "<br>")
+       document.write("<b> Remembet that </b> Only declerations are hoisted , not the initialization. Initilization remains on the same place.", "<br>")
+
+       document.write("Example 1 gives the same result as Example 2: ", "<br>")
+
+
+       // used before declaration
+       x = 50; // Assign 50 to x (variable initilization)
+       document.write(x , "<br>");
+       var x;  // Declare x (variable declaration)
+
+       var y;  // Declare y
+       y = 55; // Assign 55 to y
+       document.write(y , "<br>");
+
+       document.write("We write like the below", "<br>")
+
+       var b = 10;
+       document.write(b , "<br>");
+       var c  = 30;
+
+       
+       document.write("JavaScript interprets the above code as follows", "<br>")
+
+       
+
+       var b;
+       var c;
+       b = 10;
+       document.write(b , "<br>");
+       c = 300;
+
+       document.write("<b> Problems with var </b>", "<br>")
+       document.write("There's a weakness that comes with 'var'. Let's explain this in the below example.", "<br>")
+
+       var greater = "Good Morning";
+       var times = 5;
+
+       if (times > 3){
+        var greater = "Very good Morning Sir";
+       }
+       document.write(greater , "<br>");
+
+       
+    
+
+       document.write(" So, since 'times > 3' returns true, 'greater' is redefined to 'very good morning sir' . So , this is not a problem if you knowingly want it to be redefined. The problem is that when you do not realize that a variable 'greater' has already been defined before." , "<br>")
+       document.write(" If you have used 'greater' in other parts of your code, you might be surprised at the output you might get. This will likely cause a lot of bugs in your code.", "<br>")
+       document.write(" This is why 'let' & 'const' are necessary, as below. </br>" ) 
+
+       let p = "ploral";
+       var tim = 6;
+       if (tim >2){
+        let p = "ppppppppppppppp"
+       }
+       document.write(p , "<br>");
+
+       document.write("<hr>")
+
+
+
+       
+        document.write("<b> #2: let </b>" , "<br>")
+        document.write("let is now a days the most preffered for variable declaration. It comes as an improvement to 'var' declarations." , "<br>")
+        document.write("<b> Scope of let </b>", "<br>")
+        document.write("'let' is a block scoped.")
+        document.write(" A block is a chunk of code bounded by curly braces {}.Anything within a curly braces is a a block.", "<br>")
+        document.write("So a variable declared in a block with 'let' is only available for use within that block ,as follows." , "<br>")
+
+       let great = "Say hi";
+       let timi = 5;
+        
+       if (timi > 3){
+        //let great = "Say hello instead";
+        let hell = "Say hi only";
+        document.write(great , "<br>");
+        document.write(hell , "<br>");
+       }
+      // console.log(hell); 
+       document.write(great , "<br>") ;
+       document.write("We see that using 'hell' outside its block returns an error. This is bcz 'let' variables are block scoped." , "<br>")
+
+
+       document.write("<b> Redeclaration & Updating </b>" , "<br>")
+       document.write(" variable declared with 'let' can be updated but not redeclared . As below", "<br>")
+
+       let updat= 50;
+       updat= "Hi friends";  // value can be reassigned
+       document.write(updat , "<br>");
+
+    //    let declar = 50;
+    //    let declar = "Hi
+    //    console.log(declar)"; //SyntaxError: Identifier 'declar' has already been declared.
+
+       document.write("However if same variables are defined in different scopes, there will be no error", "<br>")
+
+       let scop = "It's a global scope"
+       if (true){
+        let scop = "It's local scope";
+        document.write(scop, "<br>");
+       }
+       document.write(scop , "<br>");
+
+
+       document.write("There is no error as both the instances are treated as different variables since they have different scopes.", "<br>")
+
+       document.write("<b> Hoisting of let </b>", "<br>")
+       document.write(" Just like 'var' , 'let' declarations are hoisted to the top without default value.", "<br>")
+       document.write(" Unlike 'var' which is initialized as undefine, the 'let' keyword is not initialized. ", "<br>")
+       document.write(" So if you try to use a 'let' variable before delclaration, you will get a \"reference Error\"", "<br>")
+       document.write("let is hoisted, but remains uninitialized in a <b> temporal dead zone </b> until the declaration is encountered. However, since let hoist; is explicitly declared before console.log(hoist);, no error occurs, but the value is still undefined.")
+    
+         xx = 50;
+        console.log(xx);
+        var xx ;
+
+        axx = 50;
+        console.log(axx);
+        let axx ;
+
+
+    
+
+        document.write("<b> Note that </b> let and const are also hoisted (but they create a temporal dead zone) and due to TDZ , we cannot access them. ", "<br>")
+        document.write(" The Temporal Dead Zone (TDZ) in JavaScript refers to the time between when a variable is hoisted to memory and when it is initialized with a value.", "<br>")
+        document.write("TDZ: The temporal dead zone is the region between the hoisting and the variables's actual initialization. During this time, the variable cannot be accessed, and attempting to do so will result in an error." , "<br>")
+         //console.log(a);     ReferenceError: Cannot access 'a' before initialization
+         //let a = 5;
+         document.write("var does not have a TDZ and is initialized with undefined.", "<br>")
+
+    document.write("<hr>")
+    document.write("<b> #3: const </b>" , "<br>")
+    document.write("Variable declared with the 'const' maintain constant values. " , "<br>")
+    document.write("'const' declarations are block scoped." , "<br>")
+    document.write(" 'const' can not be updated or redeclared. This means that the value of variable declared with 'const' remains the same within its scope." , "<br>")
+    document.write(" Every 'const' declaration , therefore, must be initialized at the time of declaration." , "<br>")
+    document.write("This behavior is somehow different when it comes to <b> object declared with 'const' .</b> While a const object can not be updated, the properties of this object can be updated." , "<br>")
+    document.write("We can not do this.", "<br>")
+
+    const teacher = {
+        name : "Khalid Usman",
+        age : 30
+        
+    }
+    
+    // teacher = {                 //Error : Assignment to constant variable. 
+    //     name : "Khalid Usman"
+    //     age : 30
+    // }
+
+    document.write("We can  do this.", "<br>")
+   teacher.name = "Inayat Khan"
+   document.write(teacher.name , "<br>");
+
+   document.write(" This will update the value of the 'name' without returning errors." , "<br>")
+   document.write("<b> Hoisting of const </b>" , "<br>")
+   document.write("Just like let, const declarations are hoisted without default value to the top but are not initialized.", "<br>")
+    
+
+
+    document.write("<hr>")
+
+
+    </script>
+
+ <h2> Global Variables in HTML </h2>
+ <p> With JavaScript, the global scope is the complete JavaScript environment. 
+    In HTML, the global scope is the window object: All global variables belong to the window object. </p>
+    <p> // code here can use window.carName
+           function myFunction() {
+            carName = "Volvo";
+        } 
+    </p>
+
+    <h3> 
+        Your global variables (or functions) can overwrite window variables (or functions).
+        Any function, including the window object, can overwrite your global variables and functions. How ??</h3>
+
+
+</body>
+</html>

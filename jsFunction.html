@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions In JS</title>
+  </head>
+
+  <body>
+    <div class="container-fluid mt-1">
+      <h2 style="background-color: black; color: whitesmoke">Function</h2>
+      <!-- In JavaScript, if a function does not explicitly return a value, it returns undefined by default. -->
+
+      <p>A function in JavaScript is a group of reusable code that can be called anywhere in your program</p>
+      <p>
+        Functions stored in variables do not need function names. This function a is actually an anonymous function (a
+        function without a name).
+      </p>
+      <p>var x = function (a, b) {return a * b}; var y = x (4 , 3); document.write( y );</p>
+      <p>
+        Earlier in this tutorial, you learned about "hoisting". Hoisting is JavaScript's default behavior of moving
+        declarations to the top of the current scope. Hoisting applies to variable declarations and to function
+        declarations. Because of this, JavaScript functions can be called before they are declared:
+      </p>
+      <p><b style="background-color: black; color: whitesmoke"> Why Functions? </b></p>
+      <p>
+        We can reuse code: Define the code once, and use it many times. You can use the same code many times with
+        different arguments, to produce different results.
+      </p>
+      <p>
+        functions are declared with the following syntax:<br />
+        function functionName(parameters) { code to be executed} <br />
+        function myFunction(a, b) {return a * b;} <br />
+        (myFunction is the name of function.) you can give any name.
+      </p>
+      <p>
+        Let's write a simple function first without parameters.<br />\ The benefit of this function is that , we can
+        simply call the name of the function and then copy the name of the function many times. <br />\ If we have to
+        edit anything later, we will simply edit the function and all text will be edited automatically.
+      </p>
+      <script>
+        function writer() {
+          document.write("Author : Khalid Usman", "<br>");
+          document.write("Course : Web development", "<br>");
+          document.write("Duration : 6 Months", "<br>");
+        }
+        writer(); //only writing the name of the function is called its reference, and using brackets () after this is called its execution.
+        //We can also write the above statement as
+        function writer2() {
+          document.write("Author : Khalid Usman, ", " Address : Mussafah,", " State : Abu Dhabi", "<br>");
+        }
+
+        writer2();
+      </script>
+      <p>
+        <b> Note </b> that , for printing the function, we can use output methods (doc..write, console.log etc) inside a
+        function , as in the above function or outside the function as in the below function.",
+      </p>
+      <script>
+        function myFunction1(a, b) {
+          let aa = 5;
+          let bb = 9;
+          return aa + bb;
+        }
+        document.write(myFunction1() + "<br>");
+      </script>
+
+      <h3 style="background-color: black; color: whitesmoke">Function with parameters and 'return' keyword</h3>
+
+      <script>
+        function myFunction(x, y) {
+          //Basically x and y are variables , passed in a function. These x and y are also called parameters here.
+          //  {return x + y};
+          return Math.round((x + Y) / 2);
+        }
+
+        let x = 17; // Note that we can't write the below variables inside the curly braces of the function bxz these variable are already declared in the function as parameters.
+        let y = 30;
+        let z = 67;
+
+        document.write(Math.round((x + y) / 2), "<br>"); // Remember that any argument passed here should be sama, as passed after the return keyword above.
+        document.write(Math.round((y + z) / 2), "<br>");
+        document.write(Math.round((z + x) / 2));
+      </script>
+      <p>
+        Now if I want to write any additional thing in this all, I will simply add those things to <br />
+        the function only after returs . e.g 'return' Math.round (x+y)/2 .
+      </p>
+      <p>Let's see another one.</p>
+      <script>
+        function multiply(a, b) {
+          document.write(" Multiplication is " + a * b + "<br>");
+        }
+
+        multiply(4, 3);
+        multiply(5, 8);
+        multiply(8, 3);
+        multiply(9, 6);
+        multiply(2, 4);
+
+        document.write("<hr>");
+
+        function addTwo(number1, number2) {
+          //Basically number1 and number2 are variables , passed in a function. These number1 and number2 are also called parameters here.
+          document.write(number1 + number2);
+        }
+
+        addTwo(5, 10); // Here the values passed during calling a function, are called arguments.
+      </script>
+      <p>Function arguments (parameters) work as local variables inside functions.</p>
+      <p>
+        Now question is this that if I store this function in a variable , will it returns the same thing , i.e (15)
+      </p>
+      <p>Answer is that It will not return the same thing, but it will return 'Undefined', as below.</p>
+      <p>
+        let result = addTwo(5, 10); // console.log(result); // I have iniitialized this variable, then why is it
+        undefined
+      </p>
+
+      <p>Another way of calling a function is as below</p>
+      <script>
+        function addTwoNmb(nmbr1, nmbr2) {
+          let reslt = nmbr1 + nmbr2;
+          return reslt; // The return keyword exits a function.
+        }
+
+        const reslt = addTwoNmb(10, 20);
+        document.write("reslt :", reslt);
+      </script>
+      <p>
+        Anything written after the keyword 'return' will not be executed. So, write everything before the return word,
+        as follow.
+      </p>
+
+      <script>
+        function addTwoNmb(nmbr1, nmbr2) {
+          document.write(" Khalid Usman ", "<br>");
+          let rest = nmbr1 + nmbr2;
+          return rest;
+          console.log("Khalid Usman"); // Unreachable code
+        }
+
+        const rest = addTwoNmb(30, 20);
+        document.write("The result is :", rest);
+      </script>
+
+      <p>
+        Instead of writing the above long code, we can directly write short code and without declaring var(let rest =
+        ...) as below.
+      </p>
+
+      <script>
+        function addTwoNmr(nmr1, nmr2) {
+          return nmr1 + nmr2;
+        }
+
+        document.write(addTwoNmr(30, 40)); // OR
+        const reist = addTwoNmr(50, 90);
+        document.write("<br>");
+        document.write("His result is ", reist);
+      </script>
+
+      <p>If I directly initialize a variable in the function, then the value in the last will not be shown, as below</p>
+
+      <script>
+        function loginUserMessage(userName = "Sam") {
+          // The code below will not run and only sam will be shown to user.
+          if (!userName) {
+            // ! means that username is undefined.
+            console.log("Please Enter Your Name:");
+            return; // code after return will not also run.
+          }
+          //return `${userName} Just Logged In `    // This code is called string manipulation
+          return userName + " You Just logged In!";
+        }
+        console.log(loginUserMessage()); // If I put value here in the brackets, this arguments will be shown instead of 'Sam'
+      </script>
+
+      <h2 style="background-color: black; color: whitesmoke">Function ' Rest ' Parameter</h2>
+      <p>
+        The rest parameter (...) allows a function to treat an indefinite number of arguments as an array , as below. To
+        loop through all the elements of an array, we have for-loop for it.
+      </p>
+      <script>
+        function addRest(...myArray) {
+          let sumRest = 0;
+          for (let ele of myArray) {
+            sumRest = sumRest + ele;
+            return sumRest;
+          }
+        }
+        document.write(addRest(4, 9, 16, 25, 29, 100, 66, 77));
+
+        function sum(...arrayss) {
+          let sum = 0;
+          for (let elements of arrayss) {
+            // sum = elements ... This will return only the last element of an array omitting the rest elements.
+            sum = sum + elements;
+          } // sum = sum + elements;. It is an assignment statement that adds the value of each element in the arrayss array to the variable sum.
+          return sum;
+        }
+
+        //   // let outPut = sum(4, 9, 16, 25, 29, 100, 66, 77);
+        //   // document.write(outPut + "<br>"); OR
+        document.write(sum(4, 9, 16, 25, 29, 100, 66, 77) + "<br>");
+        document.write(sum(25, 29, 100, 66, 77, 3) + "<br>");
+      </script>
+
+      <h2 style="background-color: black; color: whitesmoke">Generator Function</h2>
+      <p>
+        In JavaScript, A generator function is a special type of function that can pause its execution and later resume
+        from where it left off, allowing you to control its flow. The yield keyword works together with generator
+        functions to achieve this behavior.yield is a keyword primarily used in generator functions.
+      </p>
+      <p>If I call the below function , it will print the three values.</p>
+      <!-- function myGenerator() {
+            console.log("Value 1");
+             console.log("Value 2");
+            console.log("Value 3")
+         } -->
+      <p>
+        but I don't want this , i want to have control over all the statements and print them where and how I want.
+        <br />
+        So for this I will use generator function, Use ('*') with the name of a function , as below, and for this
+        control , I will use yield keywoud before the statement
+      </p>
+      <p>
+        yield must be used with next() to control execution. <br />
+        Calling myGenerator() creates a generator object. <br />
+        You need to use the .next() method to execute the generator and retrieve values.
+      </p>
+
+      <script>
+        function* myGenerator() {
+          yield "Value 1"; // Pauses here and returns value 1 // This value is returned when .next() is called
+          yield "Value 2";
+          yield "Value 3";
+        }
+        let g = myGenerator();
+
+        // Call the generator step by step
+        document.write(g.next().value + "<br>");
+        g.next().value + "<br>"; // quit this line
+        document.write(g.next().value + "<br>");
+
+        function* generateIt() {
+          document.write("Print One" + "<br>");
+          yield "No 1 Object " + "<br>";
+          document.write("Print Two" + "<br>");
+          yield "No 2 Object" + "<br>";
+          document.write("Print Three" + "<br>");
+          yield "No 3 Object";
+        }
+        let gg = generateIt();
+        document.write(gg.next().value);
+        gg.next();
+        document.write(gg.next().value);
+      </script>
+      <br /><br />
+      <h2 style="color: 'white'; background-color: 'black'">Use of Eval() Function</h2>
+      <p>
+        this is an in-built function in JS. The eval() function in JavaScript can be used to evaluate mathematical
+        expressions written as strings.
+      </p>
+      <input type="text" id="oneOne" />
+      <button type="button" onclick="show()" id="buttonOne">Result</button>
+      <h2 id="head2">Result is</h2>
+
+      <script>
+        let a = "5 + 6";
+        let b = eval(a);
+        console.log(b);
+
+        function show() {
+          let input = document.getElementById("oneOne").value;
+          let result = eval(input); // Use of eval function
+          let h2 = document.getElementById("head2");
+          h2.innerHTML = result;
+        }
+      </script>
+
+      <input type="text" id="field1" /> <br />
+      + <br />
+      <input type="text" id="field2" /> <br />
+      <button onclick="addAll()" id="btn">Add Both</button> <br />
+      <script>
+        function addAll() {
+          // Get the values from the input fields
+          let aaa = document.getElementById("field1").value;
+          let bb = document.getElementById("field2").value;
+          // Parse the values as numbers
+          const parsedA = parseFloat(aaa);
+          const parsedB = parseFloat(bb);
+
+          const sum = parsedA + parsedB;
+
+          document.getElementById("btn").textContent = ` ${sum} `;
+        }
+      </script>
+
+      <input type="text" id="log" />
+      <button id="loginButton">Just Logged In</button> <br />
+      <script>
+        document.getElementById("loginButton").addEventListener("click", function () {
+          var inputValue = document.getElementById("log").value;
+          if (inputValue) {
+            alert(inputValue + " , You Just logged In ");
+          } else {
+            alert("Please enter your username");
+          }
+        });
+      </script>
+
+      <h2 style="background-color: black; color: whitesmoke">Function Closures</h2>
+      <p>
+        In 'closure' , we basically read the concept of nested functions, i.e, a function within a function. Basically
+        nested function is a closure and closure is a nested function.
+      </p>
+      <p>
+        Definitions >>> A closure is a function having access to the parent scope. It preserve the data from outside. OR
+        A closure is an inner function that has access to the outer(enclosing) function's variables.
+      </p>
+      <p>
+        For every closure we have three scopes:- i.e, Local Scope(Own scope) , Outer Function Scope and Global Scope.
+      </p>
+      <p>
+        <b> Note that </b> outer function (Parent function) does not have access to the variables of inner function (
+        Child function)
+      </p>
+      <script>
+        //  As per first definition
+        let i = 10;
+        function show() {
+          let j = 20;
+          document.write(j + "<br>");
+          document.write(i + "<br>");
+        }
+        show();
+
+        // As per second definition
+        let = c = "c is a global variable";
+        function outSide() {
+          let a = "a is Local variable of Outer function";
+          document.write(a + "<br>");
+          document.write(c + "<br>");
+
+          function innerFunction() {
+            let b = "b is Local variable of Inner function ";
+            document.write(b + "<br>");
+            document.write(a + "<br>"); //variable of outer function.
+            document.write(c + "<br>"); // Accessing the global variable.
+          }
+          innerFunction();
+        }
+
+        outSide();
+      </script>
+    </div>
+  </body>
+</html>

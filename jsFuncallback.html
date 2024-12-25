@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Function</title>
+  </head>
+  <body>
+    <script>
+      document.write("<b> Normal Function. </b>", "<br>");
+
+      function add(num1, num2) {
+        // num1 & num2 are variables and its values are passed later while calling a function. (These are also called parameters.)
+        document.write(num1 + num2);
+      }
+      add(20, 30);
+
+      document.write("<hr>");
+      document.write("<b> Callback Function. </b>", "<br>");
+      document.write(
+        " A callback is a function passed as an argument to another function. A callback function can run after another function has finished.  It is mainly used to handle the asynchronous operations."
+      );
+      document.write(
+        "From callback function we can know how to pass another function as a parameter within a function as we passed 2 parameters in the above example.",
+        "<br>"
+      );
+
+      function passThis() {
+        document.write(" Hello", "<br>");
+      }
+
+      function passThisToo() {
+        document.write(" Good Morning");
+      } // I will pass the above function(passThis) as a parameter in the below one (passIn).
+      function passIn(x, y, callback) {
+        //Don’t consider the ‘callback’ as a name or keyword here. The callback function name can be any valid identifier.
+        document.write(x + y);
+        callback(); // I will call the above function inside the blocks{} , I.e function.
+      } // We use callback to receive another function,
+      //  let x = 10;
+      //  let y = 20;
+
+      passIn(20, 20, passThis); // I will pass the above function as a argument/parameter.
+      passIn(10, 20, passThisToo); // I will pass the another one function as a argument/parameter.
+      document.write("<br>");
+
+      document.write(
+        "In the above examples, 'PassThis' and 'PassThisToo' are 'Callback Functions' which are passed in the 'PassIn Function' as arguments. ",
+        "<br>"
+      );
+      document.write(
+        " <b> Note </b> When you pass a function as an argument, remember not to use parenthesis.",
+        "<br>"
+      );
+
+      document.write("<hr>");
+      document.write(
+        "<b> Question is that </b> If I can directly call a function within a function as ( Just write passThis() in the block), then why I need callback.",
+        "<br>"
+      );
+      document.write(
+        "<b> Answer </b> is that we use callback to call many functions with one function as we can't call many functions without callback in a single function (passIn is one function) as i did .",
+        "<br>"
+      );
+      document.write(
+        "we can pass different functions in every call. we can  lso pass an anonymous function as a parameter in the same function. (passIn).",
+        "<br>"
+      );
+      passIn(30, 20, function () {
+        document.write(" I am passed directly ", "<br>");
+      }); // This function  doesn't have any name that's why it is called anonymous. i.e function is not declared.
+
+      document.write("<hr>");
+
+      function passHere() {
+        document.write(" Hello " + "<br>");
+      }
+
+      function passThere() {
+        document.write(" Good morning ");
+      }
+
+      function passInThis(a, b, callback) {
+        // callback(); We can also do it to control the flow of the output
+        document.write(a + " " + b); // Add a space and break for readability
+        callback(); // Execute the callback function
+      }
+
+      // Now pass the correct function as the callback
+      passInThis("Student", "Sir", passHere); // Outputs: Sir Student Hello
+      passInThis("Student", "Sir", passThere); // Outputs: Sir Student Good morning
+
+      document.write("<hr>");
+
+      document.write("<b> JavaScript Promises </b>" + "<br>");
+      document.write(
+        "promise is an object that represents the completion or failure of an asynchronous operation. It employs callback functions to manage asynchronous operations.",
+        "<br>"
+      );
+      document.write("It offers a easier syntax for handling such operations more easily.", "<br>");
+      document.write(
+        "It is used to handle asynchronous operations in a cleaner and more predictable way than traditional callback functions.",
+        "<br>"
+      );
+      document.write(
+        "A promise object can created using the Promise() constructor. n\
+         The promise constructor takes a callback function as an argument. n\
+          The callback function accepts two functions, resolve() and reject(), as arguments. n\
+           The resolve function is called if the promise returns successfully. n\
+            The reject function is called when task fails and returns the reason."
+      );
+      // let promise = new Promise(Callback); //  create a promise using the Promise() constructor.
+      // OR;
+      // let promise = new Promise(function (resolve, reject) {   //Callback − It is a callback function to fulfill the promise.
+      //   // Callback function body
+      // });
+
+      //       States of the Promise
+      // There are 4 states of the Promise.
+
+      // Promise.state	                   Description	                                       Promise.result
+      // Fulfilled	          When a promise is completed with a successful response.     	   Resultant data
+      // Rejected	             When a promise is failed.	                                        An error object
+      // Pending	              When a promise is pending to execute.	                             Undefined
+      // Settled	               When a promise is either fulfilled or rejected successfully.	       Either result data or an error object
+      document.write("The 'state' and 'result' are the properties of the Promise object.", "<br>");
+
+      document.write("A JavaScript Promise object can be:" + "<br>");
+      document.write("Fulfilled" + "<br>");
+      document.write("Rejected" + "<br>");
+      document.write("Pending" + "<br>");
+      document.write("Settled" + "<br>");
+      document.write(
+        "The promise() Method have 2 specifications, i.e, If the promise is fulfulled, we call it resolve 'resolve()' , and if the promise is not fulfilled we call it reject 'reject()'.",
+        "<br>"
+      );
+      document.write(
+        " On the basis of the above 2 specifications, we decide what to be done next and for this , if a promised is fulfilled (resolved),  we use a method call then , 'then()' , and if a promise is not fulfilled (rejeced), we use a method call 'catch()' .",
+        "<br>"
+      );
+
+      const promise = new Promise((resolve, reject) => {
+        // Perform some asynchronous operation
+        let success = true;
+        if (success) {
+          resolve(" Operation successful", "<br>");
+        } else {
+          reject(" Operation failed", "<br>");
+        }
+      });
+
+      // Using the promise
+      promise
+        .then((result) => {
+          document.write(" Here is the result" + result + "<br>"); // Runs if resolved
+        })
+        .catch((error) => {
+          document.write("Here is an error" + error + "<br>"); // Runs if rejected
+        })
+        .finally(() => {
+          document.write("Promise settled" + "<br>"); // Runs regardless
+        });
+    </script>
+  </body>
+</html>

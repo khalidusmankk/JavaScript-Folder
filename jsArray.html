@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Arrays</title>
+
+    <style>
+      body {
+        margin-left: 25px;
+      }
+      /* ul {
+    display: inline;
+  } */
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid mt-1">
+      <p id="zyx"></p>
+      <h2>Use "Iterables" in Array as use in javaobjects.js</h2>
+      <script>
+        document.write(" <b> Array and its methods in JavaScript.</b> ", "<br>");
+        document.write("An array is a special variable, which can hold more than one value:", "<br>");
+        document.write(" It is a common practice to declare arrays with the ' const ' keyword.", "<br>");
+        document.write(" Array elements are written in square braces [] as follows.", "<br>");
+
+        const vehicles = [" Volvo ", " BMW ", " Mercedes", " UD"];
+
+        document.write("An array can also span multiple lines , as follows.", "<br>");
+
+        const vehicle = [" Volvo ", " BMW ", " Mercedes", " UD"];
+        document.write(vehicle, "<br>");
+        document.write(vehicles);
+
+        document.write("<hr>");
+
+        document.write("<b>Length of an array.</b>", "<br>");
+        document.write(
+          "if i want to check that how many words or characters are there in an array, i will use length property.",
+          "<br>"
+        );
+
+        document.write(
+          "Minus one (-1, -2, -3 ...) is used to eliminate the  letters , word or character form the end of an array.",
+          "<br>"
+        );
+
+        const arraylenth = [1, 2, 3, 4, 5];
+        document.write(arraylenth.length, "<br>");
+        console.log(arraylenth);
+        document.write(arraylenth.length - 3, "<br>");
+
+        document.write(
+          "<b> Remember </b> that the length property provides an easy way to append a new element to the end of an array. array[array.length] = value , Note that other methods (like, spread operator etc ,,,, Syntax: array = [...array, newElement]) can also be use for adding new elements to an array.",
+          "<br>"
+        );
+
+        /* Use of spread operator
+                       let fruits = ["Apple", "Banana"];
+                       fruits = [...fruits, "Kiwi"];
+                       console.log(fruits);  // Output: ["Apple", "Banana", "Kiwi"] */
+
+        let fruitslent = ["Banana", "Orange", "Apple", "Mango"];
+        fruitslent[fruitslent.length] = "Kiwi"; // Appends "Kiwi" to fruit.
+
+        document.write(fruitslent);
+        document.write("<hr>");
+
+        document.write("<b>Finding the index number </b>, i.e , which laptop is number 2.", "<br>");
+        document.write(" Index numbers starts from zero.", "<br>");
+        let lapto = ["HP", "DELL", "MACBOOK", "LANSER"];
+        document.write(lapto[2], "<br>");
+
+        document.write("<hr>");
+
+        document.write("<b> Changing the array element </b>", "<br>");
+
+        let machine = ["Computer", "Car", "Driller"];
+        document.write(machine + "<br>");
+        document.write(" Let's add ' Zip ' to the list instead of ' Car '.", "<br>");
+        machine[1] = "Zip";
+        document.write(machine);
+
+        document.write("<hr>");
+
+        document.write("<b>toString </b>", "<br>");
+        document.write(
+          "The JavaScript method toString() converts an array to a string of (comma separated) array values.",
+          "<br>"
+        );
+        document.write(vehicle.toString(), "<br>"); //(comma separated)
+
+        let a = [1, 2, 4, 5, 6, 7];
+        let b = a.toString();
+        document.write(b);
+
+        document.write("<hr>");
+
+        document.write("<b> Join </b> method", "<br>");
+        document.write("it connects all the elements of an array with the help of the given seperator", "<br>");
+
+        let c = [9, 8, 7, 6];
+        let d = c.join("-"); // Minus sign (-) is a seperator. it will return a string seperated by the given sign.
+        document.write(d, "<br>");
+
+        let e = c.join(" and ");
+        document.write(e, "<br>");
+
+        document.write("<hr>");
+
+        document.write("<b>Array.includes() </b>", "<br>");
+        document.write(
+          " This allows us to check if an element is present in an array (including NaN, unlike indexOf).",
+          "<br>"
+        );
+
+        const fruitsOne = ["Banana", "Orange", "Apple", "Mango"];
+        document.write(fruitsOne.includes("Mango")); // is true
+
+        document.write("<hr>");
+
+        document.write("<b> Pop </b>");
+        document.write(
+          "This method pops out only last item of an array. Remember that it updates the original array.",
+          "<br>"
+        );
+        const house = ["Rooms", "Bathrooms", "Kitchen", "Bed Room"];
+        document.write(house.pop());
+
+        document.write("<hr>");
+
+        document.write(
+          "<b> The push() </b> method adds  new elements to an array (at the end) and returns the new array length.",
+          "<br>"
+        );
+        const items = [" Laptop ", " Computer ", " Desktop "];
+        document.write(items, " <br> ");
+        items.push(" Monitor ", " Fridge");
+        document.write(items, "<br>");
+
+        document.write("<hr>");
+
+        document.write(
+          "<b>The shift() </b> method removes the first array element and 'shifts' all other elements to a lower index.",
+          "<br>"
+        );
+        document.write(" Also note that the unshift() method adds new elements to the beginning of an array:", "<br>");
+        const items2 = ["a", "b", "c", "d"];
+        document.write(items2 + "<br>");
+        items2.shift();
+        document.write(items2, "<br>");
+
+        items2.unshift(" e ");
+        document.write(items2);
+
+        document.write("<hr>");
+
+        document.write(
+          " <b> concat() </b>. It's short for concatination. it returns the combination of the both array.",
+          "<br>"
+        );
+
+        const sons = [" Imran ", " Gohar "];
+        const daughters = [" Uzma", " Zinat ", " Khwaza "];
+        const children = sons.concat(daughters);
+        document.write(children);
+
+        document.write("<hr>");
+
+        document.write(
+          "<b> Splice (means ' Jhorna ' in Urdu ) and Slice (means ' Tokrhe Krna ') Methods </b>:",
+          "<br>"
+        );
+        document.write(
+          " The splice() method can be used to add new items to an array anywhere, depends on the given parameters.",
+          "<br>"
+        );
+        document.write(
+          " I want to  add more fruits at number 2 (ie, after 1) ' Lemon & Kiwi and delete 0 ( nothing ) '.",
+          "<br>"
+        );
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.write(fruits, "<br>");
+        fruits.splice(2, 0, "Lemon", "Kiwi");
+        document.write(fruits, "<br>");
+
+        let ArrOne = [1, 2, 4, 6, 7, 8, 9];
+        let removed = ArrOne.splice(4, 1); // Removes 1 element at index 4
+        document.write(ArrOne, "<br>"); // Updated array: 1,2,4,6,8,9
+        document.write(removed, "<br>"); // Removed element: 7
+
+        document.write(
+          "The slice() method slices out a piece (returns the deleted items , i.e returns the extracted part) of an array into a new array.  It creates a new array.",
+          "<br>"
+        );
+
+        let slicem = ["Bottle", "Beg", "Plastic-cane", "Laptop"];
+        let sliceme = slicem.slice(2);
+        document.write(sliceme, "<br>");
+        let slicemet = slicem.slice(1, 3); //it will return all from first parameter and before the last parameter. i.e Last parameter is not d.
+        document.write(slicemet);
+
+        document.write("<hr>");
+
+        document.write(
+          "<b> Sort() </b> method sorts an array alphabetically (as integers). Remember that it modifies the original array.",
+          "<br>"
+        );
+        const points = [20, 100, 50, 1, 5, 25, 10, 3];
+        document.write(points, "<br>");
+        document.write(points.sort(), "<br>"); // i.e 1,2,3,4..... or a, b, c.....
+
+        document.write(
+          "Now if I want to print this array in ascending or descending order, I will use compare(as a function).",
+          "<br>"
+        );
+
+        compare = (a, b) => {
+          return a - b; // i.e : a is greater than b or b is greater than a and so on.
+        };
+        let points2 = points.sort(compare);
+        document.write(points2, "<br>");
+        // Easy way to declare a compare function is as follows.
+        // var points = [40, 100, 1, 5, 25, 10];
+        //  points.sort(function(a, b){return a-b});
+        // for descending we can use points.sort(function(a, b){return b-a}); i.e b to a.
+
+        document.write("<b> The Compare Function </b>", "<br>");
+        document.write(
+          "The purpose of the compare function is to define an alternative sort order.\
+                  The compare function should return a negative, zero, or positive value, depending on the arguments:\
+                  function(a, b){return a-b}"
+        );
+        document.write(
+          " When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.",
+          "<br>"
+        );
+
+        const vegetable = ["Garlic", "Onion", "Apple", "Mango"];
+        document.write(vegetable, "<br>");
+        document.write(vegetable.sort(), "<br>");
+
+        document.write("<hr>");
+
+        document.write("<b> Delete </b>", "<br>");
+        document.write(
+          "Basically delete is not a method but an operator. it deletes any element of the array as per the given parameter.",
+          "<br>"
+        );
+        document.write("Remember that the 'Length' of the array remains the same.", "<br>");
+        let f = [1, 2, 3, 4, 5, 6, 7];
+        delete f[4]; // Removes the value at index 4
+        document.write(f, "<br>"); // Output: 1,2,4,6,,8,9
+
+        document.write(
+          "<b> Using delete </b> on array elements leaves undefined holes in the array. Use slice method instead to remove the desired element or use pop and push for removing the last or first element . "
+        );
+
+        document.write("<hr>");
+
+        document.write("<b> indexOf </b>", "<br>");
+        const names = ["Imran", "Khanzala", "Zohaib", "Hussain", "Ilyas", "Khanzala"];
+        document.write(names.indexOf("Khanzala"), "<br>");
+        document.write(
+          "khanzala is at number 1 in the index number. Now if I want to find more khanzala except this one , i will give second parameter to find ahead of this.",
+          "<br>"
+        );
+        document.write(names.indexOf("Khanzala", 2), "<hr>");
+
+        document.write("<b> array.from()</b>", "<br>");
+        document.write("It creates an array from a string:", "<br>");
+        document.write("The Array.from() method returns an array from any object with a length property.", "<br>");
+        document.write("The Array.from() method returns an array from any iterable object.", "<br>");
+        let arrString = "String";
+        let arrString2 = Array.from(arrString);
+        document.write(arrString2, "<br>");
+
+        document.write("<hr>");
+
+        document.write("<b> Remove Duplicates </b>", "<br>");
+        document.write(
+          "<b> Note that </b> an array can contain duplicate values but a set can not contain duplicate values.",
+          "<br>"
+        );
+        document.write(
+          "One easy of removing duplicates from an array is to convert an array to set, which automatically eliminates duplicates and then spread operator(...) convert it back to an array.",
+          "<br>"
+        );
+
+        let arr = [1, 2, 4, 1, 9, 3, 8, 2, 4, 3];
+        let removeDuplicates = [...new Set(arr)];
+        document.write(removeDuplicates, "<br>");
+
+        let sortIt = removeDuplicates.sort();
+        document.write(sortIt, "<br>");
+
+        document.write(
+          " <b> new Set(arr) </b> is a 'Set' containing all the values in 'arr', which duplicates necessarily removed. Then the spread operator(...) just converts <b>this</b> back into an array.",
+          "<br>"
+        );
+        document.write("<b> Note that </b> You can create a JavaScript Set by.", "<br>");
+        document.write(
+          "<ul> <li> Passing an array to new Set() </li> <li> Create an empty set and use add() to add values </li>   </ul>"
+        );
+
+        document.write("<hr>");
+
+        document.write("<h2> Array Iteration ( repeat ) Methods </h2>", " <br>");
+        document.write("Array iteration methods operate on every array item", "<br>");
+        document.write("Below are some of the iteration methods", " <br> ");
+
+        document.write("<b> Map , ForEach , Filter & Reduce </b>", " <br>");
+        document.write("<b> Remember that </b> Map ,  Filter & Reduce  do not modify the original array", " <br>");
+        document.write(
+          "<b> Map </b> method creates a new array by performing a function on each array element. (value, index, array). The map() method does not execute the function for array elements without values.",
+          "<br>"
+        );
+
+        const numbers1 = [45, 4, 9, 16, 25];
+        const numbers2 = numbers1.map(mapFunction);
+
+        function mapFunction(value, index, array) {
+          return value * 2;
+        }
+
+        document.write(numbers2 + "<br>");
+
+        const mapMet = [2, 4, 6, 34, 50];
+        const mapMet1 = mapMet.map((value) => {
+          // callback function
+          return value / 2;
+        });
+        document.write(mapMet1, "<br>");
+
+        const compu = [2, 4, 6, 7];
+        const compi = compu.map((element, index) => {
+          return `${element} is on index ${index} <br>`;
+        });
+        document.write(compi + "<br>");
+
+        const arrayOne = [3, 4, 5];
+        const arrayOne1 = arrayOne.map(arrayOneF);
+
+        function arrayOneF(valueF, indexF) {
+          return ` The element ${valueF} is on index ${indexF} <br>`;
+        }
+        document.write(arrayOne1 + "<br>");
+
+        document.write(" <h4> How to return all three values  i.e (value, index, array) together </h4> ", "<br>");
+        document.write(
+          " The below method have printed only the array , almost 5 times. this is due to the use of  comma operator inside the return statement, which only returns the last value in the sequence, which in this case is array. That's why you see the array repeated multiple times.  ",
+          "<br>"
+        );
+        document.write(
+          "In my map() function, the return value, index, array statement actually evaluates and discards the first two values (value and index), and only returns the last value, which is array. This happens for every element in your allThree array, so array (the original array [1, 2, 5, 8, 9]) is returned for each element, resulting in the array being returned 5 times.",
+          "<br>"
+        );
+        document.write(
+          "If we want to return multiple values like value, index, and array, we should return them as an array or object, not using the comma operator.",
+          "<br>"
+        );
+        const allThree = [1, 2, 5, 8, 9];
+        const allThreeelmnts = allThree.map((value, index, array) => {
+          // console.log(allThreeelmnts)    //cannot access this variable before initialization
+          return value, index, array;
+        });
+        document.write(allThreeelmnts, "<br>");
+
+        document.write("<h3> Correction of the above problem </h3>", "<br>");
+
+        const allTheItems = [1, 2, 5, 8, 9];
+        const allTheItems2 = allTheItems.map((value, index, array) => {
+          // Return an object containing the value, index, and array
+          return { value, index, array };
+        });
+        allTheItems2.forEach((el) => {
+          document.write(`Value: ${el.value}, Index: ${el.index}, Array: [${el.array}] <br>`);
+        });
+
+        document.write(
+          " IN the above example each element now returns an object with value, index, and array properties.",
+          "<br>"
+        );
+        document.write(
+          "The result is an array of objects, each containing information about the current element in the map() iteration.",
+          "<br>"
+        );
+        document.write("The problem was due to the comma operator returning only the last value (the array).", "<br>");
+
+        const eachNumber = [1, 2, 3, 4, 5]; // Using forEach
+        eachNumber.forEach((value, index) => {
+          console.log(`Index: ${index}, Value: ${value}`, "<br>"); // Just logs the value and index
+        }); // No new array is created in the above
+
+        const mapNumbers = [1, 2, 3, 4, 5]; // Using map
+        const doubled = mapNumbers.map((value) => {
+          return value * 2; // Multiplies each element by 2
+        });
+        console.log(doubled, "<br>"); // a new array is created here
+
+        document.write("<h4> Chaining with map() </h4>");
+        document.write(
+          "I can also use map method many time with or other methods , which is called chaining, as follow",
+          "<br>"
+        );
+
+        let chain = [1, 2, 5, 8, 9];
+        let chaini = chain
+          .map((num) => num * 3)
+          .map((num) => num / 2)
+          .filter((num) => num >= 10);
+        console.log(chaini, "<br>");
+        //document.write(allThreeelmnts , "<br>");
+
+        document.write(
+          "<b> Map Method/function </b> can also be used for removing duplicates from an array, as follows ",
+          "<br>"
+        );
+
+        let arrstrng = [1, 2, 3, "Khalid", 4, 2, 1, "Usman", 3, "Khalid", "Usman", 3];
+        function removeDuplicatesHere(arrays) {
+          let a = [];
+          arrays.map((x) => (!a.includes(x) ? a.push(x) : "")); //The x in the .map(x => ...) expression is a parameter that represents each element of the array arrays during each iteration of the map function. The map function applies the provided arrow function to each element of the array.
+          return a;
+        }
+        document.write(removeDuplicatesHere(arrstrng), "<br>");
+
+        document.write("In the example below , the above function is converted to named function. ", "<br>");
+
+        function myFunction(arrays, a) {
+          arrays.map(function (x) {
+            //'x' represents each element from 'arrays'
+            if (!a.includes(x)) {
+              a.push(x); // // Adds 'x' to 'a' if it isn't already included
+            }
+          });
+        }
+
+        document.write(
+          "The function myFunction takes two parameters: arrays (the array to iterate over) and a (the array where elements will be pushed if they aren't already included).",
+          "<br>"
+        );
+        document.write("Inside map(), we use a regular function instead of the arrow function.", "<br>");
+        document.write(
+          "The logic inside the function remains the same: if the element x from arrays is not already in a, it will be added using a.push(x).",
+          "<br>"
+        );
+
+        document.write("<h3> Example Usage: </h3> ");
+        let arrays = [1, 2, 3, 4]; // This example and function is related with above one
+        let aa = [2, 3];
+        myFunction(arrays, aa);
+        console.log(aa); // Output: [2, 3, 1, 4]
+
+        /*   If arrays = [1, 2, 3, 4] and aa = [2, 3], the function will iterate through arrays, and:
+                        On the first iteration, x = 1, so 1 is added to a because it's not in aa.
+                        On the second iteration, x = 2, but since 2 is already in aa, it is skipped.
+                        On the third iteration, x = 3, which is also skipped.
+                        On the fourth iteration, x = 4, so 4 is added to aa. */
+        // So x simply refers to the current element being processed from the arrays array during each iteration.
+
+        document.write(
+          "In the example above, elements 1 and 4 are added to aa because they aren't already present in aa.",
+          "<br>"
+        );
+        document.write(
+          "In the context of the above function, x represents each individual element from the arrays array during the iteration.",
+          "<br>"
+        );
+        document.write(
+          "The map() method iterates over each element in the arrays array, and x is the placeholder for each element as the function processes them one by one.",
+          "<br>"
+        );
+        document.write(
+          "For example, if arrays = [1, 2, 3, 4], during the first iteration, x will be 1, in the second iteration, x will be 2, and so on.",
+          "<br>",
+          "<br>",
+          "<br>",
+          "<br>",
+          "<br>"
+        );
+
+        document.write(
+          "<b> Filter </b> is used to create a new array with array elements that pass a certain condition. It iterates through each element of the array and applies a callback function to test each element.It creates a new array and does not modify the existing array. ",
+          "<br>"
+        );
+
+        let ab = [4, 5];
+        let abc = ab.filter((el) => {
+          return el > 4;
+        });
+        document.write(abc, "<br>");
+
+        const arr1 = [1, 2, 5, 8, 9];
+        const arr2 = arr1.filter((ele) => {
+          // filter function
+          return ele > 4; // If we use only (), we will not use 'return' words, but if we use blocks{}, we will must use return word.
+        });
+        document.write(arr2, "<br>");
+
+        const strArr = ["Khalid", "Zaid", "Ismail", "Inayat", "Zain"];
+        const strArr1 = strArr.filter((value) => {
+          return value !== "Ismail" && value.match("Zai");
+        });
+        document.write(strArr1, "<br>");
+
+        // Arrow function
+        let arrayFilt = [3, 5, 6, 7];
+        let arrayFilt2 = arrayFilt.filter((ele) => {
+          return ele >= 5;
+        });
+        document.write(arrayFilt2, "<br>");
+
+        // Named function
+        let arrayFilt3 = [3, 5, 6, 7];
+        let arrayFilt4 = arrayFilt3.filter(filtFunction);
+        function filtFunction(ele) {
+          return ele <= 5;
+        }
+        document.write(arrayFilt4, "<br>", "<br>", "<br>", "<br>", "<br>");
+
+        document.write(" <b> Reduce Method </b> ", "<br>");
+        document.write(
+          "The reduce() method runs a function on each array element to produce (reduce it to) a single value.",
+          "<br>"
+        );
+        document.write(
+          "The reduce method executes a user-supplied 'reducer' callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element.",
+          "<br>"
+        );
+        document.write(
+          "The JavaScript Array.reduce() method iterates over an array, applying a reducer function to each element, accumulating a single output value. It takes an initial value and processes elements from left to right, reducing the array to a single result. It is useful for doing operations like max in an array, min in an array, multiplication and sum of array",
+          "<br>"
+        );
+        document.write("In reduce method , we get 2 parameters ( accumulator, currentValue)", "<br>");
+        document.write("The value of the following array is its current value. (1, 2, 3 ,4)", "<br>");
+        document.write(
+          "Accumulator is an empty variable where we put the value, and its value is declared below, i.e ( const initialValue (accValue) = 3;)",
+          "<br>"
+        );
+        document.write(
+          "For the first when we take a value, the initialvalue goes in to the accumulator. When the loop runs for the first time, the value of the accumulator is zero.",
+          "<br>"
+        );
+        document.write(
+          "For the second time when a loop runs, the current value of the array become the initial value of the accumulator and so on.",
+          "<br>"
+        );
+        const array1 = [1, 2, 3, 4, 5];
+        const initialValue = 0; //If I don't want to decalre a variable here , i can also give value to 'accumulator' at the end of a function , as ((acc, curntVal)=>{}, 0 )
+        const sumWithInitial = array1.reduce((acc, curntVal) => {
+          // Accumulator, Current Value   // callback function.
+          console.log(`Accumulator : ${acc} and CurrentValue : ${curntVal}`);
+          return acc + curntVal;
+        });
+        console.log(sumWithInitial, "<br>");
+
+        // const array12 = [1, 2, 3, 4, 5];
+        // arrRed = array12.reduce((accumulator, currentValue) => {
+        //   //// //In an arrow function, if you use curly braces {}, you need to explicitly use the return keyword to return a value.
+        //   accumulator + currentValue, 0; //// //The second issue is the comma operator (,) in your code. The syntax is not valid for the .reduce() method.
+        // });
+        // document.write(arrRed, "<br>");
+
+        // Check the corrected code below
+        // let redArr = [ 1, 2, 3, 4, 5];
+        // let redArr2 = redArr.reduce((accumulator, currentValue) => {
+        //   return accumulator +  currentValue;
+        // }, 0); // 0 is the current index and current value of accumulator
+
+        //You can simplify the code further by removing the curly braces {} and the return keyword since the arrow function contains only a single expression:
+        const array12 = [1, 2, 3, 4, 5];
+        const arrRed = array12.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        document.write(arrRed, "<br>");
+
+        //Example to do multiplication of an array using reduce
+
+        const anArr = [2, 4, 6];
+        // Use reduce to multiply the following array
+        const sum = anArr.reduce((acc, cval) => acc * cval, 2);
+
+        document.write(sum);
+
+        document.write("<hr>");
+
+        document.write("<b> Spread Operators  &  Rest  </b>", "<br>");
+        document.write(
+          "The ... operator takes the elements of an iterable (like arrays, strings, or objects) and spreads them into individual values.",
+          "<br>"
+        );
+        document.write(
+          "The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object. The spread operator is used to spread elements, whether from an array or an object, to another array or object.",
+          "<br>"
+        );
+        document.write("Purpose: To spread or expand the elements of an array or object.", "<br>");
+        document.write(
+          "Usage: Used when passing arrays or objects to functions, copying arrays, or combining them.",
+          "<br>"
+        );
+        document.write("The ... operator expands an iterable (like an array) into more elements:", "<br>");
+
+        const q1 = ["Jan", "Feb", "Mar"];
+        const q2 = ["Apr", "May", "Jun"];
+        const q3 = ["Jul", "Aug", "Sep"];
+        const q4 = ["Oct", "Nov", "Dec"];
+        const year = [...q1, ...q2, ...q3, ...q4]; //In this case, ...q1, ...q2, ...q3, and ...q4 spread their respective array elements into the year array.
+        document.write(year + "<br>");
+
+        const numberOne = [1, 2, 3];
+        const numberTwo = [4, 5, 6];
+        combineBoth = [...numberOne, ...numberTwo];
+        document.write(combineBoth + "<br>");
+
+        document.write("The spread operator is often used in combination with destructuring." + "<br>");
+        document.write(
+          "Assign the first and second items from numbers to variables and put the rest in an array" + "<br>"
+        );
+
+        document.write("We can also use the spread operator with function, as bellow.", "<br>");
+
+        const numberThree = [3, 4, 5, 6, 7, 8];
+        function sumIt(v1, v2, v3, v4) {
+          return v1 + v2 + v3 + v4;
+        }
+        document.write(sumIt(...numberThree), "<br>");
+
+        document.write(
+          "The spread operator is also used to create a new array with the existing elements and appends (add) new elements at the end, as below",
+          "<br>"
+        );
+        let fruitOne = ["Apple", "Banana"];
+        fruitOne = [...fruitOne, "Kiwi"];
+        console.log(fruitOne); // Output: ["Apple", "Banana", "Kiwi"]
+
+        document.write(" <h3> Rest Operator </h3>");
+        document.write(
+          "Rest Operator (...) is used in function arguments or destructuring to collect multiple values into an array." +
+            "<br>"
+        );
+
+        document.write(
+          "The rest operator is used to collect the remaining elements into an array after certain elements have been assigned to other variables. In your example, after assigning one to 1 and two to 2, the rest operator collects the remaining elements ([3, 4, 5, 6]) into the rest variable." +
+            "<br>"
+        );
+        document.write("Purpose: To collect multiple elements into a single variable." + "<br>");
+        document.write("Usage: Often used in function parameters and destructuring assignments." + "<br>");
+        const numbers = [1, 2, 3, 4, 5, 6];
+        const [one, two, ...rest] = numbers;
+        document.write(one, two + " ", rest); // OR we canuse the below code.
+        //  document.write("<p>" + one + "</p>");
+        //  document.write("<p>" + two + "</p>");
+        //  document.write("<p>" + rest + "</p>");
+        document.write("<hr>");
+      </script>
+    </div>
+  </body>
+</html>

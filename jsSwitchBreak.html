@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch , Break & Continue</title>
+  </head>
+  <body>
+    <script>
+      // switch   ...	Marks a block of statements to be executed in different cases
+      //function	Declares a function
+      //return	Exits a function
+      document.write("<h2 style = 'font-family : calibri ; color: blue'> JavaScript Switch Statement </h2>");
+      document.write("Use <b> switch </b> to specify many alternative blocks of code to be executed", "<br>");
+      document.write(
+        "The switch statement is used to perform different actions based on different conditions.",
+        "<br>"
+      );
+
+      /*  switch(expression) {
+              case x:
+                // code block
+                break;
+              case y:
+                // code block
+                break;
+                 case z:
+                // code block
+                break;
+              default:
+                code block
+         } */
+
+      document.write("<b style= 'color : blue'> This is how it works:</b>", "<br>");
+      document.write("The switch expression is evaluated once.", "<br>");
+      document.write("The value of the expression is compared with the values of each case.", "<br>");
+      document.write("If there is a match, the associated block of code is executed.", "<br>");
+      document.write("If there is no match, the default code block is executed.", "<br>", "<br>");
+
+      /*  switch
+             Marks a block of statements to be executed, depending on different cases. */
+
+      /*  break
+             Terminates a switch or a loop   */
+
+      let day;
+      switch (new Date().getDay()) {
+        case 0:
+          day = "Sunday";
+          break;
+        case 1:
+          day = "Monday";
+          break;
+        case 2:
+          day = "Tuesday";
+          break;
+        case 3:
+          day = "Wednesday";
+          break;
+        case 4:
+          day = "Thursday";
+          break;
+        case 5:
+          day = "Friday";
+          break;
+        case 6:
+          day = "Saturday";
+      }
+      document.write(" Today is " + day, "<br>", "<br>");
+
+      document.write("The getDay() method returns the weekday as a number between 0 and 6.", "<br>");
+      document.write("This example uses the weekday number to calculate the weekday name:", "<br>");
+
+      document.write("The <b style= 'color : blue'> break </b> Keyword", "<br>");
+      document.write(
+        "When JavaScript reaches a break keyword, it breaks out of the switch block.This will stop the execution inside the switch block.It is not necessary to break the last case in a switch block. The block breaks (ends) there anyway.",
+        "<br>"
+      );
+      document.write(
+        "<b> Note: </b> If you omit the break statement, the next case will be executed even if the evaluation does not match the case.",
+        "<br>"
+      );
+
+      let months = 3;
+      switch (months) {
+        case 1:
+          document.write("January");
+          break;
+
+        case 2:
+          document.write("February");
+          break;
+
+        case 3:
+          document.write("March");
+          break;
+
+        default:
+          "No Valid Date";
+      }
+
+      document.write("<hr>");
+
+      document.write("Use of Switch on the marks (marks2).", "<br>");
+      document.write(
+        " The fundamental principle of the 'switch true' pattern is that <br>\
+the switch statement will match against expressions as well as values. <br>\
+An expression in a case will be evaluated before matching.<br>\
+ If the expression in your case evaluates to true - it will be matched.",
+        "<br>"
+      );
+      let marks2 = 200;
+      switch (true) {
+        case marks2 >= 100 && marks2 <= 200:
+          document.write("Grade D");
+          break;
+
+        case marks2 > 200 && marks2 <= 300:
+          document.write("Grade C");
+          break;
+
+        case marks2 > 300 && marks2 <= 400:
+          document.write("Grade B");
+          break;
+
+        case marks2 > 400 && marks2 <= 500:
+          document.write("Grade A");
+          break;
+
+        default:
+          "Fail";
+      }
+      document.write("<br>");
+      document.write("<b style= 'color : blue'> The default Keyword </b>", "<br>");
+      document.write("The default keyword specifies the code to run if there is no case match:", "<br>");
+      document.write("The getDay() method returns the weekday as a number between 0 and 6.", "<br>");
+      document.write("If today is neither Saturday (6) nor Sunday (0), write a default message:", "<br>");
+      //   switch (new Date().getDay()) {
+      //    case 6:
+      //      text = "Today is Saturday";
+      //      break;
+      //    case 0:
+      //      text = "Today is Sunday";
+      //      break;
+      //    default:
+      //      text = "Looking forward to the Weekend";
+      //  }
+      document.write(
+        "The <b > default </b> case does not have to be the last case in a switch block. We can even use this in the start too, as follows",
+        "<br>"
+      );
+      //     switch (new Date().getDay()) {
+      //     default:
+      //       text = "Looking forward to the Weekend";
+      //       break;
+      //     case 6:
+      //       text = "Today is Saturday";
+      //       break;
+      //     case 0:
+      //       text = "Today is Sunday";
+      //   }
+
+      document.write(" <b style= 'color : blue'> Common Code Blocks </b>", "<br>");
+      document.write("Sometimes you will want different switch cases to use the same code.", "<br>");
+      document.write(
+        "In JavaScript, you should not use parentheses (braces) around the case values in a switch statement. The case keyword is followed by a value (without parentheses), which is compared to the value provided to the switch statement.",
+        "<br>"
+      );
+
+      /* switch(week)
+      {  case(1):   Incorrect
+         case(2):   Incorrect
+      document.write('Boring days')
+      break; } */
+
+      eekDays = "Last day of the week";
+
+      let weekDays = 4;
+      switch (weekDays) {
+        case 1:
+        case 2:
+        case 3:
+          weekDays = "First Three days of the week";
+          break;
+        case 4:
+        case 5:
+        case 6:
+          weekDays = "Middle Three days of the week";
+          break;
+        default:
+          weekDays = "Last day of the week";
+      }
+
+      // Now print the result using document.write
+      document.write(weekDays + "<br>");
+
+      // OR
+
+      let week = 4;
+
+      switch (week) {
+        case 1:
+        case 2:
+          document.write("Boring days");
+          break;
+
+        case 3:
+        case 4:
+          document.write("Working days");
+          break;
+
+        case 5:
+        case 6:
+          document.write("Waiting days");
+          break;
+
+        case 7:
+          document.write("Its Weekend");
+          break;
+
+        default:
+          document.write("Please Put the right date");
+      }
+
+      document.write("<br>");
+
+      document.write(
+        "<b> Note that </b> Switch cases use strict comparison (===). The values must be of the same type to match. ",
+        "<br>"
+      );
+      document.write(
+        'As we know that the <b> break </b> statement jumps out of the "switch() " statement,The <b>  break </b> statement "jumps out" of a loop too.',
+        "<br>"
+      );
+      document.write(
+        'In the example bolow, the break statement ends the loop ("breaks the loop") when the loop counter (i) is 3.',
+        "<br>"
+      );
+
+      let text = "";
+      for (let i = 0; i < 10; i++) {
+        if (i === 3) {
+          break;
+        }
+        text += "The number is " + i + "<br>";
+      }
+      document.write(text);
+
+      document.write("<br>");
+
+      document.write("<b style = 'color : blue'> The Continue Statement </b>", "<br>");
+      document.write(
+        "The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.",
+        "<br>"
+      );
+      document.write("The example below skips the value of 3:", "<br>");
+
+      let texxt = "";
+      for (let i = 0; i < 10; i++) {
+        if (i === 3) {
+          continue;
+        }
+        texxt += "The number is " + i + "<br>";
+      }
+      document.write(texxt);
+
+      document.write("<br>");
+
+      document.write("<h1>JavaScript Labels </h1>", "<br>");
+    </script>
+  </body>
+</html>

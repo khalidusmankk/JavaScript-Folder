@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS BOM Window</title>
+  </head>
+
+  <body>
+    <script>
+      document.write(
+        'The Browser Object Model (BOM) allows JavaScript to "talk to" the browser.',
+        "<br>"
+      );
+
+      let iht = window.innerHeight;
+      let iwt = window.innerWidth;
+
+      let oht = window.outerHeight;
+      let owt = window.outerWidth;
+
+      document.write("Height of the viewport is " + iht, "<br>");
+      document.write("Width of the viewport is " + iwt, "<br>", "<br>");
+
+      document.write("OuterHeight of the viewport is " + oht, "<br>");
+      document.write("Outerwidth of the viewport is " + owt, "<br>");
+
+      function windoww() {
+        window.open("http://www.google.com", "_parent");
+      }
+
+      function openSmall() {
+        window.open(
+          "http://www.facebook.com",
+          "",
+          "width=100px,height=100px,left=100px, top=200px"
+        );
+      }
+
+      function closeSmall() {
+        window
+          .open(
+            "http://www.facebook.com",
+            "",
+            "width=100px,height=100px,left=100px, top=200px"
+          )
+          .close();
+      }
+
+      function resizeWindow() {
+        window
+          .open(
+            "http://www.facebook.com",
+            "",
+            "width=100px,height=100px,left=100px, top=200px"
+          )
+          .window.resizeTo(400, 400);
+      }
+
+      console.log(screen.width);
+      console.log(screen.height);
+      console.log(screen.colorDepth);
+
+      console.log(location.hostname);
+
+      function goBack() {
+        history.back();
+      }
+
+      function goForward() {
+        history.forward();
+      }
+
+      function confirmBox() {
+        let confrm = window.confirm(" Do you want to continue ?");
+        if (confrm) {
+          alert("You are welcome!");
+        } else confrm;
+        alert("You have cancelled the plan.");
+      }
+
+      let nmbr = prompt("Enter you obtained marks");
+      12;
+      if (nmbr >= 400 && nmbr <= 500) {
+        document.write("You are selected.");
+      } else if (nmbr >= 300 && nmbr < 400) {
+        document.write("You are in waiting list");
+      } else if (nmbr >= 200 && nmbr < 300) {
+        document.write("You have low chance");
+      } else {
+        document.write("You can not apply here");
+      }
+
+      window.alert("Do you want to continue?.");
+
+      document.write(navigator.geolocation());
+    </script>
+
+    <h3>How to open a new window and the close</h3>
+    <h5>window.open() & window.close()</h5>
+    <p>
+      I want to open google.com(in the same window/page) by clicking the button.
+      <br />
+      The button will call a function and the window will be opened.<br />
+      By default , it will open in new window.
+    </p>
+
+    <button
+      style="background-color: blueviolet; color: whitesmoke"
+      onclick=" windoww()"
+    >
+      Open Google
+    </button>
+
+    <p>I want to open a window , where i like to open,i.e. left,top etc</p>
+    <button onclick="openSmall()">Open Small Window</button>
+
+    <p>I want to close the window with a button.</p>
+
+    <button onclick="closeSmall()">Close Window</button>
+
+    <p>
+      I can move the currently opened window with a method "window.moveTo().
+    </p>
+    <p>
+      I can resize the window by using a method window.resizeTo(), as below.
+    </p>
+
+    <button onclick="resizeWindow()">Resize Window</button>
+    <p>
+      Note that the window.resizeBy() add extra length to the already given
+      length of the window.
+    </p>
+
+    <h2>JavaScript Window Location only works on running website</h2>
+
+    <h2>JavaScript Window History</h2>
+    <h4>
+      Window History is used going backword or forward from your current page.
+    </h4>
+    <p>
+      history.back() & history.forward() are used for this with a button. <br />
+      button will run with a function.
+    </p>
+
+    <button onclick="goBack">Go Back</button>
+    <button onclick="goForward">Go Forward</button>
+
+    <h3>Confirm Box</h3>
+    <p>Press ok to confirm or cancel to cancel.</p>
+    <button onclick="confirmBox()">Confirm Box</button>
+
+    <h2>Use of Prompt Box</h2>
+    <p>
+      In prompt box, we can get any information from the user or like 'enter
+      your name' or what's your date of birth etc.
+    </p>
+    <p>let's use this on addmission form</p>
+
+    <h3>JavaScript Cookies</h3>
+    <p>Cookies are data, stored in small text files, on your computer.</p>
+    <p>Cookies let you store user information in web pages.</p>
+    <p>
+      When a web server has sent a web page to a browser, the connection is shut
+      down, and the server forgets everything about the user. Cookies were
+      invented to solve the problem "how to remember information about the
+      user": When a user visits a web page, his/her name can be stored in a
+      cookie. Next time the user visits the page, the cookie "remembers" his/her
+      name. Cookies are saved in name-value pairs like: username = John Doe
+    </p>
+  </body>
+</html>

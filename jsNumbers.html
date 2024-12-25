@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number and its Methods</title>
+  </head>
+
+  <body>
+    <script>
+      document.write("JavaScript has only one type of number.", "<br>");
+      document.write(
+        " Numbers can be written <b> with, or without </b>, decimals.",
+        "<br>"
+      );
+      document.write(
+        " let x = 34.00; (A number with decimals i.e Decimal numbers)",
+        "<br>"
+      );
+      document.write(
+        "let y = 34;  // A number without decimals i.e whole number.",
+        "<br>"
+      );
+      document.write(
+        "'e' is used for exponential notation. <b> '5e3'</b> means that 5 should be multiplied with 10 power 3 (i.e: 5 * 10 * 10 * 10 = 5000/ ;; e denotes (means batana) 10 and the digits after e are its power.)",
+        "<br>"
+      );
+      document.write(
+        "'e-' means that the first digit should be divided by the power of 'e' . i.e:<b> 34e-5  </b> means that 34 should be divided by the power of e , which is 10 * 10 * 10 * 10 * 10 =100000. now 34e5 means 34/100000 which is equal to 0.00034",
+        "<br>"
+      );
+      document.write(
+        "Integers (numbers without a period or exponent notation) are considered accurate up to <b> 15  </b> digits.",
+        "<br>"
+      );
+
+      let a = 999999999999999; // a will be 999999999999999
+      let b = 9999999999999999; //9.999999999999999e+15   // b will be 10000000000000000 //10e14
+
+      document.write(
+        "The maximum number of decimals is <b> 17 </b>, but floating point arithmetic is not always <b> 100% </b> accurate:",
+        "<br>"
+      );
+      let g = 0.2 + 0.1; // x will be 0.30000000000000004
+      document.write(
+        "To solve the problem above, it helps to <b> multiply and divide. </b>",
+        "<br>"
+      );
+      let h = (0.2 * 10 + 0.1 * 10) / 10; // x will be 0.3
+
+      document.write(
+        "Remember that Never write a number with a <b> leading zero (like 07) </b>."
+      );
+      document.write(
+        "Some JavaScript versions interpret numbers as <b> octal </b> if they are written with a leading zero.",
+        "<br>"
+      );
+
+      document.write(" <h2> NaN - Not a Number </h2>", "<br>");
+      document.write(
+        "NaN is a JavaScript reserved word indicating that a value is not a number.",
+        "<br>"
+      );
+      document.write(
+        "Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number)",
+        "<br>"
+      );
+
+      let c = 100 / "Apple"; // c will be NaN (Not a Number)
+      document.write(typeof c, "<br>");
+
+      document.write(
+        "However, if the string contains a numeric value , the result will be a number:",
+        "<br>"
+      );
+      document.write(
+        "Numbers written inside double quotes are called numeric string.",
+        "<br>"
+      );
+
+      let f = 100 / "10";
+      document.write(typeof f, "<br>");
+
+      document.write(" <h2>Numbers Can be Objects.</h2>");
+      document.write(
+        "Normally JavaScript numbers are primitive values created from literals.",
+        "<br>"
+      );
+      let j = 123; // it's type is number
+      document.write(
+        "But numbers can also be defined as objects with the keyword new",
+        "<br>"
+      );
+      let k = new Number(123); // its type is object
+
+      document.write(typeof j, "<br>");
+      document.write(typeof k, "<br>");
+
+      document.write(
+        "<b> Note that : </b> Don't create Number objects. It slows down execution speed.",
+        "<br>"
+      );
+      document.write(
+        " The <b> new </b> keyword complicates the code. This can produce some unexpected results.",
+        "<br>"
+      );
+
+      document.write("<h3> Equality Operator </h3>");
+      document.write(
+        "When using this == equality operator, equal numbers look equal:",
+        "<br>"
+      );
+
+      let i = 500;
+      let w = new Number(500);
+      document.write(i == w, "<br>");
+
+      document.write(
+        " (x == y) is true because x and y have equal values ",
+        "<br>"
+      );
+      document.write(
+        " When using this === equality operator, equal numbers are not equal, because this === operator expects equality in both type and value.",
+        "<br>"
+      );
+
+      let t = 300;
+      let s = new Number(300);
+      document.write(t === s, "<br>");
+
+      document.write(
+        " (t === s) is false because x and y have different types ",
+        "<br>"
+      );
+
+      document.write("<h3> Comparison of Objects </h3>");
+      document.write("Objects cannot be compared:", "<br>");
+
+      let e = new Number(500);
+      let q = new Number(400);
+      document.write(e == q, "<br>");
+
+      document.write(
+        " (e == q) is false because objects cannot be compared ",
+        "<br>"
+      );
+
+      document.write("<h4> Numeric Strings </h4>", "<br>");
+      document.write(
+        "JavaScript will try to convert strings to numbers in all numeric operations exept <b> Addition </b>, because the + operator is used  to concatenate the strings",
+        "<br>"
+      );
+      /* let x = "100";
+             let y = "10";
+             let z = x / y;
+
+             let x = "100";
+             let y = "10";
+             let z = x / y;
+
+             let x = "100";
+             let y = "10";
+             let z = x / y; */
+
+      document.write(" <h4> Methods of Numbers.</h4>");
+
+      document.write(" <b>#1: Number.</b>", "<br>");
+      document.write("It converts a numeric string to a number.", "<br>");
+
+      let str = "100";
+      let str2 = 20;
+      document.write(str + str2, "<br>");
+      let num = Number(str);
+      document.write(num + str2, "<br>", "<br>");
+      document.write("<hr>");
+
+      document.write(" <b>#2: ParseInt </b>", "<br>");
+      document.write(
+        "parseInt() parses a string and returns an integer (whole number). Spaces are allowed. Only the first number is returned: (Int means integers)",
+        "<br>"
+      );
+      document.write(
+        "If the number cannot be converted, NaN (Not a Number) is returned.",
+        "<br>"
+      );
+
+      let pars1 = 10.54;
+      let pars2 = parseInt(pars1);
+      document.write(pars2);
+
+      //parseInt("10");         // returns 10
+      //parseInt("10.33");      // returns 10
+      //parseInt("10 20 30");   // returns 10
+      //parseInt("10 years");   // returns 10
+      //parseInt("years 10");   // returns NaN
+      //parseInt("He was 50 year old");   // returns NaN
+      //parseInt(050)           // returns 50 bcz o is not any value
+      document.write("<hr>");
+
+      document.write("#3: parseFloat", "<br>");
+      document.write(
+        "parseFloat() parses a string and returns  a floating point  number. Spaces are allowed. Only the first number is returned:",
+        "<br>"
+      );
+      document.write(
+        "The difference b/w <b> parseInt & parsefloat </b> is that parsefloat returns the whole interger including decimal and parseInt does not return the value after decimal.",
+        "<br>"
+      );
+
+      let parseflt = 30.5;
+      let parseflt2 = parseFloat(parseflt);
+      document.write(parseflt2, "<br>");
+
+      let parfl = "10.66Years";
+      let parfl2 = parseFloat(parfl);
+      document.write(parfl2);
+
+      document.write("<hr>");
+
+      document.write(" <b> #4: isFinite & isInteger </b>", "<br>");
+      document.write(
+        "<b> Remember that </b> all the functions of javaScript starting with 'is', return 2 value ,'true or false'. <b> isFinite </b> will check. if the  given number is countable, it will return true, if not , it will return false.",
+        "<br>"
+      );
+      document.write(
+        " <b> isInteger </b> on the other hand checks if the given number is an integer or not. if it is integer, it will return true, if not , it will return false.",
+        "<br>"
+      );
+      document.write("<br> 'Integer' is any number without decimal.", "<br>");
+      document.write(
+        "<b> Remember that </b> we will use 'Number' keyword before 'isInteger', like Number.isInteger ",
+        "<br>"
+      );
+
+      let infi = 500;
+      let infin = isFinite(infi);
+      document.write(infin, "<br>");
+
+      let infit = "hello";
+      let infiti = isFinite(infit);
+      document.write(infiti, "<br>");
+
+      let is = "hello";
+      let isi = Number.isInteger(is);
+      document.write(isi, "<br>");
+
+      let fum = 599;
+      let fumm = Number.isInteger(fum);
+      document.write(fumm, "<br>");
+
+      let isii = 40.49; // It's a floating value bcz it is in decimal.
+      let isiii = Number.isInteger(isii);
+      document.write(isiii);
+
+      document.write("<hr>");
+
+      document.write("<b> #5:toFixed </b>", "<br>");
+      document.write(
+        "toFixed() returns a string, with the number written with a specified number of decimals:",
+        "<br>"
+      );
+      document.write(
+        "It returns the value with decimals(as per the given numbers in the brackets.)",
+        "<br>"
+      );
+
+      let tofi = 40.987;
+      let tofil = tofi.toFixed(1);
+      document.write(tofil, "<br>");
+
+      let ab = 40.8885;
+      let abc = ab.toFixed(2);
+      document.write(abc);
+      //  let tofix = 9.656;
+      //  tofix.toFixed(0);           // returns 10
+      //  tofix.toFixed(2);           // returns 9.66
+      //  tofix.toFixed(4);           // returns 9.6560
+      //  tofix.toFixed(6);           // returns 9.656000
+
+      document.write("<hr>");
+
+      document.write("<b> #6:toPrecision </b>", "<br>");
+      document.write(
+        "toPrecision() returns a string, with a number written with a specified <b> length </b>",
+        "<br>"
+      );
+      document.write(
+        "it starts counting from laft and before the decimal. it rounds up a number to the highest integer",
+        "<br>"
+      );
+
+      let topri = 49.856;
+      let topris = topri.toPrecision(2);
+      document.write(topris, "<br>");
+
+      let toprisx = topri.toPrecision(1);
+      document.write(toprisx, "<br>"); // Checking required.
+
+      let topric = topri.toPrecision(3);
+      document.write(topric, "<br>");
+
+      document.write("<hr>");
+
+      document.write("<b> #7:toString </b>", "<br>");
+      document.write("It returns a number as a string", "<br>");
+
+      let stri = 50;
+      let strit = stri.toString();
+      document.write(40 + strit);
+
+      document.write("<hr>");
+
+      document.write("<b> #8:toExponential </b>", "<br>");
+      document.write(
+        "Returns a string, with a number rounded and written using exponential notation.",
+        "<br>"
+      );
+
+      let toexpo = 5000;
+      let toexpon = toexpo.toExponential();
+      document.write(toexpon);
+
+      document.write("<hr>");
+
+      document.write("<b> #9:valueOf </b>", "<br>");
+      document.write(" It returns a number as a number", "<br>");
+
+      let val = 500;
+      let valu = val.valueOf();
+      document.write(valu);
+
+      document.write("<hr>");
+
+      document.write(
+        "<b> Note that </b> All number methods return a new value. They do not change the original variable."
+      );
+    </script>
+    octal
+  </body>
+</html>

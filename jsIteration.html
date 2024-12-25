@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iteration & Iterables</title>
+  </head>
+  <body>
+    <script>
+      document.write(
+        "<h2 style = 'color : blue ; font-family : calibri'> Iteration & Iterables </h2>",
+        "<br>"
+      );
+
+      document.write(
+        'E.g : I have a variable x and it stores an array , as x = ["apple", "Orange", "Grape"], and it want to read , print or use these elements somewhere else, every element of the array one by one , I can use different loops (for, for of, for in, while etc) and method(forEach() , map()). <b> Question </b> is this that If I can do this with all these loops and methods, then why do we need \'iterators()\'. <b> Answer </b> is that in looping , the complete control of the loop is not in our hands , e.g. If I run a loop once , all the values of the array will be printed. Now If I want to print all element of the array omitting the first digit, I can do it with loops, but it\'s long process and i can easily do this with \'Iterators\'.',
+        "<br>"
+      );
+      document.write(
+        "<b> Remember that </b> 'Iterators' are not only used with array, It can also be used with 'strings' and 'objects' too.",
+        "<br>"
+      );
+      //let x = [ "Apple", "Orange", "Grapes"]
+
+      document.write(" <b> Syntax </b>", "<br>");
+      document.write(" let y = x[Symbol.iterator]()", "<br>");
+      let x = ["Apple", "Orange", "Grapes"];
+      let y = x[Symbol.iterator]();
+      document.write(
+        "Now all the values of x are stored in variable Y. Now If I want to print any value anywhere , I can use a method called next(), as follows",
+        "<br>"
+      );
+      document.write(
+        "As we can know we have all the control using iterator, we can do any thing with the above array. e.g, I want to print the first element and the last only , I will do as below ",
+        "<br>"
+      );
+      console.log(y.next().value);
+      y.next();
+      console.log(y.next());
+      document.write(
+        "As we know that I can use this anywhere, Now I write some lines and then print the last element, as below ",
+        "<br>"
+      );
+      document.write(
+        "If I want to print the value direct instead of value & false, i will use 'value' direct as in the first next()",
+        "<br>"
+      );
+      document.write(
+        "<b> Note that </b> It returns a value and a false until it reaches the last element. When all the elements are done, it will return 'true'.",
+        "<br>"
+      );
+      console.log(y.next(), "<br>");
+
+      document.write(
+        "As we know we can use iterator with a string too, as below, but should avoid using it a string. we should use a loop (for...of) instead of this",
+        "<br>"
+      );
+
+      let str = "It's a string";
+      let strng = str[Symbol.iterator]();
+      console.log(strng.next(), "<br>");
+
+      for (let result of str) {
+        document.write(result);
+      }
+
+      document.write("<br>");
+
+      document.write(
+        " <b> Note that </b> Symbol is a new data type , which is used for  unique values",
+        "<br>"
+      ); // "iterator" means that I want to diverse every value of the array. i.e I want to travel each element.
+
+      document.write("<h2> Symbol data type </h2>");
+    </script>
+  </body>
+</html>

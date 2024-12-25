@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java Buttons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </head>
+
+
+
+
+   <p>
+     
+    <p> How to function a button in javascript</p>
+    
+     <p>In the following example, an onclick attribute (with code), is added to a button element of HTML.
+       Remeber that 'id' must always be written in single quotations</p>
+
+    <button onclick="document.getElementById ('dat').innerHTML=Date()"> Show Date</button>
+     
+    
+   
+    <p id="dat"></p>
+    <br>
+    <button onclick="document.write (Date()) "> here is you</button>
+
+
+    <br>  <br>
+     <p> It can also be done as below , using 'this' keyword
+      Note that in the below code the 'button'will disappear</p>
+    <button onclick="this.innerHTML=Date()" class="btn-success"> Show Date</button> <!--class is added just for color-->
+
+
+      <h3> JavaScript HTML Events, Using Function</h3>
+      <p> Click the button to display the date</p>
+      <button onclick="display()"> Display Date</button>
+      
+      <script>
+        function display()
+      { document.getElementById('iii').innerHTML=Date();}
+      </script>
+      <p id="iii"></p>
+
+
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparison and Logical Operators</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container-fluid mt-1">
+      <script>
+        document.write("<h1 style='color: blue; font-family:calibri'> Comparisons and Logical Operators </h1>");
+        document.write("Comparison and Logical operators are used to test for true or false.", "<br>");
+        document.write(
+          " <b> Comparison operators </b> are used in logical statements to determine equality or difference between variables or values.",
+          "<br>"
+        );
+        document.write(
+          "==	equal to; ===	equal value and equal type; !=	not equal; !==	not equal value or not equal type ; >	greater than ;<	less than ; >=	greater than or equal to ; <=	less than or equal to ",
+          "<br>"
+        );
+        document.write(
+          "Comparison operators can be used in conditional statements to compare values and take action depending on the result, as follows",
+          "<br>"
+        );
+        //if (age < 18) text = "Too young to buy alcohol";
+        document.write(
+          " <b> Logical operators </b> are used to determine the logic between variables or values.",
+          "<br>"
+        );
+        //  let x = 6;
+        //  let y = 3;
+        document.write(
+          "&&	and	(x < 10 && y > 1) is true; ||	or	(x == 5 || y == 5) is false; !	not	!(x == y) is true",
+          "<br>"
+        );
+        document.write(
+          "When comparing two <b> strings </b>, 2 will be greater than 12, because (alphabetically) 1 is less than 2.",
+          "<br>"
+        );
+        document.write(
+          "To secure a proper result, variables should be converted to the proper type before comparison",
+          "<br>"
+        );
+
+        document.write('<input id="putValue" />');
+        document.write('<button onclick="myFunction()">Try it</button>');
+
+        // Ternary Operator's Syntax variablename = (condition) ? value1:value2
+        function myFunction() {
+          let voteable;
+          let age = document.getElementById("putValue").value;
+          if (isNaN(age)) {
+            voteable = "Input is not a number";
+          } else {
+            voteable = age < 18 ? "Too young" : "Old enough";
+          }
+          window.alert(voteable + " to vote", "<br>", "<br>");
+        }
+
+        document.write("<h3 style = 'color: blue'> JavaScript if, else if  and else </h3>");
+        document.write(
+          " Conditional statements are used to perform different actions based on different conditions.",
+          "<br>"
+        );
+        document.write(
+          "Use <b> if </b> to specify a block of code to be executed, if a specified condition is true",
+          "<br>"
+        );
+        document.write(
+          "Use <b> else </b> to specify a block of code to be executed, if the same condition is false",
+          "<br>"
+        );
+        document.write(
+          "Use <b> else if </b> to specify a new condition to test, if the first condition is false  and condition2 is true",
+          "<br>"
+        );
+
+        let timeHere = new Date().getHours();
+        let greeting;
+        if (timeHere < 10) {
+          greeting = "Good morning Sir";
+        } else if (timeHere >= 10) {
+          greeting = "Good evening Sir";
+        } else {
+          greeting = " Nothing Sir";
+        }
+        document.write(greeting, "<br>");
+
+        document.write("Use of <b> If with Els If </b>", "<br>");
+        let time = 19;
+        if (time < 12) {
+          greet = "Good Morning";
+        } else if (time < 18) {
+          greet = "Good evening";
+        } else {
+          greet = "Good night";
+        }
+        document.write(greet, "<br>");
+
+        let marks = 440;
+
+        if (marks >= 100 && marks <= 200) {
+          document.write("Grade D");
+        } else if (marks > 200 && marks <= 300) {
+          document.write(" Grade C");
+        } else if (marks > 300 && marks <= 400) {
+          document.write("Grade B");
+        } else if (marks > 400 && marks <= 500) {
+          document.write("Grade A");
+        } else {
+          document.write("Fail");
+        }
+
+        document.write("<hr>");
+
+        let myMarks = 300;
+
+        if (myMarks >= 100 && myMarks <= 200) {
+          myMarks = "Grade D";
+        } else if (myMarks > 200 && myMarks <= 300) {
+          myMarks = " Grade C";
+        } else if (myMarks > 300 && myMarks <= 400) {
+          myMarks = "Grade B";
+        } else if (myMarks > 400 && myMarks <= 500) {
+          myMarks = "Grade A";
+        } else {
+          myMarks = "Fail";
+        }
+        document.write(myMarks);
+      </script>
+    </div>
+  </body>
+</html>
