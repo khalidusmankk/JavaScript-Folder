@@ -109,7 +109,7 @@
         }
         document.write(greet, "<br>");
 
-        let marks = 440;
+        let marks = 340;
 
         if (marks >= 100 && marks <= 200) {
           document.write("Grade D");
@@ -122,6 +122,21 @@
         } else {
           document.write("Fail");
         }
+
+        document.write("<br>");
+
+        const grade =
+          marks >= 100 && marks <= 200
+            ? "Grade D"
+            : marks > 200 && marks <= 300
+            ? "Grade C"
+            : marks > 300 && marks <= 400
+            ? "Grade B"
+            : marks > 400 && marks <= 500
+            ? "Grade A"
+            : "Fail";
+
+        document.write(grade);
 
         document.write("<hr>");
 
