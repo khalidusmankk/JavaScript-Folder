@@ -244,7 +244,7 @@
       document.write("<b> Scope of let </b>", "<br>");
       document.write("'let' is a block scoped.");
       document.write(
-        " A block is a chunk of code bounded by curly braces {}.Anything within a curly braces is a a block.",
+        " A block is a chunk of code bounded by curly braces {}.Anything within a curly braces is a block.",
         "<br>"
       );
       document.write(
@@ -261,7 +261,7 @@
         document.write(great, "<br>");
         document.write(hell, "<br>");
       }
-      // console.log(hell);
+      //console.log(hell);
       document.write(great, "<br>");
       document.write(
         "We see that using 'hell' outside its block returns an error. This is bcz 'let' variables are block scoped.",
@@ -300,6 +300,7 @@
         " So if you try to use a 'let' variable before delclaration, you will get a \"reference Error\"",
         "<br>"
       );
+
       document.write(
         "let is hoisted, but remains uninitialized in a <b> temporal dead zone </b> until the declaration is encountered. However, since let hoist; is explicitly declared before console.log(hoist);, no error occurs, but the value is still undefined."
       );
