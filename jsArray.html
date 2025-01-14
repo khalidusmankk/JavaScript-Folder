@@ -58,9 +58,9 @@
         // The comma operator evaluates all operands (left to right) and returns the value of the last operand.
 
         /* The spread operator (...) expands elements into the array:
-                       let fruits = ["Apple", "Banana"];
-                       fruits = [...fruits, "Kiwi"];
-                       console.log(fruits);  // Output: ["Apple", "Banana", "Kiwi"] */
+                               let fruits = ["Apple", "Banana"];
+                               fruits = [...fruits, "Kiwi"];
+                               console.log(fruits);  // Output: ["Apple", "Banana", "Kiwi"] */
 
         let fruitslent = ["Banana", "Orange", "Apple", "Mango"];
         fruitslent[fruitslent.length] = "Kiwi"; // Appends "Kiwi" to fruit.
@@ -239,8 +239,8 @@
         document.write("<b> The Compare Function </b>", "<br>");
         document.write(
           "The purpose of the compare function is to define an alternative sort order.\
-                  The compare function should return a negative, zero, or positive value, depending on the arguments:\
-                  function(a, b){return a-b}"
+                          The compare function should return a negative, zero, or positive value, depending on the arguments:\
+                          function(a, b){return a-b}"
         );
         document.write(
           " When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.",
@@ -262,6 +262,7 @@
         let f = [1, 2, 3, 4, 5, 6, 7];
         delete f[4]; // Removes the value at index 4
         document.write(f, "<br>"); // Output: 1,2,3,4,6,,8,9
+        console.log(f);
 
         // const x = [1, 2, 3, 4];
         // delete x[2];
@@ -286,11 +287,51 @@
         document.write("<b> array.from()</b>", "<br>");
         document.write("It creates an array from a string:", "<br>");
         document.write("The Array.from() method returns an array from any object with a length property.", "<br>");
+
         document.write("The Array.from() method returns an array from any iterable object.", "<br>");
         let arrString = "String";
         let arrString2 = Array.from(arrString);
         document.write(arrString2, "<br>");
 
+        // const person = {
+        //   Name: "Khalid",
+        //   Age: 30,
+        // };
+        // const personOne = array.from(person); //ReferenceError: array is not defined at jsArray.html:295
+        // console.log(personOne); //Array.from() cannot be used on arbitrary objects like person unless they are iterable or array-like. Instead, use methods like Object.values(), Object.keys(), or Object.entries() to work with such objects.
+        // console.log(personOne.length);
+
+        // Manually make person array-like:
+        //Add a length property and numeric keys to make it array-like:
+        const person = {
+          0: "Khalid",
+          1: 30,
+          length: 2, // If I remove this length property from this object, it will return an empty array with a length 0, because Array.from() relies on the length property to determine how many elements to extract when working with array-like objects.
+        };
+        const personOne = Array.from(person);
+        document.write(personOne, "<br>");
+
+        document.write(
+          "1. What is an Array-like Object? n\
+        An array-like object is any object that: n\
+        Has a length property that indicates the number of elements. n\
+        Optionally has numerically indexed properties (0, 1, 2, etc.).",
+          "<br>"
+        );
+        document.write(
+          "Array.from() converts such objects into a true array by: n\
+        Using the length property to know how many elements to extract. n\
+        Checking for values at numeric indices (0, 1, 2, etc.).",
+          "<br>"
+        );
+        document.write(
+          " What Happens When length Is Missing? n\
+              If the length property is missing, JavaScript no longer considers the object array-like. When you pass such an object to Array.from(): n\
+              Array.from() checks for the length property. n\
+              Without it, it assumes there are 0 elements to extract. n\
+              The result is an empty array ([]) with length 0.",
+          "<br>"
+        );
         document.write("<hr>");
 
         document.write("<b> Remove Duplicates </b>", "<br>");
@@ -299,7 +340,7 @@
           "<br>"
         );
         document.write(
-          "One easy way of removing duplicates from an array is to convert an array to set, which automatically eliminates duplicates and then spread operator(...) convert it back to an array.",
+          "One easy way of removing duplicates from an array is to convert an array to set, which automatically eliminates duplicates and then spread operator(...) convert a set back to an array.",
           "<br>"
         );
 
@@ -322,12 +363,21 @@
 
         document.write("1. Example: Converting a Set to an Array", "<br>");
 
-        const mySet = new Set([1, 2, 3, 4, 4, 5]);
+        // const youSet = new Set([1, 2, 3, 3, 2]);
+        // console.log(youSet); // This will display on 1, 2, 3
+        // const mySet1 = new Set(1, 2, 3, 4, 4, 5); //  number 1 is not iterable (cannot read property Symbol(Symbol.iterator)) at new Set (<anonymous>)
+        // console.log(mySet1);
+        const mySet = new Set([1, 2, 3, 4, 4, 5]); //The Set constructor accepts an iterable as its argument to initialize the set.
         console.log(mySet); // Set(5) {1, 2, 3, 4, 5}
 
         const myArray = [...mySet]; // Spread operator converts Set to Array
         console.log(myArray); // [1, 2, 3, 4, 5]
-
+        document.write(
+          "Key Difference in the above n\
+            mySet is a Set, so it has methods like .add(), .delete(), .has(), and .size.  n\
+            myArray is a standard array, so it has array methods like .push(), .pop(), .map(), .filter().",
+          "<br>"
+        );
         document.write("<hr>");
 
         document.write("<h2> Array Iteration ( repeat ) Methods </h2>", " <br>");
