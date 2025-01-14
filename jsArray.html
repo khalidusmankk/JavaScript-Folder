@@ -387,7 +387,7 @@
         document.write("<b> Map , ForEach , Filter & Reduce </b>", " <br>");
         document.write("<b> Remember that </b> Map ,  Filter & Reduce  do not modify the original array", " <br>");
         document.write(
-          "<b> Map </b> method creates a new array by performing a function on each array element. (value, index, array). The map() method does not execute the function for array elements without values (let arr = [1, , 3, , 5]; Note that this array is called Sparse Array. (A sparse array is an array that has empty or missing elements.)).",
+          "<b> Map </b> method creates a new array by performing a function on each array element. (value, index, array). The map() method does not execute the function for array elements without values (let arr = [1, , 3, , 5]; Note that this array is called Sparse (gher gonjan) Array. (A sparse array is an array that has empty or missing elements.)).",
           "<br>"
         );
 
@@ -467,13 +467,16 @@
           "I can also use map method many time with or other methods , which is called chaining, as follow",
           "<br>"
         );
+        // const x = [1, 2, 3];
+        // const xy = x.map((v) => v * 3).filter((v) => v < 9);
+        // document.write(xy, "<br>");
 
         let chain = [1, 2, 5, 8, 9];
         let chaini = chain
           .map((num) => num * 3)
-          .map((num) => num / 2)
-          .filter((num) => num >= 10);
-        console.log(chaini, "<br>");
+          // .map((num) => num / 2)
+          .filter((num) => num >= 5); // It will filter the result based on the last method. If I uncomment the above map , the result will be changed.
+        document.write(chaini, "<br>");
         //document.write(allThreeelmnts , "<br>");
 
         document.write(
@@ -481,38 +484,15 @@
           "<br>"
         );
 
-        // () Parentheses: Implicit Return
-        // Used for single-expression functions.
-        // Automatically returns the result of the expression inside.
-        // No need to use the return keyword
-
         let arrstrng = [1, 2, 3, "Khalid", 4, 2, 1, "Usman", 3, "Khalid", "Usman", 3];
         function removeDuplicatesHere(arrays) {
           //Inside the function, the parameter arrays acts as a local variable that refers to the same array (arrstrng).
-          let a = []; // Inside the function, you are creating a new array ab to store unique values.
+          let a = []; // Inside the function, you are creating a new array a to store unique values.
           arrays.map((x) => (!a.includes(x) ? a.push(x) : "")); //The x in the .map(x => ...) expression is a parameter that represents each element of the array arrays during each iteration of the map function. The map function applies the provided arrow function to each element of the array.
           return a;
         }
         document.write(removeDuplicatesHere(arrstrng), "<hr>"); //The value of arrstrng (the original array) is passed as an argument to the function.
 
-        const db = [1, 2, 3, 2, 1];
-
-        //         function removedb(dbarray) {
-        //   let ab = [];
-        //   dbarray.map((x) => (!ab.includes(x) ? ab.push(x) : ""));
-        // }
-        // Inside the function, you are creating a new array ab to store unique values.
-        // However, you never return ab from the function.
-        // The function implicitly returns undefined because there is no return statement.
-        // use return keyword , as below, to explicitly return value
-        function removedb(dbarray) {
-          let ab = [];
-          dbarray.map((x) => (!ab.includes(x) ? ab.push(x) : ""));
-          return ab;
-        }
-        console.log(removedb(db));
-
-        //         Always return a value from a function if you expect a result.
         // Use .forEach() for side effects like pushing elements.
 
         document.write("<b>  ForEach </b>", "<br>");
