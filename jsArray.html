@@ -518,7 +518,7 @@
         // Example 1: Logging Elements
         const numberOne2 = [1, 2, 3, 4];
         numberOne2.forEach((num) => {
-          console.log(num); // Logs each number to the console , i.e 1,2,3,4
+          document.write(num, "<br>"); // Logs each number to the console , i.e 1,2,3,4
         });
 
         // Example 2: Modifying Elements (In-place)
@@ -526,7 +526,7 @@
         arrOne.forEach((value, index, array) => {
           array[index] = value * 2; // Modify the original array
         });
-        console.log(arrOne); // [2, 4, 6]
+        document.write(arrOne); // [2, 4, 6]
 
         //Example 3: Summing Numbers
         const numbersTwo = [1, 2, 3, 4];
@@ -543,6 +543,13 @@
           "<br>",
           "<br>"
         );
+
+        const x = [1, 2, 3];
+        x.forEach((val, ind, arr) => {
+          arr[ind] = val * 3; // Modify the array at the current index
+          console.log(`Index ${ind}:`, arr); // Log the current state of the array
+        });
+        console.log(x); // Logs the final state of the array
 
         document.write(
           "<b> Filter </b> method  creates a new array, with array elements, that pass a certain condition. It iterates through each element of the array and applies a callback function to test each element.It creates a new array and does not modify the existing array. ",

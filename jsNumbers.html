@@ -25,7 +25,36 @@
         "<br>"
       );
       document.write(
-        "Integers (numbers without a period or exponent notation) are considered accurate up to <b> 15  </b> digits.",
+        "Integer: n\
+          Includes positive numbers, negative numbers, and zero. n\
+          Examples: -3, -2, -1, 0, 1, 2, 3. n\
+          Whole Number: n\
+          Includes non-negative integers (zero and positive numbers). n\
+          Examples: 0, 1, 2, 3.n\
+          In short: n\
+          Integers: ... -3, -2, -1, 0, 1, 2, 3 ... n\
+          Whole Numbers: 0, 1, 2, 3 ...",
+        "<br>"
+      );
+
+      document.write(
+        "Integers (numbers without a period (decimal point) or exponent notation) are considered accurate up to <b> 15-16  </b> digits.",
+        "<br>"
+      );
+      document.write(
+        "The number 1234567890123456 is within the safe range for integers in JavaScript, meaning it can be represented exactly.Safe range for integers: -(2^53 - 1) to 2^53 - 1 (approximately -9 quadrillion to 9 quadrillion).",
+        "<br>"
+      );
+      document.write(
+        "If you go beyond 16 digits, JavaScript will lose accuracy due to limitations in floating-point representation. example below",
+        "<br>"
+      );
+      console.log(12345678901234567); // Rounds to 12345678901234568   Rounding only occurs when a number cannot be exactly represented.
+      console.log(12345678901234568); // Remains 12345678901234568  If a number can be represented exactly (like 12345678901234568), no rounding occurs.
+      console.log(12345678901234569); // Rounds to 12345678901234568
+
+      document.write(
+        "In this case, the number is rounded because it exceeds the safe precision limit. JavaScript guarantees precision for integers up to 15–16 digits. Beyond this range, numbers may lose accuracy.",
         "<br>"
       );
 
@@ -34,7 +63,7 @@
       console.log(9999999999999999); // Output: 1e+16 (which is equivalent to 10,000,000,000,000,000)
 
       document.write(
-        "Numbers beyond ' 2<sup>53</sup> - 1 ' lose precision due to the limitations of JavaScript’s floating-point representation."
+        "Numbers beyond ' 2<sup>53</sup> - 1 ' lose precision due to the limitations of JavaScript's floating-point representation."
       );
       document.write(
         "The maximum number of decimals is <b> 17 </b>, but floating point arithmetic is not always <b> 100% </b> accurate:",
@@ -53,7 +82,7 @@
       document.write(" <h2> NaN - Not a Number </h2>");
       document.write("NaN is a JavaScript reserved word indicating that a value is not a number.", "<br>");
       document.write(
-        "Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number)", //checking
+        "Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number)",
         "<br>",
         "<br>",
         "<br>"
@@ -69,7 +98,7 @@
 
       let f = 100 / "10";
       document.write(f, "<br>");
-      document.write(typeof f, "<br>", "<br>", "<br>");
+      document.write(typeof f, "<br>", "<br>");
 
       let fg = 100 + "10";
       document.write(fg, "<br>");
@@ -77,7 +106,7 @@
 
       let fgh = 100 * "10";
       document.write(fgh, "<br>");
-      document.write(typeof fgh, "<br>", "<br>", "<br>");
+      document.write(typeof fgh, "<br>", "<br>");
 
       let fghi = 100 - "10";
       document.write(fghi, "<br>");
