@@ -4,11 +4,109 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Events</title>
-    <style></style>
-  </head>
+   <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 100px; /* Initial margin-top */
+        padding: 40px;
+        background-color: black;
+        color:whitesmoke;
+        list-style: none;
+        
+        
+      }
+
+      h2 {
+        margin-top: 100px; /* Initial margin-top */
+      }
+
+      /* Fixed position style for ul */
+      .fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        margin-top: 0; /* Remove margin-top */
+      }
+
+      /* Adjust margin of heading */
+      .no-margin {
+        margin-top: 90px; /* Adjust margin for heading */
+      }
+    </style>
 
   <body>
-    <h2>Events in JavaScript</h2>
+    <div class="divONe">
+      <ul id="listItems">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <h2 id="heading">Events in JavaScript</h2>
+
+    <script>
+      // Select the elements
+      const listItem = document.getElementById("listItems");
+      const heading = document.getElementById("heading");
+
+      // Get the initial offset position of the ul element
+      const menuOffset = listItem.offsetTop; //The offsetTop and offsetLeft properties in JavaScript is used to get the margins  between the top or left of an element and the top or left of the body .
+      //listItem.offsetTop → Returns the distance between the top edge of the <ul> element and the top of the body.
+
+      // Add scroll event listener
+      window.addEventListener("scroll", () => {
+        if (window.scrollY >= menuOffset) {
+          // When scrolled past the ul position
+          listItem.classList.add("fixed"); //Adds the CSS classes fixed and no-margin to the elements when the user scrolls past a certain point.
+          heading.classList.add("no-margin");
+        } else {
+          // Restore original position and margin
+          listItem.classList.remove("fixed");
+          heading.classList.remove("no-margin");
+        }
+      });
+    </script>
+    <p>The classList property in JavaScript is used to access and manipulate the classes of an HTML element.
+       It provides methods to add, remove, toggle, and check CSS classes dynamically without directly modifying the class attribute as a string.</p>
+
+       <div id="myDiv" class="box red"> Hi div one</div>
+
+       <script>
+        const div = document.getElementById("myDiv");
+
+// 1. Check all classes applied
+console.log(div.classList); // Outputs: DOMTokenList ['box', 'red']
+
+// 2. Add a new class
+div.classList.add("border"); // Adds 'border' class
+
+// 3. Remove a class
+div.classList.remove("red"); // Removes 'red' class
+
+// 4. Toggle a class
+div.classList.toggle("highlight"); // Adds 'highlight' if not present; removes it if present
+
+// 5. Check if a class exists
+console.log(div.classList.contains("box")); // Outputs: true
+
+       </script>
+
+       <!-- Methods of classList:
+    Method	                                Description
+add(className)	              Adds one or more classes to the element.
+remove(className)	              Removes one or more classes from the element.
+toggle(className)	              Toggles a class (adds if absent, removes if present).
+contains(className)	            Checks whether the element contains the specified class. Returns true/false.
+replace(old, new)	              Replaces an existing class with a new one.
+length	                        Returns the total number of classes applied to the element. -->
+
     <p>
       HTML events are "things" that happen to HTML elements. When JavaScript is used in HTML pages, JavaScript can
       "react" on these events.
@@ -53,10 +151,10 @@
 
     <p id="demoOne">Let's click the below button to change the content of this paragraph.</p>
     <p>In the example below, the JavaScript code changes the content of the element (p) with id="demo".</p>
-    <button onclick="document.getElementById('demoOne').innerHTML = innerHTML + Date() ">The time is</button> <br />
-
+    <button onclick="document.getElementById('demoOne').innerHTML = innerHTML + Date() "> The time is </button> <br />
+  
     <p>In the example below, the code changes the content of its own element (button) (using this.innerHTML):</p>
-    <button onclick="this.innerHTML = Date()">Today the date is?</button> <br />
+    <button onclick=" this.innerHTML = Date()">Today the date is?</button> <br />
     <button onclick=" this.innerHTML = 'You clicked on the text' ">Click This Text</button> <br />
 
     <button ondblclick="this.innerHTML ='It has been Clicked twice'">Double Click On This Button</button>
@@ -84,6 +182,7 @@ a (the function parameter) receives the value of this, meaning a holds the refer
     <script>
       function changeText(a) {
         a.innerHTML = "The text of this button will be changed";
+         
       }
     </script>
 
@@ -105,6 +204,11 @@ a (the function parameter) receives the value of this, meaning a holds the refer
 
     <p>Assign an onclick event to a button element:</p>
 
+
+
+    
+
+
     <button id="myBtn">Click The Button</button>
     <p id="btnFunction"></p>
     <script>
@@ -115,7 +219,7 @@ a (the function parameter) receives the value of this, meaning a holds the refer
       }
     </script>
     <p>
-      In the example above, a function named displayDate is assigned to an HTML element with the id="myBtn". The
+      In the example above, a function named showDate is assigned to an HTML element with the id="myBtn". The
       function will be executed when the button is clicked.
     </p>
     <br />
@@ -134,14 +238,20 @@ a (the function parameter) receives the value of this, meaning a holds the refer
     </script>
 
     <h3>The oninput Event</h3>
-    <p>The oninput event is often used for some actions while the user input data.</p>
+    <p>The oninput event is often used for some actions while the user input some data.</p>
     <p>Below is an example of how to use the oninput to change the content of an input field.</p>
-    Enter Your Name Here : <input type="text" id="fnamee" oninput="upperCase()" />
+    Enter Your Name Here : <input type="text" id="fnamee" oninput =" upperCase()" /> <br><br>
+    Change the color to red : <input type="text" id="fnamee1" oninput =" textColor()" />
 
     <script>
       function upperCase() {
         const x = document.getElementById("fnamee");
         x.value = x.value.toUpperCase();
+      }
+
+      const textColor = () =>{
+        let a = document.getElementById("fnamee1");
+        a.style.color = "red"
       }
     </script>
 
@@ -311,10 +421,15 @@ Example
       document.getElementById("divv").addEventListener("mouseenter", function () {
         this.style.border = "20px solid yellow";
       }); //   We can also use 'this' here as used ....
+
+
+      
     </script>
     <div id="multi" style="height: 100px; width: 100px; background-color: #d94a38">
       Multiple Events are applied on this div.
     </div>
+
+    
     <script>
       // document.getElementById('multi').addEventListener("click" , function(){document.getElementById('multi').style.backgroundColor="yellow"})
       document.getElementById("multi").addEventListener("click", function () {
@@ -336,7 +451,28 @@ Example
       <b> Note that </b> We can remove any addEventListener method by using another method called removeEventListener()
       method.
     </p>
+    <div id="lastDiv" style="width: 100px; height: 50px; background-color: yellowgreen"></div>
+    <p>Click the box. Event listener will be removed after 3 seconds.</p>
 
+    <script>
+      // Define the named function
+      function changeColor() {
+        document.getElementById("lastDiv").style.backgroundColor = "red";
+      }
+
+      // Add Event Listener
+      const divElement = document.getElementById("lastDiv");
+      divElement.addEventListener("click", changeColor);
+
+      // Confirm event listener was added
+      console.log("Event listener added!");
+
+      // Remove the event listener after 3 seconds
+      setTimeout(() => {
+        divElement.removeEventListener("click", changeColor); // Remove by function reference
+        console.log("Click event removed!");
+      }, 3000); // Removes after 3 seconds
+    </script>
     <h3>Navigating Between Nodes</h3>
     <ol>
       <li>parentNode</li>
@@ -375,11 +511,44 @@ DOCUMENT_TYPE_NODE	 10   	   <!Doctype html> ---->
       the text. A markup is the actual set of symbols or codes used to define or label the document structure and
       elements.
     </p>
+
+
+      <input 
+      type="number" 
+      id="lastInput" 
+      oninput="editDate()" 
+      placeholder="Enter your year of birth"
+    />
+
+    <script>
+      function editDate() {
+        // Get the input element
+        const inputField = document.getElementById("lastInput");
+
+        // Get the year of birth entered by the user
+        const yOfBirth = parseInt(inputField.value);
+
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+
+        // Calculate age
+        const age = currentYear - yOfBirth;
+
+        // Check if age is less than 18
+        if (age < 18) {
+          // Change text color to red if under 18
+          inputField.style.color = "red";
+        } else {
+          // Reset text color if 18 or older
+          inputField.style.color = "black";
+        }
+      }
+    </script>
+
   </body>
 </html>
 
-<!-- 
-then where does "function example (e) {}" this e comes from
+<!--  then where does "function example (e) {}" this e comes from
 
 ChatGPT said:
 

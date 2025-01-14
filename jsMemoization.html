@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Memoization</title>
+  </head>
+  <body>
+    <h1>Memoization in JS</h1>
+    <p>
+      A smart way to make your functions faster by storing and reusing their past results is called Memoization. OR
+      Memoization is a technique where results are stored to avoid doing the same computations many times
+    </p>
+    <p>
+      Memoization in JavaScript is a performance optimization technique where the results of expensive function calls
+      are cached. If the function is called again with the same inputs, the cached result is returned instead of
+      recalculating the result.
+    </p>
+    <p>
+      A function stores its previously computed results in a cache (often an object or a map). When the function is
+      called with the same arguments, it looks up the cache instead of recomputing the result.
+    </p>
+    <p>
+      Why Use Memoization? To improve performance by avoiding redundant computations. Especially useful for pure
+      functions, where the output depends only on the input and has no side effects.
+    </p>
+    <p>
+      A memoized value is the result of a computation that is cached and reused to avoid recomputing it unless its
+      dependencies change.
+    </p>
+    <p>
+      A memoized function is a function that caches its return values for specific arguments, avoiding re-execution for
+      the same inputs. This is typically achieved using libraries like lodash.memoize or custom implementations.
+    </p>
+    <p>
+      Simple Example of Memoization Let’s memoize a function that calculates the square of a number: javascript Copy
+      code
+    </p>
+    <p>
+      Cache: A cache is just a temporary data store that stores data in order to serve future requests for that data
+      more quickly.
+    </p>
+
+    <script>
+      function memoizeSquare() {
+        const cache = {}; // Object to store cached results
+
+        return function (num) {
+          if (num in cache) {
+            console.log("Fetching from cache:", num);
+            return cache[num]; // Return cached result
+          } else {
+            console.log("Calculating result:", num);
+            const result = num * num;
+            cache[num] = result; // Store the result in cache
+            return result;
+          }
+        };
+      }
+
+      const square = memoizeSquare();
+
+      console.log(square(5)); // Calculating result: 5 => 25
+      console.log(square(5)); // Fetching from cache: 5 => 25
+      console.log(square(6)); // Calculating result: 6 => 36
+      console.log(square(6)); // Fetching from cache: 6 => 36
+
+      document.write(
+        "Explanation:The memoizeSquare function returns a closure with access to a cache object. On the first call with a number (e.g., 5), it calculates the square, stores it in the cache, and returns it. On subsequent calls with the same number, it retrieves the result from the cache instead of recalculating.",
+        "<br>"
+      );
+
+      document.write(
+        "Benefits:The second call to square(5) fetches the result from the cache, saving computation time.This is particularly useful when working with:Computationally expensive tasks (e.g., recursion, complex calculations).Functions that are called repeatedly with the same inputs.",
+        "<br>"
+      );
+
+      document.write(
+        "Real-World Use Case: Fibonacci Series. A naive implementation of the Fibonacci series can be slow due to repeated calculations. Memoization can optimize it:",
+        "<br>"
+      );
+
+      document.write(
+        "The Fibonacci sequence, also known as Fibonacci numbers, is defined as the sequence of numbers in which each number in the sequence is equal to the sum of two numbers before it. The Fibonacci Sequence is given as: Fibonacci Sequence = 0, 1, 1, 2, 3, 5, 8, 13, 21, …. It's  formula is  Fn = Fn − 1 + Fn − 2. ",
+        "<br>"
+      );
+      let sum = 0;
+
+      const calC = (n) => {
+        //When the function is called as calC(5), the value 5 is passed to n.So, inside the function, n = 5.
+        for (let i = 0; i <= n; i++) {
+          //The loop runs from i = 0 to i <= n (5):
+          sum = sum + i;
+        }
+        return sum;
+      };
+      console.time();
+      document.write(calC(5));
+      console.timeEnd();
+
+      function toggleFun() {
+        const a = document.getElementById("toggleDiv");
+        a.style.display = "none";
+      }
+
+      function toggleFun2() {
+        const a = document.getElementById("toggleDiv");
+        a.style.display = "block";
+      }
+    </script>
+
+    <div id="toggleDiv" style="width: 100px; height: 200px; background-color: red">hi there</div>
+    <button id="toggleB" onclick="toggleFun()">click toggle</button>
+    <button id="toggleB" onclick="toggleFun2()">click toggle again</button>
+  </body>
+</html>
+
+<!-- conclusion of the calC function and the loop inside it, is below -->
+<!-- Iteration	i	sum = sum + i	sum
+            1	0	    0 + 0	     0
+            2	1	    0 + 1	     1
+            3	2	    1 + 2	     3
+            4	3	    3 + 3	     6
+            5	4	    6 + 4	     10
+            6	5	    10 + 5	     15 -->

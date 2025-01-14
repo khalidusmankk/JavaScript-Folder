@@ -9,20 +9,15 @@
   <body>
     <script>
       document.write("JavaScript has only one type of number.", "<br>");
+      document.write(" Numbers can be written <b> with, or without </b>, decimals.", "<br>");
+      document.write(" let x = 34.00; (A number with decimals i.e Decimal numbers)", "<br>");
+      document.write("let y = 34;  // A number without decimals i.e whole number.", "<br>");
       document.write(
-        " Numbers can be written <b> with, or without </b>, decimals.",
-        "<br>"
+        "The letter e in a number (e.g., 5e3) stands for exponential notation.It represents the base 10, and the digits after e are the power of 10."
       );
+
       document.write(
-        " let x = 34.00; (A number with decimals i.e Decimal numbers)",
-        "<br>"
-      );
-      document.write(
-        "let y = 34;  // A number without decimals i.e whole number.",
-        "<br>"
-      );
-      document.write(
-        "'e' is used for exponential notation. <b> '5e3'</b> means that 5 should be multiplied with 10 power 3 (i.e: 5 * 10 * 10 * 10 = 5000/ ;; e denotes (means batana) 10 and the digits after e are its power.)",
+        "'e' is used for exponential notation. <b> '5e3'</b> means that 5  multiplied by 10 raised to the power of 3 (i.e: 5 * 10 * 10 * 10 = 5000/ ;; e denotes (means batana) 10 and the digits after e are its power.) x * 10<sup>y</sup>",
         "<br>"
       );
       document.write(
@@ -34,91 +29,89 @@
         "<br>"
       );
 
-      let a = 999999999999999; // a will be 999999999999999
-      let b = 9999999999999999; //9.999999999999999e+15   // b will be 10000000000000000 //10e14
+      let a = 999999999999999; // a will be 999999999999999 .. it is  within JavaScript’s precise range and is represented exactly as it is.
+      let b = 9999999999999999; //9.999999999999999e+15   // b will be 10000000000000000 //10e14   9,999,999,999,999,999 exceeds the precise integer range. 10,000,000,000,000,000
+      console.log(9999999999999999); // Output: 1e+16 (which is equivalent to 10,000,000,000,000,000)
 
+      document.write(
+        "Numbers beyond ' 2<sup>53</sup> - 1 ' lose precision due to the limitations of JavaScript’s floating-point representation."
+      );
       document.write(
         "The maximum number of decimals is <b> 17 </b>, but floating point arithmetic is not always <b> 100% </b> accurate:",
         "<br>"
       );
       let g = 0.2 + 0.1; // x will be 0.30000000000000004
-      document.write(
-        "To solve the problem above, it helps to <b> multiply and divide. </b>",
-        "<br>"
-      );
+      document.write("To solve the problem above, it helps to <b> multiply and divide. </b>", "<br>");
       let h = (0.2 * 10 + 0.1 * 10) / 10; // x will be 0.3
 
-      document.write(
-        "Remember that Never write a number with a <b> leading zero (like 07) </b>."
-      );
+      document.write("Remember that Never write a number with a <b> leading zero (like 07) </b>.");
       document.write(
         "Some JavaScript versions interpret numbers as <b> octal </b> if they are written with a leading zero.",
         "<br>"
       );
 
-      document.write(" <h2> NaN - Not a Number </h2>", "<br>");
+      document.write(" <h2> NaN - Not a Number </h2>");
+      document.write("NaN is a JavaScript reserved word indicating that a value is not a number.", "<br>");
       document.write(
-        "NaN is a JavaScript reserved word indicating that a value is not a number.",
-        "<br>"
-      );
-      document.write(
-        "Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number)",
+        "Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number)", //checking
+        "<br>",
+        "<br>",
         "<br>"
       );
 
-      let c = 100 / "Apple"; // c will be NaN (Not a Number)
+      let c = "Apple" / 100;
+      document.write(c, "<br>"); //NaN is a special value that represents "Not a Number," but its type is number.
       document.write(typeof c, "<br>");
+      console.log(typeof c, "<br>");
 
-      document.write(
-        "However, if the string contains a numeric value , the result will be a number:",
-        "<br>"
-      );
-      document.write(
-        "Numbers written inside double quotes are called numeric string.",
-        "<br>"
-      );
+      document.write("However, if the string contains a numeric value , the result will be a number:", "<br>");
+      document.write("Numbers written inside double quotes are called numeric string.", "<br>", "<br>");
 
       let f = 100 / "10";
-      document.write(typeof f, "<br>");
+      document.write(f, "<br>");
+      document.write(typeof f, "<br>", "<br>", "<br>");
+
+      let fg = 100 + "10";
+      document.write(fg, "<br>");
+      document.write(typeof fg, "<br>", "<br>");
+
+      let fgh = 100 * "10";
+      document.write(fgh, "<br>");
+      document.write(typeof fgh, "<br>", "<br>", "<br>");
+
+      let fghi = 100 - "10";
+      document.write(fghi, "<br>");
+      document.write(typeof fghi, "<br>");
+
+      document.write("<h3> JavaScript Type Coercion (jabr, dabawo) </h3>");
+      document.write(
+        " (In the above code) JavaScript uses type coercion when performing operations between different data types (e.g., a number and a string).For subtraction (-), multiplication (*), and division (/), JavaScript attempts to convert the string operand into a number before performing the operation. If the string can be successfully converted to a number, the operation works as expected.For addition (+), JavaScript prioritizes string concatenation if at least one operand is a string. This is because the + operator is overloaded to handle both numeric addition and string concatenation.",
+        "<br>"
+      );
 
       document.write(" <h2>Numbers Can be Objects.</h2>");
-      document.write(
-        "Normally JavaScript numbers are primitive values created from literals.",
-        "<br>"
-      );
+      document.write("Normally JavaScript numbers are primitive values created from literals.", "<br>");
       let j = 123; // it's type is number
-      document.write(
-        "But numbers can also be defined as objects with the keyword new",
-        "<br>"
-      );
+      document.write("But numbers can also be defined as objects with the keyword new", "<br>");
       let k = new Number(123); // its type is object
 
       document.write(typeof j, "<br>");
       document.write(typeof k, "<br>");
 
-      document.write(
-        "<b> Note that : </b> Don't create Number objects. It slows down execution speed.",
-        "<br>"
-      );
+      document.write("<b> Note that : </b> Don't create Number objects. It slows down execution speed.", "<br>");
       document.write(
         " The <b> new </b> keyword complicates the code. This can produce some unexpected results.",
         "<br>"
       );
 
       document.write("<h3> Equality Operator </h3>");
-      document.write(
-        "When using this == equality operator, equal numbers look equal:",
-        "<br>"
-      );
+      document.write("When using this == equality operator, equal numbers look equal:", "<br>");
 
       let i = 500;
       let w = new Number(500);
       document.write(i == w, "<br>");
 
-      document.write(
-        " (x == y) is true because x and y have equal values ",
-        "<br>"
-      );
+      document.write(" (x == y) is true because x and y have equal values ", "<br>");
       document.write(
         " When using this === equality operator, equal numbers are not equal, because this === operator expects equality in both type and value.",
         "<br>"
@@ -128,10 +121,7 @@
       let s = new Number(300);
       document.write(t === s, "<br>");
 
-      document.write(
-        " (t === s) is false because x and y have different types ",
-        "<br>"
-      );
+      document.write(" (t === s) is false because x and y have different types ", "<br>");
 
       document.write("<h3> Comparison of Objects </h3>");
       document.write("Objects cannot be compared:", "<br>");
@@ -140,10 +130,7 @@
       let q = new Number(400);
       document.write(e == q, "<br>");
 
-      document.write(
-        " (e == q) is false because objects cannot be compared ",
-        "<br>"
-      );
+      document.write(" (e == q) is false because objects cannot be compared ", "<br>");
 
       document.write("<h4> Numeric Strings </h4>", "<br>");
       document.write(
@@ -179,10 +166,7 @@
         "parseInt() parses a string and returns an integer (whole number). Spaces are allowed. Only the first number is returned: (Int means integers)",
         "<br>"
       );
-      document.write(
-        "If the number cannot be converted, NaN (Not a Number) is returned.",
-        "<br>"
-      );
+      document.write("If the number cannot be converted, NaN (Not a Number) is returned.", "<br>");
 
       let pars1 = 10.54;
       let pars2 = parseInt(pars1);
@@ -259,10 +243,7 @@
         "toFixed() returns a string, with the number written with a specified number of decimals:",
         "<br>"
       );
-      document.write(
-        "It returns the value with decimals(as per the given numbers in the brackets.)",
-        "<br>"
-      );
+      document.write("It returns the value with decimals(as per the given numbers in the brackets.)", "<br>");
 
       let tofi = 40.987;
       let tofil = tofi.toFixed(1);
@@ -280,10 +261,7 @@
       document.write("<hr>");
 
       document.write("<b> #6:toPrecision </b>", "<br>");
-      document.write(
-        "toPrecision() returns a string, with a number written with a specified <b> length </b>",
-        "<br>"
-      );
+      document.write("toPrecision() returns a string, with a number written with a specified <b> length </b>", "<br>");
       document.write(
         "it starts counting from laft and before the decimal. it rounds up a number to the highest integer",
         "<br>"
@@ -311,10 +289,7 @@
       document.write("<hr>");
 
       document.write("<b> #8:toExponential </b>", "<br>");
-      document.write(
-        "Returns a string, with a number rounded and written using exponential notation.",
-        "<br>"
-      );
+      document.write("Returns a string, with a number rounded and written using exponential notation.", "<br>");
 
       let toexpo = 5000;
       let toexpon = toexpo.toExponential();

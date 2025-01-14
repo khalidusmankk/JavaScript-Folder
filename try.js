@@ -52,3 +52,7 @@
 // This is why 'A' is considered less than 'a'.
 
 console.log("answer" > "Answer");
+
+const x = NaN !== NaN;
+document.write(x);
+// The IEEE 754 floating-point standard, which JavaScript follows, specifies that NaN should never be considered equal to any value, including itself.

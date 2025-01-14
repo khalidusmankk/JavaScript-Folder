@@ -76,7 +76,7 @@
       );
       document.write("Do not use 'var' keyword inside a block. Always use 'let' & const instead.", "<br>");
       document.write("<b> #1: var </b>", "<br>");
-      document.write("<b> Scopr of var </b>", "<br>");
+      document.write("<b> Scope of var </b>", "<br>");
       document.write("<b> Scope </b> essentially means where these variables are available for use.", "<br>");
       document.write("<b> var </b> declarations are globally or fuction/lacally scoped.", "<br>");
       document.write(
@@ -168,6 +168,12 @@
         "Hoisting is a JavaScript's default behaviour of moving declaration to the top of the current scope.i.e to the top of the function, if defined in a function and to the top of global context, if defined outside a function.",
         "<br>"
       );
+      function example() {
+        console.log(x); // Output: undefined
+        var x = 10;
+        console.log(x); // Output: 10
+      }
+      example();
       document.write("In JavaScript, a variable can be used before it has been declared.", "<br>");
       document.write(
         "var' declarations are hoisted with default value of undefined. var is hoisted and initialized to undefined immediately."
@@ -233,6 +239,17 @@
         let p = "ppppppppppppppp";
       }
       document.write(p, "<br>");
+      // interview question
+      document.write(x, "<br>");
+      var x = 10;
+      document.write(
+        "The JS variables declarations are hoisted to the top of their scope during compilation phase. This means that the declaration var x; is moved to top ; but the assigment x = 10; remains on the original position. Hoisting only moves the declaration , not the initialization, So when console.log(x) is executed, the variable x is unknown as it has not been assigned any value yet. Therefore at this point the x is undefined.",
+        "<br>"
+      );
+      document.write(
+        "If the variable is declared with let or const, and we try to access this variable  , we get a ReferenceError due to temporal dead zone:  that 'Cannot access 'x' before initialization'",
+        "<br>"
+      );
 
       document.write("<hr>");
 
@@ -309,9 +326,9 @@
       console.log(xx);
       var xx;
 
-      axx = 50;
-      console.log(axx);
-      let axx;
+      // axx = 50;
+      // console.log(axx);
+      // let axx;
 
       document.write(
         "<b> Note that </b> let and const are also hoisted (but they create a temporal dead zone) and due to TDZ , we cannot access them. ",
