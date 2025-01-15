@@ -269,7 +269,7 @@
 
       document.write("<b> #5:toFixed </b>", "<br>");
       document.write(
-        "toFixed() returns a string, with the number written with a specified number of decimals:",
+        " The toFixed() method in JavaScript is used to format a number to a fixed number of decimal places.  The toFixed() method rounds the number starting from the first digit on the left side of the digits after the decimal.  toFixed() returns a string, with the number written with a specified number of decimals:",
         "<br>"
       );
       document.write("It returns the value with decimals(as per the given numbers in the brackets.)", "<br>");
@@ -290,12 +290,21 @@
 
       document.write("<hr>");
 
-      document.write("<b> #6:toPrecision </b>", "<br>");
-      document.write("toPrecision() returns a string, with a number written with a specified <b> length </b>", "<br>");
+      document.write("<b> #6:toPrecision(Accuracy or exactness) </b>", "<br>");
+      document.write(
+        "The toPrecision() method in JavaScript formats a number to a specified total number of significant digits (not just after the decimal point). It returns a string representation of the number. If no precision is provided, it behaves like toString(). toPrecision() returns a string, with a number written with a specified <b> length </b>",
+        "<br>"
+      );
       document.write(
         "it starts counting from laft and before the decimal. it rounds up a number to the highest integer",
         "<br>"
       );
+
+      let nums = 123.456;
+      console.log(nums.toPrecision(4)); // "123.5" (4 significant digits)
+      console.log(nums.toPrecision(6)); // "123.456" (6 significant digits)
+      console.log(nums.toPrecision(1)); // "1e+2" (1 significant digit, scientific notation)
+      console.log(nums.toPrecision(2)); // "120" (2 significant digits, rounded)
 
       let topri = 49.856;
       let topris = topri.toPrecision(2);
