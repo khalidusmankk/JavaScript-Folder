@@ -661,7 +661,7 @@
           "<br>"
         );
         document.write(
-          "The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object. The spread operator is used to spread elements, whether from an array or an object, to another array or object.",
+          "The spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object. The spread operator is used to spread elements, whether from an array or an object, to another array or object.",
           "<br>"
         );
         document.write("Purpose: To spread or expand the elements of an array or object.", "<br>");
@@ -717,12 +717,11 @@
         document.write("Purpose: To collect multiple elements into a single variable." + "<br>");
         document.write("Usage: Often used in function parameters and destructuring assignments." + "<br>");
         const numbers = [1, 2, 3, 4, 5, 6];
-        const [one, two, ...rest] = numbers;
-        document.write(one, two + " ", rest); // OR we canuse the below code.
+        const [one, two, three, ...rest] = numbers;
+        document.write(one, two, three + " ", rest); // OR we canuse the below code.
         //  document.write("<p>" + one + "</p>");
         //  document.write("<p>" + two + "</p>");
         //  document.write("<p>" + rest + "</p>");
-        document.write("<hr>");
       </script>
     </div>
   </body>
