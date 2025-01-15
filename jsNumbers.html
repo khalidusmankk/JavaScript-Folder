@@ -192,7 +192,7 @@
 
       document.write(" <b>#2: ParseInt </b>", "<br>");
       document.write(
-        "parseInt() parses a string and returns an integer (whole number). Spaces are allowed. Only the first number is returned: (Int means integers)",
+        "parseInt() parses a string and returns an integer . Spaces are allowed. Only the first number is returned: (Int means integers)",
         "<br>"
       );
       document.write("If the number cannot be converted, NaN (Not a Number) is returned.", "<br>");
@@ -275,8 +275,9 @@
       document.write("It returns the value with decimals(as per the given numbers in the brackets.)", "<br>");
 
       let tofi = 40.987;
-      let tofil = tofi.toFixed(1);
+      let tofil = tofi.toFixed(2);
       document.write(tofil, "<br>");
+      document.write(typeof tofil, "<br>");
 
       let ab = 40.8885;
       let abc = ab.toFixed(2);
@@ -309,7 +310,7 @@
       document.write("<hr>");
 
       document.write("<b> #7:toString </b>", "<br>");
-      document.write("It returns a number as a string", "<br>");
+      document.write("It converts a number to a string", "<br>");
 
       let stri = 50;
       let strit = stri.toString();
