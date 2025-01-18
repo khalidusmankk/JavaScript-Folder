@@ -19,6 +19,7 @@
 
   <body>
     <div class="container-fluid mt-1">
+      <!-- When the <script> tag is in the <head> or above the <form> element in the <body>, the browser executes the JavaScript before rendering the DOM. As a result, document.getElementById() cannot find the element, returning null. -->
       <script>
         document.write(
           "<h1 style='font-family: calibri ; color: blue; text-decoration: underline'> Dates in JavaScript</h1>"
@@ -189,6 +190,11 @@
         }
         document.write(text, "<br>");
       </script>
+
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   </body>
 </html>

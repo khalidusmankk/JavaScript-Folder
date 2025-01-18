@@ -804,5 +804,24 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
 
       document.getElementsByTagName("h2")[20].style.fontSize = "100px";
     </script>
+    <form id="myForm">
+      <input type="text" id="username" placeholder="Enter your username" />
+      <br />
+      <input type="password" id="password" placeholder="Enter your password" />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      // Handle form submission
+      document.getElementById("myForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevents page reload
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        console.log("Username:", username);
+        console.log("Password:", password);
+      });
+    </script>
   </body>
 </html>
