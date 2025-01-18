@@ -815,7 +815,7 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
     <script>
       // Handle form submission
       document.getElementById("myForm").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevents page reload
+        e.preventDefault(); // Default Behavior of a Form is to submit its data to the URL specified in the action attribute when the user clicks the submit button .  If no action is specified, the form submits to the current page URL, causing a page reload.
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
