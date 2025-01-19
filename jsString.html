@@ -127,12 +127,26 @@
           "indexOf returns the index number of the first found string in a string. Both indexOf() and lastIndexOf() return -1 if the text is not found.Both methods accept a second parameter as the starting position for the search.",
           "<br>"
         );
+        //         string.indexOf(searchValue, startIndex);
+        // searchValue: The substring to search for.
+        // startIndex (optional): The position (index) in the string where the search should begin.
         document.write("E.g", "<br>");
         let inde = "There is his house is";
         let house = inde.indexOf("is");
         document.write(house, "<br>");
         let house2 = inde.lastIndexOf("is");
-        document.write(house2);
+        document.write(house2, "<br>");
+
+        let textStr = "Hello, hello world!";
+        // Start search from the beginning (default)
+        console.log(textStr.indexOf("hello")); // 7
+        // Start search from index 8
+        console.log(textStr.indexOf("hello", 8)); // -1 (not found)
+
+        document.write(
+          "In the second case, the search begins at index 8, so it skips the first occurrence of hello at index 7.",
+          "<br>"
+        );
 
         document.write(" <h3> Did You Notice? </h3> ");
         document.write("The two methods are NOT equal. These are the differences.", "<br>");
