@@ -9,8 +9,6 @@
   <body>
     <div class="container-fluid mt-1">
       <h2 style="background-color: black; color: whitesmoke">Function</h2>
-      >
-
       <p>A function in JavaScript is a group of reusable code that can be called anywhere in your program</p>
       <p>In JavaScript, if a function does not explicitly return a value, it returns undefined by default.</p>
       <p>
@@ -23,6 +21,13 @@
         declarations to the top of the current scope. Hoisting applies to variable declarations and to function
         declarations. Because of this, JavaScript functions can be called before they are declared:
       </p>
+      <script>
+        document.write(hoistedFun(5, 5), "<br>");
+        function hoistedFun(a, b) {
+          return a + b;
+        }
+        document.write(hoistedFun(5, 5));
+      </script>
       <p><b style="background-color: black; color: whitesmoke"> Why Functions? </b></p>
       <p>
         We can reuse code: Define the code once, and use it many times. You can use the same code many times with
