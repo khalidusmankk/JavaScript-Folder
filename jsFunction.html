@@ -88,12 +88,15 @@
 
       <script>
         function myFunction(x, y) {
-          //Basically x and y are variables , passed in a function. These x and y are also called parameters here.
+          //Basically x and y are variables , passed in a function. These x and y are also called parameters here. x and y in the function are parameters. These are placeholders for values that will be passed when the function is called.
           //  {return x + y};
-          return Math.round((x + Y) / 2);
+          return Math.round((x + y) / 2);
         }
 
-        let x = 17; // Note that we can't write the below variables inside the curly braces of the function bxz these variable are already declared in the function as parameters.
+        document.write(myFunction(10, 20), "<br>");
+        document.write(myFunction(20, 20), "<br>");
+
+        let x = 17; //  Note that we can't write the below variables inside the curly braces of the function bxz these variable are already declared in the function as parameters.
         let y = 30;
         let z = 67;
 
@@ -121,20 +124,12 @@
 
         function addTwo(number1, number2) {
           //Basically number1 and number2 are variables , passed in a function. These number1 and number2 are also called parameters here.
-          document.write(number1 + number2);
+          return number1 + number2;
         }
 
         addTwo(5, 10); // Here the values passed during calling a function, are called arguments.
       </script>
       <p>Function arguments (parameters) work as local variables inside functions.</p>
-      <p>
-        Now question is this that if I store this function in a variable , will it returns the same thing , i.e (15)
-      </p>
-      <p>Answer is that It will not return the same thing, but it will return 'Undefined', as below.</p>
-      <p>
-        let result = addTwo(5, 10); // console.log(result); // I have iniitialized this variable, then why is it
-        undefined
-      </p>
 
       <p>Another way of calling a function is as below</p>
       <script>
@@ -182,7 +177,7 @@
       <p>If I directly initialize a variable in the function, then the value in the last will not be shown, as below</p>
 
       <script>
-        function loginUserMessage(userName = "Sam") {
+        function logIn(userName = "Sam") {
           // The code below will not run and only sam will be shown to user.
           if (!userName) {
             // ! means that username is undefined.
@@ -192,7 +187,7 @@
           //return `${userName} Just Logged In `    // This code is called string manipulation
           return userName + " You Just logged In!";
         }
-        console.log(loginUserMessage()); // If I put value here in the brackets, this arguments will be shown instead of 'Sam'
+        console.log(logIn()); // If I put value here in the brackets, this arguments will be shown instead of 'Sam'
       </script>
 
       <h2 style="background-color: black; color: whitesmoke">Function ' Rest ' Parameter</h2>
