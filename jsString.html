@@ -161,8 +161,11 @@
         );
         document.write("By default, the replace() method replaces only the first match.", "<br>");
         document.write("To replace all matches, use a regular expression with a /g flag (global match).", "<br>");
-        // let text = "Please visit Microsoft and Microsoft!";
-        // let newText = text.replace(/Microsoft/g, "W3Schools");
+
+        let aString = "string in a string for string";
+        let bString = aString.replace(/string/g, "text");
+        console.log(bString);
+
         document.write(
           "By default, the replace() method is case sensitive. Writing KHALID (with upper-case) will not replace khalid (with lower-case)",
           "<br>"
