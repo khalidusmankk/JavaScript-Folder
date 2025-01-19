@@ -175,21 +175,21 @@
         );
 
         let repl = "let's replace Khalid ";
-        let khali = repl.replace("Khalid", "Khalid Usman Khan");
+        let khali = repl.replace("Khalid", "Khalid Usman");
         document.write(khali, "<br>");
 
-        // text = text.replaceAll("Cats","Dogs");
-        // text = text.replaceAll("cats","dogs");
         document.write(
-          " The replaceAll() method allows you to specify a regular expression instead of a string to be replaced.",
+          " The replaceAll() method also allows you to specify a regular expression instead of a string to be replaced.",
           "<br>"
         );
         document.write(
           "If the parameter is a regular expression, the global flag (g) must be set, otherwise a TypeError is thrown.",
           "<br>"
         );
-        // let text = "cats , dogs, cats, animals, cats";
-        // let text2 = text.replaceAll(/cats/g,"dogs"); replace all the cats with dogs
+        let xString = "cats , dogs, cats, animals, cats";
+        let yString = xString.replaceAll("cats", "dogs"); // replace all the cats with dogs
+        console.log(yString);
+        //  let yString = xString.replaceAll(/cats/g, "dogs"); We can also do it.
 
         document.write("<hr>");
 
