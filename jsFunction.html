@@ -63,12 +63,25 @@
         function , as in the above function or outside the function as in the below function.",
       </p>
       <script>
-        function myFunction1(a, b) {
-          let aa = 5;
+        function myFunction1() {
+          let aa = 15;
           let bb = 9;
           return aa + bb;
         }
         document.write(myFunction1() + "<br>");
+
+        document.write("We can also this , as below", "<br>");
+
+        function myFunction2() {
+          return 15 + 9;
+        }
+        document.write(myFunction2() + "<br>");
+
+        document.write("OR", "<br>");
+        function myFunction3(a, b) {
+          return a + b;
+        }
+        document.write(myFunction2(15, 9) + "<br>");
       </script>
 
       <h3 style="background-color: black; color: whitesmoke">Function with parameters and 'return' keyword</h3>
