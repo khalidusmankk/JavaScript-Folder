@@ -178,6 +178,7 @@
 
       <script>
         function logIn(userName = "Sam") {
+          //When a parameter in a JavaScript function is assigned a default value (like userName = "Sam"), it acts as a fallback.
           // The code below will not run and only sam will be shown to user.
           if (!userName) {
             // ! means that username is undefined.
@@ -201,10 +202,10 @@
           let sumRest = 0;
           for (let ele of myArray) {
             sumRest = sumRest + ele;
-            return sumRest;
           }
+          return sumRest;
         }
-        document.write(addRest(4, 9, 16, 25, 29, 100, 66, 77));
+        document.write(addRest(4, 9, 16, 25, 29, 100, 66, 77), "<br>");
 
         function sum(...arrayss) {
           let sum = 0;
