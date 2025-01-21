@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+
+  <body>
+    <input type="text" id="firstInp" />
+    <button onclick="handleList()">Add To List</button>
+    <ul id="todoList"></ul>
+
+    <script>
+      // Declare the array outside the function to retain its values
+      const a = [];
+
+      function handleList() {
+        const b = document.getElementById("firstInp").value;
+
+        // Only add the item if it's not already in the array and is not empty
+        if (b.trim() !== "" && !a.includes(b)) {
+          a.push(b);
+
+          // Add the item to the displayed list
+          const listItem = document.createElement("li");
+          listItem.textContent = b;
+          document.getElementById("todoList").appendChild(listItem);
+        }
+
+        // Clear the input field after adding to the list
+        document.getElementById("firstInp").value = "";
+      }
+    </script>
+  </body>
+</html>

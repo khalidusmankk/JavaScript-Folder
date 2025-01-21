@@ -812,10 +812,16 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
       <button type="submit">Submit</button>
     </form>
 
+    <a href="https://www.google.com" id="buttonEle" onclick="handleButton(event)">Click Me</a>
     <script>
+      function handleButton(event) {
+        event.preventDefault(); // Prevents the default behavior of the anchor tag (navigating to the URL)
+        console.log("Default action prevented!");
+      }
       // Handle form submission
       document.getElementById("myForm").addEventListener("submit", function (e) {
         e.preventDefault(); // Default Behavior of a Form is to submit its data to the URL specified in the action attribute when the user clicks the submit button .  If no action is specified, the form submits to the current page URL, causing a page reload. The preventDefault() method is a JavaScript function that prevents the browser's default action for a specific event from occurring.
+        //The preventDefault() method is available on the event object, not directly on the element.
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
