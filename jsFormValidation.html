@@ -157,7 +157,8 @@
       a user wants to bookmark the result. GET is good for non-secure data, like query strings in Google.
     </p>
     <form action="/jsform2.html" method="get">
-      <input type="text" />
+      <input type="text" name="fname" /> <br />
+      <input type="text" name="lname" /><br />
       <input type="submit" />
     </form>
 
@@ -168,7 +169,8 @@
       bookmarked
     </p>
     <form action="/jsform2.html" method="post">
-      <input type="text" />
+      <input type="text" name="fname" /> <br />
+      <input type="text" name="lname" /><br />
       <input type="submit" />
     </form>
     <p><b> Tip: </b> Always use POST if the form data contains sensitive or personal information!</p>
@@ -208,7 +210,6 @@
     <p>The HTML &lt; form &gt; element can contain one or more of the following form elements:</p>
 
     <h2>Form Elements</h2>
-
     <p>
       &lt; input &gt; <br />
       &lt; label &gt; <br />
@@ -342,7 +343,7 @@
     <br />
 
     <p>
-      The "No files chosen" message you are seeing along with the "Select files" button comes from the behavior of the
+      The "No files chosen" message you are seeing along with the "Choose files" button comes from the behavior of the
       input type="file" element in HTML. Here's how it works:
     </p>
     <p><b> Default behavior </b> , This is the browser's built-in functionality for file input fields.</p>
