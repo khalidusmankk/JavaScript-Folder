@@ -343,8 +343,11 @@
           "<br>"
         );
         thirdFriend.occupation = "teaching";
+        thirdFriend["passion"] = "dancing";
         //teacher["occupation"] = "teaching"
-        document.write(thirdFriend.occupation, "<br>", "<br>");
+        document.write(thirdFriend.occupation, "<br>");
+        document.write(thirdFriend["passion"], "<br>");
+        document.write(thirdFriend.passion, "<br>", "<br>");
 
         document.write("<b> Deleting a property of an object </b>", "<br>");
         document.write(
@@ -361,7 +364,7 @@
           Nationality: "Pakistani",
           Age: 30,
         };
-        delete driver.Age; //
+        delete driver.Age;
         document.write(driver.Name + " is " + driver.Age + " Year Old", "<br>");
 
         document.write(
