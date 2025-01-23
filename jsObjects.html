@@ -170,9 +170,77 @@
         document.write(" The expression must evaluate to a property name.", "<br>");
 
         document.write(
-          "<b> Do Not Declare Strings, Numbers, and Booleans as Objects, as follows. </b> Avoid String, Number, and Boolean objects.  They complicate your code and slow down execution speed.",
+          "In javaScript to access the properties or add the properties of an object, we use two notations, dot notation or bracket notation. what is the clear difference between these 2",
           "<br>"
         );
+        document.write(
+          "In JavaScript, dot notation and bracket notation are both used to access and manipulate object properties. While they serve the same purpose, there are clear differences in their usage and scenarios where one is preferred over the other.",
+          "<br>"
+        );
+        document.write("<h4>Dot Notation (.) </h4>");
+        document.write("Syntax: object.property", "<br>");
+        document.write(
+          "<b> Use Case:</b> When the property name is a valid identifier (e.g., it does not contain spaces, special characters, or start with a number).",
+          "<br>"
+        );
+        const personHere = {
+          name: "John",
+          age: 30,
+        };
+
+        console.log(personHere.name); // "John"
+        personHere.age = 35; // Update property
+        console.log(personHere.age);
+        document.write(
+          "<b>Advantages:</b> Cleaner and more concise.Easier to read and write.Syntax errors are caught at compile time (e.g., mistyped property names).",
+          "<br>"
+        );
+        document.write(
+          "<b>Limitations: </b>Cannot be used if the property name:Contains spaces (e.g., first name)Starts with a number (e.g., 1property)Includes special characters (e.g., #key).Cannot dynamically evaluate property names."
+        );
+        document.write(
+          "Use Case: When the property name is:Dynamic: Stored in a variable or generated at runtime.Non-standard: Contains spaces, starts with a number, or has special characters.",
+          "<br>"
+        );
+        document.write("<h4>Bracket Notation ([])  </h4>");
+        document.write('Syntax: object[ "/property/" ] or object[variableContainingPropertyName]', "<br>");
+
+        document.write(
+          "Use Case: When the property name is:Dynamic: Stored in a variable or generated at runtime.Non-standard: Contains spaces, starts with a number, or has special characters.",
+          "<br>"
+        );
+        const personThere = {
+          "first name": "John",
+          age: 30,
+          "1property": "value",
+        };
+
+        console.log(personThere["first name"]); // "John"
+        console.log(personThere["1property"]); // "value"
+
+        const key = "age";
+        console.log(personThere[key]); // 30
+        console.log(personThere["age"]);
+
+        document.write(
+          "Advantages:Can access properties with names that are invalid identifiers.Useful for dynamic or computed property access.",
+          "<br>"
+        );
+        document.write(
+          "Limitations:Less readable compared to dot notation for standard property names.Typing errors or undefined variables in the bracket expression may not be caught easily.",
+          "<br>"
+        ) /
+          //         Comparison Table
+          // Feature	                   Dot Notation (.)                  	Bracket Notation ([])
+          // Property Name Validity	      Requires valid identifiers.       	Can handle any string.
+          // Dynamic Property Access 	     Not possible.                     	Possible.
+          // Readability	                More readable and concise.	        Less readable for simple names.
+          // Error Catching	              Syntax errors detected early.   	   Runtime errors for undefined variables.
+          // Special Characters in Key 	   Not allowed.	                        Allowed.
+          document.write(
+            "<b> Do Not Declare Strings, Numbers, and Booleans as Objects, as follows. </b> Avoid String, Number, and Boolean objects.  They complicate your code and slow down execution speed.",
+            "<br>"
+          );
         document.write(
           "<b> Note that </b> The JavaScript for...in statement loops through the properties of an object, as described in the loop file.",
           "<br>"
@@ -183,10 +251,7 @@
         document.write(" <b> Use of an array inside an object .</b>", "<br>");
         document.write("We can print an object using 'For/In loop .", "<br>", "<br>");
         document.write("The JavaScript for...in statement loops through the properties of an object.", "<br>");
-        document.write(
-          "The block of code inside of the for...in loop will be executed once for each property.",
-          "<br>"
-        );
+        document.write("The block of code inside the for...in loop will be executed once for each property.", "<br>");
 
         //   for (variable in object) {
         //     code to be executed
@@ -233,7 +298,7 @@
           "<br>"
         );
 
-        secondFriend = {
+        const secondFriend = {
           Name: "Ahmad Yar",
           Age: 30,
           Nationality: "Afghan",
@@ -250,6 +315,7 @@
           "The use of 'this' here means that this object is made inside this variable and the owner of this object is this variable. i.e,(secondFriend) Here 'this' is used for 'secondFriend'.",
           "<br>"
         );
+
         document.write("I can also put another object inside the same object , as below", "<br>");
 
         thirdFriend = {
@@ -257,8 +323,11 @@
           Age: 20,
           Nationality: "Pakistan",
           color: "white",
+
           favouriteCars: [" Lexus ", " Tiida ", " BMW"], //array here
+
           Hobbies: ["Reading ", " Gardening "], //array here
+
           Address: { country: "Pakistan", city: "Peshawar" },
 
           detail: function () {
