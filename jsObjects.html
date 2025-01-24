@@ -385,13 +385,21 @@
 
         document.write(Object.values(secondFriend), "<br>");
 
-        document.write(" <b> Using JSON ( JSON.stringfy) </b>", "<br>");
+        document.write(" <b> Using JSON ( JSON.stringify) </b>", "<br>");
         document.write(
           "Any JavaScript object can be stringified (converted to a string) with the JavaScript function JSON.stringify():",
           "<br>"
         );
         document.write(
           "JSON.stringfy returns complete object (properties and its values), but it will not return the function.",
+          "<br>"
+        );
+        document.write(
+          " JavaScript functions cannot be stringified by JSON.stringify. The reason is that JSON (JavaScript Object Notation) is designed to be a data format for transferring and storing data, not for including executable code.",
+          "<br>"
+        );
+        document.write(
+          "Why Functions Aren't Stringified:JSON Specification: JSON is a text format for data, not behavior. Functions contain behavior (code), so they're not part of the JSON specification.",
           "<br>"
         );
 
