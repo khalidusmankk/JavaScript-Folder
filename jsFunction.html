@@ -191,6 +191,28 @@
         console.log(logIn()); // If I put value here in the brackets, this arguments will be shown instead of 'Sam'
       </script>
 
+      <h2>Event in Function</h2>
+      <p>
+        The "e" parameter in a function like the below represents the event object that is automatically passed to the
+        event handler function by the browser when the event is triggered.
+      </p>
+      <p>
+        Where Does e Come From? When an event listener is registered for an element, the browser automatically calls the
+        associated handler function whenever the event occurs. The browser passes the event object as an argument to the
+        handler function.
+      </p>
+
+      <script>
+        function eventFun(e) {
+          e.preventDefault();
+        }
+
+        document.querySelector("button").addEventListener("click", function (e) {
+          console.log(e); // Logs the event object
+        });
+      </script>
+      <!-- Check again ...  e.stopPropagation(): Stops the event from bubbling up or propagating to parent elements. -->
+
       <h2 style="background-color: black; color: whitesmoke">Function ' Rest ' Parameter</h2>
       <p>
         The rest parameter (...) allows a function to treat an indefinite number of arguments as an array. Rest Operator
