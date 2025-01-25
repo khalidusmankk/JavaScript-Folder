@@ -564,7 +564,7 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
           }
 
           // Check for valid email format
-          else if (w.indexOf("@") <= 0 || (w.charAt(w.length - 4) != "." && w.charAt(w.length - 3) != ".")) {
+          else if (w.indexOf("@") <= 0 || (w.at(-4) != "." && w.at(-3) != ".")) {
             alert("Please put a valid email ID.");
             return false;
           }
@@ -589,6 +589,10 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
           }
         }
       </script>
+      <!-- else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(w)) {
+    alert("Please put a valid email ID.");
+    return false;
+} -->
 
       <br />
       <br />
