@@ -78,10 +78,10 @@
     <h2 id="tips">Link to FormControl file in react.JS</h2>
     <p>The below form is linked to another file just for try</p>
 
-    <form action="/javaform2.html">
+    <form action="/jsform2.html">
       <!-- This data will be sent to javaform2 -->
       <label for="fname"> First Name : </label> <br />
-      <input type="text" id="fname" value="Khalid Usman" /> <br />
+      <input type="text" id="fname1" value="Khalid Usman" /> <br />
       <input type="submit" value="Submit" />
     </form>
     <br />
@@ -95,11 +95,11 @@
     <p>Radio buttons let a user select <b> ONE </b> of a limited number of choices.</p>
 
     <form>
-      <input type="radio" id="html" name="fav_language" value="HTML" />
+      <input type="radio" id="html1" name="fav_language" value="HTML" />
       <label for="html">HTML</label><br />
-      <input type="radio" id="css" name="fav_language" value="CSS" />
+      <input type="radio" id="css1" name="fav_language" value="CSS" />
       <label for="css">CSS</label><br />
-      <input type="radio" id="javascript" name="fav_language" value="JavaScript" />
+      <input type="radio" id="javascript1" name="fav_language" value="JavaScript" />
       <label for="javascript">JavaScript</label>
     </form>
 
@@ -282,7 +282,7 @@
         <label for="birthday">Birthday: </label> <br />
         <input type="date" id="birthday" name="birthday" /><br />
         <label for="password"> Password: </label> <br />
-        <input type="password" id="password" name="password" maxlength="15" /> <br />
+        <input type="password" id="password1" name="password" maxlength="15" /> <br />
         <br />
         <!-- 15 means that we can't use more than 15 characters -->
       </fieldset>
@@ -484,7 +484,7 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
     </p>
 
     <div class="container mt-3 mx-2">
-      <form onsubmit="return anyName()" action="javaform2.html" autocomplete="off">
+      <form onsubmit="return anyName()" action="jsform2.html" autocomplete="off" method="get">
         <!-- When you write onsubmit="return anyName()", the return keyword ensures that the form submission depends on the outcome of the anyName() function. -->
 
         <label for="nam"> Name</label> <br />
@@ -497,9 +497,8 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
           id="passwor"
           placeholder="Password"
         /><br />
-        <br />
 
-        <input type="submit" value="Log In" />
+        <button value="submit">Submit</button>
       </form>
 
       <script>
@@ -523,11 +522,11 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
       <h3>Password Validation</h3>
       <p>Password and confirm password must match each other</p>
 
-      <form onsubmit="return anyName2()" action="javaform2.html">
+      <form onsubmit="return anyName2()" action="jsform2.html">
         <label for="namee"> Name</label> <br />
         <input type="text" id="namee" placeholder=" User name" /><br />
 
-        <label for="namee"> Email</label> <br />
+        <label for="email"> Email</label> <br />
         <input type="email" id="emaill" placeholder=" example@gmail.com" /><br />
 
         <label for="passwordd"> Password</label> <br />
@@ -595,14 +594,14 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
       <br />
       <br />
 
-      <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+      <form name="myForm1" action="/action_page.php" onsubmit="return validateForm()" method="post">
         Name: <input type="text" name="fname" />
         <input type="submit" value="Submit" />
       </form>
 
       <script>
         function validateForm() {
-          let x = document.forms["myForm"]["fname"].value;
+          let x = document.forms["myForm1"]["fname"].value;
           if (x == "") {
             alert("Name must be filled out");
             return false;
@@ -610,7 +609,7 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
         }
 
         document.write("<br>");
-        document.write("  document.forms[myForm][fname].value", "<br>");
+        document.write("  document.forms[myForm1][fname].value", "<br>");
         document.write(
           " document.forms[myForm] is not a method, but rather a way to access a specific form in the HTML document. ",
           "<br>"
@@ -815,7 +814,7 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
 
       document.getElementsByTagName("h2")[20].style.fontSize = "100px";
     </script>
-    <form id="myForm">
+    <form id="myForm2">
       <input type="text" id="username" placeholder="Enter your username" />
       <br />
       <input type="password" id="password" placeholder="Enter your password" />
@@ -830,7 +829,7 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
         console.log("Default action prevented!");
       }
       // Handle form submission
-      document.getElementById("myForm").addEventListener("submit", function (e) {
+      document.getElementById("myForm2").addEventListener("submit", function (e) {
         e.preventDefault(); // Default Behavior of a Form is to submit its data to the URL specified in the action attribute when the user clicks the submit button .  If no action is specified, the form submits to the current page URL, causing a page reload. The preventDefault() method is a JavaScript function that prevents the browser's default action for a specific event from occurring.
         //The preventDefault() method is available on the event object, not directly on the element.
         const username = document.getElementById("username").value;
