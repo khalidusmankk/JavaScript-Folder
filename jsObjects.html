@@ -572,20 +572,21 @@
         document.write(textEight);
 
         document.write(
-          " <b> No:8 :: toString() </b> method is used internally by JavaScript when an object needs to be displayed as a text (like in HTML), or when an object needs to be used as a string."
+          " <b> No:8 :: toString() </b> method is used internally by JavaScript when an object needs to be displayed as a text (like in HTML), or when an object needs to be used as a string.Every JavaScript object has a toString() method.",
+          "<br>"
         );
         const myTeacher = {
           firstName: "Khalid",
           lastName: "Usman",
           age: 50,
-          toString: function () {
-            return `${this.firstName} ${this.lastName}, Age: ${this.age}`;
-          },
+          // toString: function () {
+          //   return `${this.firstName} ${this.lastName} ${this.age}`;
+          // },
         };
 
         // Using toString() explicitly
-        document.write(myTeacher.toString(), "<br>"); // Output: Khalid Usman, Age: 50
-
+        document.write(myTeacher.toString(), "<br>"); //The toString() method returns "[object Object]" if it cannot return a string..The toString() method returns an object as a string.
+        document.write(Object.toString(myTeacher), "<br>"); //Object.toString() always returns the object constructor.
         // Using the object in a string context
         document.write("Teacher details: " + myTeacher, "<br>"); // Output: Teacher details: Khalid Usman, Age: 50
 
@@ -629,7 +630,9 @@
 
         document.write(
           " <b> Note </b> : A sealed object prevents structural changes (adding or removing properties).n\
-                  Sealing does not make the object immutable; it only restricts its shape, not its content."
+                  Sealing does not make the object immutable; it only restricts its shape, not its content.",
+          "<br>",
+          "<br>"
         );
 
         // Call , Apply & Bind
