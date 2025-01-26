@@ -652,28 +652,30 @@
           "<br>"
         );
         document.write(
-          "This example calls the <b> fullName method </b> of <b> principalThree </b>, using it on <b> principalOne </b>:",
+          "This example calls the <b> fullName method </b> of <b> hisName </b>, using it on <b> studentObj1 </b>:",
           "<br>"
         );
 
-        const principalOne = {
-          fName: "Khalid",
-          lName: "Usman",
+        const studentObj = {
+          Name: "kk",
+          Age: 30,
+          Nationality: "Paki",
         };
 
-        const principalTwo = {
-          fName: "Inayat",
-          lName: "Khan",
+        const studentObj1 = {
+          Name: "John",
+          Age: 30,
+          Nationality: "American",
         };
 
-        const principalThree = {
+        const hisName = {
           fullName: function () {
-            return this.fName + " " + this.lName;
+            return this.Name + this.Age + this.Nationality;
           },
         };
 
-        let a = principalThree.fullName.call(principalOne);
-        document.write(a, "<br>");
+        const yourName = hisName.fullName.call(studentObj1);
+        console.log(yourName);
 
         document.write(" <b> Apply() Method </b>");
         document.write(
