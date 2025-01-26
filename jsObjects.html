@@ -466,10 +466,14 @@
         };
 
         // Assign Source to Target
+        let assign = Object.assign(doctor, patient);
+        // document.write(assign.firstName, "<br>"); // to print any value of an object
+        for (let x in assign) {
+          document.write(x + ":" + assign[x], "<br>");
+        }
         Object.assign(doctor, patient);
-
         // Display Target
-        let text = Object.entries(doctor);
+        let text = Object.entries(doctor); // we can not directly print an object, so converted into an array
         document.write(text, "<br>");
 
         document.write(" <b> No:3 :: Object.create(object) </b> Creates an object from an existing object" + "<br>");
