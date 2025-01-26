@@ -663,9 +663,9 @@
         };
 
         const studentObj1 = {
-          Name: "John",
+          Name: " John ",
           Age: 30,
-          Nationality: "American",
+          Nationality: " American ",
         };
 
         const hisName = {
@@ -675,7 +675,7 @@
         };
 
         const yourName = hisName.fullName.call(studentObj1);
-        console.log(yourName);
+        document.write(yourName, "<br>");
 
         document.write(" <b> Apply() Method </b>");
         document.write(
@@ -697,6 +697,7 @@
 
         document.write("<b> Difference Between call() and apply() </b>", "<br>");
         document.write(
+          // Rechecking
           "The call() method takes arguments separately.n\
 The apply() method takes arguments as an array.",
           "<br>"
