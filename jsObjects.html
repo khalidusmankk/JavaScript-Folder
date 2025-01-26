@@ -771,6 +771,7 @@ The apply() method takes arguments as an array.",
         document.write(personaaa2.lastNn + "<br>", "<br>");
 
         document.write("<b> JavaScript Setter (The set Keyword) </b>", "<br>");
+        document.write("The set keyword is used to set the value of any property of any object", "<br>");
         document.write(
           "This example uses a <b> lang </b> property to <b> set </b> the value of the <b> language </b> property.",
           "<br>"
@@ -794,7 +795,7 @@ The apply() method takes arguments as an array.",
           name: "HP",
           color: "white",
           get colr() {
-            return this.color.toUpperCase().charAt(0);
+            return this.color.charAt(0).toUpperCase();
           },
         };
         document.write(computer.colr, "<br>");
