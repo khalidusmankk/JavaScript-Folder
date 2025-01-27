@@ -963,6 +963,7 @@ The apply() method takes arguments as an array.",
         //   document.write(x, "<br>");
         // }
         document.write(numbers, "<br>");
+        document.write(typeof numbers, "<br>");
 
         document.write(iter.next().value, "<br>");
         iter.next().value, "<br>"; // To omit the middle digit
@@ -972,7 +973,7 @@ The apply() method takes arguments as an array.",
 
         let mix = ["khalid", 50, "Ihsan", 40];
         let iterabl = mix[Symbol.iterator]();
-        document.write(iterabl);
+        document.write(mix, "<br>");
         document.write(iterabl.next().value, "<br>");
         iterabl.next().value;
         document.write(iterabl.next().value, "<br>");
