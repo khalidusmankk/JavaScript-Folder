@@ -65,6 +65,27 @@
           "<b> Remember that </b>Specifying a day higher than max, will not result in an error but add the overflow to the next month: ",
           "<br>"
         );
+        document.write(new Date(2024, 7, 36), "<br>");
+        document.write(new Date(4, 35, 2024), "<br>");
+
+        document.write(
+          "The reason the code document.write(new Date(4, 35, 2024)) returns Sat Jun 15 1912 is due to how the JavaScript Date object interprets its constructor arguments.",
+          "<br>"
+        );
+        document.write(
+          "4 is interpreted as the year (1904, since years between 0 and 99 are treated as 1900-1999).35 is interpreted as the month index, which is out of range.2024 is interpreted as the day, which is also out of range. ",
+          "<br>"
+        );
+        document.write("Handling Out-of-Range Values:", "<br>");
+        document.write(
+          "When the monthIndex or day value exceeds the valid range, JavaScript rolls over the value into the next unit. For example:",
+          "<br>"
+        );
+        document.write("35 months means 35 - 12 = 23 months beyond January, which becomes November 1906.", "<br>");
+        document.write(
+          "2024 days are added to the calculated month, pushing the final date forward to June 15, 1912.",
+          "<br>"
+        );
         document.write(
           "<b> Note that </b> You cannot omit month. If you supply only one parameter it will be treated as milliseconds.One parameter will be interpreted as new Date(milliseconds).",
           "<br>"
