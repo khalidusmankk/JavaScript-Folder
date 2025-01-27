@@ -1046,18 +1046,21 @@ The apply() method takes arguments as an array.",
           num3: 30,
           num4: 40,
         };
-        const { num1, ...numberNums } = nums;
+
+        const { num1, ...RestNums } = nums;
         document.write(num1 + "<br>");
-        document.write(numberNums + "<br>"); //numberNums uses the rest operator (...) to collect the remaining properties of nums (excluding num1) into a new object:
-        // When you use document.write(numberNums), it tries to display the numberNums object, but since objects are not inherently printable as plain text, it results in [object Object].
+        document.write(RestNums + "<br>"); //RestNums uses the rest operator (...) to collect the remaining properties of nums (excluding num1) into a new object:
+        // When you use document.write(RestNums), it tries to display the numberNums object, but since objects are not inherently printable as plain text, it results in [object Object].
 
         // Solution is that we know that for displaying any object we use JSON.stringify, Iterate Through the Object (using for..in loop) or Using Object.values()
 
-        document.write(JSON.stringify(numberNums) + "<br>");
+        document.write(JSON.stringify(RestNums) + "<br>");
 
-        for (let keys in numberNums) {
-          document.write(numberNums[keys] + "<br>");
+        for (let keys in RestNums) {
+          document.write(RestNums[keys] + "<br>");
         }
+
+        document.write(Object.values(nums));
       </script>
 
       <h2>How to use Property Attributes in Object ?</h2>
