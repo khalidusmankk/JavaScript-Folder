@@ -957,6 +957,11 @@ The apply() method takes arguments as an array.",
 
         let iter = numbers[Symbol.iterator](); //The () is necessary because numbers[Symbol.iterator] gives you a function, and the () calls that function to get the actual iterator object. Without the (), you're just accessing the function itself but not using it.
 
+        document.write(iter, "<br>");
+
+        // for (let x of iter) {
+        //   document.write(x, "<br>");
+        // }
         document.write(numbers, "<br>");
 
         document.write(iter.next().value, "<br>");
