@@ -881,6 +881,20 @@ The apply() method takes arguments as an array.",
         //  In an event, this refers to the element that received the event.
         //  Methods like call(), apply(), and bind() can refer this to any object.
 
+        // document.write("The statement "Alone, or in a function, this keyword refers to the global object" explains the behavior of the   this keyword in JavaScript in non-strict mode when used outside of a class, object, or arrow function. Let’s break it down:")
+
+        //         1. Alone:
+        // When this is used outside of any function or object (in the global context), it refers to the global object.
+
+        // Global Object:
+        // In browsers, the global object is window.
+        // In Node.js, the global object is global.
+
+        function showThis() {
+          console.log(this); // Refers to the global object
+        }
+        showThis(); // Logs `window` in browsers
+
         document.write(
           "<b> Note that </b> this is not a variable. It is a keyword. You cannot change the value of this.",
           "<br>",
