@@ -959,7 +959,7 @@ The apply() method takes arguments as an array.",
 
         document.write(iter, "<br>");
 
-        // for (let x of iter) {
+        // for (let x of iter) { for loop for printing the object
         //   document.write(x, "<br>");
         // }
         document.write(numbers, "<br>");
@@ -972,6 +972,7 @@ The apply() method takes arguments as an array.",
 
         let mix = ["khalid", 50, "Ihsan", 40];
         let iterabl = mix[Symbol.iterator]();
+        document.write(iterabl);
         document.write(iterabl.next().value, "<br>");
         iterabl.next().value;
         document.write(iterabl.next().value, "<br>");
