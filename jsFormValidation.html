@@ -774,6 +774,7 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
         </tbody>
       </table>
 
+      <h2>Example of checkValidity</h2>
       <p>If an input field contains invalid data, display a message:</p>
       <input type="number" id="numberOne" min="100" max="300" required />
       <button onclick="myFunction()">OK</button>
@@ -789,11 +790,34 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
           }
         }
       </script>
-
-      <h2>Example with setCustomValidity</h2>
     </div>
-    <br />
-    <br />
+
+    <h2>Example of setCustomValidity</h2>
+    <form id="myForm">
+      <input
+        type="number"
+        id="lastNumber"
+        min="100"
+        max="300"
+        required
+        placeholder="Enter a number between 100 and 300"
+      />
+      <button onclick="lastFun()" type="submit">Submit</button>
+      <h2 id="demo"></h2>
+    </form>
+    <script>
+      function lastFun() {
+        const a = document.getElementById("lastNumber");
+        const value = a.value;
+        // a.setCustomValidity("Done It");
+
+        if (value < 100 || value > 300) {
+          a.setCustomValidity("The entered number is not between 100 and 300.");
+        } else {
+          a.setCustomValidity("field is filled properly");
+        }
+      }
+    </script>
 
     <form id="myForm2">
       <input type="text" id="username" placeholder="Enter your username" />
@@ -803,12 +827,7 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
       <button type="submit">Submit</button>
     </form>
 
-    <a href="https://www.google.com" id="buttonEle" onclick="handleButton(event)">Click Me</a>
     <script>
-      function handleButton(event) {
-        event.preventDefault(); // Prevents the default behavior of the anchor tag (navigating to the URL)
-        console.log("Default action prevented!");
-      }
       // Handle form submission
       document.getElementById("myForm2").addEventListener("submit", function (e) {
         e.preventDefault(); // Default Behavior of a Form is to submit its data to the URL specified in the action attribute when the user clicks the submit button .  If no action is specified, the form submits to the current page URL, causing a page reload. The preventDefault() method is a JavaScript function that prevents the browser's default action for a specific event from occurring.
@@ -820,48 +839,13 @@ Allows times like 00:00, 00:15, 00:30, 00:45, etc. -->
         console.log("Password:", password);
       });
     </script>
-
-    <form id="myForm">
-      <input
-        type="number"
-        id="lastNumber"
-        min="100"
-        max="300"
-        required
-        placeholder="Enter a number between 100 and 300"
-      />
-      <button type="submit">Submit</button>
-      <h2 id="demo"></h2>
-    </form>
-
+    <a href="https://www.google.com" id="buttonEle" onclick="handleButton(event)">Click Me</a>
     <script>
-      const numberInput = document.getElementById("lastNumber");
-
-      // Add an input event listener to validate the field dynamically
-      numberInput.addEventListener("input", function () {
-        const value = numberInput.value;
-
-        // Clear previous custom validation messages
-        numberInput.setCustomValidity("");
-
-        // Check if the input value is outside the valid range
-        if (value < 100 || value > 300) {
-          numberInput.setCustomValidity("Please enter a number between 100 and 300.");
-        }
-      });
-
-      // Add a submit event listener for form validation
-      document.getElementById("myForm").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent form submission
-
-        if (numberInput.checkValidity()) {
-          document.getElementById("demo").innerHTML = "Form submitted successfully!";
-        } else {
-          document.getElementById("demo").innerHTML = numberInput.validationMessage;
-        }
-      });
+      function handleButton(event) {
+        event.preventDefault(); // Prevents the default behavior of the anchor tag (navigating to the URL)
+        console.log("Default action prevented!");
+      }
     </script>
-
     <h2
       style="
         background-color: rgb(63, 132, 255);
