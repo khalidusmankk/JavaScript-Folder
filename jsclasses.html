@@ -9,6 +9,10 @@
   <body>
     <script>
       document.write(
+        "We use classes in JavaScript to create reusable blueprints for objects, enabling object-oriented programming. They provide a structured way to define properties and methods, support inheritance, and make the code more modular, readable, and maintainable.",
+        "<br>"
+      );
+      document.write(
         " For example: If I receive any form for addmission or any air ticket, <br>\
                   this empty form with basic data is called class, but when i fill this form and submit, <br>\
                   this filled form now includes my informations and its now called an object. <br>\
@@ -134,10 +138,7 @@
         }
       }
 
-      document.write(
-        "Fill in your form for the addmission in this college ",
-        "<br>"
-      ); // Printed only once
+      document.write("Fill in your form for the addmission in this college ", "<br>"); // Printed only once
 
       let jhon = new AddmissionForm4(" Jhon ");
       let Doe = new AddmissionForm4(" Doe ");
@@ -219,10 +220,7 @@
       );
 
       document.write("<h2> Using a Class </h2>");
-      document.write(
-        "When you have a class, you can use the class to create objects:",
-        "<br>"
-      );
+      document.write("When you have a class, you can use the class to create objects:", "<br>");
 
       const myCar1 = new Car("Ford", 2014); // `this` refers to `myCar1` object
       const myCar2 = new Car("Audi", 2019); // `this` refers to `myCar2` object here
@@ -239,24 +237,12 @@
         "<br>"
       );
 
-      document.write(
-        " The example above uses the <b> Car class </b> to create two <b> Car objects </b>.",
-        "<br>"
-      );
-      document.write(
-        " The constructor method is called automatically when a new object is created.",
-        "<br>"
-      );
-      document.write(
-        " The constructor method is used to initialize object properties ",
-        "<br>"
-      );
+      document.write(" The example above uses the <b> Car class </b> to create two <b> Car objects </b>.", "<br>");
+      document.write(" The constructor method is called automatically when a new object is created.", "<br>");
+      document.write(" The constructor method is used to initialize object properties ", "<br>");
 
       document.write(" <h2> Class Methods </h2>");
-      document.write(
-        " Class methods are created with the same syntax as object methods.",
-        "<br>"
-      );
+      document.write(" Class methods are created with the same syntax as object methods.", "<br>");
       document.write(" Use the keyword class to create a class. ", "<br>");
       document.write(" Always add a constructor() method. ", "<br>");
       document.write(" Then add any number of methods. ", "<br>");
@@ -298,14 +284,8 @@
                               Example : Create a class named Model which will inherit the methods from the Car class: "
       );
 
-      document.write(
-        " Use the 'extends' keyword to inherit all methods from another class",
-        "<br>"
-      );
-      document.write(
-        "Use the 'super method' to call the parent's constructor function.",
-        "<br>"
-      );
+      document.write(" Use the 'extends' keyword to inherit all methods from another class", "<br>");
+      document.write("Use the 'super method' to call the parent's constructor function.", "<br>");
 
       class Person {
         constructor(a, b, c) {
@@ -363,10 +343,7 @@
         "<br>"
       );
 
-      document.write(
-        " Classes also allows you to use <b> getters and setters </b>. ",
-        "<br>"
-      );
+      document.write(" Classes also allows you to use <b> getters and setters </b>. ", "<br>");
 
       document.write("<h3> Hoisting </h3>");
       document.write(
@@ -445,10 +422,7 @@
       document.write(
         "<ol> <li> Encapsulation </li>  <li> Abstraction </li>  <li> Inheritance </li>  <li> Polymorphism </li></ol>"
       );
-      document.write(
-        " <b style = 'color: blue ; background-color : gray'> Encapsulation </b>",
-        "<br>"
-      );
+      document.write(" <b style = 'color: blue ; background-color : gray'> Encapsulation </b>", "<br>");
       document.write(
         "The capability to store related information, whether data or methods, together in an object. Encapsulation in JavaScript is a way to keep the related properties and methods under a single namespace by bundling them.It can be a function, a class or an object. In JavaScript, the encapsulation can be implemented using closures, classes and getters and setters. ",
         "<br>"
@@ -469,11 +443,7 @@
         deposit(amount) {
           if (amount > 0) {
             this._balance = this._balance + amount; //The _balance property is prefixed with _, signaling that it is intended to be accessed only via the provided methods (a convention in JavaScript).
-            document.write(
-              `${amount} deposited. ${"<br>"} New balance is ${
-                this._balance
-              }${"<br>"}`
-            );
+            document.write(`${amount} deposited. ${"<br>"} New balance is ${this._balance}${"<br>"}`);
           } else {
             document.write("Deposit amount must be greater than zero.");
           }
@@ -483,11 +453,7 @@
         withdraw(amount) {
           if (amount > 0 && amount <= this._balance) {
             this._balance = this._balance - amount;
-            document.write(
-              `${amount} withdrawn.${"<br>"} Remaining balance is ${
-                this._balance
-              }${"<br>"}`
-            );
+            document.write(`${amount} withdrawn.${"<br>"} Remaining balance is ${this._balance}${"<br>"}`);
           } else {
             document.write("Insufficient balance or invalid amount.");
           }
@@ -532,21 +498,12 @@
       }
 
       let carobj = new CarToyota(); //We created the car class's object and used the method to access and modify the private fields. If you try to access the private field of the class, the code will throw an error.
-      document.write(
-        "Before  the car mileage was " + carobj.getMilage(),
-        "<br>"
-      );
+      document.write("Before  the car mileage was " + carobj.getMilage(), "<br>");
       carobj.setMilage(20);
-      document.write(
-        "After updating the car mileage is " + carobj.getMilage(),
-        "<br>"
-      );
+      document.write("After updating the car mileage is " + carobj.getMilage(), "<br>");
       // carobj.#milage);  will throw an error.
 
-      document.write(
-        " <b style = 'color: blue ; background-color : gray'> Inheritance </b>",
-        "<br>"
-      );
+      document.write(" <b style = 'color: blue ; background-color : gray'> Inheritance </b>", "<br>");
       document.write(
         "The concept of inheritance in JavaScript allows the child class to inherit the properties and methods of the parent class.",
         "<br>"
@@ -556,14 +513,8 @@
                     A class created with a class inheritance inherits all the methods from another class: <br>\
         Example : Create a class named Model which will inherit the methods from the Car class: "
       );
-      document.write(
-        " Use the 'extends' keyword to inherit all methods from another class",
-        "<br>"
-      );
-      document.write(
-        "Use the 'super method' to call the parent's constructor function.",
-        "<br>"
-      );
+      document.write(" Use the 'extends' keyword to inherit all methods from another class", "<br>");
+      document.write("Use the 'super method' to call the parent's constructor function.", "<br>");
 
       class PersonOne {
         constructor(a, b, c) {
@@ -590,10 +541,7 @@
       // Use the `showMe` method
       document.write(studentMe.showMe(), "<br>");
 
-      document.write(
-        " <b style = 'color: blue ; background-color : gray'> Abstraction </b>",
-        "<br>"
-      );
+      document.write(" <b style = 'color: blue ; background-color : gray'> Abstraction </b>", "<br>");
       document.write(
         " The abstraction concept allows us to hide the implementation details and expose only the essential features to the users.",
         "<br>"
@@ -610,9 +558,7 @@
 
         // Public method to check balance
         getBalance() {
-          return `The balance for ${this.accountHolder} is $ ${
-            this.#balance
-          } ${"<br>"}`;
+          return `The balance for ${this.accountHolder} is $ ${this.#balance} ${"<br>"}`;
         }
 
         // Public method to deposit money
@@ -645,10 +591,7 @@
       // Attempting to directly access private field (will throw an error)
       // document.write(yourAccount.#balance); // Uncaught SyntaxError: Private field '#balance' must be declared in an enclosing class
 
-      document.write(
-        " <b style = 'color: blue ; background-color : gray'> Polymorphism </b>",
-        "<br>"
-      );
+      document.write(" <b style = 'color: blue ; background-color : gray'> Polymorphism </b>", "<br>");
       document.write(
         "The polymorphism in JavaScript allows you to define multiple methods with the same name and different functionalities. Polymorphism is achieved by using method overloading and overriding.",
         "<br>"
