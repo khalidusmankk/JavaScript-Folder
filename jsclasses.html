@@ -405,10 +405,11 @@
       const myLastCar = new Car("Ford");
 
       //You can call 'hello()' on the Car Class:
-      document.write(lastCar.hello());
+      document.write(lastCar.hello(), "<br>");
 
       // But NOT on  a Car Object:
-      // document.write ( myLastCar.hello() );
+      //document.write(myLastCar.hello()); // Hello is not a function
+      // document.write(myLastCar.hello); // Undefined
       // this will raise an error.
 
       document.write(
@@ -424,13 +425,59 @@
         }
       }
 
-      const helloMyCar = new Car("Ford");
+      const helloMyCar = new Car("Toyota");
       document.write(latestCar.hello(helloMyCar), "<br>");
 
       document.write(
         "<b style = 'color: blue ; background-color: red; font-size : 30px'> Object Oriented Programming (OOP) </b>",
         "<br>"
       );
+      document.write(
+        "object oriented programming is a programming language model organized around objects rather than actions and organized around data rather than logic",
+        "<br>"
+      );
+      document.write(
+        "The above statement means that Object-Oriented Programming (OOP) focuses on objects (which represent real-world entities) and their data (properties) rather than just performing actions (functions) or following a series of logical steps. It organizes code around these objects and how they interact with each other. In OOP, the main building blocks are objects that encapsulate data (properties) and behavior (methods). ",
+        "<br>"
+      );
+      document.write(" <h2> Key Differences: </h2>");
+      document.write(
+        " No:1: <b> Logic-Oriented:</b> The focus is on functions and steps to process data.Data is handled separately from the logic.",
+        "<br>"
+      );
+      document.write(
+        " No:2: <b> Object-Oriented:</b> The focus is on creating objects that hold both data and logic.Data and behavior are tied together, making it easier to understand and reuse.",
+        "<br>"
+      );
+
+      document.write("<b> Without OOP (Logic-Oriented Approach): </b>", "<br>");
+      document.write("Here, actions (functions) are written separately from the data.", "<br>");
+      // Data
+      const carBrand = "Toyota";
+      const carSpeed = 120;
+
+      // Action (Function)
+      function showCarDetails(brand, speed) {
+        console.log(`Car: ${brand}, Speed: ${speed} km/h`);
+      }
+
+      showCarDetails(carBrand, carSpeed); // Output: Car: Toyota, Speed: 120 km/h
+
+      document.write(" With OOP (Object-Oriented Approach) ", "<br>");
+      document.write("Here, data and behavior are combined into an object.", "<br>");
+
+      // Object-Oriented Approach
+      const car = {
+        brand: "Toyota", // Data (property)
+        speed: 120, // Data (property)
+        showDetails: function () {
+          // Behavior (method)
+          console.log(`Car: ${this.brand}, Speed: ${this.speed} km/h`);
+        },
+      };
+
+      car.showDetails(); // Output: Car: Toyota, Speed: 120 km/h
+      document.write("<hr>");
       document.write(
         " JavaScript is an Object Oriented Programming (OOP) language. A programming language can be called object-oriented if it provides four(4) basic capabilities to developers.",
         "<br>"
