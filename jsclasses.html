@@ -11,9 +11,6 @@
       b {
         font-family: "Courier New", Courier, monospace;
       }
-      * {
-        font-family: Verdana, sans-serif;
-      }
     </style>
   </head>
 
@@ -300,6 +297,10 @@
 
       document.write(" Use the 'extends' keyword to inherit all methods from another class", "<br>");
       document.write("Use the 'super method' to call the parent's constructor function.", "<br>");
+      document.write(
+        "By calling the super() method in the constructor method, we call the parent's constructor method and get access to the parent's properties and methods.",
+        "<br>"
+      );
 
       class Person {
         constructor(a, b, c) {
