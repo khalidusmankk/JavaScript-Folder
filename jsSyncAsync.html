@@ -6,7 +6,6 @@
     <title>Synchronous & Asynchronous</title>
   </head>
   <body>
-    <div id="timeContainer">The time is</div>
     <h1
       id="demo"
       style="
@@ -94,9 +93,10 @@
 
       document.write("Wait just for 3 seconds" + "<br>");
 
-      document.write("Show the time after 2 seconds", "<br>");
+      document.write("Show the time after 3 seconds", "<br>");
 
-      document.write("The Time Is : " + "<br>", "<br>");
+      document.write("<p id = 'idOne'> Here time is</p>");
+
       setTimeout(function () {
         // Create a new Date object
         var currentDate = new Date();
@@ -105,8 +105,8 @@
         var minutes = currentDate.getMinutes();
         var seconds = currentDate.getSeconds();
         //Print the formatted time
-        document.getElementById("timeContainer").innerHTML = "The time is " + `${hours}:${minutes}:${seconds}`;
-      }, 6000);
+        document.getElementById("idOne").innerHTML = ` ${hours}:${minutes}:${seconds}`;
+      }, 3000);
 
       function myFunction() {
         let d = new Date();
@@ -116,238 +116,238 @@
 
       document.write("<br><br>");
 
-      document.write(" <h1> JS Promises,,... Visit jsFunCallback file </h1> ");
+      // document.write(" <h1> JS Promises,,... Visit jsFunCallback file </h1> ");
 
-      document.write("<b> Async & Await </b>", "<br>");
-      document.write(
-        "The JavaScript functions defined with the async/await keyword can perform the same task as promises with fewer lines of code, and it makes the code readable. The promise's syntax is a bit complex, so the async/await syntax is introduced.",
-        "<br>"
-      );
-      document.write(
-        "The await keyword makes JavaScript to wait for the promise to resolve before continuing the function.",
-        "<br>"
-      );
-      document.write(
-        "To use async/await, we need to define an aync function first. For this we write async before function definition. An async function returns a promise. The await keyword is used inside an async function only. ",
-        "<br>"
-      );
-      document.write(
-        "<b> async </b> is like a normal function , but we just write 'async' before this function. The difference between a normal and async function is that , an async function returns a promise",
-        "<br>"
-      );
-      document.write(
-        "A JavaScript function defined with the async keyword is called the asynchronous function. The async function allows you to produce the asynchronous code.",
-        "<br>"
-      );
-      document.write(
-        "Async  work same as 'Promise', Now the <b> question </b> is this that if we can do the same thing with promise , then why do we need async and await.",
-        "<br>"
-      );
-      document.write(
-        "The <b> answer </b> is that in 'Promise' we had to declare resolve and reject methods ( functions ), and then on the basis of these, then() and catch() were called. but in async function we don't need this, so it's easy to write (make) and read.  ",
-        "<br>"
-      );
+      // document.write("<b> Async & Await </b>", "<br>");
+      // document.write(
+      //   "The JavaScript functions defined with the async/await keyword can perform the same task as promises with fewer lines of code, and it makes the code readable. The promise's syntax is a bit complex, so the async/await syntax is introduced.",
+      //   "<br>"
+      // );
+      // document.write(
+      //   "The await keyword makes JavaScript to wait for the promise to resolve before continuing the function.",
+      //   "<br>"
+      // );
+      // document.write(
+      //   "To use async/await, we need to define an aync function first. For this we write async before function definition. An async function returns a promise. The await keyword is used inside an async function only. ",
+      //   "<br>"
+      // );
+      // document.write(
+      //   "<b> async </b> is like a normal function , but we just write 'async' before this function. The difference between a normal and async function is that , an async function returns a promise",
+      //   "<br>"
+      // );
+      // document.write(
+      //   "A JavaScript function defined with the async keyword is called the asynchronous function. The async function allows you to produce the asynchronous code.",
+      //   "<br>"
+      // );
+      // document.write(
+      //   "Async  work same as 'Promise', Now the <b> question </b> is this that if we can do the same thing with promise , then why do we need async and await.",
+      //   "<br>"
+      // );
+      // document.write(
+      //   "The <b> answer </b> is that in 'Promise' we had to declare resolve and reject methods ( functions ), and then on the basis of these, then() and catch() were called. but in async function we don't need this, so it's easy to write (make) and read.  ",
+      //   "<br>"
+      // );
 
-      //       async function printMessage() {
-      //    return "Hello World";
+      // //       async function printMessage() {
+      // //    return "Hello World";
+      // // }
+      // // The below code is similar to the above code.
+      // // function printMessage() {
+      // //    return Promise.resolve("Hello World");
+      // // }
+
+      // // Normal function is below
+
+      // //  function normal(){
+      // //     return "Hello";
+      // //  }
+      // //  console.log(normal());
+
+      // document.write("Below is async function. Write <b>async </b> before a function.", "<br>");
+
+      // // async function normal(){   // Now it returns a promise and the value both and it has become a promise function.
+      // //     return "Hello";
+      // //  }
+      // //  console.log(normal());
+
+      // document.write(
+      //   "Now I can directly call then() and catch() without declaring resolve() and reject(), as below",
+      //   "<br>"
+      // );
+
+      // async function normal() {
+      //   return "Hello from an async function";
       // }
-      // The below code is similar to the above code.
-      // function printMessage() {
-      //    return Promise.resolve("Hello World");
+      // normal().then((result) => {
+      //   // The value of the async function is now store in the variable(parameter) of the then() function.
+      //   document.write(result, "<br>");
+      // });
+      // //document.write(result);
+      // document.write(
+      //   "<b> Note that </b> This is not the only way of making an async function, but there are other ways too, as below.",
+      //   "<br>"
+      // );
+      // document.write("Store an async function in a variable, as", "<br>");
+
+      // let noramll = async function () {
+      //   return "Hi";
+      // };
+      // noramll().then((resulti) => {
+      //   // The value of the async function is now store in the variable(parameter) of the then() function.
+      //   console.log(resulti, "<br>");
+      // });
+
+      // document.write("We can even convert this function to an arrow function, as", "<br>");
+
+      // let norm = async () => "Good Morning"; // If there is a single statement, we don't nedd curly braces and return word in an arrow function.
+
+      // norm().then((resultii) => {
+      //   // The value of the async function is now store in the variable(parameter) of the then() function.
+      //   console.log(resultii, "<br>");
+      // });
+
+      // //document.write("<b> Await </b>" , "<br>")
+
+      // // async function func_name(parameters) {
+      // //    await promise;
+      // // Function body
+      // //}
+      // document.write("await makes a function wait for a Promise", "<br>");
+      // document.write(
+      //   "The await keyword can only be used inside an async function. i.e , It works only inside an async function.",
+      //   "<br>"
+      // );
+      // document.write(
+      //   "The await keyword makes the function pause the execution and wait for a resolved promise before it continues:",
+      //   "<br>"
+      // );
+
+      // async function awet() {
+      //   console.log("2 : Message");
+      //   await console.log(" 3 : Message is awaiting "); // Code after this line will be printed later.
+      //   console.log("4 : Message");
       // }
+      // console.log("1 : Message");
+      // awet();
+      // console.log("5 : Message");
 
-      // Normal function is below
+      // document.write("<br>");
+      // document.write("<br>");
 
-      //  function normal(){
-      //     return "Hello";
-      //  }
-      //  console.log(normal());
+      // async function solvePromise() {
+      //   const promise = new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       // Setting up timeout for promises
+      //       resolve("The promise is solved after 2 seconds");
+      //     }, 2000);
+      //   });
+      //   const isResult = await promise;
+      //   alert(isResult);
+      // }
+      // solvePromise();
 
-      document.write("Below is async function. Write <b>async </b> before a function.", "<br>");
+      // document.write("<b style = 'color : blue ' > Fetch API </b> ", "<br>");
+      // document.write(
+      //   "The Fetch API interface allows web browser to make HTTP requests to web servers. <b> Note that </b> No need for XMLHttpRequest anymore as XMLHTTpRequest requires extra coding. ",
+      //   "<br>"
+      // );
+      // document.write(" To avoid all the problems above, we use 'fetch' method.", "<br>");
+      // document.write(
+      //   "We can do anything with the server with the help of fetch method. i.e we can insert , update , read or delete the data from the server. The fetch method, as compared to AJAX or XMLHTTpRequest, requires minimum code",
+      //   "<br>"
+      // );
+      // document.write(" <b> Sytax </b>", "<br>");
+      // document.write(
+      //   " Write fetch(), and give the path of the file in the brackets, as fetch(file/URL). It could be any type of file, i.e JSON, text or PHP.",
+      //   "<br>"
+      // );
+      // document.write(
+      //   " fetch method basically returns a promise and as we know that we use 'then' with the promise if it is fulfilled, we also use then here , fetch(file / URL ).then(). This then also returns a promise where we make a function and in this function, we receive a response from a server, as  fetch(file / URL).then(function(response){ return response.data;}) . The data could be in any format, and we will write the name of the format here . this data will again be store in another the."
+      // );
+      // document.write(" IN case of any error , we will use catch() method.", "<br>");
+      // document.write("Read a text from a text file", "<br>");
 
-      // async function normal(){   // Now it returns a promise and the value both and it has become a promise function.
-      //     return "Hello";
-      //  }
-      //  console.log(normal());
+      // //  fetch("javascript/javasynctext.txt")
+      // //  .then((response)=>{
+      // //       return response.text();
+      // //  })
+      // //  .then((date)=>{
+      // //    console.log(date);
+      // //  });
+      // document.write(
+      //   "I don't need return and curly braces as my code contains one single statement, and I can write as below.",
+      //   "<br>"
+      // );
+      // //  fetch("javascript/javasynctext.txt")
+      // //  .then((response) => response.text())
+      // //  .then((date) => console.log(date));
+      // document.write(" If we a single parameter, I don't even need brackets around parameter.", "<br>");
+      // fetch("javascript/javasynctext.txt")
+      //   .then((response) => response.text())
+      //   .then((date) => console.log(date));
 
-      document.write(
-        "Now I can directly call then() and catch() without declaring resolve() and reject(), as below",
-        "<br>"
-      );
+      // document.write("Now I want a 'JSON' data. I take this from google, just for practice purpose.", "<br>");
 
-      async function normal() {
-        return "Hello from an async function";
-      }
-      normal().then((result) => {
-        // The value of the async function is now store in the variable(parameter) of the then() function.
-        document.write(result, "<br>");
-      });
-      //document.write(result);
-      document.write(
-        "<b> Note that </b> This is not the only way of making an async function, but there are other ways too, as below.",
-        "<br>"
-      );
-      document.write("Store an async function in a variable, as", "<br>");
+      // fetch("https://jsonplaceholder.typicode.com/users")
+      //   .then((jayson) => jayson.json())
+      //   .then((dta2) => console.log(dta2));
 
-      let noramll = async function () {
-        return "Hi";
-      };
-      noramll().then((resulti) => {
-        // The value of the async function is now store in the variable(parameter) of the then() function.
-        console.log(resulti, "<br>");
-      });
+      // document.write(
+      //   "If I want to print the above data in document.write, i will use loops, like for..in or for..of etc , as below.",
+      //   "<br>"
+      // );
+      // //  fetch("https://jsonplaceholder.typicode.com/users")
+      // //  .then((jayson) => jayson.json())
+      // //  .then((dta2) => {console.log(dta2);
+      // //  for(let x in dta2){
+      // //  document.write(`${dta2[x].name} -------- ${dta2[x].email} ---${dta2[x].address.city}  <br> `)}
+      // //  })
 
-      document.write("We can even convert this function to an arrow function, as", "<br>");
+      // document.write(
+      //   "Sometimes the file may not be found , the path may be wrong or the server may not respond, so we use the catch() method for this , as follows.",
+      //   "<br>"
+      // );
 
-      let norm = async () => "Good Morning"; // If there is a single statement, we don't nedd curly braces and return word in an arrow function.
+      // fetch("https://jsonplaceholder.typicode.com/use")
+      //   .then((jayson) => jayson.json1()) // I used '1' with json
+      //   .then((dta2) => console.log(dta2))
+      //   .catch((error) => console.log("Please put the correct name of the format (json) " + "<br>"));
 
-      norm().then((resultii) => {
-        // The value of the async function is now store in the variable(parameter) of the then() function.
-        console.log(resultii, "<br>");
-      });
+      // document.write(
+      //   "Till now I just knew how to read a data. Now I will do How to save (read, delete, update etc) a data on 'server'. ",
+      //   " <br> "
+      // );
+      // document.write(
+      //   "we will use fetch(file/ URL,{}); (In URl ,we will give the path of the file , where we want to insert the date), In the curly braces, i will use the different properties of fetch, such metod, body etc",
+      //   "<br>"
+      // );
+      // document.write(
+      //   " In method property we then use different value, like 'Post' (for Inserting) , 'Delete or Get' ( for deleting) , 'Put' ( Updating) ",
+      //   "<br>"
+      // );
+      // document.write(
+      //   " In body we pass the data which has to be inserted on the server.It could be in any format , like ' Form Date ' , ' JSON Data ' , Text ",
+      //   "<br>"
+      // );
+      // document.write(
+      //   "In header we will use show the type of content such as , header:{'content-Type' : 'application/json' OR header:{'content-Type' : 'application/x-www-form-urlencoded' }",
+      //   "<br>"
+      // );
 
-      //document.write("<b> Await </b>" , "<br>")
-
-      // async function func_name(parameters) {
-      //    await promise;
-      // Function body
-      //}
-      document.write("await makes a function wait for a Promise", "<br>");
-      document.write(
-        "The await keyword can only be used inside an async function. i.e , It works only inside an async function.",
-        "<br>"
-      );
-      document.write(
-        "The await keyword makes the function pause the execution and wait for a resolved promise before it continues:",
-        "<br>"
-      );
-
-      async function awet() {
-        console.log("2 : Message");
-        await console.log(" 3 : Message is awaiting "); // Code after this line will be printed later.
-        console.log("4 : Message");
-      }
-      console.log("1 : Message");
-      awet();
-      console.log("5 : Message");
-
-      document.write("<br>");
-      document.write("<br>");
-
-      async function solvePromise() {
-        const promise = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            // Setting up timeout for promises
-            resolve("The promise is solved after 2 seconds");
-          }, 2000);
-        });
-        const isResult = await promise;
-        alert(isResult);
-      }
-      solvePromise();
-
-      document.write("<b style = 'color : blue ' > Fetch API </b> ", "<br>");
-      document.write(
-        "The Fetch API interface allows web browser to make HTTP requests to web servers. <b> Note that </b> No need for XMLHttpRequest anymore as XMLHTTpRequest requires extra coding. ",
-        "<br>"
-      );
-      document.write(" To avoid all the problems above, we use 'fetch' method.", "<br>");
-      document.write(
-        "We can do anything with the server with the help of fetch method. i.e we can insert , update , read or delete the data from the server. The fetch method, as compared to AJAX or XMLHTTpRequest, requires minimum code",
-        "<br>"
-      );
-      document.write(" <b> Sytax </b>", "<br>");
-      document.write(
-        " Write fetch(), and give the path of the file in the brackets, as fetch(file/URL). It could be any type of file, i.e JSON, text or PHP.",
-        "<br>"
-      );
-      document.write(
-        " fetch method basically returns a promise and as we know that we use 'then' with the promise if it is fulfilled, we also use then here , fetch(file / URL ).then(). This then also returns a promise where we make a function and in this function, we receive a response from a server, as  fetch(file / URL).then(function(response){ return response.data;}) . The data could be in any format, and we will write the name of the format here . this data will again be store in another the."
-      );
-      document.write(" IN case of any error , we will use catch() method.", "<br>");
-      document.write("Read a text from a text file", "<br>");
-
-      //  fetch("javascript/javasynctext.txt")
-      //  .then((response)=>{
-      //       return response.text();
-      //  })
-      //  .then((date)=>{
-      //    console.log(date);
-      //  });
-      document.write(
-        "I don't need return and curly braces as my code contains one single statement, and I can write as below.",
-        "<br>"
-      );
-      //  fetch("javascript/javasynctext.txt")
-      //  .then((response) => response.text())
-      //  .then((date) => console.log(date));
-      document.write(" If we a single parameter, I don't even need brackets around parameter.", "<br>");
-      fetch("javascript/javasynctext.txt")
-        .then((response) => response.text())
-        .then((date) => console.log(date));
-
-      document.write("Now I want a 'JSON' data. I take this from google, just for practice purpose.", "<br>");
-
-      fetch("https://jsonplaceholder.typicode.com/users")
-        .then((jayson) => jayson.json())
-        .then((dta2) => console.log(dta2));
-
-      document.write(
-        "If I want to print the above data in document.write, i will use loops, like for..in or for..of etc , as below.",
-        "<br>"
-      );
-      //  fetch("https://jsonplaceholder.typicode.com/users")
-      //  .then((jayson) => jayson.json())
-      //  .then((dta2) => {console.log(dta2);
-      //  for(let x in dta2){
-      //  document.write(`${dta2[x].name} -------- ${dta2[x].email} ---${dta2[x].address.city}  <br> `)}
-      //  })
-
-      document.write(
-        "Sometimes the file may not be found , the path may be wrong or the server may not respond, so we use the catch() method for this , as follows.",
-        "<br>"
-      );
-
-      fetch("https://jsonplaceholder.typicode.com/use")
-        .then((jayson) => jayson.json1()) // I used '1' with json
-        .then((dta2) => console.log(dta2))
-        .catch((error) => console.log("Please put the correct name of the format (json) " + "<br>"));
-
-      document.write(
-        "Till now I just knew how to read a data. Now I will do How to save (read, delete, update etc) a data on 'server'. ",
-        " <br> "
-      );
-      document.write(
-        "we will use fetch(file/ URL,{}); (In URl ,we will give the path of the file , where we want to insert the date), In the curly braces, i will use the different properties of fetch, such metod, body etc",
-        "<br>"
-      );
-      document.write(
-        " In method property we then use different value, like 'Post' (for Inserting) , 'Delete or Get' ( for deleting) , 'Put' ( Updating) ",
-        "<br>"
-      );
-      document.write(
-        " In body we pass the data which has to be inserted on the server.It could be in any format , like ' Form Date ' , ' JSON Data ' , Text ",
-        "<br>"
-      );
-      document.write(
-        "In header we will use show the type of content such as , header:{'content-Type' : 'application/json' OR header:{'content-Type' : 'application/x-www-form-urlencoded' }",
-        "<br>"
-      );
-
-      fetch("https://jsonplaceholder.typicode.com/posts", {
-        method: "POST",
-        body: JSON.stringify({
-          //stringfy converts json format to string as body here is an object and I can't directly send an object anywhere
-          title: "foo",
-          body: "bar",
-          userId: 1,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+      // fetch("https://jsonplaceholder.typicode.com/posts", {
+      //   method: "POST",
+      //   body: JSON.stringify({
+      //     //stringfy converts json format to string as body here is an object and I can't directly send an object anywhere
+      //     title: "foo",
+      //     body: "bar",
+      //     userId: 1,
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8",
+      //   },
+      // })
+      //   .then((response) => response.json())
+      //   .then((json) => console.log(json));
     </script>
   </body>
 </html>
