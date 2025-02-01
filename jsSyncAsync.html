@@ -29,6 +29,25 @@
         "synchronous code will block further execution of the remaining code until it finishes the current one, whereas the Asynchronous code allows the program to be executed immediately.",
         "<br>"
       );
+      //Synchronous Code
+
+      function synchronous() {
+        console.log("Step 1");
+        console.log("Step 2");
+        console.log("Step 3");
+      }
+      synchronous();
+
+      // Asynchronous
+
+      function asynchronous() {
+        console.log("Step 1");
+        setTimeout(() => {
+          console.log("Step 2 (delayed)");
+        }, 3000); // Executes after 3 second
+        console.log("Step 3");
+      }
+      asynchronous();
 
       // Synchronous is below
       document.write("Start", "<br>");
