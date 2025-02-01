@@ -9,11 +9,19 @@
     <script>
       document.write("<b> Normal Function. </b>", "<br>");
 
-      function add(num1, num2) {
-        // num1 & num2 are variables and its values are passed later while calling a function. (These are also called parameters.)
-        document.write(num1 + num2);
-      }
-      add(20, 30);
+      document.write(
+        "Display vs. Return:\
+In the below functions The first function displays the result on the page but returns undefined, while the second function returns the result (50) but does not display anything by itself."
+      );
+      // function add(num1, num2) {
+      //   document.write(num1 + num2);
+      // }
+      // add(20, 30);
+
+      // function add(num1, num2) {
+      //  return num1 + num2;
+      // }
+      // add(20, 30);
 
       document.write("<hr>");
       document.write("<b> Callback Function. </b>", "<br>");
@@ -24,6 +32,24 @@
         "From callback function we can know how to pass another function as a parameter within a function as we passed 2 parameters in the above example.",
         "<br>"
       );
+
+      function funA() {
+        document.write(" My Name is ");
+      }
+
+      function funB() {
+        document.write(" Khalid Usman");
+      }
+
+      function passFun(callback, a, b) {
+        callback(); // It will effect the result , as callback is called before the execution of this function.
+        document.write(a + b);
+      }
+
+      passFun(funA, "Hello", " EveryOne "); // I will pass the above function as a argument/parameter.
+      passFun(funB, "Hello", " Hello");
+
+      document.write("<br>");
 
       function passThis() {
         document.write(" Hello", "<br>");
