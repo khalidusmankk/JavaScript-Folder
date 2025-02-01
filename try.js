@@ -51,8 +51,9 @@
 // Uppercase letters (A–Z) have lower Unicode values than lowercase letters (a–z).
 // This is why 'A' is considered less than 'a'.
 
-console.log("answer" > "Answer");
+// console.log("answer" > "Answer");
 
-const x = NaN !== NaN;
-document.write(x);
+// const x = NaN !== NaN;
+// document.write(x);
 // The IEEE 754 floating-point standard, which JavaScript follows, specifies that NaN should never be considered equal to any value, including itself.
+// console.log(typeof typeof 100); returns a string
