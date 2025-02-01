@@ -98,26 +98,6 @@ In the below functions The first function displays the result on the page but re
 
       document.write("<hr>");
 
-      function passHere() {
-        document.write(" Hello " + "<br>");
-      }
-
-      function passThere() {
-        document.write(" Good morning ");
-      }
-
-      function passInThis(a, b, callback) {
-        // callback(); We can also do it to control the flow of the output
-        document.write(a + " " + b); // Add a space and break for readability
-        callback(); // Execute the callback function
-      }
-
-      // Now pass the correct function as the callback
-      passInThis("Student", "Sir", passHere); // Outputs: Sir Student Hello
-      passInThis("Student", "Sir", passThere); // Outputs: Sir Student Good morning
-
-      document.write("<hr>");
-
       document.write("<b> JavaScript Promises </b>" + "<br>");
       document.write(
         "promise is an object that represents the completion or failure of an asynchronous operation. It employs callback functions to manage asynchronous operations.",
