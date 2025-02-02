@@ -155,7 +155,7 @@
         }
         document.write(myMarks);
 
-        document.write("<b> The Nullish Coalescing Operator (??) </b>", "<br>");
+        document.write("<b> Nullish Coalescing Operator (??) </b>", "<br>");
         document.write(
           "The ?? operator returns the first argument if it is not nullish (null or undefined).Otherwise it returns the second argument.",
           "<br>"
@@ -164,7 +164,26 @@
         const name = null;
         const age = 35;
         const resutl = name ?? age;
-        document.write(resutl);
+        document.write(resutl, "<br>");
+
+        document.write("<b> Optional Chaining Operator (?.) </b>", "<br>");
+        document.write(
+          "The ?. operator returns undefined if an object is undefined or null (instead of throwing an error).",
+          "<br>"
+        );
+
+        const person = {
+          name: "Khalid",
+          age: 35,
+          color: "white",
+        };
+        document.write(person?.address, "<br>");
+        // document.write(person?.address ?? "Address not available");
+
+        // let myName = null;
+        // document.write(myName.age); //Cannot read properties of null (reading 'age')
+        let myName = null;
+        document.write(myName?.age);
       </script>
     </div>
   </body>
