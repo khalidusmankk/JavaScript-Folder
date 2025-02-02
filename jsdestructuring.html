@@ -167,7 +167,7 @@
       // Destructing
       [firstNameIs, lastNameIs] = [lastNameIs, firstNameIs];
       // Display the Values
-      document.getElementById("paraArray5").innerHTML = firstNameIs + " " + lastNameIs;
+      document.getElementById("paraArray5").innerHTML = firstNameIs + " " + lastNameIs + "<br>";
 
       // const content = `
       //     <h2 id="headingOne">Destructuring Assignment Syntax</h2>
@@ -177,6 +177,10 @@
       //     <p id="paraFour">let [firstName, lastName] = person</p>
       // `;
       // document.getElementById('content').innerHTML = content;
+
+      const myArray = [1, 2, 3, 4, 5];
+      const [x, y, ...restArray] = myArray;
+      document.write(`x is ${x} , y is ${y} and the rest is ${restArray}`);
     </script>
   </body>
 </html>
