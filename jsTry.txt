@@ -1,0 +1,10 @@
+Line 1: This is the first line.
+Line 2: Learning how to read files.
+Line 3: Fetching text from another file.
+Line 4: File handling is important.
+Line 5: Node.js or Python can be used.
+Line 6: React apps also need data sometimes.
+Line 7: MongoDB stores data efficiently.
+Line 8: Backend and frontend work together.
+Line 9: APIs help in data communication.
+Line 10: This is the last line of the file.

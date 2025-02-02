@@ -185,7 +185,8 @@
         // The value of the async function is now store in the variable(parameter) of the then() function.
         document.write(result, "<br>");
       });
-      //document.write(result);
+
+      // document.write(result); // If you call document.write() after the page has loaded, it overwrites the entire document, removing all existing content.
       document.write(
         "<b> Note that </b> This is not the only way of making an async function, but there are other ways too, as below.",
         "<br>"
@@ -351,6 +352,33 @@
       })
         .then((response) => response.json())
         .then((json) => console.log(json));
+
+      async function asyncFun() {
+        console.log("Wait for the data...");
+        try {
+          let response = await fetch("jsTry.txt");
+          let data = await response.text();
+          console.log(data);
+        } catch (error) {
+          console.error("Error fetching the file:", error);
+        }
+      }
+      // Call the function
+      asyncFun();
+
+      document.write(
+        " In the above code , The .text() method comes from the Response object returned by the fetch() API."
+      );
+      document.write(
+        "When you use fetch(jsTry.txt), it makes an HTTP request and returns a Response object, which contains methods to extract the data in different formats."
+      );
+
+      //       Key Methods of Response Object:
+      // Method	Description
+      // response.text()	Reads the response as plain text (.txt, .html, etc.).
+      // response.json()	Parses the response as JSON (.json files or API responses).
+      // response.blob()	Reads the response as binary large object (useful for images/files).
+      // response.arrayBuffer()	Reads the response as raw binary data.
     </script>
   </body>
 </html>
