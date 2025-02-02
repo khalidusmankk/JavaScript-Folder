@@ -14,34 +14,25 @@
 
   <body>
     <p>
-      We can also do the below process with Sting Manipulation , and I will
-      comment this for now . Both ways are okay.
+      We can also do the below process with Sting Manipulation , and I will comment this for now . Both ways are okay.
     </p>
     <!-- <div id="content"></div> -->
 
     <h2 id="headingOne">Destructuring Assignment Syntax</h2>
-    <p id="paraOne">
-      The destructuring assignment syntax unpack object properties into
-      variables:
-    </p>
+    <p id="paraOne">The destructuring assignment syntax unpack object properties into variables:</p>
     <p id="paraTwo">let {firstName, lastName} = person</p>
     <p id="paraThree">It can also unpack arrays and any other iterables:</p>
     <p id="paraFour">let [firstName, lastName] = person</p>
     <p id="paraObj"></p>
     <p id="paraObj2"></p>
     <p id="paraInfo">
-      <b> Note: </b> Destructuring is not destructive. Destructuring does not
-      change the original object.
+      <b> Note: </b> Destructuring is not destructive. Destructuring does not change the original object.
     </p>
     <h3 id="headingTwo">Object Default Values</h3>
-    <p id="paraInfo2">
-      For potentially missing properties we can set default values:
-    </p>
+    <p id="paraInfo2">For potentially missing properties we can set default values:</p>
     <p id="paraObj3"></p>
     <h3 id="headingThree">String Destructuring</h3>
-    <p id="paraInfo3">
-      One use for destructuring is unpacking string characters.
-    </p>
+    <p id="paraInfo3">One use for destructuring is unpacking string characters.</p>
     <p id="paraString"></p>
     <h3 id="headingFour">Array Destructuring</h3>
     <p id="paraInfo4">We can pick up array variables into our own variables.</p>
@@ -52,26 +43,30 @@
     <p id="paraArrayTwo"></p>
 
     <h3 id="headingSix">Array Position Values</h3>
-    <p id="paraInfo6">
-      We can pick up values from specific index locations of an array.
-    </p>
+    <p id="paraInfo6">We can pick up values from specific index locations of an array.</p>
     <p id="paraArray3"></p>
 
     <h3 id="heading7">The Rest Property</h3>
     <p id="paraInfo7">
-      You can end a destructuring syntax with a rest property. This syntax will
-      store all remaining values into a new array:
+      You can end a destructuring syntax with a rest property. This syntax will store all remaining values into a new
+      array:
     </p>
     <p id="paraArray4"></p>
 
     <h3 id="heading8">Swapping Variables</h3>
     <p id="paraInfo8">
-      You can swap (menas = adla badla krna) the values of two variables using a
-      destructuring assignment:
+      You can swap (menas = adla badla krna) the values of two variables using a destructuring assignment:
     </p>
     <p id="paraArray5"></p>
 
+    <p id="lastId"><b> Khalid Usman </b></p>
+
     <script>
+      const abc = document.getElementById("lastId").innerHTML; // It returns all the tags and the text.
+      console.log(abc);
+      const xyz = document.getElementById("lastId").textContent; // It returns the text only and ignores the tags like <b> or anything else.
+      console.log(xyz);
+
       document.getElementById("headingOne").textContent;
       document.getElementById("paraOne").textContent;
       document.getElementById("paraTwo").textContent;
@@ -90,8 +85,7 @@
       document.getElementById("paraObj").innerHTML = firstName + " " + lastName;
 
       // OR We can simply Use the ordinary way of printing the values by using the method object.propertyName instead of destrunturing, as below
-      document.getElementById("paraObj2").innerHTML =
-        person.firstName + person.lastName;
+      document.getElementById("paraObj2").innerHTML = person.firstName + person.lastName;
 
       document.getElementById("paraInfo").innerHTML;
       document.getElementById("headingTwo").textContent;
@@ -107,8 +101,7 @@
       let { fName, lName, country = "US" } = person2;
 
       // Display Primitive Values
-      document.getElementById("paraObj3").innerHTML =
-        fName + " " + lName + " " + country;
+      document.getElementById("paraObj3").innerHTML = fName + " " + lName + " " + country;
 
       document.getElementById("headingThree").innerHTML;
       document.getElementById("paraInfo3").innerHTML;
@@ -145,14 +138,7 @@
       document.getElementById("paraInfo6").textContent;
 
       // Create an Array
-      const fruits3 = [
-        "Bananas",
-        "Oranges",
-        "Apples",
-        "Mangos",
-        "Avocado",
-        "Blackberry",
-      ];
+      const fruits3 = ["Bananas", "Oranges", "Apples", "Mangos", "Avocado", "Blackberry"];
 
       const { [2]: fruit4, [4]: fruit5 } = fruits3;
 
@@ -169,16 +155,14 @@
       const [a, b, ...rest] = numbers;
 
       // Display the Values
-      document.getElementById("paraArray4").innerHTML =
-        "<p>a is " + a + "<p>b is " + b + "<p>the rest is " + rest;
+      document.getElementById("paraArray4").innerHTML = "<p>a is " + a + "<p>b is " + b + "<p>the rest is " + rest;
 
       let firstNameIs = "John";
       let lastNameIs = "Doe";
       // Destructing
       [firstNameIs, lastNameIs] = [lastNameIs, firstNameIs];
       // Display the Values
-      document.getElementById("paraArray5").innerHTML =
-        firstNameIs + " " + lastNameIs;
+      document.getElementById("paraArray5").innerHTML = firstNameIs + " " + lastNameIs;
 
       // const content = `
       //     <h2 id="headingOne">Destructuring Assignment Syntax</h2>
