@@ -503,6 +503,12 @@
 
         // Use .forEach() for side effects like pushing elements.
 
+        const array = [1, 2, 4];
+        const array2 = array.map((_, index) => index); //the underscore (_) is used as a placeholder for the first parameter of the mapping function. which is not needed here.
+        document.write(array2);
+
+        document.write("<hr>");
+
         document.write("<b>  ForEach </b>", "<br>");
         document.write(
           "The .forEach() method is used to iterate over each element in an array and execute a callback function for each item. However, it does not return any value. Its return value is always undefined.",
