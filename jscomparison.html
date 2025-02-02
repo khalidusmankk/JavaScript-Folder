@@ -154,6 +154,17 @@
           myMarks = "Fail";
         }
         document.write(myMarks);
+
+        document.write("<b> The Nullish Coalescing Operator (??) </b>", "<br>");
+        document.write(
+          "The ?? operator returns the first argument if it is not nullish (null or undefined).Otherwise it returns the second argument.",
+          "<br>"
+        );
+
+        const name = null;
+        const age = 35;
+        const resutl = name ?? age;
+        document.write(resutl);
       </script>
     </div>
   </body>
