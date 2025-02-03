@@ -6,6 +6,9 @@
     <title>JS HTML DOM Navigation </title>
 
 </head>
+<body>
+   
+
  <h1> DOM Navigation </h1>
 <p> With the HTML DOM, you can navigate the node tree using node relationships.</p>
 <p> Everything in an HTML document is a node</p>
@@ -276,51 +279,6 @@ The value of the text node can be accessed by the node's innerHTML property:
    The <b> title </b> attribute defines some extra information about an element </p>
 
 
-<!-- 
-   
- 
-    <button onclick="changeColor()" style="background-image: conic-gradient(red, blue );  " > Change Color</button> 
-
-   </br>
-   <p>Finding HTML Elements by CSS Selector (Query Selector)</p>
-   <p class="intro">Hello World!.</p>
-   <p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
-
-
-   
-
- 
-
- let a = document.getElementsByTagName("p");
- for(let paragraph = 6 ; paragraph < a.length; paragraph++){
-    a[paragraph].style.color= "red";
- }
-
-
-    document.write("<p> I want to change the h3 color to green and  paragraphs(starts for 4, i.e, leave first 4) to red by using loop(for)</p>")
-
-    function changeColor(){
- let x = document.getElementsByTagName("h3");
- for ( let headd = 0; headd < x.length ; headd++){
-    x[headd].style.color= "yellow";
-    x[headd].style.backgroundColor= "blue";
- }}
-
- 
- document.write("In the example above, getElementById is a method, while innerHTML is a property.","<br>")
-
-
-
-
- document.write("Difference between <b> textContent & InnerText </b> " ,"<br>")
- document.write("textcontent gives us complete text while innertext does not as the text in the span tags have been disappeared by css. as below" , "<br>")
-
- 
-//  document.getElementsByTagName('h3').textContent
-//  document.getElementsByTagName('h3').innerText
-
-document.write("Note that the <b> innerHTML </b> gives us everything (text and attributes.)" ,"<br>")
-
-
 </body>
-</html> 
+</html>
+
