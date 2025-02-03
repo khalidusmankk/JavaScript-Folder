@@ -57,3 +57,7 @@
 // console.log(x);
 // The IEEE 754 floating-point standard, which JavaScript follows, specifies that NaN should never be considered equal to any value, including itself.
 // console.log(typeof typeof 100); returns a string
+
+// Importing the module from modules.js
+import tryModules from "./modules.js";
+console.log(tryModules());
