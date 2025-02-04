@@ -15,20 +15,16 @@
       <li>Create TextNode</li>
       <li>Create Comment</li>
     </ul>
+    <p>If I want to add any tag, add text or show comment in the page , I can use the above methods.</p>
     <p>
-      If I want to add any tag, add text or show comment in the page , I can use
-      the above methods.
-    </p>
-    <p>
-      To add a new element to the HTML DOM, you must create the element (element
-      node) first, and then append it to an existing element.
+      To add a new element to the HTML DOM, you must create the element (element node) first, and then append it to an
+      existing element.
     </p>
     <p>I want to add new paragraph to the below paragraphs in the div.</p>
     <p>
-      The problem here is that all the added elements are added at the end. Now
-      if I want to add a paragraph at any other place, <br />
-      I will use "insertBefore" method. I want to add a heading at the start of
-      that div.
+      The problem here is that all the added elements are added at the end. Now if I want to add a paragraph at any
+      other place, <br />
+      I will use "insertBefore" method. I want to add a heading at the start of that div.
     </p>
 
     <div id="div1">
@@ -59,5 +55,8 @@
       z.appendChild(x);
       z.insertBefore(x, z.childNodes[0]); //x in braces here means that  x.appendChild(y); to be inserted at number 0 .
     </script>
+    <p>We can also use removeChild and replaceChild methods in the DOM</p>
+    <p>The getElementsByClassName() and getElementsByTagName() methods return a live HTMLCollection.</p>
+    <p>The querySelectorAll() method returns a static NodeList. The childNodes property returns a live NodeList.</p>
   </body>
 </html>
