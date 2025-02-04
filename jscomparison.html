@@ -154,8 +154,20 @@
         } else {
           myMarks = "Fail";
         }
-        document.write(myMarks);
+        document.write(myMarks, "<br>");
 
+        document.write(" <button onclick = 'timeFun()'> Click for time </button> ", "<br>");
+
+        function timeFun() {
+          const a = new Date().getHours();
+          const b = new Date().getMinutes();
+
+          if (b < 30) {
+            alert(" It's " + b + " past " + a);
+          } else {
+            alert(60 - Number(b) + " to " + String(Number(a) + 1));
+          }
+        }
         document.write("<b> Nullish Coalescing Operator (??) </b>", "<br>");
         document.write(
           "The ?? operator returns the first argument if it is not nullish (null or undefined).Otherwise it returns the second argument.",
