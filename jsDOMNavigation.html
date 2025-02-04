@@ -79,7 +79,7 @@ and:
     <h2>Adding and Deleting Elements</h2>
     <p>
       Method Description document.createElement(element) Create an HTML element document.removeChild(element) Remove an
-      HTML element document.appendChild(element) Add an HTML element document.replaceChild(new, old) Replace an HTML
+      HTML element. document.appendChild(element) Add an HTML element. document.replaceChild(new, old) Replace an HTML
       element document.write(text) Write into the HTML output stream
     </p>
 
@@ -211,6 +211,20 @@ and:
     <script>
       document.getElementById("changeContent").innerHTML = " You will be changed ! "; //A JavaScript changes the content (innerHTML) of that element to "New text!"
     </script>
+    <p>The value of the text node can be accessed by the node's innerHTML property:</p>
+    <p>myTitle = document.getElementById("demo").innerHTML;</p>
+    <p>Accessing the innerHTML property is the same as accessing the nodeValue of the first child:</p>
+    <p>myTitle = document.getElementById("demo").firstChild.nodeValue;</p>
+    <p>Accessing the first child can also be done like this:</p>
+    <p>myTitle = document.getElementById("demo").childNodes[0].nodeValue;</p>
+    <p>All the (3) above examples retrieves the text of an h1 element and copies it into a</p>
+    <p>element:</p>
+    <h2>DOM Root Nodes</h2>
+    <p>There are two special properties that allow access to the full document:</p>
+    <ul>
+      <li>document.body - The body of the document</li>
+      <li>document.documentElement - The full document</li>
+    </ul>
 
     <h2>Changing the Value of an Attribute</h2>
     <p>
