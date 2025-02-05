@@ -8,10 +8,7 @@
 
   <body>
     <script>
-      document.write(
-        'The Browser Object Model (BOM) allows JavaScript to "talk to" the browser.',
-        "<br>"
-      );
+      document.write('The Browser Object Model (BOM) allows JavaScript to "talk to" the browser.', "<br>");
 
       let iht = window.innerHeight;
       let iwt = window.innerWidth;
@@ -30,30 +27,16 @@
       }
 
       function openSmall() {
-        window.open(
-          "http://www.facebook.com",
-          "",
-          "width=100px,height=100px,left=100px, top=200px"
-        );
+        window.open("http://www.facebook.com", "", "width=100px,height=100px,left=100px, top=200px");
       }
 
       function closeSmall() {
-        window
-          .open(
-            "http://www.facebook.com",
-            "",
-            "width=100px,height=100px,left=100px, top=200px"
-          )
-          .close();
+        window.open("http://www.facebook.com", "", "width=100px,height=100px,left=100px, top=200px").close();
       }
 
       function resizeWindow() {
         window
-          .open(
-            "http://www.facebook.com",
-            "",
-            "width=100px,height=100px,left=100px, top=200px"
-          )
+          .open("http://www.facebook.com", "", "width=100px,height=100px,left=100px, top=200px")
           .window.resizeTo(400, 400);
       }
 
@@ -105,12 +88,7 @@
       By default , it will open in new window.
     </p>
 
-    <button
-      style="background-color: blueviolet; color: whitesmoke"
-      onclick=" windoww()"
-    >
-      Open Google
-    </button>
+    <button style="background-color: blueviolet; color: whitesmoke" onclick=" windoww()">Open Google</button>
 
     <p>I want to open a window , where i like to open,i.e. left,top etc</p>
     <button onclick="openSmall()">Open Small Window</button>
@@ -119,25 +97,16 @@
 
     <button onclick="closeSmall()">Close Window</button>
 
-    <p>
-      I can move the currently opened window with a method "window.moveTo().
-    </p>
-    <p>
-      I can resize the window by using a method window.resizeTo(), as below.
-    </p>
+    <p>I can move the currently opened window with a method "window.moveTo().</p>
+    <p>I can resize the window by using a method window.resizeTo(), as below.</p>
 
     <button onclick="resizeWindow()">Resize Window</button>
-    <p>
-      Note that the window.resizeBy() add extra length to the already given
-      length of the window.
-    </p>
+    <p>Note that the window.resizeBy() add extra length to the already given length of the window.</p>
 
     <h2>JavaScript Window Location only works on running website</h2>
 
     <h2>JavaScript Window History</h2>
-    <h4>
-      Window History is used going backword or forward from your current page.
-    </h4>
+    <h4>Window History is used going backword or forward from your current page.</h4>
     <p>
       history.back() & history.forward() are used for this with a button. <br />
       button will run with a function.
@@ -152,8 +121,8 @@
 
     <h2>Use of Prompt Box</h2>
     <p>
-      In prompt box, we can get any information from the user or like 'enter
-      your name' or what's your date of birth etc.
+      In prompt box, we can get any information from the user or like 'enter your name' or what's your date of birth
+      etc.
     </p>
     <p>let's use this on addmission form</p>
 
@@ -161,12 +130,10 @@
     <p>Cookies are data, stored in small text files, on your computer.</p>
     <p>Cookies let you store user information in web pages.</p>
     <p>
-      When a web server has sent a web page to a browser, the connection is shut
-      down, and the server forgets everything about the user. Cookies were
-      invented to solve the problem "how to remember information about the
-      user": When a user visits a web page, his/her name can be stored in a
-      cookie. Next time the user visits the page, the cookie "remembers" his/her
-      name. Cookies are saved in name-value pairs like: username = John Doe
+      When a web server has sent a web page to a browser, the connection is shut down, and the server forgets everything
+      about the user. Cookies were invented to solve the problem "how to remember information about the user": When a
+      user visits a web page, his/her name can be stored in a cookie. Next time the user visits the page, the cookie
+      "remembers" his/her name. Cookies are saved in name-value pairs like: username = John Doe
     </p>
   </body>
 </html>
