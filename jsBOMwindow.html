@@ -7,6 +7,27 @@
   </head>
 
   <body>
+    <h1>The Window Object</h1>
+    <h2>The moveTo() Method</h2>
+
+    <p>Open "myWindow" and move it to the position 500 x 100:</p>
+
+    <button onclick="openWin()">Open "myWindow"</button>
+    <button onclick="moveWin()">Move "myWindow"</button>
+
+    <script>
+      let myWindow;
+
+      function openWin() {
+        myWindow = window.open("", "", "width=400, height=200");
+      }
+
+      function moveWin() {
+        myWindow.moveTo(500, 100);
+      }
+    </script>
+
+    <br />
     <script>
       document.write('The Browser Object Model (BOM) allows JavaScript to "talk to" the browser.', "<br>");
 
@@ -15,7 +36,8 @@
 
       let oht = window.outerHeight;
       let owt = window.outerWidth;
-
+      // window.close() - close the current window
+      // window.moveTo() - move the current window
       document.write("Height of the viewport is " + iht, "<br>");
       document.write("Width of the viewport is " + iwt, "<br>", "<br>");
 
@@ -43,7 +65,6 @@
       console.log(screen.width);
       console.log(screen.height);
       console.log(screen.colorDepth);
-
       console.log(location.hostname);
 
       function goBack() {
@@ -62,19 +83,19 @@
         alert("You have cancelled the plan.");
       }
 
-      let nmbr = prompt("Enter you obtained marks");
-      12;
-      if (nmbr >= 400 && nmbr <= 500) {
-        document.write("You are selected.");
-      } else if (nmbr >= 300 && nmbr < 400) {
-        document.write("You are in waiting list");
-      } else if (nmbr >= 200 && nmbr < 300) {
-        document.write("You have low chance");
-      } else {
-        document.write("You can not apply here");
-      }
+      // let nmbr = prompt("Enter you obtained marks");
+      // 12;
+      // if (nmbr >= 400 && nmbr <= 500) {
+      //   document.write("You are selected.");
+      // } else if (nmbr >= 300 && nmbr < 400) {
+      //   document.write("You are in waiting list");
+      // } else if (nmbr >= 200 && nmbr < 300) {
+      //   document.write("You have low chance");
+      // } else {
+      //   document.write("You can not apply here");
+      // }
 
-      window.alert("Do you want to continue?.");
+      // window.alert("Do you want to continue?.");
 
       document.write(navigator.geolocation());
     </script>
