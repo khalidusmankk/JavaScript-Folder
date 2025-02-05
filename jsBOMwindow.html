@@ -62,40 +62,145 @@
           .window.resizeTo(400, 400);
       }
 
+      document.write("<h1> JavaScript Window Screen </h2>");
+      document.write("The window.screen object can be written without the window prefix.", "<br>");
       console.log(screen.width);
       console.log(screen.height);
       console.log(screen.colorDepth);
       console.log(location.hostname);
 
+      const swidth = screen.width;
+      document.write("The width of this screen is " + swidth + "<br>");
+
+      document.write(
+        "The Screen.colorDepth read-only property returns the color depth of the screen.The colorDepth property returns the screen's color depth.",
+        "<br>"
+      );
+      const colorDepth = screen.colorDepth;
+      document.write("The depth of the color is " + colorDepth + "<br>");
+      // Check the color depth of the screen
+      // if (window.screen.colorDepth < 8) {
+      // Use low-color version of page
+      // } else {
+      // Use regular, colorful page
+      // }
+
+      // screen.pixelDepth  The pixelDepth property returns the screen'scolor depth.
+
+      //The screen.availWidth property returns the width of the visitor's screen, in pixels, minus interface features like the Windows Taskbar.
+
+      document.write("<h2> JS Window Location </h2>");
+      document.write(
+        "The window.location object can be used to get the current page address (URL) and to redirect the browser to a new page.",
+        "<br>"
+      );
+      document.write("The window.location object can be written without the window prefix.i.e location.,,,", "<br>");
+
+      const wLocation = window.location;
+      document.write(wLocation, "<br>");
+
+      document.write("window.location.assign() loads a new document", "<br>");
+      // const wAssign = window.location.assign("https://www.w3schools.com");
+      // document.write(wAssign, "<br>");
+
       function goBack() {
-        history.back();
+        //history.back() - same as clicking back in the browser
+        history.back(); //The history.back() method loads the previous URL in the history list.
       }
 
       function goForward() {
-        history.forward();
+        //history.forward() - same as clicking forward in the browser
+        history.forward(); //The history.forward() method loads the next URL in the history list.
       }
+
+      document.write("<h2>JavaScript Window Navigator </h2>");
+      document.write("The window.navigator object contains information about the visitor's browser.", "<br>");
+      document.write("The window.navigator object can be written without the window prefix.", "<br>");
+      document.write(
+        "navigator.cookieEnabled . This property returns true if cookies are enabled, otherwise false: ",
+        "<br>"
+      );
+
+      const nCookie = navigator.cookieEnabled;
+      document.write(nCookie, "<br>");
+
+      document.write(
+        " <b> The Browser Version </b> The appVersion property returns version information about the browser:",
+        "<br>"
+      );
+
+      const apVersion = navigator.appVersion;
+      document.write(apVersion, "<br>");
+
+      document.write(
+        " <b> The Browser Platform </b> The platform property returns the browser platform (operating system):",
+        "<br>"
+      );
+      const nPlate = navigator.platform;
+      document.write(nPlate, "<br>");
+
+      document.write("The language property returns the browser's language: navigator.language", "<br>");
+      document.write("The onLine property returns true if the browser is online:", "<br>");
+
+      document.write("<h2> JavaScript Popup Boxes </h2>");
+      document.write("JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.", "<br>");
+      document.write("Alert Box", "<br>");
+      document.write(
+        "An alert box is often used if you want to make sure information comes through to the user.\
+        When an alert box pops up, the user will have to click OK to proceed.",
+        "<br>"
+      );
+
+      document.write("<button onclick = 'wAlert()'> Alert Box </button>", "<br>");
+      function wAlert() {
+        window.alert("We will continue");
+      }
+
+      document.write("Confirm Box", "<br>");
+      document.write(
+        "A confirm box is often used if you want the user to verify or accept something. When a confirm box pops up, the user will have to click either 'OK' or 'Cancel' to proceed.If the user clicks 'OK', the box returns true. If the user clicks 'Cancel', the box returns false.",
+        "<br>"
+      );
+      document.write("<button onclick = 'confirmBox()'> Confirm Box </button>", "<br>");
 
       function confirmBox() {
-        let confrm = window.confirm(" Do you want to continue ?");
-        if (confrm) {
-          alert("You are welcome!");
-        } else confrm;
-        alert("You have cancelled the plan.");
+        let a;
+        if (window.confirm("Press 'Okay' to Continue")) {
+          a = "You have pressed Okay";
+        } else {
+          a = "You have cancelled the plan";
+        }
       }
 
-      // let nmbr = prompt("Enter you obtained marks");
-      // 12;
-      // if (nmbr >= 400 && nmbr <= 500) {
-      //   document.write("You are selected.");
-      // } else if (nmbr >= 300 && nmbr < 400) {
-      //   document.write("You are in waiting list");
-      // } else if (nmbr >= 200 && nmbr < 300) {
-      //   document.write("You have low chance");
-      // } else {
-      //   document.write("You can not apply here");
-      // }
+      document.write("Prompt Box", "<br>");
+      document.write(
+        "A prompt box is often used if you want the user to input a value before entering a page.",
+        "<br>"
+      );
+      document.write(
+        "When a prompt box pops up, the user will have to click either OK or Cancel to proceed after entering an input value.If the user clicks OK the box returns the input value. If the user clicks Cancel the box returns null.",
+        "<br>"
+      );
+      //window.prompt("sometext","defaultText");
 
-      // window.alert("Do you want to continue?.");
+      document.write("<button onclick='myFunction()'>Prompt Box </button>");
+
+      function myFunction() {
+        let text;
+        let person = prompt("Please enter your name:", "Harry Potter");
+        if (person == null || person == "") {
+          text = "User cancelled the prompt.";
+        } else {
+          text = "Hello " + person + "! How are you today?";
+        }
+        document.write(text);
+      }
+
+      //       Line Breaks
+      // To display line breaks inside a popup box, use a back-slash followed by the character n.
+
+      // Example
+      // alert("Hello\nHow are you?");
 
       document.write(navigator.geolocation());
     </script>
