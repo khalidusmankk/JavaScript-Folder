@@ -15,7 +15,7 @@
             Iteration occurs when we want to execute code once for each item in a collection, usually elements in an array or properties of an object."
         );
         document.write("<h4> Loops in JavaScript</h4>");
-        document.write("  Loops are used in JavaScript to perform repeated tasks based on a condition ", "<br>");
+        document.write("  Loops are used to perform repeated tasks based on conditions ", "<br>");
         document.write(" Conditions typically return true or false.", "<br>");
         document.write(" A loop will continue running until the defined condition returns false.", "<br>");
         document.write(
@@ -44,7 +44,7 @@
         // Here i is 5
         document.write("<b> Use of ' for loop ' </b>", "<br>");
         document.write(
-          "  for loop - loops through a block of code a number of times i.e, A 'For' loop is used to repeat a specific block of code a known number of times. For example, if we want to check the grade of every student in the class, we loop from 1 to that number.",
+          " A 'For' loop is used to repeat a specific block of code a known number of times. For example, if we want to check the grade of every student in the class, we loop from 1 to that number.",
           "<br>"
         );
         document.write("(initial expression, condition, increment/decrement)", "<br>");
@@ -53,13 +53,14 @@
         const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audiis"];
         let Room = "The cars are " + "<br>";
         for (let i = 0; i < cars.length; i++) {
+          // i means index
           Room = Room + cars[i] + "<br>";
         }
-        document.write(Room);
+        document.write(Room + "<br>");
 
         document.write("<br>");
 
-        for (let i = 10; i >= 1; i--) {
+        for (let i = 10; i >= 0; i--) {
           document.write(i, "<br>") + "<br>";
         }
 
