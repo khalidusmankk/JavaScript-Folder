@@ -346,14 +346,18 @@
         );
         document.write(" forEach Loop is used to print every elemet of array, (value, index, array)", "<br>");
 
-        const numberes = [45, 4, 9, 16, 25];
-        let text = "";
-        numberes.forEach(myFunction);
-        document.write(text);
+        // const numberes = [45, 4, 9, 16, 25];
+        // numberes.forEach((ele, ind, val) => { //So val inside forEach is actually the entire numberes array, not an individual element.
+        //   //The third parameter of forEach is not the array values, but the original array itself.
+        //   return { ele, ind, val }; // The forEach method does not return anything, so returning an object inside it is useless.
+        // });
+        // document.write("The element is " + ele + " on the index number " + " in the array " + val); //ele, ind, and val are scoped inside the callback function of forEach, so you cannot use them in document.write() outside the loop.
 
-        function myFunction(value, index, array) {
-          text = text + array + "<br>";
-        }
+        const numberes = [45, 34, 29, 16, 25];
+
+        numberes.forEach((ele, ind, arr) => {
+          document.write("The element is " + ele + " on index number " + ind + " in the array [" + arr + "]<br>");
+        });
 
         let chicken = [" Grills ", " Motton ", " Fried ", " Tikka"];
         chicken.forEach(function (chik) {
