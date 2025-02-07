@@ -94,9 +94,29 @@
         document.write(" Below numbers are started from index two (2)" + "<br>");
 
         for (let k = 2; k <= 20; k++) {
-          document.write(k);
+          document.write(k, "<br>");
         }
 
+        //         const thisA = [1, -1, 2, -2];
+        // const thisEmpty = [];
+
+        // for (let ii = 0; ii < thisA.length; ii++) {
+        //   if (!thisEmpty.includes(ii)) { // Checking if the index already exists in thisEmpty
+        //     thisEmpty.push(ii); // Pushing the index instead of the value
+        //   }
+        // }
+
+        // console.log(thisEmpty); // Output: [0, 1, 2, 3]
+
+        const thisA = [1, -1, 2, -2];
+        const thisEmpty = [];
+
+        for (let ii = 0; ii < thisA.length; ii++) {
+          if (thisA[ii] > 0) {
+            thisEmpty.push(thisA[ii]);
+          }
+        }
+        document.write(thisEmpty);
         document.write("<br> ", "<br>");
 
         document.write(" <b> Remove Negative NUmbers </b> from an array", "<br>");
