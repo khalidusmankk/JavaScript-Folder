@@ -159,7 +159,6 @@
           Inaya: 80,
           Zahid: 90,
         };
-
         for (let a in students) {
           document.write(" Marks of " + a + " are " + students[a], "<br>");
         }
@@ -169,11 +168,9 @@
         document.write(" <b> For In Over Arrays </b>", "<br>");
         document.write("The JavaScript for in statement can also loop over the properties of an Array:", "<br>");
         const numbers = [45, 4, 9, 16, 25];
-        let txtt = "";
         for (let x in numbers) {
-          txtt += numbers[x] + "<br>";
+          document.write(numbers[x], "<br>"); // document.write(numbers, "<br>"); This will print the array 5 times, as it will iterate over the array only.
         }
-        document.write(txtt + "<br>");
 
         // Array no 2
         const schools = ["Iqra", "Alberuni", "Musa Nika"];
