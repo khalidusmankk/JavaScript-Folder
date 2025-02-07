@@ -538,9 +538,19 @@
         // Example 2: Modifying Elements (In-place)
         let arrOne = [1, 2, 3];
         arrOne.forEach((value, index, array) => {
-          array[index] = value * 2; // Modify the original array
+          array[index] = value * 2; //array[index] is just accessing the value instead of changing it. array[index] refers to the current element in the array. Modify the original array
         });
         document.write(arrOne); // [2, 4, 6]
+
+        //          Difference Between Accessing and Modifying
+        // Operation         	Code Example	                      Purpose
+        // Accessing Values	console.log(array[index]);	Print or read values
+        // Modifying Values	array[index] = value * 2;	  Change existing values
+        // If you just want to print values, use console.log(array[index]); inside forEach().
+        //  Alternative Approach of the above Using map()
+        let arrOnee = [1, 2, 3];
+        let newArr = arrOnee.map((value) => value * 2);
+        document.write(newArr); // Output: 2,4,6
 
         //Example 3: Summing Numbers
         const numbersTwo = [1, 2, 3, 4];
