@@ -233,6 +233,20 @@
           document.write(x.toUpperCase(), "<br>");
         }
 
+        for (let x in language) {
+          document.write(x, "<br>"); //The for...in loop is used to iterate over the keys (property names) of an object. When you use for...in on a string:
+        } // A string in JavaScript is treated like an array of characters.... (language[0] = 'J', language[1] = 'a', etc.).for...in loops over keys (indices) of the string, which are the positions of characters (0, 1, 2, ...). It does not iterate over the actual characters, but their indices.
+
+        document.write(
+          "If you accidentally used for...in instead of for...of and still want to print characters in uppercase, use the below procedure",
+          "<br>"
+        );
+
+        //         let language = "JavaScript";
+        // for (let x in language) {
+        //   document.write(language[x].toUpperCase(), "<br>");
+        // }
+
         document.write("<hr>");
 
         document.write("<b> While & do/while </b> loop", "<br>");
