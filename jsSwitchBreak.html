@@ -18,18 +18,18 @@
       );
 
       /*  switch(expression) {
-              case x:
-                // code block
-                break;
-              case y:
-                // code block
-                break;
-                 case z:
-                // code block
-                break;
-              default:
-                code block
-         } */
+                    case x:
+                      // code block
+                      break;
+                    case y:
+                      // code block
+                      break;
+                       case z:
+                      // code block
+                      break;
+                    default:
+                      code block
+               } */
 
       document.write("<b style= 'color : blue'> This is how it works:</b>", "<br>");
       document.write("The switch expression is evaluated once.", "<br>");
@@ -38,10 +38,10 @@
       document.write("If there is no match, the default code block is executed.", "<br>", "<br>");
 
       /*  switch
-             Marks a block of statements to be executed, depending on different cases. */
+                   Marks a block of statements to be executed, depending on different cases. */
 
       /*  break
-             Terminates a switch or a loop   */
+                   Terminates a switch or a loop   */
 
       let day;
       switch (new Date().getDay()) {
@@ -104,9 +104,9 @@
       document.write("Use of Switch on the marks (marks2).", "<br>");
       document.write(
         " The fundamental principle of the 'switch true' pattern is that <br>\
-the switch statement will match against expressions as well as values. <br>\
-An expression in a case will be evaluated before matching.<br>\
- If the expression in your case evaluates to true - it will be matched.",
+      the switch statement will match against expressions as well as values. <br>\
+      An expression in a case will be evaluated before matching.<br>\
+       If the expression in your case evaluates to true - it will be matched.",
         "<br>"
       );
       let marks2 = 200;
@@ -168,10 +168,10 @@ An expression in a case will be evaluated before matching.<br>\
       );
 
       /* switch(week)
-      {  case(1):   Incorrect
-         case(2):   Incorrect
-      document.write('Boring days')
-      break; } */
+            {  case(1):   Incorrect
+               case(2):   Incorrect
+            document.write('Boring days')
+            break; } */
 
       eekDays = "Last day of the week";
 
@@ -265,8 +265,74 @@ An expression in a case will be evaluated before matching.<br>\
       document.write(texxt);
 
       document.write("<br>");
-
+      let EmptyArray = [];
+      let names = ["Khalid ", "Inayat ", "Usman ", "Ismail ", "Khan"];
+      document.write(names, "<br>");
+      for (let i = 0; i < names.length; i++) {
+        document.write(names[i], "<br>"); //document.write(names) will print the whole array 5 times
+        if (names[i].charAt(0) === "I") {
+          continue;
+        }
+        // EmptyArray.push(names[i]);
+        EmptyArray = EmptyArray + names[i];
+      }
+      document.write(EmptyArray);
       document.write("<h1>JavaScript Labels </h1>", "<br>");
+      document.write(
+        "A labeled statement is any statement that is prefixed with an identifier. You can jump to this label using a break or continue statement nested within the labeled statement.",
+        "<br>"
+      );
+      document.write(
+        "A labeled statement in JavaScript allows you to assign a label (a name) to a block of code, which can be useful when using break or continue inside nested loops.",
+        "<br>"
+      );
+      outerLoop: for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          if (i === 1 && j === 1) {
+            break outerLoop; // Exits both loops
+          }
+          console.log(`i = ${i}, j = ${j}`);
+        }
+      }
+      document.write(
+        "When i === 1 and j === 1, break outerLoop; terminates both loops.\
+                      Without the label, break would only exit the inner loop.",
+        "<br>"
+      );
+
+      outerLoop: for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          if (j === 1) {
+            continue outerLoop; // Skips current iteration of the outer loop
+          }
+          console.log(`i = ${i}, j = ${j}`);
+        }
+      }
+
+      document.write("<br>");
+
+      let str = "";
+
+      loop1: for (let i = 0; i < 5; i++) {
+        // "loop1" is a labeled statement... loop1: → This is a label for the for loop.
+        if (i === 1) {
+          continue loop1; // Skips the current iteration of the outer loop
+        }
+        str = str + i; // Appends the value of "i" to "str"
+      }
+      console.log(str);
+
+      // i = 0 → str = "0"
+      // i = 1 → continue loop1; (skips adding 1)
+      // i = 2 → str = "02"
+      // i = 3 → str = "023"
+      // i = 4 → str = "0234"
+
+      //       When to Use Labeled Statements?
+      // ✅ Useful when handling nested loops
+      // ✅ Helps control flow explicitly
+      // ❌ Not recommended in simple loops (can reduce readability)
+      //
     </script>
   </body>
 </html>
