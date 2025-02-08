@@ -5,5 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Web APIs</title>
   </head>
-  <body></body>
+  <body>
+    <h2>API</h2>
+    <p>
+      API is a set of rules and tools that allows different software applications or systems to communicate with each
+      other.
+    </p>
+    <p>
+      An API (Application Programming Interface) is a bridge that allows two software applications or systems to
+      communicate with each other.
+    </p>
+    <p>APIs can be used to send data, retrieve data, or trigger actions in another application.</p>
+    <p>Example of API in Real Lifeis >> The waiter (API) connects you (client) with the kitchen (server).</p>
+    <p>
+      <b>Web APIs → </b> is used to communicate over the internet. Example: Fetching weather data from an API like
+      OpenWeatherMap.
+    </p>
+    <p>
+      A Web API is an API that allows communication between a client (frontend) and a server (backend) over the
+      internet.
+    </p>
+    <!-- Example of a Web API Request (Using JavaScript Fetch)
+Fetching data from a REST (Representational State Transfer) API: -->
+    <script>
+      fetch("https://jsonplaceholder.typicode.com/posts/3") // API request
+        .then((response) => response.json()) // Convert response to JSON
+        .then((data) => console.log(data)) // Print API response
+        .catch((error) => console.error("Error:", error));
+    </script>
+  </body>
 </html>
