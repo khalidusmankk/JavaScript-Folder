@@ -33,5 +33,73 @@ Fetching data from a REST (Representational State Transfer) API: -->
         .then((data) => console.log(data)) // Print API response
         .catch((error) => console.error("Error:", error));
     </script>
+
+    <h2>Third Party APIs</h2>
+    <p>Third party APIs are not built into your browser.</p>
+    <p>To use these APIs, you will have to download the code from the Web.</p>
+    <pre>
+        YouTube API - Allows you to display videos on a web site.
+        Twitter API - Allows you to display Tweets on a web site.
+        Facebook API - Allows you to display Facebook info on a web site.
+    </pre>
+
+    <br />
+    <br />
+    <h2>Web History API</h2>
+    <p>The Web History API provides easy methods to access the windows.history object.</p>
+    <p>The window.history object contains the URLs (Web Sites) visited by the user.</p>
+
+    <h2>History Object Properties/Methods</h2>
+    <p><b>length property</b> Returns the number of URLs in the history list</p>
+    <p>
+      back() method Loads the previous URL in the history list. forward() method Loads the next URL in the history list.
+      go() method Loads a specific URL from the history list.
+    </p>
+    <h4>History back() Method</h4>
+    <p>
+      The back() method loads the previous URL in the windows.history list. It is the same as clicking the "back arrow"
+      in your browser.
+    </p>
+    <button onclick="backFun()">Go Back</button>
+    <button onclick="goBackFun()">Go Back 2 Pages</button>
+    <script>
+      function backFun() {
+        window.history.back();
+      }
+
+      function goFun() {
+        window.history.go(-2);
+      }
+    </script>
+
+    <br />
+    <br />
+    <h2>Web Storage API</h2>
+    <p>The Web Storage API is a simple syntax for storing and retrieving data in the browser.</p>
+    <!-- Example below -->
+    <script>
+      localStorage.setItem("name", "Khalid Usman");
+      document.write(localStorage.getItem("name"));
+    </script>
+    <h3>The localStorage Object</h3>
+    <p>
+      The localStorage object provides access to a local storage for a particular Web Site. It allows you to store,
+      read, add, modify, and delete data items for that domain.
+    </p>
+    <p>
+      The data is stored with no expiration date, and will not be deleted when the browser is closed. The data will be
+      available for days, weeks, and years.
+    </p>
+    <h3>The setItem() Method</h3>
+    <p>The localStorage.setItem() method stores a data item in a storage. It takes a name and a value as parameters:</p>
+
+    <h3>The getItem() Method</h3>
+    <p>The localStorage.getItem() method retrieves a data item from the storage. It takes a name as parameter:</p>
+
+    <h3>The sessionStorage Object</h3>
+    <p>
+      The sessionStorage object is identical to the localStorage object. The difference is that the sessionStorage
+      object stores data for one session. The data is deleted when the browser is closed.
+    </p>
   </body>
 </html>
