@@ -109,5 +109,52 @@ Fetching data from a REST (Representational State Transfer) API: -->
     <!-- Property	                 Description
 window.localStorage	    Allows to save key/value pairs in a web browser. Stores the data with no expiration date
 window.sessionStorage	Allows to save key/value pairs in a web browser. Stores the data for one session -->
+
+    <h2>Web Workers API</h2>
+    <p>A web worker is a JavaScript file running in the background, without affecting the performance of the page.</p>
+    <p>When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.</p>
+    <p>
+      A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the
+      performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web
+      worker runs in the background.
+    </p>
+    <p>
+      The Web Worker API allows JavaScript to run in the background, enabling multi-threading to prevent UI blocking.
+    </p>
+    <h2>Web Worker API Demo</h2>
+    <button onclick="startWorker()">Start Heavy Task</button>
+    <p id="result">Waiting for result...</p>
+
+    <script>
+      // let worker = new Worker("jsWebWorker.js");
+      // worker.postMessage(20000000000); // PostMessage is used for sending the data
+      // worker.onmessage = function (message) {
+      //   // The onmessage is used for receiving the data
+      //   document.write("Sum is " + message.data);
+      // };
+
+      let worker;
+
+      function startWorker() {
+        if (window.Worker) {
+          //The condition if (window.Worker) checks whether the browser supports Web Workers before attempting to create one. window.Worker → A built-in JavaScript property that exists only if the browser supports Web Workers.
+
+          if (!worker) {
+            // Create worker only if it does not exist
+            worker = new Worker("jsWebWorker.js"); // Load the Web Worker
+
+            worker.onmessage = function (event) {
+              //Receives the result from the worker (using postMessage from jsWebWorker.js).Updates the UI with the result.
+              //We use onmessage in both files because Web Workers communicate using messages.
+              document.getElementById("result").innerText = event.data; // Display result
+            };
+
+            worker.postMessage("Start"); // // postMessage is used to send data to and from a Web Worker, depending on where you call it. .. The main JavaScript file (jsWebAPIs.html) sends data to the Web Worker (jsWebWorker.js) using worker.postMessage(data).
+          }
+        } else {
+          alert("Your browser doesn't support Web Workers.");
+        }
+      }
+    </script>
   </body>
 </html>
