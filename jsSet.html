@@ -53,5 +53,54 @@
       document.write(typeof thisSet, "<br>");
       document.write(thisSet instanceof Set);
     </script>
+
+    <h2>JavaScript Set Methods</h2>
+    <p>new Set() Creates a new Set</p>
+    <p>add() Adds a new element to the Set</p>
+    <p>clear() Removes all elements from a Set</p>
+    <p>delete() Removes an element from a Set</p>
+    <p>entries() Returns an Iterator with the [value,value] pairs from a Set</p>
+    <p>forEach() Invokes a callback for each element</p>
+    <p>has() Returns true if a value exists</p>
+    <p>
+      keys() Same as values(). The keys() method returns an Iterator object with the values in a set.Since a set has no
+      keys, the keys() method returns the same as values().
+    </p>
+    <p>values() Returns an Iterator with the values in a Set</p>
+
+    <h2>JavaScript Set Property</h2>
+    <p>Sets have only one property:</p>
+    <p>size Returns the number of elements in a Set</p>
+
+    <p><b> Note that </b> new Set(), add() and size are already used above</p>
+    <script>
+      const trySet = new Set([1, 2, "kk"]);
+      const myValues = trySet.values(); // The values() method returns an Iterator object with the values in a set.
+      for (let x of myValues) {
+        document.write(x);
+      }
+    </script>
+    <h4>JavaScript Set entries()</h4>
+    <p>The entries() method returns an Iterator with [value,value] pairs from a set.</p>
+    <p>
+      The entries() method is supposed to return a [key,value] pair from an object. Since a set has no keys, the
+      entries() method returns [value,value].
+    </p>
+    <script>
+      const letters = new Set(["a", "b", "c"]);
+      const myIterator = letters.entries();
+
+      for (let a of myIterator) {
+        document.write(a + "<br>");
+        //  document.write(a); check this too without br tag
+      }
+
+      letters.delete("a");
+      document.write("There are only " + [...letters] + " in this set after deletion", "<br>");
+
+      const person = new Set(["Inayat", 25, "11th"]);
+      const answer = person.has("11th");
+      document.write(" The answer is  " + answer);
+    </script>
   </body>
 </html>
