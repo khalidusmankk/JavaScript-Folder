@@ -17,6 +17,40 @@
   <body>
     <h3>Classes in JS</h3>
     <script>
+      class HrOffice {
+        constructor(a, b, c) {
+          this.name = a;
+          this.age = b;
+          this.qualification = c;
+        }
+        getAge() {
+          let x = new Date().getFullYear();
+          let y = x - this.age;
+          return y;
+        }
+      }
+      class SecodOffice extends HrOffice {
+        constructor(a, b, c, d) {
+          super(a, b, c);
+          this.duty = d;
+        }
+      }
+
+      let Ismail = new HrOffice("Ismail Khan", 20, "BS/CS");
+      let Irshad = new HrOffice("Irshad Khan", 25, "BS/CS");
+      let M_Noor = new SecodOffice("M.Noor", 27, "Diploma", "Accountant");
+
+      document.write(
+        Ismail.name +
+          "'s year of birth is " +
+          Ismail.getAge() +
+          " and his qualfication is " +
+          Ismail.qualification +
+          "<br>"
+      );
+      document.write(" My name is " + M_Noor.name + " and I am an " + M_Noor.duty);
+      document.write("<hr>");
+
       document.write(
         "We use classes in JavaScript to create reusable blueprints for objects, enabling object-oriented programming. They provide a structured way to define properties and methods, support inheritance, and make the code more modular, readable, and maintainable.",
         "<br>"
