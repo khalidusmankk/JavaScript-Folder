@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Set</title>
+  </head>
+  <body>
+    <h2>JavaScript Sets</h2>
+    <p>A JavaScript Set is a collection of unique values.Each value can only occur once in a Set.</p>
+    <p>The values can be of any type, primitive values or objects.</p>
+    <h2>How to Create a Set</h2>
+    <p>You can create a JavaScript Set by Passing an iterable (like an array) to the new Set() constructor:</p>
+    <p>Create an empty set and use add() to add values</p>
+
+    <script>
+      // Method #1
+      const set = new Set([1, 2, 3]);
+      document.write("This set have " + set.size + " items", "<br>");
+
+      // Method #2
+      const mySet = new Set();
+      mySet.add(10);
+      mySet.add(20);
+      mySet.add(30);
+      //   document.write(mySet); the output is [object Set] because document.write(mySet) tries to convert the Set object into a string, and JavaScript does not provide a direct string representation of Set.
+    </script>
+    <h2>Correct Ways to Display a Set</h2>
+    <p>If you want to properly display the values of mySet, you can use one of the following methods:</p>
+    <h4>Convert Set to an Array</h4>
+    <p>This spread operator spreads the Set into an array, which is then displayed properly.</p>
+
+    <script>
+      document.write([...mySet]);
+    </script>
+    <h4>Use Array.from()</h4>
+    <p>Array.from(mySet) converts the Set into an array before displaying it.</p>
+
+    <script>
+      document.write(Array.from(mySet));
+    </script>
+    <h3>We can also use .forEach() and JSON.Stringify to print a set</h3>
+
+    <h2>Listing the Elements using for..of loop</h2>
+
+    <script>
+      const thisSet = new Set(["Khalid Usman ", 35, " Abu Dhabi"]);
+      for (let val of thisSet) {
+        document.write(val);
+      }
+      document.write("<br>");
+
+      document.write(typeof thisSet, "<br>");
+      document.write(thisSet instanceof Set);
+    </script>
+  </body>
+</html>
