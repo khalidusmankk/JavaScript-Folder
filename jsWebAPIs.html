@@ -218,5 +218,71 @@ window.sessionStorage	Allows to save key/value pairs in a web browser. Stores th
 
       fetchData();
     </script>
+
+    <h2>Web Geolocation API</h2>
+    <p>The HTML Geolocation API is used to get the geographical position of a user.</p>
+    <p>Since this can compromise privacy, the position is not available unless the user approves it.</p>
+    <p>
+      <b>Note that</b>The Geolocation API will only work on secure contexts such as HTTPS. If your site is hosted on a
+      non-secure origin (such as HTTP) the requests to get the users location will no longer function.
+    </p>
+
+    <h2>Using the Geolocation API</h2>
+    <p>The getCurrentPosition() method is used to return the user's position.</p>
+    <p>The example below returns the latitude and longitude of the user's position:</p>
+
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Get Location</button>
+
+    <p id="demo">Hello</p>
+
+    <script>
+      const x = document.getElementById("demo");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          // In JavaScript, when we write an if statement without comparison operators (==, ===, etc.), the condition is automatically checked for truthiness or falsiness.
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+      }
+    </script>
+    <p>
+      In JavaScript, when we write an if statement without comparison operators (==, ===, etc.), the condition is
+      automatically checked for truthiness or falsiness.
+    </p>
+    <p>
+      If navigator.geolocation exists (i.e., it is defined and not undefined), the condition is true, and the code
+      inside the if block runs. If navigator.geolocation doesn't exist (i.e., it is undefined in older browsers that
+      don't support geolocation), the condition is false, and the else block runs.
+    </p>
+    <h2>What is coords.latitude?</h2>
+    <p>The coords object stands for coordinates and contains information about the user's location.</p>
+    <p>
+      In the Geolocation API, when we get the user's current location using navigator.geolocation.getCurrentPosition(),
+      it returns a position object.
+    </p>
+    <p>
+      When getCurrentPosition() runs successfully, it provides a position object, which contains a coords (coordinates)
+      object.
+    </p>
+
+    <!-- Explanation of coords (Coordinates)
+The coords object contains several properties related to the user's location:
+
+latitude → The latitude of the user's position (e.g., 37.7749 for San Francisco).
+longitude → The longitude of the user's position (e.g., -122.4194).
+altitude → The altitude (height) in meters (may be null if not available).
+accuracy → The accuracy level of the latitude/longitude in meters.
+altitudeAccuracy → Accuracy of the altitude in meters.
+heading → The direction the user is moving in degrees (0° = North).
+speed → The user's speed in meters per second. -->
+    <br /><br />
   </body>
 </html>
