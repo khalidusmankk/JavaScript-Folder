@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maps In JS</title>
+  </head>
+  <body>
+    <h2>JS Maps</h2>
+    <p>
+      A Map holds key-value pairs where the keys can be any datatype. A Map remembers the original insertion order of
+      the keys.
+    </p>
+    <pre>
+        A Map is a built-in JavaScript data structure that stores key-value pairs where:
+✅ Keys can be any data type (Unlike objects where keys are always strings or symbols).
+✅ Maintains insertion order (Unlike objects which don’t guarantee order).
+✅ Efficient for lookups (Faster than regular objects when working with large datasets).
+    </pre>
+    <h2>Why use a Map instead of an object ({})?</h2>
+    <pre>
+1️⃣ Objects ({}) only allow strings or symbols as keys, but Map allows any data type as a key (e.g., numbers, objects, functions).
+2️⃣ Map keeps the insertion order, while object properties may not.
+3️⃣ Map has built-in methods like .set(), .get(), .has(), .delete(), and .size.
+</pre
+    >
+    <h2>Ways to create a Map object</h2>
+    <p>there are multiple ways to create a Map in JavaScript. Here are the different methods:</p>
+
+    <h4>Using new Map() (Standard Method)</h4>
+    <p>
+      This is the most common way to create a Map and then add key-value pairs using .set(). We can add elements to a
+      Map with the set() method:
+    </p>
+    <script>
+      const myMap = new Map();
+      myMap.set("name", "Ali");
+      myMap.set(10, "Number Key");
+      myMap.set(true, "Boolean Key");
+      myMap.set("age", 35);
+
+      // document.write(myMap); // [Object Map]
+      for (let a of myMap) {
+        document.write(a, "<br>");
+      }
+    </script>
+    <h4>Using new Map() with an Array of Key-Value Pairs</h4>
+    <p>Instead of adding key-value pairs one by one, you can initialize a Map directly with an array.</p>
+
+    <script>
+      const myMap2 = new Map([
+        ["name", "Ali"],
+        [10, "Number Key"],
+        [true, "Boolean Key"],
+      ]);
+
+      document.write(Array.from(myMap2), "<br>");
+
+      const fruits = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200],
+      ]);
+      let numb = fruits.get("apples");
+      document.write("There are " + numb + " apples." + "<br>");
+      document.write(" This is useful when you already have key-value pairs as an array.", "<br>");
+    </script>
+    <h4>Converting an Object to a Map</h4>
+    <p>You can convert a regular object into a Map using Object.entries().</p>
+    <script>
+      const obj = { name: "Ali", age: 25, city: "Lahore" };
+      const myMap3 = new Map(Object.entries(obj));
+
+      console.log(myMap3);
+      console.log(myMap3.get("name")); // Output: Ali
+    </script>
+    <h1>Using a Map inside a Class (for Advanced Use)</h1>
+    <p>You can create a Map inside a class to handle complex data.</p>
+
+    <script>
+      class UserData {
+        constructor() {
+          this.data = new Map();
+        }
+
+        addUser(id, name) {
+          this.data.set(id, name);
+        }
+
+        getUser(id) {
+          return this.data.get(id);
+        }
+      }
+
+      const users = new UserData();
+      users.addUser(1, "Ali");
+      users.addUser(2, "Ahmed");
+
+      console.log(users.getUser(1)); // Output: Ali
+    </script>
+    <h2>Maps are Objects</h2>
+    <script>
+      document.write(typeof fruits);
+      document.write("instanceof Map returns true:", "<br>");
+
+      document.write(fruits instanceof Map);
+    </script>
+    <p>
+      The instanceof operator is used to check whether an object is an instance of a specific class (constructor
+      function).
+    </p>
+    <pre>
+        Syntax...
+        object instanceof Constructor
+    </pre>
+    <p>
+      To verify if an object belongs to a particular class. To differentiate between different data types (e.g., Map,
+      Array, Object). We should use it when we are working with complex data types like Map, Set, Array, etc.
+    </p>
+    <p>
+      <b>Note that</b> Don't use instanceof for primitive values (string, number, boolean), but use <b>typeof</b> for
+      primitives
+    </p>
+
+    <!-- Object	                                    Map
+Not directly iterable	               Directly iterable
+Do not have a size property	           Have a size property
+Keys must be Strings (or Symbols)	   Keys can be any datatype
+Keys are not well ordered	           Keys are ordered by insertion
+Have default keys                      Do not have default keys -->
+
+    <h2>Map Methods and Properties</h2>
+    <pre>
+ 
+    Method	Description
+new Map()   Creates a new Map object
+clear()	    Removes all the elements from a Map
+delete()	Removes a Map element specified by a key
+entries()	Returns an iterator object with the [key, value] pairs in a Map
+forEach()	Invokes a callback for each key/value pair in a Map
+get()	    Gets the value for a key in a Map
+groupBy()	Groups object elements according to returned callback values
+has()	    Returns true if a key exists in a Map
+keys()	    Returns an iterator object with the keys in a Map
+set()	    Sets the value for a key in a Map
+size	    Returns the number of Map elements
+values()	Returns an iterator object of the values in a Map
+</pre
+    >
+
+    <script>
+      const myFruits = new Map([
+        ["Banana", 900],
+        ["Apple", 800],
+        [20, 15],
+        [25, "DOB"],
+      ]);
+      let value = myFruits.get(25);
+      document.write(value, "<br>");
+      document.write(myFruits.size);
+    </script>
+  </body>
+</html>
