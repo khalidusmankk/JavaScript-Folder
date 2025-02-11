@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphics</title>
+
+    <script src="https://cdn.plot.ly/plotly-3.0.0.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h2>Plotify.js</h2>
+    <p>Plotly.js is a charting library that comes with over 40 chart types:</p>
+    <h2>Students Result Chart</h2>
+    <div id="myPlot" style="width: 100%; max-width: 700px"></div>
+    <script>
+      const classes = ["Ist", "Second", "Third", "Fourth", "Fifth"];
+      const students = [95, 49, 44, 24, 15];
+
+      const data = [
+        {
+          x: classes,
+          y: students,
+          type: "bar",
+          orientation: "v", // Change "v" to "h" for a horizontal chart
+          marker: { color: "red" },
+        },
+      ];
+
+      // 🔹 Fixed Layout
+      const layout = {
+        title: { text: "Student Count per Class", font: { size: 20 } },
+      };
+
+      Plotly.newPlot("myPlot", data, layout);
+    </script>
+    <h2>Pie Charts</h2>
+    <p>To display a pie instead of bars, change x and y to labels and values, and change the type to "pie" as below</p>
+    <pre>
+          const data = [
+        {
+          labels: classes,
+          values: students,
+          type: "pie",
+          marker: { color: "red" },
+        },
+      ];
+    </pre>
+    <h2>Donut Charts</h2>
+    <p>To display a donut instead of a pie, add a hole</p>
+    <pre>
+        const data = [{
+  labels: xArray,
+  values: yArray,
+  hole: .4,
+  type: "pie"
+}];
+    </pre>
+  </body>
+</html>
