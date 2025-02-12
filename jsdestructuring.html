@@ -129,6 +129,7 @@
       document.write("<h2> Destructuring Assignment Syntax</h2>");
       document.write("The destructuring assignment syntax unpack object properties into variables:" + "<br>");
 
+      document.write(" <h2> Destructuring Objects </h2>");
       // Create an Object
       const principal = {
         hisname: "Khalid Usman ",
@@ -139,6 +140,61 @@
       const { hisname, hisage, hiscolor } = principal; // The order of the properties does not matter: let {lastName, firstName} = person; Both orders are okay and they will show same result.
       document.write(hisname + " is " + hisage, "<br>");
 
+      document.write("<b> OR </b> We can even do it with a function like the below", "<br>");
+      const person = {
+        Name: "Inayat",
+        age: 25,
+        Nationality: "Pakistani",
+      };
+      function myDetail({ Name, age, Nationality }) {
+        document.write("My name is " + Name + " and I am " + Nationality);
+      }
+      myDetail(person + "<br>");
+
+      document.write(
+        "We can even destructure deeply nested objects by referencing the nested object then using a colon and curly braces to again destructure the items needed from the nested object:" +
+          "<br>"
+      );
+
+      const vehicleOne = {
+        brand: "Ford",
+        Name: "Mustang",
+        type: "car",
+        year: 2021,
+        color: "red",
+        registration: {
+          city: "Peshawar",
+          state: "Khyber Pakhtunkhwa",
+          country: "Pakistan",
+        },
+      };
+
+      function myVehicle({ Name, registration: { state } }) {
+        document.write("My " + Name + " is registered in " + state + ".");
+      }
+      // myVehicle(vehicleOne + "<br>"); // TypeError: Cannot read properties of undefined (reading 'state').. Problem: You are trying to concatenate an object (vehicleOne) with a string ("<br>"). This will cause an error because vehicleOne is not a string.
+      myVehicle(vehicleOne, "<br>");
+
+      document.write("<h2> Object Default Values </h2>");
+      document.write("For potentially missing properties we can set default values", "<br>");
+
+      const school = {
+        schoolName: "NIPHS",
+        students: 1500,
+      };
+      let { schoolName, students, sLocation = "Wana" } = school;
+      document.write(schoolName + " is located in " + sLocation + "<br>");
+      const parents = {
+        father_Name: "Haji Shah Mir",
+        Mother_Name: "Hajra Bibi",
+        age: 40,
+      };
+      // Destructuring
+      let { Mother_Name: herName } = parents;
+      document.write(herName, "<br>");
+
+      document.write("<h2> Object Property Alias </h2>");
+      document.write(" Detail of Alias is below");
       document.write(" <h3>String Destructuring</h3>");
       let name = "W3Schools";
       // Destructuring
@@ -147,6 +203,19 @@
       document.write(a4, "<br>");
       const [ab, ...restString] = name;
       document.write("The firs letter is " + ab + " and the remaining is " + restString);
+
+      document.write("<h2> Destructuring Maps </h2>");
+
+      // Create a Map
+      const myFruits = new Map([
+        ["apples ", 500],
+        [" bananas ", 300],
+        [" oranges ", 200],
+      ]);
+      // Destructing
+      for (let [key, value] of myFruits) {
+        document.write(key + " is " + value + "<br>");
+      }
     </script>
   </body>
 </html>
