@@ -10,7 +10,28 @@
 
 <body>
 
+  <h2> Bits</h2>
+  <p> Bit is made from 2 words, Binary and digit. B is taken from Binary and "it" is taken from digit. دوہرا · ثنائی · مثنیٰ · مزدوج · جوڑے دار · کسی شے یا نظام میں ہر دو میں سے ایک منتخب کر سکنے کی صلاحیت رکھنے والا · بائینری.</p>
+  <p><b> Whole Number : </b> Any positive number that does not include a fractional or decimal part. This means that, for example, the numbers 0, 1, 2, 3, 4, 5, 6, and 7 are all whole numbers.</p>
+  <h2> Decimal Numbers</h2>
+  <p> The word decimal comes from the Latin word 'decimus' that means "tenth part"</p>
+  <p>(1 out of 10 parts) 1/10 is fraction and 0.1 is decimal.</p>
+
+  <pre>
+    0.1
+    0 is whole number;
+    . is decimal point;
+    1 is fractional part
+  </pre>
+  <p> <b> Key Fact</b> A decimal is a fraction with a denominator of 10, 100 and 1000.</p>
+  <p> 3/10 = 0.3 and 7/10 = 0.7</p>
+  <h2> Hunderedths in decimal</h2>
+  <p> If we eat one part out of 100, so we will write 1/100 in fraction and 0.01 in decimal. 77/100 = 0.77</p>
+  <h2> Thousandths</h2>
+  <p> 1/1000 = 0.001</p>
+
     <h2> Base 10 decimals numbers </h2>
+
     <p> Base 10 decimals refer to the standard number system used in everyday life, also known as the <b> decimal system. </b> 
         It is called  <b> base 10  </b> because it is based on ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. Each digit in a number represents a different power of 10, depending on its position.</p>
         <p> For example, in the number 345.67: </p>
@@ -39,10 +60,47 @@
 
             <p> The system is widely used because it matches the way humans typically count using ten fingers </p>
 
+                <h2> General Rule for Negative Exponents </h2>
+               <p> For any number: a<sup>-n</sup></p>
+               <pre>
+               a<sup>n</sup> = 1/a<sup>n</sup> (a-n = 1/an)
+               </pre>
+               <p> So for 10<sup>-2</sup>=1/10 * 10 ; = 1/100 ; = 0.01 : </p>
+               <pre>
+                10<sup>-3</sup> = 1/10*10*10 = 0.001
+               </pre>
 
+       <h2> Usage in JavaScript</h2>
+       <p>You can calculate this in JavaScript using the Math.pow() function or the exponentiation operator **:</p>
+       <script>
+            console.log(Math.pow(10, -2)); // Output: 0.01
+             console.log(10 ** -2);         // Output: 0.01
 
+       </script>
+    <h2> Place Value of digits in decimal </h2>
+    <p> Here's how place values work on both sides of the decimal point </p>
+    <p> <b>Left of the Decimal (Whole Numbers) :</b> The place value starts from ones (10⁰) and increases by powers of 10 as you move left.</p>
+    <pre>1 → Ones (10⁰ = 1)
+         10 → Tens (10¹ = 10)
+         100 → Hundreds (10² = 100)
+         1000 → Thousands (10³ = 1000)</pre>
+         <p> <b> Right of the Decimal (Decimal Fractions) :</b>The place value starts from tenths (10⁻¹) and decreases by powers of 10 as you move right.</p>
+         <pre>
+          0.1 → Tenths (10⁻¹ = 1/10 = 0.1)
+          0.01 → Hundredths (10⁻² = 1/100 = 0.01)
+          0.001 → Thousandths (10⁻³ = 1/1000 = 0.001)
+         </pre>
+         <pre>
+          For the number 123.456, the place values are:
 
-    
+  Digit	       Place Value
+   1           	Hundreds (10² = 100)
+   2           	Tens (10¹ = 10)
+   3           	Ones (10⁰ = 1)
+   4           	Tenths (10⁻¹ = 0.1)
+   5           	Hundredths (10⁻² = 0.01)
+   6           	Thousandths (10⁻³ = 0.001)
+         </pre>
     <H2> Bitwise in JS </H2>
     <p> Bitwise refers to operations or manipulations of data at the level of individual bits, which are the smallest units of data in computing, either 0 or 1. 0 for off and 1 for on.
          Bitwise operations are fundamental in low-level programming and are used to manipulate bits directly, usually for performance optimization, encryption, and other specialized tasks.
