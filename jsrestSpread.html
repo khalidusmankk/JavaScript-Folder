@@ -80,19 +80,19 @@
 
       let fruitOne = ["Apple", "Banana"];
       fruitOne = [...fruitOne, "Kiwi"];
-      document.write(fruitOne); // Output: ["Apple", "Banana", "Kiwi"]
+      document.write(fruitOne);
 
       document.write("<h2> Uses Of Spread Operator </h2>");
       document.write("<h3>1. Copying Arrays and Objects </h3>");
       document.write("<h4>a) Copying an Array (Shallow Copy) </h4>");
       const arr1 = [1, 2, 3];
       const arr2 = [...arr1]; // Copy of arr1
-      document.write(arr2); // Output: [1, 2, 3]
+      document.write(arr2);
 
       document.write("<h4>b) Copying an Object (Shallow Copy) </h4>");
       const obj1 = { name: "Ali", age: 25 };
       const obj2 = { ...obj1 }; // Copy of obj1
-      document.write(Object.values(obj2)); // Output: { name: "Ali", age: 25 }
+      document.write(Object.values(obj2));
 
       document.write("<h3>2. Merging Arrays and Objects </h3>");
       document.write("<h4> a) Merging Arrays </h4>");
@@ -116,7 +116,7 @@
         return a + b + c;
       }
       const myNumbers = [1, 2, 3];
-      document.write(sum(...myNumbers)); // Output: 6
+      document.write(sum(...myNumbers));
 
       document.write("<h3>5. Spreading Elements in JSX (React) </h3>");
       const props = { name: "Ali", age: 25 };
