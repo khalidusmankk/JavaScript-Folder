@@ -39,7 +39,7 @@
     <p>
       Base 10 decimals refer to the standard number system used in everyday life, also known as the
       <b> decimal system. </b> It is called <b> base 10 </b> because it is based on ten digits: 0, 1, 2, 3, 4, 5, 6, 7,
-      8, and 9. Each digit in a number represents a different power of 10, depending on its position.
+      8, and 9. Each digit in this numbers represents a different power of 10, depending on its position.
     </p>
     <p>For example, in the number 345.67:</p>
     <ul>
@@ -50,7 +50,6 @@
       <li>The digit 7 is in the hundredths place, so it represents 7 * 10 <sup> -2</sup> = 0.07</li>
     </ul>
     <p><b> Together </b> 300 + 40 + 5 + 0.6 + 0.07 = 345.67</p>
-    <p>300 + 40 + 5 + 0.6 + 0.07 = 345.67 300+40+5+0.6+0.07=345.67.</p>
 
     <p>The system is widely used because it matches the way humans typically count using ten fingers</p>
 
@@ -68,6 +67,10 @@
 
     <h2>Usage in JavaScript</h2>
     <p>You can calculate this in JavaScript using the Math.pow() function or the exponentiation operator **:</p>
+    <p>
+      The exponentiation operator (**) in JavaScript is used to raise a number to the power of another number. It is
+      equivalent to using Math.pow().
+    </p>
     <script>
       console.log(Math.pow(10, -2)); // Output: 0.01
       console.log(10 ** -2); // Output: 0.01
@@ -115,16 +118,31 @@
       specialized tasks. In JavaScript (and many other languages), there are several bitwise operators that allow you to
       work with the bits of binary numbers.
     </p>
-
+    <pre>
+  00
+  01
+  10
+  11
+</pre
+    >
     <h4>Bit and Byte</h4>
     <p>In general computing, the terms bit and byte represent different units of data.</p>
     <h4>Bit</h4>
     <ul>
       <li>A bit is the smallest unit of data in computing.</li>
+      <li>1 bit: A single binary digit (0 or 1)</li>
       <li>It can have one of two values: 0 or 1.</li>
       <li>A bit represents a single binary digit.</li>
       <li><b> Data Range </b> Can store 2 values (0, 1)</li>
-      <li>8 bits = 1 byte</li>
+      <li>8 bits = 1 byte ..... 10101010 (8 bits = 1 byte)</li>
+      <li>If we extend your 2-bit values to 8 bits, they would look like:</li>
+      <pre>
+        00000000  (0 in decimal)
+        00000001  (1 in decimal)
+        00000010  (2 in decimal)
+        00000011  (3 in decimal)
+       </pre
+      >
       <li>1 Kilobyte (KB) = 1024 Bytes</li>
       <li>1 Megabyte (MB) = 1024 KB</li>
       <li>Giga</li>
@@ -141,7 +159,10 @@
     <ul>
       <li>A byte is a collection of 8 bits.</li>
       <li>It is the standard unit used to measure data size.</li>
-      <li>A byte can represent 256 different values (from 0 to 255 in decimal, or 00000000 to 11111111 in binary).</li>
+      <li>
+        A byte can represent 256 different values (from 0 to 255 in decimal, or 00000000 to 11111111(0 to 255) in
+        binary).
+      </li>
       <li><b> Data Range </b> Can store 256 values (0 to 255)</li>
     </ul>
 
@@ -153,14 +174,38 @@
       <li>4 bits = 16 characters</li>
       <li>5 bits = 32 characters</li>
       <li>6 bits = 64 characters</li>
+      <li>7 bits = 128 characters</li>
+      <li>8 bits = 256 characters</li>
     </ul>
 
+    <h2>How does 11111111 become 255?</h2>
+    <p>The number 11111111 is an 8-bit binary number, meaning it has 8 digits, each representing a power of 2.</p>
+    <p>
+      Binary to Decimal Conversion: Each bit in an 8-bit binary number represents a power of 2, starting from 2<sup
+        >0</sup
+      >
+      on the right:
+    </p>
+    <pre>
+      Binary      Power of 2           Value 
+      1           2<sup>7</sup>                     128
+      1           2<sup>6</sup>                      64
+      1           2<sup>5</sup>                      32
+      1           2<sup>4</sup>                      16
+      1           2<sup>3</sup>                      8
+      1           2<sup>2</sup>                      4
+      1           2<sup>1</sup>                      2
+      1           2<sup>0</sup>                      1
+    </pre>
+    <p>128+64+32+16+8+4+2+1=255</p>
+    <p>So, 11111111 in binary is 255 in decimal.</p>
     <p>
       The statement 1 bit = 2 characters, 2 bits = 4 characters, 3 bits = 8 characters refers to the number of<b>
         unique combinations
       </b>
       or <b> patterns </b> that can be represented with a certain number of bits.
     </p>
+
     <h3>How This Works:</h3>
     <ul>
       <li>A bit is the smallest unit of data in a computer and can have two values: 0 or 1.</li>
