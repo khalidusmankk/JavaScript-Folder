@@ -25,6 +25,7 @@
     <p>We can pick up array variables into our own variables.</p>\
    " + "<br>"
       );
+
       document.write("It can also unpack arrays and any other iterables:" + "<br>");
       // Create an Array
       const fruits = ["Bananas", "Oranges", "Apples", "Mangos"];
@@ -123,6 +124,7 @@
       document.write("<h2> Destructuring Assignment Syntax</h2>");
       document.write("The destructuring assignment syntax unpack object properties into variables:" + "<br>");
 
+      document.write("<hr>");
       document.write(" <h2> Destructuring Objects </h2>");
       // Create an Object
       const principal = {
@@ -189,6 +191,7 @@
 
       document.write("<h2> Object Property Alias </h2>");
       document.write(" Detail of Alias is below");
+
       document.write(" <h3>String Destructuring</h3>");
       let name = "W3Schools";
       // Destructuring
@@ -210,6 +213,33 @@
       for (let [key, value] of myFruits) {
         document.write(key + " is " + value + "<br>");
       }
+    </script>
+    <h2>Alias in JavaScript</h2>
+    <p>
+      An alias in JavaScript means giving an alternative name to a variable, function, or import/export to make it
+      easier to use or avoid conflicts.
+    </p>
+    <h3>1. Alias in Object Destructuring</h3>
+    <p>You can rename object properties while destructuring:</p>
+    <script>
+      const student = {
+        fullName: "Ali Khan",
+        age: 22,
+      };
+      // Alias: Rename `fullName` to `myName`
+      const { fullName: myName, age } = student;
+
+      console.log(myName); // Output: Ali Khan
+      console.log(age); // Output: 22
+    </script>
+    <h2>Alias in Arrays (Using Rest Operator)</h2>
+    <p>In array destructuring, you can also assign aliases using the rest (...) operator:</p>
+    <script>
+      const colors = ["red", "blue", "green"];
+      // Alias: `firstColor` for the first element, `otherColors` for the rest
+      const [firstColor, ...otherColors] = colors;
+      console.log(firstColor); // Output: red
+      console.log(otherColors); // Output: ["blue", "green"]
     </script>
   </body>
 </html>
