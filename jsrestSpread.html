@@ -140,12 +140,22 @@
 
       document.write(" <h3> Rest Operator </h3>");
       document.write(
-        " NO : 1 :Rest Operator (...) is used in function arguments or destructuring to collect multiple values into an array." +
-          "<br>"
+        "The rest operator (...) looks the same as the spread operator, but it works oppositely. Instead of spreading values, it collects multiple values into an array.",
+        "<br>"
       );
 
       document.write(
-        " NO : 2 :The rest operator is used to collect the remaining elements into an array after certain elements have been assigned to other variables. In your example, after assigning one to 1 and two to 2, the rest operator collects the remaining elements ([3, 4, 5, 6]) into the rest variable." +
+        " NO : 1 : Collecting Function Arguments: The rest parameter (...) allows a function to treat an indefinite number of arguments as an array." +
+          "<br>"
+      );
+      function sum(...numbers) {
+        return numbers.reduce((total, num) => total + num, 0);
+      }
+      console.log(sum(1, 2, 3, 4)); // Output: 10
+      console.log(sum(10, 20)); // Output: 30
+      document.write(" Here, ...numbers gathers all arguments into an array [1, 2, 3, 4].", "<br>");
+      document.write(
+        " NO : 2 : Destructuring Arrays with Rest : The rest operator is used to collect the remaining elements into an array after certain elements have been assigned to other variables. In your example, after assigning one to 1 and two to 2, the rest operator collects the remaining elements ([3, 4, 5, 6]) into the rest variable." +
           "<br>"
       );
       document.write("Purpose: To collect multiple elements into a single variable." + "<br>");
@@ -156,6 +166,99 @@
       //  document.write("<p>" + one + "</p>");
       //  document.write("<p>" + two + "</p>");
       //  document.write("<p>" + rest + "</p>");
+
+      document.write("No : 3. Destructuring Objects with Rest", "<br>");
+      document.write(
+        "When extracting some properties from an object, we can use the rest operator to store the remaining properties.",
+        "<br>"
+      );
+
+      const thisPerson = { name: "Ali", age: 25, city: "Lahore", country: "Pakistan" };
+      const { name, ...otherDetails } = thisPerson;
+      console.log(name); // Output: Ali
+      console.log(otherDetails); // Output: { age: 25, city: "Lahore", country: "Pakistan" }
+      document.write("name is extracted, and the rest of the properties are stored in otherDetails.", "<br>");
+
+      document.write(
+        "No : 4. Handling Function Parameters Dynamically ... Example: Fixed and Dynamic Parameters",
+        "<br>"
+      );
+      document.write(
+        "When defining a function, you may need a few fixed parameters but still want to accept additional values.",
+        "<br>"
+      );
+
+      function introduce(name, age, ...hobbies) {
+        console.log(`Name: ${name}, Age: ${age}`);
+        console.log(`Hobbies: ${hobbies.join(", ")}`);
+      }
+      introduce("Ali", 25, "Reading", "Coding", "Gaming");
+      document.write(
+        " The first two arguments go into name and age, and the remaining values go into the hobbies array.",
+        "<br>"
+      );
+
+      document.write("No : 5. Creating a Flexible Object Function ....Example: Merging User Details ", "<br>");
+      document.write("We can use the rest operator in object functions to accept flexible parameters.", "<br>");
+
+      function createUser(name, age, ...details) {
+        return { name, age, details };
+      }
+      console.log(createUser("Ali", 25, "Lahore", "Pakistan", "Developer"));
+      document.write(
+        "The first two arguments are stored separately, and the rest are collected in the details array.",
+        "<br>"
+      );
+
+      document.write("No : 6. Filtering Object Properties... Example: Removing a Property ", "<br>");
+      document.write("We can use the rest operator to remove unwanted properties from an object.", "<br>");
+
+      const user = { id: 1, name: "Ali", password: "12345", role: "admin" };
+      const { password, ...safeUser } = user;
+      console.log(safeUser);
+      document.write("password is removed, and the rest of the object is stored in safeUser.", "<br>");
+
+      // Feature	                  Spread (...)	                                         Rest (...)
+      // Usage	       Expands an array/object into individual elements	                       Collects multiple values into an array/object
+      // Used In	       Function arguments, arrays, objects	                                       Function parameters, destructuring
+      // Example         const arr2 = [...arr1] (copies array)	                                  const [first, ...rest] = arr (gets first item, stores rest)
+
+      document.write(
+        "The rest operator is a powerful tool that allows you to gather multiple values into an array , Destructuring arrays and objects and Filtering out unwanted properties",
+        "<br>"
+      );
+
+      document.write(
+        " Expand does not mean collect. Instead, it means to break something down into its individual elements. The spread operator takes an array or object and expands its elements individually.",
+        "<br>"
+      );
+      const spreadNumbers = [1, 2, 3];
+      console.log(...spreadNumbers);
+      // Output: 1 2 3 (Expands the array elements) ... The array [1, 2, 3] is expanded into 1 2 3.
+
+      //Example: Expanding an Array into a New Array
+
+      const oldArray = [1, 2, 3];
+      const newArray = [...oldArray, 4, 5];
+      console.log(newArray);
+      // Output: [1, 2, 3, 4, 5]
+
+      document.write(
+        "Rest Operator (...) → Collects (Gathers) ... Example: Collecting Extra Function Arguments",
+        "<br>"
+      );
+      document.write("The rest operator collects multiple values into an array or object.", "<br>");
+
+      function sum(...numbers) {
+        console.log(numbers);
+      }
+      sum(1, 2, 3, 4);
+      // Output: [1, 2, 3, 4] (Rest collects them into an array)
     </script>
+    <pre>
+        Conclusion:
+✅ Spread (...) → Expands → Breaks an array/object into its elements
+✅ Rest (...) → Collects → Gathers multiple values into an array/object
+    </pre>
   </body>
 </html>
