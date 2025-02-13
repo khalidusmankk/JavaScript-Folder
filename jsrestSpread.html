@@ -25,6 +25,10 @@
         "<br>"
       );
       document.write(
+        " It is also useful for merging, updating, passing arguments, destructuring, and working with React props.",
+        "<br>"
+      );
+      document.write(
         "The spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object. The spread operator is used to spread elements, whether from an array or an object, to another array or object.",
         "<br>"
       );
@@ -76,7 +80,63 @@
 
       let fruitOne = ["Apple", "Banana"];
       fruitOne = [...fruitOne, "Kiwi"];
-      console.log(fruitOne); // Output: ["Apple", "Banana", "Kiwi"]
+      document.write(fruitOne); // Output: ["Apple", "Banana", "Kiwi"]
+
+      document.write("<h2> Uses Of Spread Operator </h2>");
+      document.write("<h3>1. Copying Arrays and Objects </h3>");
+      document.write("<h4>a) Copying an Array (Shallow Copy) </h4>");
+      const arr1 = [1, 2, 3];
+      const arr2 = [...arr1]; // Copy of arr1
+      document.write(arr2); // Output: [1, 2, 3]
+
+      document.write("<h4>b) Copying an Object (Shallow Copy) </h4>");
+      const obj1 = { name: "Ali", age: 25 };
+      const obj2 = { ...obj1 }; // Copy of obj1
+      document.write(Object.values(obj2)); // Output: { name: "Ali", age: 25 }
+
+      document.write("<h3>2. Merging Arrays and Objects </h3>");
+      document.write("<h4> a) Merging Arrays </h4>");
+      const myArrayOne = [1, 2, 3];
+      const myArrayTwo = [4, 5, 6];
+      const mergedArray = [...myArrayOne, ...myArrayTwo];
+      document.write(mergedArray);
+      document.write("<h4> b) Merging Objects </h4>");
+      const myObj1 = { name: "Ali" };
+      const myObj2 = { age: 25 };
+      const mergedObj = { ...myObj1, ...myObj2 };
+      document.write(Object.values(mergedObj));
+
+      document.write("<h3>3. Adding or Updating Properties in Objects </h3>");
+      const person = { name: "Ali ", age: 25 };
+      const updatedPerson = { ...person, age: 26, city: "Lahore" };
+      document.write(Object.values(updatedPerson));
+
+      document.write("<h3>4. Expanding Function Arguments (Function Calls) </h3>");
+      function sum(a, b, c) {
+        return a + b + c;
+      }
+      const myNumbers = [1, 2, 3];
+      document.write(sum(...myNumbers)); // Output: 6
+
+      document.write("<h3>5. Spreading Elements in JSX (React) </h3>");
+      const props = { name: "Ali", age: 25 };
+      //<MyComponent {...props} />;
+      // Equivalent to <MyComponent name="Ali" age="25" />
+
+      document.write("<h3> 6. Converting Strings to Arrays </h3>");
+      const str = "Hello";
+      const charArray = [...str];
+      document.write(charArray); // Output: ['H', 'e', 'l', 'l', 'o']
+
+      document.write("<h3> 7. Removing Items from Arrays</h3>");
+      document.write("<p> You can remove an item by filtering it out and spreading the filtered array. </p>");
+      const arr = [1, 2, 3, 4];
+      const newArr = [...arr.filter((num) => num !== 3)];
+      document.write(newArr);
+
+      document.write("<h3> 8. Using with Math Functions</h3>");
+      const number = [10, 20, 30];
+      document.write(Math.max(...number));
 
       document.write(" <h3> Rest Operator </h3>");
       document.write(
