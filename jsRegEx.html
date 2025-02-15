@@ -5,5 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regular Expressions</title>
   </head>
-  <body></body>
+  <body>
+    <h2>Regular Expressions</h2>
+    <p>A regular expression is a sequence of characters that forms a <b>search pattern </b>.</p>
+    <p>The search pattern can be used for text search and text replace operations.</p>
+    <p>
+      A regular expression can be a single character, or a more complicated pattern. Regular expressions can be used to
+      perform all types of text search and text replace operations.
+    </p>
+    <pre>
+      Syntax
+      /pattern/modifiers;
+      Example
+      /w3schools/i;
+      Example explained:
+
+      /w3schools/i  is a regular expression.
+      w3schools  is a pattern (to be used in a search).
+      i is a modifier (modifies the search to be case-insensitive).
+    </pre>
+    <h3>Using String Methods</h3>
+    <p>In JavaScript, regular expressions are often used with the two string methods: search() and replace().</p>
+    <p>The search() method uses an expression to search for a match, and returns the position of the match.</p>
+    <p>The replace() method returns a modified string where the pattern is replaced.</p>
+
+    <h4>Using String search() With a String</h4>
+    <p>The search() method searches a string for a specified value and returns the position of the match:</p>
+    <script>
+      let text = "Visit W3Schools!";
+      let n = text.search("W3Schools");
+      document.write(n);
+    </script>
+    <h4>Using String search() With a Regular Expression</h4>
+    <p>Use a regular expression to do a case-insensitive search for "w3schools" in a string:</p>
+    <p>
+      case insensitive means that it doesn't matter whether the word is in uppercase, lowercase, or mixed case. It will
+      match all variations.
+    </p>
+    <script>
+      let text2 = "Visit W3Schools";
+      let n2 = text.search(/w3schools/i);
+      document.write(n2);
+    </script>
+    <h3>Using String replace() With a String</h3>
+    <p>The replace() method replaces a specified value with another value in a string:</p>
+    <script>
+      let myString = "Visit Microsoft!";
+      let result = myString.replace("Microsoft", "W3Schools");
+      document.write(result);
+    </script>
+    <h3>Use String replace() With a Regular Expression</h3>
+    <p>Use a case insensitive regular expression to replace Microsoft with W3Schools in a string:</p>
+    <script>
+      let textStr = "Visit Microsoft!";
+      let myResult = textStr.replace(/microsoft/i, "W3Schools");
+      document.write(myResult);
+    </script>
+    <h2>Regular Expression Modifiers</h2>
+    <p>Modifiers can be used to perform case-insensitive more global searches:</p>
+    <pre>
+      i	Perform case-insensitive matching	
+      g	Perform a global match (find all)	
+      m	Perform multiline matching	
+      d	Perform start and end matching (New in ES2022)
+    </pre>
+    <p>
+      By default the below replace would replace only the first only replaces the first occurrence of the word, but with
+      a regular expression with the g flag, It will now replace every 'string' in the line.
+    </p>
+    <script>
+      let aString = "string in a string for string";
+      let bString = aString.replace(/string/g, "text");
+      console.log(bString);
+    </script>
+  </body>
 </html>
