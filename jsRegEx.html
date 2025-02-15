@@ -76,7 +76,127 @@
     <script>
       let aString = "string in a string for string";
       let bString = aString.replace(/string/g, "text");
-      console.log(bString);
+      document.write(bString);
+      document.write("<br>");
+
+      let xString = "string in a string for string";
+      let yString = xString.replace(/string/d, "text");
+      document.write(yString);
+    </script>
+
+    <h2>Regular Expression Patterns</h2>
+    <p>Brackets are used to find a range of characters:</p>
+    <pre>
+       Expression	             Description	
+         [abc]	     Find any of the characters between the brackets	
+         [0-9]	     Find any of the digits between the brackets	
+         (x|y)	     Find any of the alternatives separated with |
+    </pre>
+    <p>Do a global search for the character "h" in a string:</p>
+    <script>
+      let aText = "Is this all there is?";
+      let aResult = aText.match(/[h]/g);
+      document.write(aResult, "<br>");
+
+      let digits = "123456789";
+      let dRes = digits.match(/[1-5]/g);
+      document.write(dRes);
+    </script>
+    <p>Do a global search for any of the specified alternatives (red|green):</p>
+    <script>
+      let colors = "white, green, red, green, blue, orange, reddish, green";
+      let colors2 = colors.match(/(red|green)/g);
+      document.write(colors2);
+    </script>
+    <p><b> Metacharacters </b> are characters with a special meaning:</p>
+    <pre>
+      Metacharacter	            Description	
+          \d	              Find a digit	
+          \s	              Find a whitespace character	
+          \b	             (beginning OR behind) Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b	
+          \uxxxx	      Find the Unicode character specified by the hexadecimal number xxxx
+    </pre>
+    <script>
+      let digitStr = "Give 100%";
+      let digitMatch = digitStr.match(/\d/g);
+      document.write(digitMatch);
+    </script>
+    <p>
+      In JavaScript, whitespace characters refer to spaces, tabs, newlines, and other empty characters that do not
+      produce a visible mark but still occupy space in the string, as there are 5 spaces/whiteSpaces between Hello
+      World.
+    </p>
+    <script>
+      let textOne = "Hello     World!\nThis is\tJavaScript.";
+      let resultOne = textOne.match(/\s/g);
+      document.write(resultOne);
+    </script>
+    <p>Search for the characters "LO" in the <b>beginning</b> of a word in the phrase:</p>
+    <script>
+      let myWord = "HELLO, LOOK AT YOU!";
+      let theResult = myWord.search(/\bLO/); //(/LO\b/) Search for the characters "LO" in the <b>end</b> of a word in the phrase:
+      document.write(theResult);
+    </script>
+
+    <h2>Quantifiers define quantities:</h2>
+    <pre>
+      Quantifier	             Description	
+          n+	             Matches any string that contains at least one n
+          n*	             Matches any string that contains zero or more occurrences of n
+          n?	             Matches any string that contains zero or one occurrences of n
+    </pre>
+    <p>Do a global search for at least one "o" in a string:</p>
+    <script>
+      let thisStr = "Hellooo world, who is school";
+      let thisStr2 = thisStr.match(/o+/g);
+      document.write(thisStr2);
+      document.write("If you only want to match k that is followed by at least one h, use + instead of *", "<br>");
+      let myName = "khalid khan hkan";
+      let searchMyName = myName.match(/kh+/g);
+      document.write(searchMyName);
+    </script>
+
+    <p>Do a global search for an "k", followed by zero or more "h" characters:</p>
+    <script>
+      let name = "khalid khan hkan";
+      let searchMe = name.match(/kh*/g); //h* → Matches zero or more occurrences of "h" (meaning it can match an empty string if "h" is not present). **k**an" → Matches "k" (because "h*" allows zero occurrences of "h").
+      document.write(searchMe);
+    </script>
+
+    <p>Do a global search for a "1", followed by zero or one "0" characters:</p>
+    <script>
+      let thisDigits = "1, 10, 22, 100, 33, 1000";
+      let myDigits = thisDigits.match(/10?/g);
+      document.write(myDigits);
+    </script>
+    <h2>Using the RegExp Object</h2>
+    <p>In JavaScript, the RegExp object is a regular expression object with predefined properties and methods.</p>
+    <h4>test() method</h4>
+    <p>
+      The test() method is a RegExp expression method. It searches a string for a pattern, and returns true or false,
+      depending on the result.
+    </p>
+    <p>The following example searches a string for the character "e".</p>
+
+    <script>
+      const pattern = /e/;
+      document.write(pattern.test("The best things in life are free!"));
+    </script>
+    <h4>exec() Method (execute)</h4>
+    <p>
+      It searches a string for a specified pattern, and returns the found text as an <b> object </b>. If no match is
+      found, it returns an empty (null) object.
+    </p>
+    <pre>
+      Syntax:
+    regex.exec(string)
+    </pre>
+    <script>
+      let execText = "Hello, my name is Khalid";
+      let regex = /Khalid/;
+      let urResult = regex.exec(execText);
+      document.write(urResult);
+      console.log(urResult); // Logs the full match object
     </script>
   </body>
 </html>
