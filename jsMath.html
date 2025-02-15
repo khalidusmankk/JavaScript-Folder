@@ -26,6 +26,43 @@
   <body>
     <div class="container-fluid mx-3">
       <script>
+        document.write("<h2> JavaScript Operator Precedence </h2>");
+        document.write(
+          "Operator precedence describes the order in which operations are performed in an arithmetic expression.",
+          "<br>"
+        );
+        document.write(
+          "Multiplication (*) and division (/) have higher precedence than addition (+) and subtraction (-).",
+          "<br>"
+        );
+        document.write(
+          " As in traditional mathematics, multiplication is done first:\
+               let x = 100 + 50 * 3;\
+              When using parentheses, operations inside the parentheses are computed first:\
+              let x = (100 + 50) * 3; ",
+          "<br>"
+        );
+        document.write(
+          "Operations with the same precedence (like * and /) are computed from left to right:\
+                   let x = 100 / 50 * 3;",
+          "<br>"
+        );
+        let xy = (100 / 50) * 3;
+        document.write(xy, "<br>");
+
+        document.write("The : Operator OR The Colon Assignment", "<br>");
+        let size = { x: 10, y: 15, z: 20 };
+        document.write(size.y, "<br>");
+
+        document.write("<h4> Arithmetic Operators </h4>");
+        document.write(
+          " Exponentiations are executed before multiplications. Multiplications and divisions are executed before additions and subtractions ",
+          "<br>"
+        );
+        let number = 10;
+        let number2 = 10 ** 3; // x raise to the power of y
+        document.write(number2);
+        document.write("<br>");
         // The modulus operator (%) returns the division remainder.
 
         //Example
