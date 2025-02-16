@@ -2,6 +2,8 @@
 //output true...
 // JavaScript performs type coercion (automatic type conversion) when comparing different data types. Here's the step-by-step evaluation:
 
+// const { func } = require("prop-types");
+
 // Empty String ("") Conversion:
 
 // JavaScript converts the empty string "" to a number during comparison.
@@ -59,8 +61,8 @@
 // console.log(typeof typeof 100); returns a string
 
 // Importing the module from modules.js
-import tryModules from "./modules.js";
-console.log(tryModules());
+// import tryModules from "./modules.js";
+// console.log(tryModules());
 
 // Explain the building blocks of React.
 // The five main building blocks of React are:

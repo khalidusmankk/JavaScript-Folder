@@ -425,6 +425,24 @@
     </pre
       >
       <p>Deleting a function is also not allowed in strice mode.</p>
+
+      <h3>Accessing the global function through the global object</h3>
+      <p>we have defined the sum() function in the global scope.</p>
+      <p>After that, we have defined the person object containing the name, tribe, and count properties.</p>
+      <p>The count property is initialized with a value returned by the sum() function.</p>
+      <p>We used the' window' object to invoke a global sum() function.</p>
+      <script>
+        function sum(a, b) {
+          return a + b;
+        }
+
+        const person = {
+          name: "Khalid Usman",
+          tribe: "Wazir",
+          count: sum(10, 20),
+        };
+        document.write(Object.values(person));
+      </script>
     </div>
   </body>
 </html>
