@@ -401,6 +401,29 @@
         }
         outSide();
       </script>
+
+      <script>
+        function sum(a, a) {
+          return a + a;
+        }
+        document.write(sum(5, 6));
+
+        document.write(
+          "The second parameter overwrites the first because both have the same name (a). JavaScript does not throw an error (in non-strict mode) but assigns the last passed value (6) to a. The function then returns 6 + 6 = 12.",
+          "<br>"
+        );
+        document.write(
+          "In strict mode (use strict), JavaScript throws a syntax error because duplicate parameter names are not allowed.In non-strict mode, the second parameter replaces the first silently.",
+          "<br>"
+        );
+      </script>
+      <pre>
+         "use strict";
+        function sum(a, a) { 
+            return a + a; 
+        } // This will throw a SyntaxError
+    </pre
+      >
     </div>
   </body>
 </html>
