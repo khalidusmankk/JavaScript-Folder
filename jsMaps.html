@@ -88,15 +88,17 @@
       document.write("There are " + numb + " apples." + "<br>");
       document.write(" This is useful when you already have key-value pairs as an array.", "<br>");
     </script>
+
     <h4>Converting an Object to a Map</h4>
     <p>You can convert a regular object into a Map using Object.entries().</p>
     <script>
       const obj = { name: "Ali", age: 25, city: "Lahore" };
       const myMap3 = new Map(Object.entries(obj));
 
-      console.log(myMap3);
-      console.log(myMap3.get("name")); // Output: Ali
+      document.write(myMap3);
+      document.write(myMap3.get("name"), "<br>"); // Output: Ali
     </script>
+
     <h1>Using a Map inside a Class (for Advanced Use)</h1>
     <p>You can create a Map inside a class to handle complex data.</p>
 
@@ -145,12 +147,14 @@
       primitives
     </p>
 
-    <!-- Object	                                    Map
-Not directly iterable	               Directly iterable
-Do not have a size property	           Have a size property
-Keys must be Strings (or Symbols)	   Keys can be any datatype
-Keys are not well ordered	           Keys are ordered by insertion
-Have default keys                      Do not have default keys -->
+    <!-- 
+    These methods are used to print a map object
+Method	                           Best Use Case
+JSON.stringify([...map])	    Quick conversion but not human-readable.
+.forEach()	                  Simple for key-value display.
+for...of loop               	Clean and readable loop method.
+.map() with join()	          One-liner, good for inline display.
+Array.from()	                Alternative to .map(), more readable. -->
 
     <h2>Map Methods and Properties</h2>
     <pre>
