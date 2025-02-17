@@ -92,8 +92,8 @@
     <h4>Converting an Object to a Map</h4>
     <p>You can convert a regular object into a Map using Object.entries().</p>
     <script>
-      const obj = { name: "Ali", age: 25, city: "Lahore" };
-      const myMap3 = new Map(Object.entries(obj));
+      const obj2 = { name: "Ali", age: 25, city: "Lahore" };
+      const myMap3 = new Map(Object.entries(obj2));
 
       document.write(myMap3);
       document.write(myMap3.get("name"), "<br>"); // Output: Ali
@@ -184,7 +184,12 @@ values()	Returns an iterator object of the values in a Map
       ]);
       let value = myFruits.get(25);
       document.write(value, "<br>");
-      document.write(myFruits.size);
+      document.write(myFruits.size, "<br>");
+
+      const entriesF = myFruits.entries(); //Returns an iterator object with the [key, value] pairs in a Map
+      for (let a of entriesF) {
+        document.write(a, "<br>");
+      }
     </script>
   </body>
 </html>
