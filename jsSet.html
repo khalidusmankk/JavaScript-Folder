@@ -6,12 +6,25 @@
     <title>JS Set</title>
   </head>
   <body>
+    <script>
+      const urSet = new Set([1, 2, 3]);
+      const hisSet = new Set();
+      hisSet.add(12);
+      hisSet.add(22);
+      hisSet.add(32);
+
+      document.write([...urSet], "<br>");
+      document.write(Array.from(hisSet), "<br>");
+      document.write(urSet.size);
+    </script>
     <h2>JavaScript Sets</h2>
     <p>A JavaScript Set is a collection of unique values.Each value can only occur once in a Set.</p>
     <p>The values can be of any type, primitive values or objects.</p>
+
     <h2>How to Create a Set</h2>
-    <p>You can create a JavaScript Set by Passing an iterable (like an array) to the new Set() constructor:</p>
-    <p>Create an empty set and use add() to add values</p>
+    <p>In JavaScript, there are two main ways to create a Set</p>
+    <p>No 1 : You can create a JavaScript Set by Passing an iterable (like an array) to the new Set() constructor:</p>
+    <p>No 2 : Create an empty set and use add() to add values</p>
 
     <script>
       // Method #1
@@ -74,7 +87,7 @@
 
     <p><b> Note that </b> new Set(), add() and size are already used above</p>
     <script>
-      const trySet = new Set([1, 2, "kk"]);
+      const trySet = new Set([1, 2, " kk"]);
       const myValues = trySet.values(); // The values() method returns an Iterator object with the values in a set.
       for (let x of myValues) {
         document.write(x);
@@ -99,7 +112,7 @@
       document.write("There are only " + [...letters] + " in this set after deletion", "<br>");
 
       const person = new Set(["Inayat", 25, "11th"]);
-      const answer = person.has("11th");
+      const answer = person.has("11th"); //has method Returns true if a value exists
       document.write(" The answer is  " + answer);
     </script>
   </body>
