@@ -12,19 +12,41 @@
       A Map holds key-value pairs where the keys can be any datatype. A Map remembers the original insertion order of
       the keys.
     </p>
-    <pre>
-        A Map is a built-in JavaScript data structure that stores key-value pairs where:
-✅ Keys can be any data type (Unlike objects where keys are always strings or symbols).
-✅ Maintains insertion order (Unlike objects which don’t guarantee order).
-✅ Efficient for lookups (Faster than regular objects when working with large datasets).
-    </pre>
+
     <h2>Why use a Map instead of an object ({})?</h2>
     <pre>
 1️⃣ Objects ({}) only allow strings or symbols as keys, but Map allows any data type as a key (e.g., numbers, objects, functions).
-2️⃣ Map keeps the insertion order, while object properties may not.
+2️⃣ Map keeps the insertion order, while objects do not guarantee order.
 3️⃣ Map has built-in methods like .set(), .get(), .has(), .delete(), and .size.
 </pre
     >
+    <p>
+      From ES6 onwards, Integer-like keys (e.g., "1", "2", "100") are sorted numerically in ascending order , but this
+      doesn't happen in Map because Map strictly preserves insertion order.
+    </p>
+    <script>
+      const obj = {};
+      obj["3"] = "three";
+      obj["1"] = "one";
+      obj["2"] = "two";
+      obj["b"] = "letter b";
+      obj["a"] = "letter a";
+
+      console.log(Object.keys(obj));
+      // Output: ['1', '2', '3', 'b', 'a'] ❌ (Numbers are sorted first!)
+      document.write(Object.keys(obj), "<br>");
+
+      const map = new Map();
+      map.set("3", "three");
+      map.set("1", "one");
+      map.set("2", "two");
+      map.set("b", "letter b");
+      map.set("a", "letter a");
+
+      console.log([...map.keys()]);
+      // Output: ['3', '1', '2', 'b', 'a'] ✅ (Perfectly preserved)
+      document.write([...map.keys()], "<br>");
+    </script>
     <h2>Ways to create a Map object</h2>
     <p>there are multiple ways to create a Map in JavaScript. Here are the different methods:</p>
 
@@ -51,7 +73,7 @@
     <script>
       const myMap2 = new Map([
         ["name", "Ali"],
-        [10, "Number Key"],
+        [10, "Number "],
         [true, "Boolean Key"],
       ]);
 
