@@ -7,12 +7,6 @@
   </head>
 
   <body>
-    <script>
-      let empty = "";
-      let zero = 0;
-      let c = Number(empty);
-      console.log(c);
-    </script>
     <h2>Destructing</h2>
     <p>
       Destructuring is a powerful feature in JavaScript that allows you to extract values from arrays or properties from
@@ -28,8 +22,8 @@
 
       document.write(
         "<h3>Array Destructuring</h3>\
-    <p>We can pick up array variables into our own variables.</p>\
-   " + "<br>"
+          <p>We can pick up array variables into our own variables.</p>\
+         " + "<br>"
       );
 
       document.write("It can also unpack arrays and any other iterables:" + "<br>");
@@ -45,8 +39,8 @@
       const fruits2 = ["Bananas", "Oranges", "Apples", "Mangoes"];
       document.write(
         " <h3>Skipping Array Values</h3>\
-    <p >We can skip array values using two or more commas.</p>\
-    "
+          <p >We can skip array values using two or more commas.</p>\
+          "
       );
       // Destructuring
       let [fruit0, , , fruit3] = fruits2;
@@ -55,9 +49,9 @@
       document.write(fruit0 + " " + fruit3, "<br>");
 
       document.write(
-        " <h3>Array Position Values</h3>\
-    <p>We can pick up values from specific index locations of an array.</p>\
-"
+        " <h3>Array Position(index) Values</h3>\
+          <p>We can pick up values from specific index locations of an array.</p>\
+      "
       );
       // Create an Array
       const fruits3 = ["Bananas", "Oranges", "Apples", "Mangos", "Avocado", "Blackberry"];
@@ -69,8 +63,8 @@
 
       document.write(
         " <h3>The Rest Property</h3>\
-    <p>You can end a destructuring syntax with a rest property. This syntax will store all remaining values into a new array:\
- </p>"
+          <p>You can end a destructuring syntax with a rest property. This syntax will store all remaining values into a new array:\
+       </p>"
       );
       // Create an Array
       const numbers = [10, 20, 30, 40, 50, 60, 70];
@@ -85,7 +79,7 @@
 
       document.write(
         " This technique is called 'Array Destructuring for Swapping Variables'.It allows swapping variables in one line without using a temporary variable.\
-                       Easy to read, clean, and efficient." + "<br>"
+                             Easy to read, clean, and efficient." + "<br>"
       );
       let firstNameIs = "Khalid ";
       let lastNameIs = " Usman";
@@ -121,7 +115,7 @@
       //       // old way
       //       const a = vehicles[0];
       //       const b = vehicles[1];
-      //       const  c = vehicles[2];
+      //       const c = vehicles[2];
 
       // With destructuring ... new way
       // const vehicles = ['mustang', 'f-150', 'expedition'];
@@ -143,15 +137,16 @@
       document.write(hisname + " is " + hisage, "<br>");
 
       document.write("<b> OR </b> We can even do it with a function like the below", "<br>");
+
       const person = {
         Name: "Inayat",
         age: 25,
         Nationality: "Pakistani",
       };
       function myDetail({ Name, age, Nationality }) {
-        document.write("My name is " + Name + " and I am " + Nationality);
+        document.write("My name is " + Name + ", I am " + age + " , " + Nationality, "<br>");
       }
-      myDetail(person + "<br>");
+      myDetail(person, "<br>");
 
       document.write(
         "We can even destructure deeply nested objects by referencing the nested object then using a colon and curly braces to again destructure the items needed from the nested object:" +
@@ -186,6 +181,7 @@
       };
       let { schoolName, students, sLocation = "Wana" } = school;
       document.write(schoolName + " is located in " + sLocation + "<br>");
+
       const parents = {
         father_Name: "Haji Shah Mir",
         Mother_Name: "Hajra Bibi",
@@ -196,7 +192,7 @@
       document.write(herName, "<br>");
 
       document.write("<h2> Object Property Alias </h2>");
-      document.write(" Detail of Alias is below");
+      document.write(" Detail of Alias is below", "<br>");
 
       document.write(" <h3>String Destructuring</h3>");
       let name = "W3Schools";
@@ -235,8 +231,8 @@
       // Alias: Rename `fullName` to `myName`
       const { fullName: myName, age } = student;
 
-      console.log(myName); // Output: Ali Khan
-      console.log(age); // Output: 22
+      document.write(myName, "<br>");
+      document.write(age, "<br>");
     </script>
     <h2>Alias in Arrays (Using Rest Operator)</h2>
     <p>In array destructuring, you can also assign aliases using the rest (...) operator:</p>
@@ -244,8 +240,8 @@
       const colors = ["red", "blue", "green"];
       // Alias: `firstColor` for the first element, `otherColors` for the rest
       const [firstColor, ...otherColors] = colors;
-      console.log(firstColor); // Output: red
-      console.log(otherColors); // Output: ["blue", "green"]
+      document.write("The first color is " + firstColor, "<br>");
+      document.write(otherColors, "<br>");
     </script>
   </body>
 </html>
