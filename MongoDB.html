@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mongo DB</title>
+  </head>
+  <body>
+    <h2>Mongo DB</h2>
+    <pre>
+ When we install MongoDB, We receive the already created databases.
+        these are name as ;
+        config;
+        admin;
+        local
+    </pre>
+    <h3>The 'use' Command</h3>
+    <p>We can change or create a new database by typing <b>use</b> then the name of the database.</p>
+    <p>E.g : Create a new database called "school":</p>
+    <p>By bd command , We can check that in which database are we now.</p>
+    <p><b> Remember </b>: In MongoDB, a database is not actually created until it gets content!</p>
+
+    <h3>Create Collection</h3>
+    <p>school> db.createCollection("students")</p>
+
+    <h3>Rename Collection</h3>
+    <p>db.oldName.renameCollection("newCollection's-Name")</p>
+    <pre> db.students.renameCollection("student")</pre>
+
+    <h2>help() method in MongoDB</h2>
+    <p>db.help() gives the methods and its explanation</p>
+    <p>
+      db.collection-name.help(), i.e db.students.help() gives all the methods and their explanation which are used on
+      collections
+    </p>
+  </body>
+</html>
