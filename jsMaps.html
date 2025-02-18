@@ -104,26 +104,25 @@
     <p>You can create a Map inside a class to handle complex data.</p>
 
     <script>
-      class UserData {
+      class School {
         constructor() {
-          this.data = new Map();
+          this.myMap = new Map();
         }
-
-        addUser(id, name) {
-          this.data.set(id, name);
+        putData(id, name) {
+          this.myMap.set(id, name);
         }
-
-        getUser(id) {
-          return this.data.get(id);
+        getData(id) {
+          return this.myMap.get(id);
         }
       }
+      const student1 = new School();
+      const student2 = new School();
 
-      const users = new UserData();
-      users.addUser(1, "Ali");
-      users.addUser(2, "Ahmed");
-
-      console.log(users.getUser(1)); // Output: Ali
+      student1.putData(1, "Khalid");
+      student2.putData(2, "Inayat");
+      console.log(student2.getData(2));
     </script>
+
     <h2>Maps are Objects</h2>
     <script>
       document.write(typeof fruits);

@@ -146,6 +146,45 @@
         let maximum = (1, 3, 5, 10);
         document.write(Math.max(maximum));
       </script>
+
+      <h2>The Unary + Operator</h2>
+      <p>The unary + operator can be used to convert a variable to a number:</p>
+      <p>OR : The Unary + Operator in JavaScript is used to convert a value into a number.</p>
+
+      <pre>
+        console.log(+"42");       // 42 (number)
+        console.log(+"3.14");     // 3.14 (number)
+        console.log(+ "");        // 0 (empty string becomes 0)
+        console.log(+"hello");    // NaN (Not a Number, because "hello" is not numeric)
+
+      </pre>
+      <pre>
+        2. Converting Boolean Values
+            console.log(+true);  // 1
+            console.log(+false); // 0
+
+
+        3. Converting null and undefined
+        console.log(+null);      // 0
+        console.log(+undefined); // NaN
+
+          4. Converting Arrays
+          console.log(+[10]);    // 10 (array with one number converts to that number)
+          console.log(+[]);      // 0 (empty array converts to 0)
+          console.log(+[1, 2]);  // NaN (multiple values in an array result in NaN)
+      </pre>
+      <script>
+        let unary = "5";
+        let unary2 = +unary;
+        document.write(
+          "typeOf unary is " + typeof unary + "<br>" + " and now the typeOf unary2 is " + typeof unary2,
+          "<br>"
+        );
+      </script>
+      <p>If the variable cannot be converted, it will still become a number, but with the value NaN (Not a Number)</p>
+
+      <!-- let y = "John"; // y is a string
+       let x = + y; // x is a number (NaN) -->
     </div>
   </body>
 </html>
