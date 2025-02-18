@@ -72,3 +72,14 @@
 // Props and State: props are like function parameters and State is similar to variables.
 // Context: This allows data to be passed through components as props in a hierarchy.
 // Virtual DOM: It is a lightweight copy of the actual DOM which makes DOM manipulation easier.
+
+// What is useState, and how does it work?
+// useState is a hook that allows you to add state to functional components. It takes an initial state value and returns an array with two elements: the current state and a function to update it. useState re-renders the component when the state is updated.
+
+//  React.memo and useMemo prevent unnecessary re-renders and calculations by caching results based on dependencies.
+
+// What is Prop Drilling and how do you avoid it?
+// Prop drilling occurs when props are unnecessarily passed through multiple component layers to reach a nested component. You can avoid it using Context API, which allows you to share the state between deeply nested components without manually passing props down.
+
+// What is a dispatcher?
+// Dispatcher is a function in React JS that sends an action to the store to trigger a state update. It acts as a central hub and sent actions are processed by reducers.
