@@ -68,6 +68,7 @@
       g	Perform a global match (find all)	
       m	Perform multiline matching	
       d	Perform start and end matching (New in ES2022)
+      \b metacharacter is used for word boundaries //Matches the position before or after a word, ensuring whole-word replacements.
     </pre>
     <p>
       By default the below replace would replace only the first only replaces the first occurrence of the word, but with
@@ -79,11 +80,48 @@
       document.write(bString);
       document.write("<br>");
 
-      let xString = "string in a string for string";
-      let yString = xString.replace(/string/d, "text");
-      document.write(yString);
+      let text22 = "\nIs th\nis it?";
+      let result2 = text22.match(/^is/m);
+      document.write(result2);
     </script>
 
+    <p>
+      The ^ symbol in regular expressions (regex) is called the 'caret' and has different meanings depending on how it
+      is used.
+    </p>
+    <p>
+      <b> No : 1 : ^ as an "Anchor" (Start of Line) </b>....When used outside of square brackets ([]), ^ matches the
+      beginning of a line.
+    </p>
+    <p>Example: Match "Hello" only if it appears at the start of a string</p>
+
+    <script>
+      let caretPoint = "Hello world\nHello again";
+      document.write(caretPoint.replace(/^Hello/g, "Hi"));
+    </script>
+    <p>
+      The /m (multiline) flag allows ^ to match the start of each line:/^Hello/m Matches "Hello" at the start of each
+      line (due to /m)
+    </p>
+    <script>
+      let textCaret = "Hello world\nHello again";
+      document.write(textCaret.replace(/^Hello/gm, "Hi"));
+    </script>
+    <p>
+      <b>No : 2: ^ as a "Negation" Inside []</b>When used inside square brackets ([^...]), ^ negates the character set
+      (matches anything except the given characters).
+    </p>
+    <p><b>Example: Remove all vowels</b></p>
+    <script>
+      let textVowels = "abcdef";
+      document.write(textVowels.replace(/[^aeiou]/g, ""), "<br>"); // Removes all non-vowel characters
+    </script>
+    <!-- <script>
+       let aaaa = "this is multiline \n\
+      string in the js";
+      document.write(aaaa);
+    </script>
+     Use \ (backslash) for line continuation:Use explicit \n for new lines: -->
     <h2>Regular Expression Patterns</h2>
     <p>Brackets are used to find a range of characters:</p>
     <pre>
@@ -94,7 +132,7 @@
     </pre>
     <p>Do a global search for the character "h" in a string:</p>
     <script>
-      let aText = "Is this all there is?";
+      let aText = "his this all there is?";
       let aResult = aText.match(/[h]/g);
       document.write(aResult, "<br>");
 
@@ -116,6 +154,7 @@
           \b	             (beginning OR behind) Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b	
           \uxxxx	      Find the Unicode character specified by the hexadecimal number xxxx
     </pre>
+
     <script>
       let digitStr = "Give 100%";
       let digitMatch = digitStr.match(/\d/g);
@@ -179,13 +218,13 @@
     <p>The following example searches a string for the character "e".</p>
 
     <script>
-      const pattern = /e/;
+      const pattern = /t/;
       document.write(pattern.test("The best things in life are free!"));
     </script>
     <h4>exec() Method (execute)</h4>
     <p>
-      It searches a string for a specified pattern, and returns the found text as an <b> object </b>. If no match is
-      found, it returns an empty (null) object.
+      It searches a string for a specified pattern, and returns an array when there is a match, or null if no match is
+      found..
     </p>
     <pre>
       Syntax:
@@ -198,5 +237,39 @@
       document.write(urResult);
       console.log(urResult); // Logs the full match object
     </script>
+    <pre>
+      Alternative: match() vs. exec()
+exec() is used on RegExp objects (regName.exec(nameStr))
+match() is used on strings (nameStr.match(regName))
+    </pre>
+    <pre>
+        So, exec() returns an array with the following properties:
+          [0] → The matched string ("Ismail")
+          index → The position where the match starts (12)
+          input → The original string
+          groups → If there were named capturing groups (undefined in this case)
+    </pre>
+    <h3>w in regex</h3>
+    <p>\w stands for "word character" in regular expressions.</p>
+    <pre>
+      🔹 \w Includes:
+✔ Letters (A-Z, a-z)
+✔ Digits (0-9)
+✔ Underscore (_)
+    </pre>
+    <pre>
+      ❌ \w Does NOT Include:
+🚫 Spaces ( )
+🚫 Punctuation (.,!?)
+🚫 Special characters (@#$%^&*)
+    </pre>
+    <pre>
+      const text = "Hello_123!";
+const regex = /\w+/g;
+console.log(text.match(regex)); // Output: ["Hello_123"]
+
+It matches "Hello_123" (letters, numbers, and underscore).
+It ignores "!" because punctuation is not part of \w.
+    </pre>
   </body>
 </html>
