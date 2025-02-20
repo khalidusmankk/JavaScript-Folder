@@ -87,7 +87,7 @@
       document.write("<b> #1: var </b>", "<br>");
       document.write("<b> Scope of var </b>", "<br>");
       document.write("<b> Scope </b> essentially means where these variables are available for use.", "<br>");
-      document.write("<b> var </b> declarations are globally or fuction/lacally scoped.", "<br>");
+      document.write("<b> var </b> declarations are globally or fuction/locally scoped.", "<br>");
       document.write(
         "The scope is global when a var variable is declared outside a function. This means that any variable that is declared with 'var' outside a function block is available for use in the whole window.",
         "<br>"
@@ -97,6 +97,42 @@
         "<br>"
       );
       document.write("E.g", "<br>");
+
+      function abc() {
+        var a = "khalid"; // 'a' is function-scoped
+      }
+
+      console.log(a); // ❌ ReferenceError: a is not defined
+
+      // Use let or const in a Higher Scope as below
+      //       let a; // Declared outside
+      // function abc() {
+      //     a = "khalid"; // ✅ Modifies outer variable
+      // }
+      // abc(); call the function first
+      // console.log(a); // ✅ Output: "khalid"
+
+      function myFunction() {
+        var a = "Hello"; // Function-scoped
+        let b = "World"; // Block-scoped
+        const c = "!"; // Block-scoped
+      }
+      console.log(a); // ❌ ReferenceError: a is not defined
+      console.log(b); // ❌ ReferenceError: b is not defined
+      console.log(c); // ❌ ReferenceError: c is not defined
+
+      function test() {
+        if (true) {
+          var x = 10; // ✅ Accessible outside block (but inside function)
+          let y = 20; // ❌ Block-scoped
+          const z = 30; // ❌ Block-scoped
+        }
+        console.log(x); // ✅ Output: 10
+        console.log(y); // ❌ ReferenceError
+        //console.log(z); // ❌ ReferenceError
+      }
+
+      test();
 
       var greeter = "global variable";
 
@@ -192,7 +228,7 @@
       document.write("var a ; is variable declaration", "<br>");
       document.write("a = 40; is variable initilization", "<br>");
       document.write(
-        "<b> Remembet that </b> Only declerations are hoisted , not the initialization. Initilization remains on the same place.",
+        "<b> Remember that </b> Only declerations are hoisted , not the initialization. Initilization remains on the same place.",
         "<br>"
       );
 
@@ -202,6 +238,10 @@
       x = 50; // Assign 50 to x (variable initilization)
       document.write(x, "<br>");
       var x; // Declare x (variable declaration)
+
+      //  x = 50;
+      // document.write(x, "<br>");
+      // let x; //Variables declared with let are in the "Temporal Dead Zone" (TDZ) until their declaration is encountered. ////let x; is hoisted to the top but remains uninitialized (in TDZ).
 
       var y; // Declare y
       y = 55; // Assign 55 to y
@@ -400,7 +440,12 @@
       With JavaScript, the global scope is the complete JavaScript environment. In HTML, the global scope is the window
       object: All global variables belong to the window object.
     </p>
-    <p>// code here can use window.carName function myFunction() { carName = "Volvo"; }</p>
+    <pre>
+// code here can use window.carName
+       function myFunction() {
+       carName = "Volvo"; }
+      </pre
+    >
 
     <h3>
       Your global variables (or functions) can overwrite window variables (or functions). Any function, including the
