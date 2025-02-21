@@ -44,5 +44,43 @@
 
     <h2>How to find these documents in database and collection</h2>
     <p>Use find() and findOne() for finding the documents in the collections.</p>
+
+    <h2>MongoDB data types</h2>
+    <p>
+      In MongoDB , we can enter any type of data in the document. So to prevent this , we need to clarify the datatype
+      first.
+    </p>
+    <!-- Data types in MongoDb-->
+    <ul>
+      <li>String</li>
+      <li>Double</li>
+      <li>32-bit Integer</li>
+      <li>64-bit Integer</li>
+      <li>Boolean</li>
+      <li>Array</li>
+      <li>Object</li>
+      <li>Null</li>
+      <li>Regular Expression</li>
+      <li>Timestamp</li>
+      <li>Date</li>
+      <li>ObjectId</li>
+    </ul>
+
+    <pre>
+      {
+        _id : ObjectId("507f1f77bd86dc56554"),
+        name : "Khalid Usman",
+        age : 35,
+        married : true,
+        DOB : ISODate("2000-10-14T08:00:00z"),
+        weight : 70.89, // Double Value
+        kids : null,
+        hobbies : ["Sports", "Coding"],
+        address : {
+          "city" : "Wana",
+           province : "kp"
+        }
+      }
+    </pre>
   </body>
 </html>
