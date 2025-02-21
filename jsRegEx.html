@@ -68,7 +68,7 @@
       g	Perform a global match (find all)	
       m	Perform multiline matching	
       d	Perform start and end matching (New in ES2022)
-      \b metacharacter is used for word boundaries //Matches the position before or after a word, ensuring whole-word replacements.
+    \b metacharacter is used for word boundaries //Matches the position before or after a word, ensuring whole-word replacements.
     </pre>
     <p>
       By default the below replace would replace only the first only replaces the first occurrence of the word, but with
@@ -80,9 +80,9 @@
       document.write(bString);
       document.write("<br>");
 
-      let text22 = "\nIs th\nis it?";
+      let text22 = "\nis th\nis  it?";
       let result2 = text22.match(/^is/m);
-      document.write(result2);
+      document.write(result2, "<br>");
     </script>
 
     <p>
@@ -90,8 +90,8 @@
       is used.
     </p>
     <p>
-      <b> No : 1 : ^ as an "Anchor" (Start of Line) </b>....When used outside of square brackets ([]), ^ matches the
-      beginning of a line.
+      <b> No : 1 : ^ as an "Anchor" (Start of Line) </b>....When used outside of square brackets ([]), ^ matches only if
+      it appears at the start of the entire string.
     </p>
     <p>Example: Match "Hello" only if it appears at the start of a string</p>
 
@@ -105,7 +105,13 @@
     </p>
     <script>
       let textCaret = "Hello world\nHello again";
-      document.write(textCaret.replace(/^Hello/gm, "Hi"));
+      document.write(textCaret.replace(/^Hello/gm, "Hi"), "<br>");
+    </script>
+
+    <script>
+      let abc = "123asdf";
+      let abc2 = abc.match(/[^123]/);
+      document.write(abc2, "<br>");
     </script>
     <p>
       <b>No : 2: ^ as a "Negation" Inside []</b>When used inside square brackets ([^...]), ^ negates the character set
@@ -170,10 +176,10 @@
       let resultOne = textOne.match(/\s/g);
       document.write(resultOne);
     </script>
-    <p>Search for the characters "LO" in the <b>beginning</b> of a word in the phrase:</p>
+    <p>Replace the characters "LO" , which is in the <b>beginning</b> of a word in the phrase:</p>
     <script>
-      let myWord = "HELLO, LOOK AT YOU!";
-      let theResult = myWord.search(/\bLO/); //(/LO\b/) Search for the characters "LO" in the <b>end</b> of a word in the phrase:
+      let myWord = "HELLOs, LOOK AT YOU!";
+      let theResult = myWord.replace(/\bLO/, "Ti"); //(/LO\b/) Search for the characters "LO" in the <b>end</b> of a word in the phrase:
       document.write(theResult);
     </script>
 
@@ -223,15 +229,15 @@
     </script>
     <h4>exec() Method (execute)</h4>
     <p>
-      It searches a string for a specified pattern, and returns an array when there is a match, or null if no match is
-      found..
+      It searches a string for a specified pattern, and returns an array (array-like object) with details when there is
+      a match, or null if no match is found..
     </p>
     <pre>
       Syntax:
     regex.exec(string)
     </pre>
     <script>
-      let execText = "Hello, my name is Khalid";
+      let execText = "Hello, my name is Khalid , i am with khalid";
       let regex = /Khalid/;
       let urResult = regex.exec(execText);
       document.write(urResult);
@@ -239,8 +245,8 @@
     </script>
     <pre>
       Alternative: match() vs. exec()
-exec() is used on RegExp objects (regName.exec(nameStr))
-match() is used on strings (nameStr.match(regName))
+        exec() is used on RegExp objects (regName.exec(nameStr))
+        match() is used on strings (nameStr.match(regName))
     </pre>
     <pre>
         So, exec() returns an array with the following properties:
@@ -264,12 +270,12 @@ match() is used on strings (nameStr.match(regName))
 🚫 Special characters (@#$%^&*)
     </pre>
     <pre>
-      const text = "Hello_123!";
+      const text = "Hello_123$#!";
 const regex = /\w+/g;
 console.log(text.match(regex)); // Output: ["Hello_123"]
 
 It matches "Hello_123" (letters, numbers, and underscore).
-It ignores "!" because punctuation is not part of \w.
+It ignores "$#!" because punctuation is not part of \w.
     </pre>
   </body>
 </html>
