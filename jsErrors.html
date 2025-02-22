@@ -31,9 +31,10 @@ catch(err) {
       try {
         adddlert("Welcome guest!");
       } catch (err) {
-        document.write(err.message);
+        document.write(err.message); // err is an error object automatically created by JavaScript. The err object contains useful information about the error.
       }
     </script>
+
     <p>JavaScript catches adddlert as an error, and executes the catch code to handle it.</p>
 
     <h3>JavaScript Throws Errors</h3>
@@ -42,6 +43,18 @@ catch(err) {
     <p>
       JavaScript will actually create an <b> Error object </b> with two properties: <b> name </b> and <b>message</b>.
     </p>
+
+    <p>🔹 Example: Logging the Error Object</p>
+
+    <script>
+      try {
+        adddlert("Hello!");
+      } catch (err) {
+        console.log(err); // Logs the full error object
+        console.log(err.name); //Type of error... ReferenceError
+        console.log(err.message);
+      } //Error description.... adddlert is not defined
+    </script>
 
     <h3>The throw Statement</h3>
     <p>
@@ -67,11 +80,11 @@ catch(err) {
     <p>Please input a number between 5 and 10:</p>
 
     <input id="demo" type="text" />
-    <button type="button" onclick="myFunction()">Test Input</button>
+    <button type="button" onclick="myFunction1()">Test Input</button>
     <p id="p01"></p>
 
     <script>
-      function myFunction() {
+      function myFunction1() {
         const message = document.getElementById("p01");
         message.innerHTML = "";
         let x = document.getElementById("demo").value;
@@ -102,15 +115,14 @@ catch(err) {
         }
     </pre>
 
-    <p>Please input a number between 5 and 10:</p>
+    <p>Please input a number between 5 and 120:</p>
 
     <input id="demoF" type="text" />
-    <button type="button" onclick="myFunction()">Test Input</button>
-
+    <button type="button" onclick="myFunction2()">Test Input</button>
     <p id="p01F"></p>
 
     <script>
-      function myFunction() {
+      function myFunction2() {
         const message = document.getElementById("p01F");
         message.innerHTML = "";
         let x = document.getElementById("demoF").value;
@@ -158,7 +170,10 @@ URIError	    An error in encodeURI() has occurred //A URIError is thrown if you 
       into real errors.
     </p>
     <p>"use strict"; Defines that JavaScript code should be executed in "strict mode".</p>
-    <p>"use strict"; x = 3.14; // This will cause an error because x is not declared</p>
+    <pre>
+       "use strict";
+        x = 3.14; // This will cause an error because x is not declared</pre
+    >
     <pre>
         Declared inside a function, it has local scope (only the code inside the function is in strict mode):
         x = 3.14;       // This will not cause an error.
@@ -179,21 +194,27 @@ URIError	    An error in encodeURI() has occurred //A URIError is thrown if you 
     </pre>
     <pre>
         The words (eval , arguments ) cannot be used as a variable in strict mode
-"use strict";
-let eval = 3.14;         // This will cause an error
+          "use strict";
+          let eval = 3.14;         // This will cause an error
     </pre>
 
+    <script>
+      const thisObj = {
+        name: "Khalid Khan",
+        age: 35,
+      };
+    </script>
     <pre>
         The this keyword in functions behaves differently in strict mode.
-        The this keyword refers to the object that called the function.
+        The this keyword refers to the object that calls the function.
         If the object is not specified, functions in strict mode will return undefined and functions in normal mode will return the global object (window):
     </pre>
     <script>
       "use strict"; // Remove this line to see another behaviour
-      function myFunction() {
+      function myFunction3() {
         alert(this); // will alert "undefined"
       }
-      document.write(myFunction());
+      document.write(myFunction3());
     </script>
   </body>
 </html>
