@@ -394,6 +394,64 @@
       );
 
       document.write(" Classes also allows you to use <b> getters and setters </b>. ", "<br>");
+      document.write(
+        " JavaScript classes support getters and setters, which allow you to define computed properties and control access to properties in an object-oriented way.",
+        "<br>"
+      );
+      document.write(
+        "get (getter) → Allows you to retrieve a value as a property.\
+         set (setter) → Allows you to update a value while adding custom logic.",
+        "<br>"
+      );
+
+      class Person {
+        constructor(name, age) {
+          this._name = name; // Using _name to avoid direct property access
+          this._age = age;
+        }
+
+        // Getter for name
+        get name() {
+          return this._name.toUpperCase(); // Convert name to uppercase before returning
+        }
+
+        // Setter for name
+        set name(newName) {
+          if (newName.length < 3) {
+            console.log("Name must be at least 3 characters long.");
+            return;
+          }
+          this._name = newName;
+        }
+
+        // Getter for age
+        get age() {
+          return this._age;
+        }
+
+        // Setter for age
+        set age(newAge) {
+          if (newAge < 0) {
+            console.log("Age cannot be negative!");
+            return;
+          }
+          this._age = newAge;
+        }
+      }
+
+      let person1 = new Person("John", 25);
+
+      console.log(person1.name); // Output: JOHN (getter converts to uppercase)
+
+      person1.name = "Al"; // Invalid (less than 3 characters)
+      person1.name = "Alice"; // Valid change
+
+      console.log(person1.name); // Output: ALICE
+
+      person1.age = -5; // Invalid (negative age)
+      person1.age = 30; // Valid change
+
+      console.log(person1.age); // Output: 30
 
       document.write("<h3> Hoisting </h3>");
       document.write(
@@ -406,10 +464,10 @@
       //myCar = new Car("Ford") will raise an error.
 
       /* class Car {
-                              constructor(brand) {
-                                this.carname = brand;
-                              }
-                            } */
+                  constructor(brand) {
+                    this.carname = brand;
+                  }
+                } */
 
       //Now you can use the class:
       // const myCar = new Car("Ford")
@@ -419,7 +477,7 @@
       document.write("<h3> JavaScript Static Methods </h3>");
       document.write(
         "<p> Static class methods are defined on the class itself. <br>\
-                                    You cannot call a static method on an object, only on an object class. </P> "
+           You cannot call a static method on an object, only on an object class. </P> "
       );
 
       document.write("<h1>JavaScript Class Static Methods</h1>");
