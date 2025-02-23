@@ -254,10 +254,39 @@ If it is placed before the operand, it returns the value after the decrement.
 
           Assigns only if the value is null or undefined.
           Falsey values like 0 or "" are NOT replaced.
-🚀 ||= (Logical OR Assignment)
+      ||= (Logical OR Assignment)
 
 Assigns if the value is any falsey value (null, undefined, 0, "", false).
       </pre>
+
+      <p>
+        JavaScript evaluates expressions from left to right. Different sequences can produce different results: Check
+        the below results
+      </p>
+      <pre>
+        let x = 16 + 4 + "Volvo";
+         Result: 20Volvo
+         .....................
+         let x = "Volvo" + 16 + 4;
+               Result: Volvo164
+      </pre>
+      <pre>
+        In the first example, JavaScript treats 16 and 4 as numbers, until it reaches "Volvo".
+        In the second example, since the first operand is a string, all operands are treated as strings.
+      </pre>
+      <p>All JavaScript numbers are stored as decimal numbers (floating point).</p>
+
+      <pre>
+        Exponential Notation
+Extra large or extra small numbers can be written with scientific (exponential) notation:
+Example
+let y = 123e5;    // 12300000
+let z = 123e-5;   // 0.00123
+      </pre>
+
+      <h2>Undefined</h2>
+      <p>In JavaScript, a variable without a value, has the value undefined. The type is also undefined.</p>
+      <p>let car; // Value is undefined, type is undefined</p>
     </div>
   </body>
 </html>
