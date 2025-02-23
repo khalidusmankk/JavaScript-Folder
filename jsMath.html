@@ -185,6 +185,79 @@
 
       <!-- let y = "John"; // y is a string
        let x = + y; // x is a number (NaN) -->
+
+      <h2>Increment Operator (++)</h2>
+      <p>Post Increment</p>
+      <p>Pre Increment</p>
+
+      <pre>
+        Description
+The increment operator (++) adds 1 from the operand.
+If it is placed after the operand, it returns the value before the increment.
+If it is placed before the operand, it returns the value after the increment.
+      </pre>
+      <script>
+        let a = 5;
+        let b = a++;
+        document.write(a, "<br>");
+        document.write(b, "<br>");
+
+        document.write("<hr>");
+        let ab = 5;
+        let ba = ++ab;
+        document.write(ab, "<br>");
+        document.write(ba, "<br>");
+      </script>
+
+      <h2>Decrement Operator (--)</h2>
+      <p>Post Decrement</p>
+      <p>Pre Decrement</p>
+
+      <pre>
+        Description
+The decrement operator (--) subtracts 1 to the operand.
+If it is placed after the operand, it returns the value before the decrement.
+If it is placed before the operand, it returns the value after the decrement.
+      </pre>
+
+      <script>
+        let ax = 5;
+        let ay = ax--;
+        document.write(ax, "<br>");
+        document.write(ay, "<br>");
+        document.write("<hr>");
+        let axa = 5;
+        let aya = --ax;
+        document.write(axa, "<br>");
+        document.write(aya, "<br>");
+      </script>
+
+      <h2>??= (Nullish Coalescing Assignment) Operator</h2>
+      <p>The Nullish coalescing assignment operator is used between two values.</p>
+      <p>If the first value is undefined or null, the second value is assigned.</p>
+      <script>
+        let myA = null;
+        myA ??= 10;
+        document.write(myA); //myA is null, so 10 is assigned to myA.
+      </script>
+      <h3>Example 2: No Change if Already Defined</h3>
+      <script>
+        let yz = 5;
+        yz ??= 20;
+        console.log(y); // Output: 5
+      </script>
+      <p>yz already has a value (5), so 20 is not assigned.</p>
+
+      <h2>Difference Between ??= and ||=</h2>
+      <pre>
+        ??= (Nullish Coalescing Assignment)
+
+          Assigns only if the value is null or undefined.
+          Falsey values like 0 or "" are NOT replaced.
+🚀 ||= (Logical OR Assignment)
+
+Assigns if the value is any falsey value (null, undefined, 0, "", false).
+      </pre>
     </div>
   </body>
 </html>

@@ -83,3 +83,16 @@
 
 // What is a dispatcher?
 // Dispatcher is a function in React JS that sends an action to the store to trigger a state update. It acts as a central hub and sent actions are processed by reducers.
+
+//Note that strings are compared alphabetically:
+// let text1 = "A";
+// let text2 = "B";
+// let result = text1 < text2;
+// console.log(result)  //output true
+
+// The += assignment operator can also be used to add (concatenate) strings:
+
+// Operator	Description
+// &&	       logical and
+// ||	       logical or
+// !	       logical not
