@@ -164,7 +164,7 @@
 
         let aString = "string in a string for string";
         let bString = aString.replace(/string/g, "text");
-        console.log(bString);
+        document.write(bString, "<br>");
 
         document.write(
           "By default, the replace() method is case sensitive. Writing KHALID (with upper-case) will not replace khalid (with lower-case)",
@@ -304,7 +304,7 @@
         document.write(subss, "<br>");
 
         document.write(
-          "Remeber that 'substring' returns the letters or character between (after the first parameter and before the last parameter. first and last parameters are not included.) the given parameters.",
+          "the substring(start, end) method returns the part of the string between start and end, but it includes the character at start and excludes the character at end.",
           "<br>"
         );
         document.write(
@@ -326,6 +326,10 @@
         let subbs = sub.substring(7, 18);
         document.write(subbs);
 
+        document.write(
+          "<b> Note that </b> It does not support negative values (treats them as 0). If start > end, it swaps them: substring(5, 2) → becomes substring(2, 5).",
+          "<br>"
+        );
         document.write("<hr>");
 
         document.write("#16: toString", "<br>");
