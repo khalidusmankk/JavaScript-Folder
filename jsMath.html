@@ -147,6 +147,16 @@
         document.write(Math.max(maximum));
       </script>
 
+      <script>
+        function handleOPT() {
+          let opt = Math.random() * 1000000;
+          let opt2 = Math.round(opt);
+          document.getElementById("optId").innerHTML = opt2;
+        }
+      </script>
+      <p id="optId"></p>
+      <button onclick="handleOPT()">Handle OPT</button>
+
       <h2>The Unary + Operator</h2>
       <p>The unary + operator can be used to convert a variable to a number:</p>
       <p>OR : The Unary + Operator in JavaScript is used to convert a value into a number.</p>
