@@ -300,12 +300,15 @@
         "<br>"
       );
 
-      let nums = 123.456;
-      document.write(nums.toPrecision(4), "<br>"); // "123.5" (4 significant digits)
-      document.write(nums.toPrecision(6), "<br>"); // "123.456" (6 significant digits)
-      document.write(nums.toPrecision(1), "<br>"); // "1e+2" (1 significant digit, scientific notation)
-      document.write(nums.toPrecision(2), "<br>"); // "120" (2 significant digits, rounded)
+      let nums = 123.656;
 
+      document.write(nums.toPrecision(1), "<br>"); // "1e+2" (1 significant digit, scientific notation)
+      document.write(nums.toPrecision(2), "<br>"); //1.2e+2... "120" (2 significant digits, rounded) means 1.2 × 10².
+      document.write(nums.toPrecision(3), "<br>");
+      document.write(nums.toPrecision(4), "<br>");
+      document.write(nums.toPrecision(5), "<br>"); // "123.5" (4 significant digits)
+      document.write(nums.toPrecision(6), "<br>"); // "123.456" (6 significant digits)
+      document.write(nums.toPrecision(7), "<br>");
       let topri = 49.856;
       let topris = topri.toPrecision(2);
       document.write(topris, "<br>");
