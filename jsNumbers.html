@@ -49,9 +49,9 @@
         "If you go beyond 16 digits, JavaScript will lose accuracy due to limitations in floating-point representation. example below",
         "<br>"
       );
-      console.log(12345678901234567); // Rounds to 12345678901234568   Rounding only occurs when a number cannot be exactly represented.
-      console.log(12345678901234568); // Remains 12345678901234568  If a number can be represented exactly (like 12345678901234568), no rounding occurs.
-      console.log(12345678901234569); // Rounds to 12345678901234568
+      document.write(12345678901234567); // Rounds to 12345678901234568   Rounding only occurs when a number cannot be exactly represented.
+      document.write(12345678901234568); // Remains 12345678901234568  If a number can be represented exactly (like 12345678901234568), no rounding occurs.
+      document.write(12345678901234569); // Rounds to 12345678901234568
 
       document.write(
         "In this case, the number is rounded because it exceeds the safe precision limit. JavaScript guarantees precision for integers up to 15-16 digits. Beyond this range, numbers may lose accuracy.",
@@ -60,7 +60,7 @@
 
       let a = 999999999999999; // a will be 999999999999999 .. it is  within JavaScript’s precise range and is represented exactly as it is.
       let b = 9999999999999999; //9.999999999999999e+15   // b will be 10000000000000000 //10e14   9,999,999,999,999,999 exceeds the precise integer range. 10,000,000,000,000,000
-      console.log(9999999999999999); // Output: 1e+16 (which is equivalent to 10,000,000,000,000,000)
+      document.write(9999999999999999); // Output: 1e+16 (which is equivalent to 10,000,000,000,000,000)
 
       document.write(
         "Numbers beyond ' 2<sup>53</sup> - 1 ' lose precision due to the limitations of JavaScript's floating-point representation."
@@ -91,7 +91,7 @@
       let c = "Apple" / 100;
       document.write(c, "<br>"); //NaN is a special value that represents "Not a Number," but its type is number.
       document.write(typeof c, "<br>");
-      console.log(typeof c, "<br>");
+      document.write(typeof c, "<br>");
 
       document.write("However, if the string contains a numeric value , the result will be a number:", "<br>");
       document.write("Numbers written inside double quotes are called numeric string.", "<br>", "<br>");
@@ -301,10 +301,10 @@
       );
 
       let nums = 123.456;
-      console.log(nums.toPrecision(4)); // "123.5" (4 significant digits)
-      console.log(nums.toPrecision(6)); // "123.456" (6 significant digits)
-      console.log(nums.toPrecision(1)); // "1e+2" (1 significant digit, scientific notation)
-      console.log(nums.toPrecision(2)); // "120" (2 significant digits, rounded)
+      document.write(nums.toPrecision(4), "<br>"); // "123.5" (4 significant digits)
+      document.write(nums.toPrecision(6), "<br>"); // "123.456" (6 significant digits)
+      document.write(nums.toPrecision(1), "<br>"); // "1e+2" (1 significant digit, scientific notation)
+      document.write(nums.toPrecision(2), "<br>"); // "120" (2 significant digits, rounded)
 
       let topri = 49.856;
       let topris = topri.toPrecision(2);
