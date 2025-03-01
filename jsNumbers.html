@@ -349,10 +349,39 @@
       document.write("<hr>");
 
       document.write(
-        "<b> Note that </b> All number methods return a new value. They do not change the original variable."
+        "<b> Note that </b> All number methods return a new value. They do not change the original variable.",
+        "<br>"
       );
+      document.write(
+        " <b>convert 7 to binary using JavaScript: </b>.. Since 1 ÷ 2 gives 0.5, we only take the quotient (0) and the remainder 1."
+      );
+      console.log((7).toString(2));
     </script>
 
-    octal
+    <pre>
+      Step-by-step binary conversion of 7:
+We are dividing by 2 and keeping track of the remainders.
+
+7 ÷ 2
+
+Quotient = 3
+Remainder = 1 (because 7 = 3 × 2 + 1)
+3 ÷ 2
+
+Quotient = 1
+Remainder = 1 (because 3 = 1 × 2 + 1)
+1 ÷ 2
+
+Quotient = 0 (since 1 ÷ 2 = 0.5, we take only the whole number part, which is 0)
+Remainder = 1 (because 1 = 0 × 2 + 1)
+The remainder 1 comes from the part that is left after taking out full multiples of 2.
+
+Finally, reading the remainders from bottom to top, we get:
+7 in binary = 111 ✅
+    </pre>
+    <p>
+      <b> Note that </b>In binary conversion, dividing by 2 is always the rule because binary is a base-2 number system,
+      meaning it only uses two digits: 0 and 1.
+    </p>
   </body>
 </html>
