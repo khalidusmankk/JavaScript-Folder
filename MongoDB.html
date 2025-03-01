@@ -81,6 +81,47 @@
            province : "kp"
         }
       }
+
     </pre>
+    <p>
+      <b>Remember</b> that I have create a collection which contains all the above data types and its name is
+      "allDataTypes"
+    </p>
+    <p>In MongoDB we write a date as below</p>
+    <pre> {dob:ISODate(2024-10-18T18:30:00Z)}</pre>
+    <p>
+      'T' stands for time and 'Z' have two meanings i.e ist is that the it is the end and the second is UTC (Coordinated
+      Universal Time)
+    </p>
+    <p>
+      Writing Z is not compulsary to be written . We can even do this , {dob:ISODate(2024-10-18T18:30:00 + 02:00)} and
+      it means "Central European Time" and they are 2 hours ahead of us.
+    </p>
+    <p>
+      If I do minus (-), it is called Eastern Standard Time and they are 5 hours behind us ..
+      {dob:ISODate(2024-10-18T18:30:00-05:00)}
+    </p>
+    <p>
+      If I do not give zero (0) or do not set any thing as {dob:ISODate(2024-10-18T18:30:00)} , so it becomes Local Time
+      Zone.
+    </p>
+    <p><b>Note that</b> We can also create a date as {dob:new Date(2024-10-18T18:30:00-05:00Z)}</p>
+    <p><b>Note that</b> this method dob:new Date () returns the current date and time.</p>
+
+    <h2>Integers</h2>
+    <p>
+      32-bit Integers stores values between -2,147,483,648 to -2,147,483,647. It uses 32 bits(4 bytes) of memory to
+      store the integer value.
+    </p>
+    <p>
+      64-bit Integers stores values between -9223,372,036,854,775,808 to -9223,372,036,854,775,807. It uses 64 bits(8
+      bytes) of memory to store the integer value.
+    </p>
+
+    <p><b>Note</b> that ISODate() is a function in MongoDB, but its argument must be a string (wrapped in "").</p>
+    <p>
+      If You are Using MongoDB in JavaScript (Node.js with Mongoose or MongoDB Driver) MongoDB's ISODate() is only
+      available inside mongosh. In JavaScript code, you need to use new Date() instead:
+    </p>
   </body>
 </html>
