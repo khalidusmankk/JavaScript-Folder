@@ -75,7 +75,7 @@
         document.write("<h2> Math Objects in JavaScript</h2>");
         document.write("The JavaScript Math object allows you to perform mathematical tasks on numbers.", "<br>");
         document.write(
-          "<b> Note that </b> Unlike other objects, the Math object has no constructor. All methods and properties can be used without creating a Math object first.",
+          " In JavaScript, the Math object is built-in and does not need to be created using new Math() like other objects. You can directly use its properties and methods.<b> Note that </b> Unlike other objects, the Math object has no constructor. All methods and properties can be used without creating a Math object first.",
           "<br>"
         );
         document.write(
@@ -129,7 +129,7 @@
         );
         document.write(Math.sign(2), "<br>");
 
-        document.write("<b> Math.pow(x, y) </b>  returns the value of x to the power of y, as below", "<br>");
+        document.write("<b> Math.pow(x, y) </b>  returns the value of x raise to the power of y, as below", "<br>");
 
         document.write(Math.pow(4, 3), "<br>");
 
@@ -150,13 +150,17 @@
 
       <script>
         function handleOTP() {
-          let opt = Math.random() * 1000000;
-          let opt2 = Math.round(opt);
-          document.getElementById("optId").innerHTML = opt2;
+          let otp = Math.floor(100000 + Math.random() * 900000);
+          document.getElementById("optId").innerHTML = "Your OTP is : " + otp;
         }
       </script>
-      <p id="optId"></p>
+      <p id="optId">Your OTP is :</p>
       <button onclick="handleOTP()">Handle OTP</button>
+      <pre>
+        Math.random() * 900000 generates a number between 0 and 899999.
+        Adding 100000 ensures the number is at least 100000 (6 digits).
+  </pre
+      >
 
       <h2>The Unary + Operator</h2>
       <p>The unary + operator can be used to convert a variable to a number:</p>
