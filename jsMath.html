@@ -166,13 +166,14 @@
       <p>The unary + operator can be used to convert a variable to a number:</p>
       <p>OR : The Unary + Operator in JavaScript is used to convert a value into a number.</p>
 
-      <pre>
-        console.log(+"42");       // 42 (number)
-        console.log(+"3.14");     // 3.14 (number)
-        console.log(+ "");        // 0 (empty string becomes 0)
-        console.log(+"hello");    // NaN (Not a Number, because "hello" is not numeric)
-
-      </pre>
+      <script>
+        let aString = "42";
+        document.write(typeof +aString, "<br>");
+        document.write(+"42", "<br>");
+        document.write(+"3.14", "<br>"); // 3.14 (number)
+        document.write(+"", "<br>"); // 0 (empty string becomes 0)
+        document.write(+"hello", "<br>"); // NaN (Not a Number, because "hello" is not numeric)
+      </script>
       <pre>
         2. Converting Boolean Values
             console.log(+true);  // 1
@@ -242,7 +243,7 @@ If it is placed before the operand, it returns the value after the decrement.
         document.write(ay, "<br>");
         document.write("<hr>");
         let axa = 5;
-        let aya = --ax;
+        let aya = --axa;
         document.write(axa, "<br>");
         document.write(aya, "<br>");
       </script>
@@ -263,12 +264,13 @@ If it is placed before the operand, it returns the value after the decrement.
       </script>
       <p>yz already has a value (5), so 20 is not assigned.</p>
 
-      <h2>Difference Between ??= and ||=</h2>
+      <h2>Difference Between ??= and ||= (Logical OR Assignment)</h2>
       <pre>
         ??= (Nullish Coalescing Assignment)
 
           Assigns only if the value is null or undefined.
           Falsey values like 0 or "" are NOT replaced.
+          
       ||= (Logical OR Assignment)
 
 Assigns if the value is any falsey value (null, undefined, 0, "", false).
