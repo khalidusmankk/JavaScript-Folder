@@ -90,14 +90,14 @@
       is used.
     </p>
     <p>
-      <b> No : 1 : ^ as an "Anchor" (Start of Line) </b>....When used outside of square brackets ([]), ^ matches only if
-      it appears at the start of the entire string.
+      <b> No : 1 : ^ as an "Anchor" (Start of string) </b>....When used outside of square brackets ([]), ^ matches only
+      if it appears at the start of the entire string.
     </p>
     <p>Example: Match "Hello" only if it appears at the start of a string</p>
 
     <script>
       let caretPoint = "Hello world\nHello again";
-      document.write(caretPoint.replace(/^Hello/g, "Hi"));
+      document.write(caretPoint.replace(/^Hello/g, "Hi"), "<br>");
     </script>
     <p>
       The /m (multiline) flag allows ^ to match the start of each line:/^Hello/m Matches "Hello" at the start of each
@@ -192,7 +192,7 @@
     </pre>
     <p>Do a global search for at least one "o" in a string:</p>
     <script>
-      let thisStr = "Hellooo world, who is school";
+      let thisStr = "Hellooo world, who is in school";
       let thisStr2 = thisStr.match(/o+/g);
       document.write(thisStr2);
       document.write("If you only want to match k that is followed by at least one h, use + instead of *", "<br>");
@@ -221,7 +221,7 @@
       The test() method is a RegExp expression method. It searches a string for a pattern, and returns true or false,
       depending on the result.
     </p>
-    <p>The following example searches a string for the character "e".</p>
+    <p>The following example searches a string for the character "t".</p>
 
     <script>
       const pattern = /t/;
