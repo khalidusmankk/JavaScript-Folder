@@ -92,7 +92,6 @@
       let c = "Apple" / 100;
       document.write(c, "<br>"); //NaN is a special value that represents "Not a Number," but its type is number.
       document.write(typeof c, "<br>");
-      document.write(typeof c, "<br>");
 
       document.write("However, if the string contains a numeric value , the result will be a number:", "<br>");
       document.write("Numbers written inside double quotes are called numeric string.", "<br>", "<br>");
@@ -276,7 +275,7 @@
       document.write("It returns the value with decimals(as per the given numbers in the brackets.)", "<br>");
 
       let tofi = 40.987;
-      let tofil = tofi.toFixed(2);
+      let tofil = tofi.toFixed(1);
       document.write(tofil, "<br>");
       document.write(typeof tofil, "<br>");
 
@@ -310,16 +309,9 @@
       document.write(nums.toPrecision(5), "<br>"); // "123.5" (4 significant digits)
       document.write(nums.toPrecision(6), "<br>"); // "123.456" (6 significant digits)
       document.write(nums.toPrecision(7), "<br>");
-      let topri = 49.856;
-      let topris = topri.toPrecision(2);
-      document.write(topris, "<br>");
 
-      let toprisx = topri.toPrecision(1);
-      document.write(toprisx, "<br>"); // Checking required.
-
-      let topric = topri.toPrecision(3);
-      document.write(topric, "<br>");
-
+      let nums2 = nums.toPrecision(3);
+      document.write(typeof nums2, "<br>");
       document.write("<hr>");
 
       document.write("<b> #7:toString </b>", "<br>");
@@ -364,15 +356,14 @@
 We are dividing by 2 and keeping track of the remainders.
 
 7 ÷ 2
-
 Quotient = 3
 Remainder = 1 (because 7 = 3 × 2 + 1)
-3 ÷ 2
 
+3 ÷ 2
 Quotient = 1
 Remainder = 1 (because 3 = 1 × 2 + 1)
-1 ÷ 2
 
+1 ÷ 2
 Quotient = 0 (since 1 ÷ 2 = 0.5, we take only the whole number part, which is 0)
 Remainder = 1 (because 1 = 0 × 2 + 1)
 The remainder 1 comes from the part that is left after taking out full multiples of 2.
