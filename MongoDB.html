@@ -123,5 +123,55 @@
       If You are Using MongoDB in JavaScript (Node.js with Mongoose or MongoDB Driver) MongoDB's ISODate() is only
       available inside mongosh. In JavaScript code, you need to use new Date() instead:
     </p>
+    <h2>JSON Schema Validation</h2>
+    <p><b>Note that</b> validation rules can applied both on the existing and new collection.</p>
+    <p>
+      If we want to prevent user from inserting wrong data types, we can set "validator" . For this we will set this in
+      advance while creating a collection. we will pass second parameter. Check 'validation' collection for this, and
+      the command is db.createCollection("students", {validator{$jsonSchema{}}})
+    </p>
+    <p>
+      Inside the first property is 'required', i.e what is required for user.db.createCollection("students",
+      {validator{$jsonSchema{required:["name", "age"]}}})
+    </p>
+    <p>The second property is title. etc</p>
+    <p>
+      <b>Note that</b> the above 2 properties are not required. ONly one property is required which is called
+      "properties".
+    </p>
+    <pre>
+      db.createCollection("students",{
+        validator:{
+          $jsonSchema:{    <!-- The $jsonSchema operator allows us to define our document structure.-->
+            title : "Students collection Validation ",
+            required:["name", "age", "course"], 
+            properties : {
+              name : {
+                bsonType : "string",
+                description : "Name must be a string and it is required"
+              },
+              age : {
+                bsonType : "int",
+                minimum : 5,
+                maximum : 20,
+                description : "Age must be an interger and between 5 and 20"
+              },
+               course : {        <!-- course in not in the required fields/array -->
+                bsonType : "string",
+                 enum : ["BA", "B.SC", "BTECH"], <!-- enum means that user can select only select any thing from this array -->
+                description : "Course must be one the following values"
+              }
+            }
+          }
+        }
+      })
+    </pre>
+    <p>I delete the students collection and re-create it with schema validation</p>
+
+    <h3>How to validate an existing collection</h3>
+    <pre>command for this is :: db.runCommand({
+      collMod : "students,  <!-- collMod is a property-->
+       validator{.........}"})</pre>
+    <!-- validator and so on  -->
   </body>
 </html>
