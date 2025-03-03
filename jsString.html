@@ -459,6 +459,20 @@
       Method 1 (padStart) is best if you want to ensure all numbers are exactly 6 digits, including leading zeros (e.g.,
       012345).
     </p>
+    <p>To pad a number, convert the number to a string first.</p>
     <p>let otp = Math.floor(Math.random() * 1000000).toString().padStart(6, "0");</p>
+
+    <!-- Syntax string.padStart(length, string) -->
+    <script>
+      let numb = 5;
+      let string = numb.toString();
+      document.write(string.padStart(4, "2"), "<br>");
+
+      document.write(
+        Math.floor(Math.random() * 1000000)
+          .toString()
+          .padStart(6, "0")
+      );
+    </script>
   </body>
 </html>
