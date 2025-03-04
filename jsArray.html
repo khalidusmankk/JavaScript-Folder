@@ -505,9 +505,15 @@
         function removeDuplicatesHere(arrays) {
           //Inside the function, the parameter arrays acts as a local variable that refers to the same array (arrstrng).
           let a = []; // Inside the function, you are creating a new array a to store unique values.
-          arrays.map((x) => (!a.includes(x) ? a.push(x) : "")); //The x in the .map(x => ...) expression is a parameter that represents each element of the array arrays during each iteration of the map function. The map function applies the provided arrow function to each element of the array.
+          // arrays.map((x) => (!a.includes(x) ? a.push(x) : "")); //The x in the .map(x => ...) expression is a parameter that represents each element of the array arrays during each iteration of the map function. The map function applies the provided arrow function to each element of the array.
+          arrays.forEach((x) => {
+            if (!a.includes(x)) {
+              a.push(x);
+            }
+          });
+
           return a;
-        }
+        } //Each time removeDuplicatesHere(arrstrng) is called, a is newly created inside the function.
         document.write(removeDuplicatesHere(arrstrng), "<hr>"); //The value of arrstrng (the original array) is passed as an argument to the function.
 
         // Use .forEach() for side effects like pushing elements.
