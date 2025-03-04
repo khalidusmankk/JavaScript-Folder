@@ -469,12 +469,21 @@
           "<br>"
         );
         document.write("The problem was due to the comma operator returning only the last value (the array).", "<br>");
-
+        //below is just try
+        const thisArr = [1, 2, 3, 4, 5];
+        const thisArr2 = thisArr.map((val, ind, arr) => {
+          return { val, ind, arr };
+        });
+        document.write(thisArr2, "<br>");
+        thisArr2.forEach((el) => {
+          document.write(`The value ${el.val} is one index ${el.ind} in the array ${el.arr} <br>`);
+        });
         document.write("<h4> Chaining with map() </h4>");
         document.write(
           "I can also use map method many time with or other methods , which is called chaining, as follow",
           "<br>"
         );
+
         // const x = [1, 2, 3];
         // const xy = x.map((v) => v * 3).filter((v) => v < 9);
         // document.write(xy, "<br>");
