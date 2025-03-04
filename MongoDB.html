@@ -173,5 +173,42 @@
       collMod : "students,  <!-- collMod is a property-->
        validator{.........}"})</pre>
     <!-- validator and so on  -->
+
+    <h2>Update Document</h2>
+    <p>To update an existing document we can use the updateOne() or updateMany() methods.</p>
+    <pre>
+      Syntax : 
+      db.collection_name.updateOne(
+        {field : "Value"}, <!-- Filter.. i.e search with this -->
+        {$set : {update_field : "new_value"}} <!-- Update-->
+      )
+      ...............................
+      db.students.updateOne(
+        {name : "Khalid"},
+        {$set : {age : 19, name : "Khalid Khan"}}
+
+      );
+    </pre>
+    <pre>
+      To update many documents at once, use the below command,
+      Syntax : 
+      db.collection_name.updateMany(
+        {field : "Value"}, <!-- Filter -->
+        {$set : {update_field : "new_value"}} <!-- Update-->
+      )
+      ................
+      db.students.updateMany(
+        {course : "BSC"},
+        {$set : {course : "BA"}}
+      );
+    </pre>
+    <p><b>Note that</b> We can use other commands instead of 'set', as below</p>
+    <pre>
+      $unset : Removes the field from the document.
+      $rename : Rename the field.
+      $inc : increment the field value.
+      $mul : multiplies the field value.
+      $currentDate : set the field value to the current date.
+    </pre>
   </body>
 </html>
