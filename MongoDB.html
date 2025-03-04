@@ -210,5 +210,41 @@
       $mul : multiplies the field value.
       $currentDate : set the field value to the current date.
     </pre>
+    <h3>Array update operators</h3>
+    <pre>
+      It is an array
+      {skills : ["HTML", "JS", PYTHON]};
+
+      
+
+      below are the operators for updating Array
+      $push : Adds an element to an array.
+      $pop : Removes the first or last element of an array.
+      $pull : Removes all elements from an array that match the query.
+      $addToSet : Adds distinct (unique) elements to an array.
+    </pre>
+    <pre>
+      db.students.updateOne(
+        {name : "Khalid Khan"},
+        {$inc : { age : 2}} 
+      )
+      .......
+      <!-- For multiply -->
+      db.students.updateOne(
+        {name : "Khalid Khan"},
+        {$mul : { age : 2}} 
+      )
+         <!-- For unset -->
+      db.students.updateOne(
+        {name : "Khalid Khan"},
+        {$unset : { age : ""}} 
+      )
+      .......................
+      db.students.updateMany(
+       { course: "BA" },  <!--  Filter: Selects all students with course "BA" -->
+   { $set: { skill: ["HTML", "CSS", "JS"] } } <!--  Update this and Adds "skill" array -->
+);
+
+    </pre>
   </body>
 </html>
