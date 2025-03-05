@@ -215,8 +215,6 @@
       It is an array
       {skills : ["HTML", "JS", PYTHON]};
 
-      
-
       below are the operators for updating Array
       $push : Adds an element to an array.
       $pop : Removes the first or last element of an array.
@@ -245,6 +243,53 @@
    { $set: { skill: ["HTML", "CSS", "JS"] } } <!--  Update this and Adds "skill" array -->
 );
 
+    </pre>
+
+    <h3>Rename Command</h3>
+    <pre>
+      db.students.updateMany(
+        {}, <!-- updateall-->
+        {$rename: {"skill" : "coding_skills"}} <!-- New name of skill is coding_skills-->
+      )
+
+    </pre>
+    <h3>Current Date</h3>
+    <pre>
+      db.students.updateMany(
+        {},
+        {$currentDate:{"Current_Date" : true}} <!-- I do not have this column. this will be created now by this command and the current date will be added to it.-->
+      )
+    </pre>
+    <h3>How to update array</h3>
+    <pre>
+      db.students.updateOne(
+        {name : "Khalid Khan"},
+        {$push:{"coding_skills" : "MongoDB"}} <!--add Mongodb-->
+      )
+      .......
+      To remove anything from the center , use a command called 'pull' and the name of the element of the array.
+      db.students.updateOne(
+        {name : "Khalid Khan"},
+        {$pull:{"coding_skills" : "PYTHON"}} <!--add Mongodb-->
+      )
+      ..............
+      PullAll is used to remove more elements at once..
+      db.students.updateOne(
+        {name : "Khalid Khan"},
+        {$pullAll:{"coding_skills" : ["PYTHON", "JS"]}})
+    </pre>
+    <h2>Replace Command</h2>
+    <p>All commands work like update, but it has only updateOne, not updatemany.</p>
+    <pre>
+      db.students.replaceOne(
+        {name: "Khalid Khan"},
+        {$set : {"new_field" : "new_Value"}}
+      )
+      .................
+      db.students.replaceOne(
+        {name: "Khalid Khan"},
+        {name : "Usman Khan", age : 12, course: "BA" }
+      )
     </pre>
   </body>
 </html>
