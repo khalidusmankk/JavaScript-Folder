@@ -252,6 +252,12 @@ If it is placed before the operand, it returns the value after the decrement.
       <p>The Nullish coalescing assignment operator is used between two values.</p>
       <p>If the first value is undefined or null, the second value is assigned.</p>
       <script>
+        const name = null;
+        const age = 35;
+        const resutl = name ?? age;
+        document.write(resutl, "<br>");
+
+        //.............................
         let myA = null;
         myA ??= 10;
         document.write(myA); //myA is null, so 10 is assigned to myA.

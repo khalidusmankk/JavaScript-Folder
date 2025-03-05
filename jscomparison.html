@@ -165,12 +165,13 @@
           if (b < 30) {
             alert(" It's " + b + " past " + a);
           } else {
-            alert(60 - Number(b) + " to " + String(Number(a) + 1));
+            alert(60 - Number(b) + " minutes to " + String(Number(a) + 1 - 12) + " O'clock");
           }
         }
         document.write("<b> Nullish Coalescing Operator (??) </b>", "<br>");
         document.write(
-          "The ?? operator returns the first argument if it is not nullish (null or undefined).Otherwise it returns the second argument.",
+          " The Nullish coalescing assignment operator is used between two values.\
+            If the first value is undefined or null, the second value is assigned.",
           "<br>"
         );
 
@@ -178,6 +179,10 @@
         const age = 35;
         const resutl = name ?? age;
         document.write(resutl, "<br>");
+        //..............................
+        let a = null;
+        a ??= 10;
+        document.write(a);
 
         document.write("<b> Optional Chaining Operator (?.) </b>", "<br>");
         document.write(
@@ -191,7 +196,7 @@
           color: "white",
         };
         document.write(person?.address, "<br>");
-        // document.write(person?.address ?? "Address not available");
+        document.write(person?.address ?? "Address not available", "<br>");
 
         // let myName = null;
         // document.write(myName.age); //Cannot read properties of null (reading 'age')
