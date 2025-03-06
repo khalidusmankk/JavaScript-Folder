@@ -291,5 +291,26 @@
         {name : "Usman Khan", age : 12, course: "BA" }
       )
     </pre>
+    <h3>Delete Document</h3>
+    <p>We can delete documents by using the methods deleteOne() or deleteMany().</p>
+    <p>These methods accept a query object. The matching documents will be deleted.</p>
+    <p>The deleteOne() method will delete the first document that matches the query provided.</p>
+    <p>
+      The deleteMany() method will delete all documents that match the query provided. We can also used this method to
+      delete all records, and we will keep the field empty , as {}.
+    </p>
+    <pre>
+      db.students.deleteOne(
+        {field : "value"})
+        ............
+        db.students.deleteMany({field : "value"})
+          ........
+          db.students.deleteMany({})
+    </pre>
+    <h2>MongoDB Query Operators</h2>
+    <h4>Comparison</h4>
+
+    db.students.insertMany([{name : "Inayat", age : 15, course: "BSC"},{name : "Usman Khan", age : 10, course: "BSC"},
+    {name : "Imran", age : 8, course: "BA"}])
   </body>
 </html>
