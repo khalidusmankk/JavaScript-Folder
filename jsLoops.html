@@ -262,6 +262,10 @@ Since var does not have block scope, the same i (which is now 3) is used in all 
           document.write(x, "<br>");
         }
 
+        let tags = ["HTML", "CSS", "javascript", "ES6"];
+        for (let x of tags) {
+          document.write(`<li> ${x} </li>`);
+        }
         document.write("<b> Looping over a String </b>", "<br>");
 
         let language = "JavaScript";
