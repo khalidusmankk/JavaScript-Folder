@@ -312,5 +312,31 @@
 
     db.students.insertMany([{name : "Inayat", age : 15, course: "BSC"},{name : "Usman Khan", age : 10, course: "BSC"},
     {name : "Imran", age : 8, course: "BA"}])
+
+    <h3>Find/Read Document</h3>
+    <pre>
+      db.students.find()  //for all documents or we can put search value also,as below.
+      db.students.find({class : "BA"})
+      db.students.find({age : 12})
+       db.students.findOne() //for One document
+       db.students.findOne({class : "BA"}) // It will show the first record.
+       db.students.findOne({age : 12})
+    </pre>
+    <h3>Find method with projection</h3>
+    <pre>
+      db.students.find(
+        {field : "value"}, ......... Query
+        {field1:1, field2:1, field3:0....} ...Projection
+        )
+
+    </pre>
+    <p><b>Note</b>that we write 1 with the field , we want to see, ans 0 with the field we do not want to see</p>
+    <p>we can also use directly a projection method,as below</p>
+    <pre>
+      db.students.find().projection({field1:1, field2:1, field3:0....})
+      db.students.find({class: "BA"},{name:1,age:1})
+    </pre>
+    <p>if we do not a field to be shown, make its value 0, as below</p>
+    <p>db.students.find({class: "BA"},{name:1,age:1,_id:0})</p>
   </body>
 </html>
