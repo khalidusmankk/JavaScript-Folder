@@ -369,11 +369,12 @@
       );
 
       document.write(
-        "let is hoisted, but remains uninitialized in a <b> temporal dead zone </b> until the declaration is encountered. However, since let hoist; is explicitly declared before console.log(hoist);, no error occurs, but the value is still undefined."
+        "let is hoisted, but remains uninitialized in a <b> temporal dead zone </b> until the declaration is encountered. However, since let hoist; is explicitly declared before console.log(hoist);, no error occurs, but the value is still undefined.",
+        "<br>"
       );
 
       xx = 50;
-      console.log(xx);
+      document.write(xx, "<br>");
       var xx;
 
       // axx = 50; //Cannot access 'axx' before initialization (declaration)
