@@ -11,7 +11,7 @@
       <script>
         document.write("<h3> Looping  and Iteration</h3>");
         document.write(
-          " Looping is when we want to run through the same block of code a specific number of times, or repeatedly until a condition is met.We specify this condition within the loop.\
+          " Looping occurs when we want to loop through the same block of code a specific number of times, or repeatedly until a condition is met.We specify this condition within the loop.\
             Iteration occurs when we want to execute code once for each item in a collection, usually elements in an array or properties of an object."
         );
         document.write("<h4> Loops in JavaScript</h4>");
@@ -52,11 +52,13 @@
         document.write("(initial expression, condition, increment/decrement)", "<br>");
 
         document.write("<b> Simple 'for' loop </b>", "<br>");
+
         const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audiis"];
         let Room = "The cars are " + "<br>";
         for (let i = 0; i < cars.length; i++) {
+          //i is just a variable that holds the current index (0, 1, 2, ...).
           // i means index
-          Room = Room + cars[i] + "<br>";
+          Room = Room + `Index ${i}: ${cars[i]} <br>`; //cars[i] accesses the element at that index.
         }
         document.write(Room + "<br>");
 
@@ -123,9 +125,7 @@
         document.write(" <b> Remove Negative NUmbers </b> from an array", "<br>");
 
         const myNumbers = [4, 1, -20, -7, 5, 9, -6];
-
         let removeNeg = []; // Create a new array to store positive numbers
-
         // Loop through the array to check each number
         for (let i = 0; i < myNumbers.length; i++) {
           if (myNumbers[i] > 0) {
@@ -301,7 +301,7 @@ Since var does not have block scope, the same i (which is now 3) is used in all 
           "<br>"
         );
 
-        // let i = 0;
+        // let i = 0; // i has already been declared above
         // while (i < 10) {
         //   document.write(i + "<br>");
         //   i++;
