@@ -195,7 +195,7 @@
         const xy = [1, 2];
         const y = xy.splice(0, 2, 4, 5, 6); // Start from index 0 and delete 2 items
         console.log(xy); // It updates the original array
-        console.log(y); // splice() returns an array of the deleted elements, that's why its empty array now
+        console.log(y); // splice() returns an array of the deleted elements, that's why it returns array with 1, 2 now
 
         const fruits = ["Banana", "Orange", "Apple", "Mango"];
         document.write(fruits, "<br>");
@@ -234,7 +234,7 @@
           "<br>"
         );
 
-        compare = (a, b) => {
+        const compare = (a, b) => {
           return a - b; // i.e : a is greater than b or b is greater than a and so on.
         };
         let points2 = points.sort(compare);
@@ -293,10 +293,11 @@
         document.write(names.indexOf("Khanzala", 2), "<hr>");
 
         document.write("<b> array.from()</b>", "<br>");
-        document.write("It creates an array from a string:", "<br>");
-        document.write("The Array.from() method returns an array from any object with a length property.", "<br>");
+        document.write(
+          "The Array.from() method creates an array from any iterable object with a length property.",
+          "<br>"
+        );
 
-        document.write("The Array.from() method returns an array from any iterable object.", "<br>");
         let arrString = "String";
         let arrString2 = Array.from(arrString);
         document.write(arrString2, "<br>");
@@ -386,6 +387,7 @@
             myArray is a standard array, so it has array methods like .push(), .pop(), .map(), .filter().",
           "<br>"
         );
+
         document.write("<hr>");
 
         document.write("<h2> Array Iteration ( repeat ) Methods </h2>", " <br>");
@@ -402,8 +404,8 @@
         const numbers1 = [45, 4, 9, 16, 25];
         const numbers2 = numbers1.map(mapFunction);
 
-        function mapFunction(value, index, array) {
-          return value * 2;
+        function mapFunction(value) {
+          return value * 3;
         }
 
         document.write(numbers2 + "<br>");
