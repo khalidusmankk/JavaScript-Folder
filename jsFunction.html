@@ -9,13 +9,27 @@
   <body>
     <div class="container-fluid mt-1">
       <h2 style="background-color: black; color: whitesmoke">Function</h2>
+      <p>A JavaScript function is a block of code designed to perform a particular task.</p>
       <p>A function in JavaScript is a group of reusable code that can be called anywhere in your program</p>
       <p>In JavaScript, if a function does not explicitly return a value, it returns undefined by default.</p>
       <p>
         Functions stored in variables do not need function names. This function a is actually an anonymous function (a
         function without a name).
       </p>
-      <p>var x = function (a, b) {return a * b}; var y = x (4 , 3); document.write( y );</p>
+      <pre>
+        const xFun = function (a, b) {
+        return a * b
+      };
+       var y = x (4 , 3); 
+       document.write( y );
+      </pre>
+      <script>
+        const xFun = function (a, b) {
+          return a * b;
+        };
+        var y = xFun(4, 3);
+        document.write(y);
+      </script>
       <p>
         Earlier in this tutorial, you learned about "hoisting". Hoisting is JavaScript's default behavior of moving
         declarations to the top of the current scope. Hoisting applies to variable declarations and to function
@@ -28,6 +42,7 @@
         }
         document.write(hoistedFun(5, 5));
       </script>
+      <p>Functions defined using an expression are not hoisted.</p>
       <p><b style="background-color: black; color: whitesmoke"> Why Functions? </b></p>
       <p>
         We can reuse code: Define the code once, and use it many times. You can use the same code many times with
@@ -443,6 +458,7 @@
         };
         document.write(Object.values(person));
       </script>
+      <h2>Self-Invoking Functions</h2>
     </div>
   </body>
 </html>
