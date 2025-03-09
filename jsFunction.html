@@ -9,7 +9,7 @@
   <body>
     <div class="container-fluid mt-1">
       <h2 style="background-color: black; color: whitesmoke">Function</h2>
-      <p>A JavaScript function is a block of code designed to perform a particular task.</p>
+      <p>A JavaScript function is a block of reusable code designed to perform a particular task.</p>
       <p>A function in JavaScript is a group of reusable code that can be called anywhere in your program</p>
       <p>In JavaScript, if a function does not explicitly return a value, it returns undefined by default.</p>
       <p>
@@ -79,9 +79,9 @@
       </p>
       <script>
         function myFunction1() {
-          let aa = 15;
-          let bb = 9;
-          return aa + bb;
+          let a = 15;
+          let b = 9;
+          return a + b;
         }
         document.write(myFunction1() + "<br>");
 
@@ -110,14 +110,6 @@
 
         document.write(myFunction(10, 20), "<br>");
         document.write(myFunction(20, 20), "<br>");
-
-        let x = 17; //  Note that we can't write the below variables inside the curly braces of the function bxz these variable are already declared in the function as parameters.
-        let y = 30;
-        let z = 67;
-
-        document.write(Math.round((x + y) / 2), "<br>"); // Remember that any argument passed here should be sama, as passed after the return keyword above.
-        document.write(Math.round((y + z) / 2), "<br>");
-        document.write(Math.round((z + x) / 2));
       </script>
       <p>
         Now if I want to write any additional thing in this all, I will simply add those things to <br />
@@ -131,18 +123,8 @@
 
         multiply(4, 3);
         multiply(5, 8);
-        multiply(8, 3);
-        multiply(9, 6);
-        multiply(2, 4);
 
         document.write("<hr>");
-
-        function addTwo(number1, number2) {
-          //Basically number1 and number2 are variables , passed in a function. These number1 and number2 are also called parameters here.
-          return number1 + number2;
-        }
-
-        addTwo(5, 10); // Here the values passed during calling a function, are called arguments.
       </script>
       <p>Function arguments (parameters) work as local variables inside functions.</p>
 
