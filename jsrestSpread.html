@@ -127,11 +127,11 @@
       const str = "Hello";
       const charArray = [...str];
       document.write(charArray); // Output: ['H', 'e', 'l', 'l', 'o']
-
+      console.log(charArray);
       document.write("<h3> 7. Removing Items from Arrays</h3>");
       document.write("<p> You can remove an item by filtering it out and spreading the filtered array. </p>");
-      const arr = [1, 2, 3, 4];
-      const newArr = [...arr.filter((num) => num !== 3)];
+      const arr = [1, 2, 3, 4, -1, -2];
+      const newArr = [...arr.filter((num) => num > 0)];
       document.write(newArr);
 
       document.write("<h3> 8. Using with Math Functions</h3>");
@@ -148,11 +148,11 @@
         " NO : 1 : Collecting Function Arguments: The rest parameter (...) allows a function to treat an indefinite number of arguments as an array." +
           "<br>"
       );
-      function sum(...numbers) {
+      function sum2(...numbers) {
         return numbers.reduce((total, num) => total + num, 0);
       }
-      console.log(sum(1, 2, 3, 4)); // Output: 10
-      console.log(sum(10, 20)); // Output: 30
+      console.log(sum2(1, 2, 3, 4)); // Output: 10
+      console.log(sum2(10, 20)); // Output: 30
       document.write(" Here, ...numbers gathers all arguments into an array [1, 2, 3, 4].", "<br>");
       document.write(
         " NO : 2 : Destructuring Arrays with Rest : The rest operator is used to collect the remaining elements into an array after certain elements have been assigned to other variables. In your example, after assigning one to 1 and two to 2, the rest operator collects the remaining elements ([3, 4, 5, 6]) into the rest variable." +
@@ -249,10 +249,10 @@
       );
       document.write("The rest operator collects multiple values into an array or object.", "<br>");
 
-      function sum(...numbers) {
+      function sum3(...numbers) {
         console.log(numbers);
       }
-      sum(1, 2, 3, 4);
+      sum3(1, 2, 3, 4);
       // Output: [1, 2, 3, 4] (Rest collects them into an array)
     </script>
     <pre>
