@@ -548,10 +548,11 @@ You can also name the function inside the IIFE:
         console.log(person2.greet());
         // variable shadowing
         let glb = 5; // Global variable
-
+        let glb2 = 15;
         function myFunc() {
           let glb = 10; // Local variable (shadows the global one)
           console.log(glb); // Outputs 10 (local variable takes priority)
+          console.log(glb2);
         }
 
         myFunc();
