@@ -220,20 +220,11 @@
         all the elements of an array, we have for-loop for it.
       </p>
       <script>
-        function addRest(...myArray) {
-          let sumRest = 0;
-          for (let ele of myArray) {
-            sumRest = sumRest + ele;
-          }
-          return sumRest;
-        }
-        document.write(addRest(4, 9, 16, 25, 29, 100, 66, 77), "<br>");
-
-        function sum(...arrayss) {
+        function sum(...array) {
           let sum = 0;
-          for (let elements of arrayss) {
+          for (let ele of array) {
             // sum = elements ... This will return only the last element of an array omitting the rest elements.
-            sum = sum + elements;
+            sum = sum + ele;
           } // sum = sum + elements;. It is an assignment statement that adds the value of each element in the arrayss array to the variable sum.
           return sum;
         }
@@ -302,27 +293,18 @@
       <br />
       <br />
 
-      <h2 style="color: 'white'; background-color: 'black'">Use of Eval() Function</h2>
+      <h2 style="background-color: black; color: whitesmoke">Use of Eval() Function</h2>
       <p>
         this is an in-built function in JS. The eval() function can evaluate a string as JavaScript code. The eval()
         function in JavaScript can be used to evaluate( جانچنا, قدر اندازہ کرنا ,تشخیص)mathematical expressions written
         as strings.
       </p>
-      <input type="text" id="oneOne" />
-      <button type="button" onclick="show()" id="buttonOne">Result</button>
-      <h2 id="head2">Result is</h2>
 
       <script>
-        let a = "5 + 6";
+        //let a = "5" + "7"; // Not this , as it is string concatination, not expression.
+        let a = "5 + 7";
         let b = eval(a);
         console.log(b);
-
-        function show() {
-          let input = document.getElementById("oneOne").value;
-          let result = eval(input); // Use of eval function
-          let h2 = document.getElementById("head2");
-          h2.innerHTML = result;
-        }
       </script>
 
       <input type="text" id="field1" /> <br />
@@ -363,8 +345,8 @@
         nested function is a closure and closure is a nested function.
       </p>
       <p>
-        Definitions >>> A closure is a function having access to the parent scope. It preserve the data from outside. OR
-        A closure is an inner function that has access to the outer(enclosing) function's variables.
+        Definitions >>> A closure is a function having access to the parent scope. It preserve (محفوظ کرنا) the data
+        from outside. OR A closure is an inner function that has access to the outer(enclosing) function's variables.
       </p>
       <p>
         For every closure we have three scopes:- i.e, Local Scope(Own scope) , Outer Function Scope and Global Scope.
@@ -373,9 +355,12 @@
         <b> Note that </b> outer function (Parent function) does not have access to the variables of inner function (
         Child function)
       </p>
+      <hr />
+      <script></script>
+
       <script>
         //  As per first definition
-        let i = 10;
+        const i = 100;
         function show() {
           let j = 20;
           document.write(j + "<br>");
@@ -389,10 +374,11 @@
           let a = "a is Local variable of Outer function";
           document.write(a + "<br>");
           document.write(c + "<br>");
+          // document.write(innerB + "<br>"); // Uncaught ReferenceError: innerB is not defined at outSide
 
           function innerFunction() {
-            let b = "b is Local variable of Inner function ";
-            document.write(b + "<br>");
+            let innerB = "b is Local variable of Inner function ";
+            document.write(innerB + "<br>");
             document.write(a + "<br>"); //variable of outer function.
             document.write(c + "<br>"); // Accessing the global variable.
           }
@@ -400,12 +386,13 @@
         }
         outSide();
       </script>
-
+      <hr />
       <script>
         function sum(a, a) {
+          //the second parameter replaces the first silently
           return a + a;
         }
-        document.write(sum(5, 6));
+        document.write(sum(2, 6), "<br>"); // Explanation below
 
         document.write(
           "The second parameter overwrites the first because both have the same name (a). JavaScript does not throw an error (in non-strict mode) but assigns the last passed value (6) to a. The function then returns 6 + 6 = 12.",
@@ -434,15 +421,97 @@
         function sum(a, b) {
           return a + b;
         }
-
+        function detail() {
+          let brand = "Toyota";
+          let speed = 120;
+          document.write(brand + " runs with " + speed + "KM/hour.");
+        }
         const person = {
-          name: "Khalid Usman",
+          name: " Khalid Usman",
           tribe: "Wazir",
           count: sum(10, 20),
+          details: detail(),
         };
         document.write(Object.values(person));
       </script>
       <h2>Self-Invoking Functions</h2>
+      <p>Functions can be invoked automatically without being called:</p>
+      <p>Function expressions will execute automatically if the expression is followed by ().</p>
+      <p>You have to add parentheses around the function to indicate that it is a function expression:</p>
+
+      <p id="demo"></p>
+      <script>
+        (function () {
+          document.getElementById("demo").innerHTML = "Hello! I called myself";
+        })();
+      </script>
+
+      <h2>Functions Can Be Used as Values</h2>
+      <script>
+        function thisFun(a, b) {
+          return a * b;
+        }
+
+        let x = 5;
+        let xy = thisFun(4, 5);
+        let z = x + xy;
+        document.write(z);
+      </script>
+      <pre>
+        JavaScript functions can also be used in expressions:
+            Example
+            function myFunction(a, b) {
+              return a * b;
+            }
+
+            let x = myFunction(4, 3) * 2;
+            console.log(x)
+      </pre>
+
+      <h3>Functions are Objects</h3>
+      <pre>
+      The typeof operator in JavaScript returns "function" for functions.
+        But, JavaScript functions can best be described as objects.
+        JavaScript functions have both properties and methods.
+        The <b> arguments.length </b> property returns the number of arguments received when the function was invoked:
+
+        function myFunction(a, b) {
+          return arguments.length;
+        }
+        document.getElementById("demo").innerHTML = myFunction(4, 3); // It will return 2</pre>
+
+      <pre>
+        A function defined as the property of an object, is called a method to the object.
+         A function designed to create new objects, is called an object constructor, as below. but in ES6 we use class instead of function.
+      </pre>
+      <script>
+        function Person(name, age) {
+          this.name = name; // Assign name property
+          this.age = age; // Assign age property
+          this.greet = function () {
+            return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+          };
+        }
+
+        // Creating new objects using the constructor
+        const person1 = new Person("Khalid", 30);
+
+        console.log(person1.greet()); // Output: Hello, my name is Khalid and I am 30 years old.
+      </script>
+      <!-- In ES6 , We use class Constructor -->
+      <script>
+        class Person {
+          constructor(name, age) {
+            this.name = name;
+            this.age = age;
+          }
+          greet() {
+            return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+          }
+        }
+        const person2 = new Person("Khalid", 30);
+        console.log(person2.greet());
+      </script>
     </div>
   </body>
 </html>
