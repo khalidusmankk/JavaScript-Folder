@@ -198,18 +198,20 @@
         associated handler function whenever the event occurs. The browser passes the event object as an argument to the
         handler function.
       </p>
-
+      <button onclick="eventFun" style="background-color: aquamarine; width: 100px; height: 50px; font-size: 30px">
+        Event
+      </button>
       <script>
         function eventFun(e) {
           e.preventDefault();
         }
 
         document.querySelector("button").addEventListener("click", function (e) {
+          e.preventDefault(); // Prevents default behavior (if any)
           console.log(e); // Logs the event object
         });
       </script>
       <p>Here, the e parameter represents the MouseEvent object, which contains details about the click event.</p>
-      <!-- Check again ...  e.stopPropagation(): Stops the event from bubbling up or propagating to parent elements. -->
 
       <h2 style="background-color: black; color: whitesmoke">Function ' Rest ' Parameter</h2>
       <p>
