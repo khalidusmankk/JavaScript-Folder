@@ -175,6 +175,7 @@
 
       <script>
         function logIn(userName = "Sam") {
+          // that's what we call default assigment
           //When a parameter in a JavaScript function is assigned a default value (like userName = "Sam"), it acts as a fallback.
           // The code below will not run and only sam will be shown to user.
           if (!userName) {
@@ -186,6 +187,15 @@
           return userName + " You Just logged In!";
         }
         console.log(logIn()); // If I put value here in the brackets, this arguments will be shown instead of 'Sam'
+
+        // i can even pass a function here to check that if there is no urguments, then call this function.
+        function check() {
+          throw new Error("Params required");
+        }
+        function showFun(name = check()) {
+          console.log(name);
+        }
+        showFun("kk");
       </script>
 
       <h2>Event in Function</h2>
