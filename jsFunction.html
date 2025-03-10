@@ -546,7 +546,25 @@ You can also name the function inside the IIFE:
         }
         const person2 = new PersonClass("Khalid", 30);
         console.log(person2.greet());
+        // variable shadowing
+        let glb = 5; // Global variable
+
+        function myFunc() {
+          let glb = 10; // Local variable (shadows the global one)
+          console.log(glb); // Outputs 10 (local variable takes priority)
+        }
+
+        myFunc();
+        console.log(glb); // Outputs 5 (global variable remains unchanged)
       </script>
+      <p>
+        Local variables have priority over global variables inside their scope. This concept is known as variable
+        shadowing
+      </p>
+      <p>
+        when a local variable inside a function has the same name as a global variable, the local variable hides
+        (shadows) the global one within that function's scope.
+      </p>
     </div>
   </body>
 </html>
