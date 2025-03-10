@@ -434,10 +434,16 @@
         };
         document.write(Object.values(person));
       </script>
-      <h2>Self-Invoking Functions</h2>
+      <h2>Immediately Invoked Function Expression (IIFE)./Self-Invoking Functions</h2>
+      <p>
+        The function is declared inside parentheses (function () { ... }), making it an expression rather than a normal
+        function declaration.
+      </p>
+      <p>The (); at the end immediately executes the function without needing to call it separately.</p>
       <p>Functions can be invoked automatically without being called:</p>
       <p>Function expressions will execute automatically if the expression is followed by ().</p>
       <p>You have to add parentheses around the function to indicate that it is a function expression:</p>
+      <p>Used to create private variables and avoid conflicts</p>
 
       <p id="demo"></p>
       <script>
@@ -445,7 +451,16 @@
           document.getElementById("demo").innerHTML = "Hello! I called myself";
         })();
       </script>
+      <pre>
+  Named IIFE:
+You can also name the function inside the IIFE:
 
+(function greet() {
+  console.log("Hello from IIFE!");
+})();
+(The function name "greet" is optional but can be useful for debugging.)
+</pre
+      >
       <h2>Functions Can Be Used as Values</h2>
       <script>
         function thisFun(a, b) {
@@ -500,7 +515,7 @@
       </script>
       <!-- In ES6 , We use class Constructor -->
       <script>
-        class Person {
+        class PersonClass {
           constructor(name, age) {
             this.name = name;
             this.age = age;
@@ -509,7 +524,7 @@
             return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
           }
         }
-        const person2 = new Person("Khalid", 30);
+        const person2 = new PersonClass("Khalid", 30);
         console.log(person2.greet());
       </script>
     </div>
