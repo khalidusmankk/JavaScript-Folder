@@ -566,6 +566,37 @@ You can also name the function inside the IIFE:
         when a local variable inside a function has the same name as a global variable, the local variable hides
         (shadows) the global one within that function's scope.
       </p>
+      <p>In a function, this refers to the global object.</p>
+      <script>
+        function showGlobal() {
+          console.log(this);
+          document.write(this);
+        }
+        showGlobal(); // In a browser, this will log 'window'
+        // In Node.js, this will log 'global'
+      </script>
+      <p>
+        Since showGlobal() is called as a regular function, this refers to the global object, which is window in a
+        browser. The window object contains all global functions and variables, including the other functions and
+        methods you've defined on the same page.
+      </p>
+      <p>
+        If you've declared functions globally (without using const, let, or var inside a block), they become properties
+        of window.
+      </p>
+      <pre>
+        How to Avoid Polluting the Global Scope?
+            Use modules (import/export) or wrap your code inside an IIFE (Immediately Invoked Function Expression):
+            javascript
+            Copy code
+            (() => {
+              function showGlobal() {
+                console.log(this);
+              }
+              showGlobal();
+            })();
+            Now, showGlobal is not attached to window.
+      </pre>
     </div>
   </body>
 </html>
