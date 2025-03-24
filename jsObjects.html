@@ -116,23 +116,23 @@
         }
 
         document.write(
-          "<b> Note that </b> Objects are mutable (means : taghaiorpazir): They are addressed by reference, not by value.If person is an object, the following statement will not create a copy of person:",
+          "<b> Note that </b> Objects are mutable (means : taghaiorpazir): They are addressed/called/passed by reference, not by value.If person is an object, the following statement will not create a copy of person:",
           "<br>"
         );
-        //   const person = {
-        //   firstName:"John",
-        //   lastName:"Doe",
-        //    age:50,
-        // eyeColor:"blue"
-        //   }
 
-        //   const x = person;
-        //   x.age = 10;      // Will change both x.age and person.age
+        const obj1 = {
+          firstName: "Khalid",
+          lastName: "Usman",
+          password: "sayHi500",
+        };
 
-        //  const x = person;  // Will not create a copy of person.
+        const obj2 = obj1; // Will not create a copy of person.
+        obj2.password = "asdfjkl";
+        console.log(obj1);
+        console.log(obj2);
 
         document.write(
-          "The object x is not a copy of person. It is person. Both x and person are the same object. Any changes to x will also change person, because x and person are the same object.",
+          "The object obj2 is not a copy of obj1. It is person. Both obj2 and obj1 are the same object. Any changes to obj2 will also change obj1, because obj2 and obj1 are the same object.",
           "<br>"
         );
         document.write("<b style = 'color : blue ; font-family : calibri'> JavaScript Primitives </b>", "<br>");
@@ -150,7 +150,7 @@
         //  string
         // undefined
         document.write(
-          "Primitive values are <b> immutable </b> (they are hardcoded and cannot be changed). if x = 3.14, you can change the value of x, but you cannot change the value of 3.14.",
+          "Primitive values are <b> immutable </b> (they are hardcoded and cannot be changed). if x = 3.14, we can change the value of x, but we cannot change the value of 3.14.",
           "<br>"
         );
 
@@ -266,10 +266,14 @@
         }; //array here
 
         for (let x in person) {
+          //document.write(x + " : " + person.x, "<br>");
           document.write(x + " : " + person[x], "<br>");
         }
         document.write(person.Nationality.toUpperCase(), "<br>", "<br>"); // If I want to access the property one by one
-
+        document.write(
+          "Why person.x Does Not Work? <br>\
+        When you try to access object properties using dot notation (person.x), JavaScript looks for a property named exactly 'x' inside the object. Since 'x' is just a variable that holds the property names (keys), there is no property named 'x' in person. dot notation requires an explicit key name, not a variable."
+        );
         document.write(
           "If I want to print any single element of an array, i will give the index number in square brackets, as follows",
           "<br>"
@@ -312,7 +316,7 @@
         document.write(secondFriend.detail(), "<br>", "<br>");
 
         document.write(
-          "The use of 'this' here means that this object is made inside this variable and the owner of this object is this variable. i.e,(secondFriend) Here 'this' is used for 'secondFriend'.",
+          "In an object method, 'this' refers to the object. Here 'this' is used for 'secondFriend'.",
           "<br>"
         );
 
@@ -323,13 +327,9 @@
           Age: 20,
           Nationality: "Pakistan",
           color: "white",
-
           favouriteCars: [" Lexus ", " Tiida ", " BMW"], //array here
-
           Hobbies: ["Reading ", " Gardening "], //array here
-
           Address: { country: "Pakistan", city: "Peshawar" },
-
           detail: function () {
             return this.Name + " " + this.Nationality; //if i try to print this two properties without using 'this' keyword, it will return an error "Name is not defined", as Name is outside the scope of the function.
           },
